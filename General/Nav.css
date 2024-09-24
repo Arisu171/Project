@@ -1,0 +1,74 @@
+html {
+    background-color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    scroll-behavior: smooth;
+    caret-color: transparent;
+    cursor: default;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background: transparent;
+    color: inherit;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+}
+
+/* Navigation bar */
+
+.navbar {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(3px);
+    background-color: #00000077;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: max-content;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navleft {
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.navright {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 10px 20px;
+}
+
+.navtitle {
+    padding: 16px 18px;
+    line-height: 1;
+}
+
+.navuser {
+    padding: 0px 0px 0px 20px;
+}
+
+.navuser i {
+    width: 25px;
+    height: 25px;
+    padding: 18px;
+    border: 3px solid orange;
+    border-radius: 50%;
+    text-align: center;
+}

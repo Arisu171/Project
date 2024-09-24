@@ -1,0 +1,11 @@
+/* Banner */
+.homebanner {
+    overflow: hidden;
+    height: 100vh;
+    max-height: calc(16*100vw/9);
+    ;
+}
+
+.bannerimg {
+    width: 100vw;
+}
