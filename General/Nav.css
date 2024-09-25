@@ -20,6 +20,10 @@ body {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Navigation bar */
 
 .navbar {
@@ -190,4 +194,99 @@ body {
     }
 }
 
-@media (max-width: 601px) {}
+@media (max-width: 665px) {
+    .navbar {
+        background-color: #00000000;
+        backdrop-filter: blur(0px);
+    }
+
+    .navright {
+        display: none;
+    }
+}
+
+/* Navigation Button */
+@media (min-width: 666px) {
+    .navbutton {
+        height: 0px;
+        opacity: 0;
+    }
+}
+
+.navbutton {
+    position: fixed;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(3px);
+    background-color: #000000d3;
+    color: white;
+    width: max-content;
+    top: 5px;
+    right: 5px;
+    padding: 0px;
+    border-radius: 50px;
+    height: max-content;
+}
+
+.navbutton div {
+    cursor: pointer;
+}
+
+.navbutton .navuser {
+    padding: 10px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+}
+
+.navbutton .navuser i {
+    font-size: 17px;
+    width: 21px;
+    height: 21px;
+    padding: 10px;
+    border: 2px solid rgb(255, 123, 0);
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s;
+    transition-delay: 0.1s;
+}
+
+.navicon {
+    text-align: center;
+    padding: 11px;
+    font-size: 25px;
+}
+
+.navicon:hover {
+    text-shadow: 0 0 5px rgb(255, 53, 53),
+        0 0 5px rgba(255, 22, 22, 0.76),
+        0 0 5px rgba(255, 63, 63, 0.897);
+}
+
+.navicon i {
+    text-align: center;
+    width: 25px;
+    padding: 9px;
+}
+
+.navitem {
+    width: 55px;
+    height: 55px;
+    padding: 5px;
+    text-align: center;
+}
+
+.navitem:hover {
+    text-shadow: 0 0 5px rgba(255, 195, 139, 0.808),
+        0 0 5px rgba(255, 127, 22, 0.5),
+        0 0 5px rgba(255, 170, 100, 0.349);
+}
+
+.navitem i {
+    font-size: 20px;
+    margin: 7px 0px;
+}
+
+.navitcap {
+    font-size: 12px;
+    font-weight: 400;
+}
