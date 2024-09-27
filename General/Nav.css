@@ -15,7 +15,7 @@ html {
     color: inherit;
 }
 
-body {
+.body {
     margin: 0px;
     width: 100%;
 }
@@ -154,16 +154,26 @@ a {
     overflow: hidden;
     background-blend-mode: overlay;
     backdrop-filter: blur(3px);
-    background-color: #00000066;
     color: white;
     width: max-content;
-    top: 5px;
-    right: 5px;
     padding: 0px;
-    border-radius: 50px;
-    height: 65px;
     transition: 0.5s ease;
     transition-delay: 0s;
+}
+
+.navradius {
+    height: 65px;
+    top: 5px;
+    right: 5px;
+    background-color: #00000066;
+    border-radius: 50px;
+}
+
+.navcol {
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    background-color: #000000;
 }
 
 .navbutton div {
@@ -228,10 +238,9 @@ a {
     transition-delay: 0.1s;
 }
 
-.navbutton:hover {
+.navradius:hover {
     background-color: #000000d3;
     height: 520px;
-    scale: 1;
     transition-delay: 0.4s;
 }
 
