@@ -1,18 +1,19 @@
 const navbut = document.getElementById('navicon');
 const button = document.getElementById('navbutt');
-const bodie = document.getElementById('body');
+const main = document.getElementById('main');
+
 // Thêm class khi click chuột
 navbut.addEventListener('click', function () {
     if (button.classList.contains('navcol')) {
         button.classList.remove('navcol');
+        main.classList.remove('main1');
         button.classList.add('navradius');
-        bodie.classList.add('body100');
-        bodie.classList.remove('body90');
+        main.classList.add('main0');
     } else {
         button.classList.remove('navradius');
+        main.classList.remove('main0');
         button.classList.add('navcol');
-        bodie.classList.add('body90');
-        bodie.classList.remove('body100');
+        main.classList.add('main1');
     }
 });
 
@@ -20,9 +21,9 @@ function handleResize() {
     // Kiểm tra nếu chiều rộng màn hình nhỏ hơn 768px
     if (window.innerWidth > 665) {
         button.classList.remove('navcol');
+        main.classList.remove('main1');
         button.classList.add('navradius');
-        bodie.classList.add('body90');
-        bodie.classList.remove('body100');
+        main.classList.add('main0');
     }
 }
 

@@ -17,10 +17,26 @@ html {
 
 body {
     margin: 0px;
+    width: 100vw;
+}
+
+/* #body {
+    display: flex;
+} */
+
+#body>#main {
+    transition: 0.3s;
+}
+
+.main1 {
+    width: calc(100% - 65px);
+}
+
+.main0 {
     width: 100%;
 }
 
-a {
+body a {
     text-decoration: none;
 }
 
@@ -227,8 +243,8 @@ a {
     width: 45px;
     height: 45px;
     text-align: center;
-    transition-delay: 0.4s;
-    transition: 0.7s ease;
+    transition-delay: 0s;
+    transition: 0.6s ease;
 }
 
 .navradius .navuser {
@@ -250,7 +266,7 @@ a {
 .navradius:hover {
     background-color: #000000d3;
     height: 520px;
-    transition-delay: 0.4s;
+    transition-delay: 0.2s;
 }
 
 .navbutton:hover .navitem {
@@ -263,7 +279,7 @@ a {
 
 .navbutton:hover .navicon {
     scale: 1;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .navicon:hover {
