@@ -20,16 +20,12 @@ body {
     width: 100vw;
 }
 
-/* #body {
-    display: flex;
-} */
-
 #body>#main {
     transition: 0.3s;
 }
 
 .main1 {
-    width: calc(100% - 65px);
+    width: calc(100% - 64px);
 }
 
 .main0 {
@@ -75,7 +71,7 @@ body a {
         0 0 2px rgba(255, 170, 100, 0.349);
 }
 
-.navtitle:hover a {
+.navright>.navtitle:hover a {
     text-shadow: 0 0 5px rgba(255, 195, 139, 0.808),
         0 0 5px rgba(255, 127, 22, 0.5),
         0 0 5px rgba(255, 170, 100, 0.349);
@@ -138,6 +134,10 @@ body a {
     left: calc(0% + 15px);
     width: calc(100% - 30px);
     box-shadow: 0 0 10px rgba(255, 123, 0, 0.801);
+}
+
+.navdroplist {
+    position: absolute;
 }
 
 .navuser {
