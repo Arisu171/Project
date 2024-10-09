@@ -1,0 +1,11 @@
+.img{
+    height:100vh;
+    overflow:hidden;
+}
+.img img{
+    background-size:cover;
+    width:100%;
+    position:absolute;
+    top:-19rem;
+    z-index:0;
+}
