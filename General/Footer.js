@@ -1,81 +1,7 @@
 // loadFooter.js
-function loadFooter() {
-    const footerHTML = `
-        <style>
-            footer {
-                width: 100%;
-                height: 50vh;
-                background-color: #161618;
-            }
-            footer .content {
-                width: 85%;
-                height: 100%;
-                margin-left: auto;
-                margin-right: auto;
-                display: flex;
-                justify-content: space-between;
-            }
-            footer .content .content1 {
-                margin-top: 2rem;
-                width: calc(100% / 3);
-            }
-            footer .content .content1 p:nth-child(1) {
-                color: white;
-                font-weight: 700;
-            }
-            footer .content .content1 p:nth-last-child(1) {
-                color: white;
-                opacity: 0.7;
-                font-size: larger;
-                margin-top: 2rem;
-            }
-            footer .content .content2 {
-                margin-top: 2rem;
-                width: calc(100% / 3);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            footer .content .content2 p {
-                color: white;
-                font-weight: 700;
-                margin-bottom: 2rem;
-            }
-            footer .content .content2 .dong {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            footer .content .content2 img {
-                width: 100%;
-                max-width: 5rem;
-                height: auto;
-                margin: 0.3rem;
-            }
-            footer .content .content3 {
-                margin-top: 2rem;
-                width: calc(100% / 3);
-                display: flex;
-                flex-direction: column;
-            }
-            footer .content .content3 .text p {
-                font-size: larger;
-                color: white;
-                opacity: 0.7;
-                margin: 0.3rem;
-            }
-            footer .content .content3 .heading {
-                color: white;
-                font-weight: 700;
-                margin-bottom: 2rem;
-            }
-            footer .content .content3 .icon i {
-                margin-top: 3rem;
-                color: white;
-                font-size: x-large;
-            }
-        </style>
-        <footer>
+window.onload = function () {
+    var footer = document.getElementById('footer');
+    footer.innerHTML = `
             <div class="content">
                 <div class="content1">
                     <p>FLARISTA</p>
@@ -110,12 +36,7 @@ function loadFooter() {
                     </div>
                 </div>
             </div>
-        </footer>
     `;
-    
-    document.body.insertAdjacentHTML('beforeend', footerHTML);
-}
+};
 
-// Gọi hàm để tải footer khi trang được tải
-window.onload = loadFooter;
 
