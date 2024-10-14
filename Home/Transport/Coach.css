@@ -1,0 +1,126 @@
+:root{
+    --p-anh-font-size:6rem;
+    --h5-font-size:1.5rem;
+    --color-main:#DD8834;
+    --color-black:rgb(27, 26, 26);
+    --h3-font-size:1.8rem;
+    --color-main-sp:#ff8707;
+    --h2-font-size:2.8rem;
+    --h5-font-size:1.2rem;
+}
+/*phần ảnh đầu*/
+body{
+    font-size:16px;
+}
+#img{
+    height:100vh;
+    overflow:hidden;
+}
+#img img{
+    background-size:cover;
+    width:100%;
+    position:absolute;
+    top:-15rem;
+    z-index:0;
+}
+#img h1{
+    font-size:var(--p-anh-font-size);
+    font-weight:800;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%;
+    left: 5%;
+    color:white;
+}
+/*phần book*/
+#book{
+    margin:5rem;
+    height:80vh;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: white;
+    border-radius: 1rem;
+    filter: drop-shadow(0px 0px 10px #2e2e2e49);
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
+#book .book{
+    margin:2rem;
+    background-color: aqua;
+}
+#book .book>.text{
+    margin-bottom:1.3rem;
+}
+#book .book .text h3{
+    font-size: var(--h3-font-size);
+    font-weight: 800;
+}
+/*content 1 phần from*/
+#book .book .content1{
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+}
+#book .book .content1 .from{
+    width:45%;
+    background-color: rgb(151, 100, 147);
+}
+#book .book .content1 .from .main input{
+    width:100%;
+    height:3rem;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content1 .from .main svg{
+    position:absolute;
+    display:inline-block;
+    top:55%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-45%);
+}
+/*content 1 phần button*/
+#book .book .content1 .button{
+    background-color: red;
+    width:10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#book .book .content1 .button button{ 
+    width:50%;
+    height:50%;
+    border-radius: 50px; 
+    border: none; 
+    background-color: var(--color-main);
+    color: white; 
+}
+#book .book .content1 .button button i{
+    font-size:1rem;
+}
+/*content 1 phần to*/
+#book .book .content1 .to{
+    width:45%;
+    background-color: rgb(38, 207, 134);
+}
+#book .book .content1 .to .main input{
+    width:100%;
+    height:3rem;
+    border:1px solid black;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content1 .to .main svg{
+    position:absolute;
+    display:inline-block;
+    top:55%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-45%);
+}
