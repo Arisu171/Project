@@ -2,12 +2,9 @@ const navbut = document.getElementById('navicon');
 const button = document.getElementById('navbutt');
 const main = document.getElementById('main');
 
-// Đảm bảo sự kiện chỉ chạy khi trang đã được tải hoàn toàn
 window.onload = function () {
-    // Lấy phần tử có id là 'content'
     var navigationbar = document.getElementById('navigationbar');
 
-    // Chèn nội dung HTML vào phần tử
     navigationbar.innerHTML = `
     <div id="shadow"></div>
     <div class="navbar">
@@ -68,8 +65,44 @@ window.onload = function () {
         </div>
     </div>
     `;
+
+    var pagefooter = document.getElementById('pagefooter');
+
+    pagefooter.innerHTML = ` <div class="footercontent">
+            <div class="footerpart" id="footerabout">
+                <h3 class="footertitle">FLARISTA</h3>
+                <div class="footertext">Discover Vietnam with exclusive deals and exceptional service.</div>
+            </div>
+            <div class="footerpart" id="footerdestination">
+                <h3 class="footertitle">TOP DESTINATIONS</h3>
+                <div class="footerimg">
+                    <img src="img1.png" alt="">
+                    <img src="img2.png" alt="">
+                    <img src="img3.png" alt="">
+                    <img src="img4.png" alt="">
+                    <img src="img5.png" alt="">
+                    <img src="img6.png" alt="">
+                </div>
+            </div>
+            <div class="footerpart" id="footercontact">
+                <h3 class="footertitle">CONTACT INFO</h3>
+                <div class="footertext">
+                    <p>Address: 21 Hoan Kiem Street - Ha Noi</p>
+                    <p>Phone: +84 6868 888</p>
+                    <p>Contact: FlaristaTravel@gmail.com</p>
+                </div>
+                <div id="footericon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">© Copyright 2024 – Flarista Travel</div>`;
 };
-// Thêm class khi click chuột
+
 navbut.addEventListener('click', function () {
     if (button.classList.contains('navcol')) {
         button.classList.remove('navcol');
@@ -85,7 +118,7 @@ navbut.addEventListener('click', function () {
 });
 
 function handleResize() {
-    // Kiểm tra nếu chiều rộng màn hình nhỏ hơn 768px
+
     if (window.innerWidth > 665) {
         button.classList.remove('navcol');
         main.classList.remove('main1');
@@ -94,10 +127,8 @@ function handleResize() {
     }
 }
 
-// Gọi hàm khi người dùng thay đổi kích thước cửa sổ
-window.addEventListener('resize', handleResize);
 
-// Kiểm tra kích thước ban đầu của màn hình khi tải trang
+window.addEventListener('resize', handleResize);
 handleResize();
 
 
