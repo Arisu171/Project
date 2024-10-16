@@ -71,12 +71,12 @@ window.onload = function () {
             <div class="footerpart" id="footerdestination">
                 <h3 class="footertitle">TOP DESTINATIONS</h3>
                 <div class="footerimg">
-                    <img src="img1.png" alt="">
-                    <img src="img2.png" alt="">
-                    <img src="img3.png" alt="">
-                    <img src="img4.png" alt="">
-                    <img src="img5.png" alt="">
-                    <img src="img6.png" alt="">
+                    <img src="https://arisu171.github.io/Project/General/Footer/img1.png" alt="">
+                    <img src="https://arisu171.github.io/Project/General/Footer/img2.png" alt="">
+                    <img src="https://arisu171.github.io/Project/General/Footer/img3.png" alt="">
+                    <img src="https://arisu171.github.io/Project/General/Footer/img4.png" alt="">
+                    <img src="https://arisu171.github.io/Project/General/Footer/img5.png" alt="">
+                    <img src="https://arisu171.github.io/Project/General/Footer/img6.png" alt="">
                 </div>
             </div>
             <div class="footerpart" id="footercontact">
