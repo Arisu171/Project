@@ -16,19 +16,9 @@ html {
 }
 
 body {
-    margin: 0px;
-}
-
-#body>#main {
-    transition: 0.3s;
-}
-
-.main1 {
-    width: calc(100% - 64px);
-}
-
-.main0 {
-    width: 100%;
+    width: 99.5vw;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 body a {
@@ -57,7 +47,7 @@ body a {
     width: 100%;
     height: max-content;
     transition: background-color 0.4s;
-    z-index:100;
+    z-index: 100;
 }
 
 .navbar a {
@@ -173,12 +163,12 @@ body a {
     color: white;
     width: max-content;
     padding: 0px;
-    transition: 0.5s ease;
+    transition: height 0.5s ease;
     transition-delay: 0s;
+    scale: 0.8;
 }
 
 .navradius {
-    height: 65px;
     top: 5px;
     right: 5px;
     background-color: #00000066;
@@ -202,6 +192,7 @@ body a {
     padding: 11px;
     font-size: 25px;
     border-radius: 50%;
+    transition: text-shadow 0.5s ease;
 }
 
 .navradius .navicon {
@@ -263,28 +254,41 @@ body a {
     transition-delay: 0.1s;
 }
 
-.navradius:hover {
-    background-color: #000000d3;
+.navradius .navitem {
+    opacity: 0;
+}
+
+.navradius.show {
     height: 520px;
+    transition: height 0.5s ease;
     transition-delay: 0.2s;
 }
 
-.navbutton:hover .navitem {
+.navradius.hide {
+    height: 65px;
+    transition: height 0.5s;
+    transition-delay: 0.2s;
+}
+
+.navitem.show {
     opacity: 1;
 }
 
-.navbutton:hover .navuser {
-    opacity: 1;
+.navitem.hide {
+    opacity: 0;
 }
 
-.navbutton:hover .navicon {
+.navicon.show {
     scale: 1;
-    transition: 0.4s;
+    transition: scale 0.4s ease;
+}
+
+.navicon.hide {
+    scale: 1;
+    transition: scale 0.4s ease;
 }
 
 .navicon:hover {
-    transition: 0.5s;
-    background-color: #00000066;
     text-shadow: 0 0 5px rgb(255, 53, 53),
         0 0 5px rgba(255, 22, 22, 0.76),
         0 0 5px rgba(255, 63, 63, 0.897);

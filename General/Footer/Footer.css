@@ -9,7 +9,7 @@
 .footercontent {
     position: absolute;
     right: 1vw;
-    top: 4vw;
+    top: 2vw;
     width: 90vw;
     /* background-color: black; */
     display: flex;
@@ -47,6 +47,10 @@ footer img {
     line-height: 1.5;
 }
 
+.footertext p {
+    margin: 0.3vw;
+}
+
 #footericon {
     display: flex;
     width: 13vw;
@@ -63,5 +67,4 @@ footer img {
     bottom: 1vw;
     right: 2vw;
     font-size: calc(0.8vw + 5px);
-    ;
 }
