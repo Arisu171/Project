@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="tesst.css">
+    <link rel="stylesheet" href="../General/Footer/Footer.css">
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="Banner.css">
+    <title>Flarista-Home</title>
+</head>
+
+<body>
+    <div id="navigationbar">
+        <div id="shadow"></div>
+        <div class="navbar">
+            <div class="navleft"><a href="#bannerimg1"></a></div>
+            <div class="navright" id="navright">
+                <div class="navtitle"><a href="#bannerimg1">Home</a></div>
+                <div class="navtitle">
+                    <div class="navdroptitle">Pages</div>
+                    <div class="navdroplist">
+                        <div>List 1</div>
+                        <div>List 2</div>
+                        <div>List 3</div>
+                    </div>
+                </div>
+                <div class="navtitle">Tourist</div>
+                <div class="navtitle">Regions</div>
+                <div class="navtitle">
+                    <div class="navdroptitle">Transportations</div>
+                    <div class="navdroplist">
+                        <div>List 1</div>
+                        <div>List 2</div>
+                        <div>List 3</div>
+                    </div>
+                </div>
+                <div class="navtitle">Blog</div>
+                <div class="navuser"><i class="fa fa-user"></i></div>
+            </div>
+            <div class="navbutton navradius navhide hide" id="navbutt" onclick="shownav()">
+                <div class="navicon navhide" id="navicon"><i class="fa-solid fa-bars"></i></div>
+                <div class="navitem navhide">
+                    <a href="#bannerimg1">
+                        <i class="fa-solid fa-house"></i>
+                        <div class="navitcap">Home</div>
+                    </a>
+                </div>
+                <div class="navitem navhide">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="navitcap">Pages</div>
+                </div>
+                <div class="navitem navhide">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="navitcap">Tourist</div>
+                </div>
+                <div class="navitem navhide">
+                    <i class="fa-solid fa-globe"></i>
+                    <div class="navitcap">Regions</div>
+                </div>
+                <div class="navitem navhide">
+                    <i class="fa-solid fa-bus"></i>
+                    <div class="navitcap">Transpos</div>
+                </div>
+                <div class="navitem navhide">
+                    <i class="fa-brands fa-squarespace"></i>
+                    <div class="navitcap">Blog</div>
+                </div>
+                <div class="navuser navhide"><i class="fa fa-user"></i></div>
+            </div>
+        </div>
+    </div><!--link của nav-->
+    <div id="body">
+        <div class="homebanner" id="homebanner">
+            <img src="Banner1.jpg" alt="" class="bannerimg bannerimg1" id="bannerimg1">
+            <img src="Banner2.jpg" alt="" class="bannerimg bannerimg2" id="bannerimg2">
+            <img src="Banner3.jpg" alt="" class="bannerimg bannerimg3" id="bannerimg3">
+            <img src="Banner4.jpg" alt="" class="bannerimg bannerimg4" id="bannerimg4">
+            <img src="Banner5.jpg" alt="" class="bannerimg bannerimg5" id="bannerimg5">
+            <div class="bannercontrol" id="bannercontrolprev" onclick="prev()">
+                <i class="fa-solid fa-circle-chevron-left"></i>
+            </div>
+            <div class="bannercontrol" id="bannercontrolnext" onclick="next()">
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+            <div class="bannercurrent">
+                <div id="bannercurent1"><i class="fa-solid fa-circle"></i></div>
+                <div id="bannercurent2"><i class="fa-regular fa-circle"></i></div>
+                <div id="bannercurent3"><i class="fa-regular fa-circle"></i></div>
+                <div id="bannercurent4"><i class="fa-regular fa-circle"></i></div>
+                <div id="bannercurent5"><i class="fa-regular fa-circle"></i></div>
+            </div>
+            <div class="bannercontent">
+                <div class="bannertitle">
+                    <div id="line1">Extraordinary natural</div>
+                    <div id="line2">and cultural charm</div>
+                </div>
+                <div class="bannerbio">Exploring Vietnam is an unforgettable adventure</div>
+                <div class="bannersearchbar">
+                    <div id="bannersearchbarleft">
+                        <div class="searchbaroption" id="searchbaroption1">
+                            <i class="fa-light fa-calendar-days"></i>
+                            <div class="optext">Date</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="searchbaroption" id="searchbaroption2">
+                            <i class="fa-regular fa-wallet"></i>
+                            <div class="optext">Budget</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="searchbaroption" id="searchbaroption3">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="optext">People</div>
+                        </div>
+                    </div>
+                    <div class="searchbarinput">
+                        <input type="text" placeholder="SEARCH">
+                        <i class="fa-regular fa-circle" id="searchiconx"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="Banner.js"></script><!--link banner-->
+    </div>
+    <footer id="pagefooter"></footer>
+    <script>
+
+        // Move the nav and button click logic inside window.onload
+        let dragging = false;
+
+        function makeElementDraggable(el) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+            el.onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                e.preventDefault();
+                dragging = false;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e.preventDefault();
+                dragging = true;
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                el.style.top = (el.offsetTop - pos2) + "px";
+                el.style.left = (el.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+
+                const currentY = el.offsetTop;
+                const windowHeight = window.innerHeight;
+                let newY = currentY;
+
+                if (currentY < 1) {
+                    newY = 1;
+                } else if (currentY > (windowHeight - el.offsetHeight - 1)) {
+                    newY = windowHeight - el.offsetHeight - 1;
+                }
+
+                const windowWidth = window.innerWidth;
+                const currentX = el.offsetLeft;
+                let newX;
+
+                if (currentX < (windowWidth / 2)) {
+                    newX = 1;
+                } else {
+                    newX = windowWidth - el.offsetWidth - 1;
+                }
+
+                setTimeout(() => {
+                    el.style.left = newX + "px";
+                    el.style.top = newY + "px";
+                    dragging = false;
+                }, 100);
+            }
+        }
+
+        //hiển thị list khi click
+        function shownav() {
+            if (!dragging) {
+                const elements = document.querySelectorAll('.navhide');
+                elements.forEach(function (element) {
+                    if (element.classList.contains('show')) {
+                        element.classList.remove('show');
+                        element.classList.add('hide');
+                    } else {
+                        element.classList.add('show');
+                        element.classList.remove('hide');
+                    }
+                });
+            }
+        }
+
+        makeElementDraggable(document.getElementById("navbutt"));
+
+    </script>
+</body>
+
+
+</html>
