@@ -1,26 +1,26 @@
-// loadFooter.js
 window.onload = function () {
     var footer = document.getElementById('footer');
-    footer.innerHTML = `
-            <div class="content">
-                <div class="content1">
+    if (footer) {
+        footer.innerHTML = `
+            <div class="footcontent">
+                <div class="footcontent1">
                     <p>FLARISTA</p>
                     <p>Discover Vietnam with exclusive deals and exceptional service.</p>
                 </div>
-                <div class="content2">
+                <div class="footcontent2">
                     <p>TOP DESTINATIONS</p>
                     <div class="dong">
-                        <img src="cố đô huế.png" alt="Cố Đô Huế">
-                        <img src="cho noi.png" alt="Chợ Nội">
-                        <img src="hoi an.png" alt="Hội An">
+                        <img src="co-do-hue.png" alt="Cố Đô Huế">
+                        <img src="cho-noi.png" alt="Chợ Nội">
+                        <img src="hoi-an.png" alt="Hội An">
                     </div>
                     <div class="dong">
-                        <img src="nha tho lon.png" alt="Nhà Thờ Lớn">
-                        <img src="nền 4.png" alt="Nền 4">
+                        <img src="nha-tho-lon.png" alt="Nhà Thờ Lớn">
+                        <img src="nen-4.png" alt="Nền 4">
                         <img src="beauty-unesco-heritage-site-ha-long-bay.png" alt="Vịnh Hạ Long">
                     </div>
                 </div>
-                <div class="content3">
+                <div class="footcontent3">
                     <p class="heading">CONTACT INFO</p>
                     <div class="text">
                         <p>Address: 21 Hoan Kiem Street - Ha Noi</p>
@@ -36,7 +36,6 @@ window.onload = function () {
                     </div>
                 </div>
             </div>
-    `;
+        `;
+    }
 };
-
-
