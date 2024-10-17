@@ -4,10 +4,29 @@ html {
     scroll-behavior: smooth;
     caret-color: transparent;
     cursor: default;
+    overflow: -moz-scrollbars-none;
+    -scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 * {
     -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --Wid: 100vw;
+    --Hig: 100vh;
+    --pot: calc(var(--pot) * 1);
+    --pixe: 1px;
 }
 
 ::selection {
@@ -16,8 +35,6 @@ html {
 }
 
 body {
-    width: 99.5vw;
-    margin: 0;
     overflow-x: hidden;
 }
 
@@ -27,7 +44,7 @@ body a {
 
 #shadow {
     position: fixed;
-    width: 100vh;
+    width: 100vw;
 }
 
 /* Navigation bar */
@@ -41,7 +58,7 @@ body a {
     background-color: #00000077;
     color: white;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: calc(1.3vw + 5px);
     top: 0px;
     left: 0px;
     width: 100%;
@@ -67,15 +84,15 @@ body a {
         0 0 5px rgba(255, 170, 100, 0.349);
 }
 
-.navtitle a::after {
+.navbarcurrent a::after {
     position: absolute;
     background-color: rgba(255, 235, 216, 0.829);
     content: '';
-    height: 6px;
-    border-radius: 6px;
-    bottom: -6%;
-    left: calc(0% + 15px);
-    width: calc(100% - 30px);
+    height: calc(0.3vw + 1px);
+    border-radius: 100vw;
+    bottom: 10%;
+    left: 1.8vw;
+    width: calc(100% - 3.6vw);
     box-shadow: 0 0 5px rgba(255, 123, 0, 0.801);
     transition: 0.5s ease;
     transition-delay: 0.2s;
@@ -83,20 +100,20 @@ body a {
 
 .navleft {
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 0vw 1vw;
 }
 
 .navright {
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 10px 20px;
+    padding: 0vw 1vw;
     transition: scale 0.3s, ;
 }
 
 .navtitle {
     position: relative;
-    padding: 14px 18px 16px 18px;
+    padding: 1.4vw 1.6vw 1.6vw;
     line-height: 1;
     transition: text-shadow 0.4s;
 }
@@ -111,9 +128,9 @@ body a {
     position: absolute;
     background-color: rgba(255, 213, 174, 0.829);
     content: '';
-    height: 6px;
-    border-radius: 6px;
-    bottom: -6%;
+    height: calc(0.3vw + 1px);
+    border-radius: 100vw;
+    bottom: 10%;
     left: 50%;
     width: 0%;
     transition: 0.5s;
@@ -121,24 +138,45 @@ body a {
 }
 
 .navtitle:hover::after {
-    left: calc(0% + 15px);
-    width: calc(100% - 30px);
+    left: 1.5vw;
+    width: calc(100% - 3vw);
     box-shadow: 0 0 10px rgba(255, 123, 0, 0.801);
 }
 
 .navdroplist {
+    height: 0;
+    overflow-y: hidden;
     position: absolute;
+    font-size: calc(1.2vw + 4px);
+    top: calc(4.1vw + 5px);
+    left: 0px;
+    width: calc(100% - 20px);
+    min-width: 10vw;
+    padding: 0px 1vw;
+    background-color: #080808c5;
+    border-radius: 1.5vw;
+    transition: 0.3s ease;
+}
+
+.navdroplist div {
+    padding: 1vw;
+}
+
+.navtitle:hover .navdroplist {
+    height: calc((3.2vw + 4px) * 3);
+    padding: 1vw 1vw;
 }
 
 .navuser {
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 2vw;
 }
 
 .navuser i {
-    width: 25px;
-    height: 25px;
-    padding: 18px;
-    border: 3px solid rgb(255, 123, 0);
+    font-size: calc(1.3vw + 5px);
+    width: calc(1.2vw + 4px);
+    height: calc(1.2vw + 4px);
+    padding: 0.9vw;
+    border: 0.25vw solid rgb(255, 123, 0);
     border-radius: 50%;
     text-align: center;
     transition: 0.5s;
@@ -163,24 +201,18 @@ body a {
     color: white;
     width: max-content;
     padding: 0px;
-    transition: height 0.5s ease;
+    transition: 0.5s ease;
     transition-delay: 0s;
-    scale: 0.8;
 }
 
 .navradius {
-    top: 5px;
-    right: 5px;
+    top: 0.5vw;
+    right: 0.5vw;
     background-color: #00000066;
-    border-radius: 50px;
+    border-radius: 100vw;
+    transition: 0.5s ease;
 }
 
-.navcol {
-    height: 100vh;
-    top: 0px;
-    right: 0px;
-    background-color: #000000;
-}
 
 .navbutton div {
     cursor: pointer;
@@ -189,40 +221,41 @@ body a {
 
 .navicon {
     text-align: center;
-    padding: 11px;
-    font-size: 25px;
+    padding: 1vw;
+    font-size: 4vw;
     border-radius: 50%;
     transition: text-shadow 0.5s ease;
 }
 
 .navradius .navicon {
-    scale: 0.7;
+    scale: 1;
+    transition: scale 0.5s;
 }
 
 .navicon i {
     text-align: center;
-    width: 25px;
-    padding: 9px;
+    width: 4vw;
+    padding: 1vw;
 }
 
 .navitem i {
-    font-size: 20px;
-    margin: 7px 0px;
+    font-size: 3vw;
+    margin: 0.7vw 0px;
     transition: 0.7s ease;
 }
 
 .navitcap {
-    font-size: 12px;
+    font-size: 1.5vw;
     font-weight: 400;
 }
 
 .navitem {
-    width: 55px;
-    height: 55px;
-    padding: 5px;
+    width: 7vw;
+    height: 7vw;
+    padding: 0.5vw;
     text-align: center;
     transition-delay: 0.4s;
-    transition: 0.7s ease;
+    transition: height 0.7s ease;
 }
 
 .navradius .navitem {
@@ -230,9 +263,9 @@ body a {
 }
 
 .navbutton .navuser {
-    padding: 10px;
-    width: 45px;
-    height: 45px;
+    padding: 1vw;
+    width: 6vw;
+    height: 6vw;
     text-align: center;
     transition-delay: 0s;
     transition: 0.6s ease;
@@ -243,10 +276,10 @@ body a {
 }
 
 .navbutton .navuser i {
-    font-size: 17px;
-    width: 21px;
-    height: 21px;
-    padding: 10px;
+    font-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+    padding: 1vw;
     border: 2px solid rgb(255, 123, 0);
     border-radius: 50%;
     text-align: center;
@@ -259,13 +292,13 @@ body a {
 }
 
 .navradius.show {
-    height: 520px;
+    height: 64vw;
     transition: height 0.5s ease;
     transition-delay: 0.2s;
 }
 
 .navradius.hide {
-    height: 65px;
+    height: 8vw;
     transition: height 0.5s;
     transition-delay: 0.2s;
 }
@@ -278,13 +311,21 @@ body a {
     opacity: 0;
 }
 
+.navuser.show {
+    opacity: 1;
+}
+
+.navuser.hide {
+    opacity: 0;
+}
+
 .navicon.show {
-    scale: 1;
+    scale: 0.85;
     transition: scale 0.4s ease;
 }
 
 .navicon.hide {
-    scale: 1;
+    scale: 0.95;
     transition: scale 0.4s ease;
 }
 
@@ -301,7 +342,7 @@ body a {
 }
 
 /* Responsive navbar */
-
+/* 
 @media (max-width: 1366px) {
     .navbar {
         font-size: calc(1.1vw + 6px);
@@ -353,7 +394,30 @@ body a {
             0 0 18px rgba(255, 170, 100, 0.4);
         border: 2px solid rgba(255, 169, 57, 0.664);
     }
-}
+
+    .navdroplist {
+        height: 0;
+        overflow-y: hidden;
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        width: calc(100% - 20px);
+        min-width: 100px;
+        padding: 0px 10px;
+        background-color: #080808c5;
+        border-radius: 15px;
+        transition: 0.3s ease;
+    }
+
+    .navdroplist div {
+        padding: 10px;
+    }
+
+    .navtitle:hover .navdroplist {
+        height: 135px;
+        padding: 10px 10px;
+    }
+} */
 
 @media (max-width: 665px) {
     .navbar {
