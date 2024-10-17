@@ -1,6 +1,6 @@
 #pagefooter {
     width: 100vw;
-    height: 35vw;
+    height: calc(100vw *6/16);
     position: relative;
     background-color: rgb(27, 27, 27);
     color: white;
@@ -22,7 +22,7 @@
 }
 
 .footertitle {
-    font-size: calc(1.2vw + 5px);
+    font-size: 1.3vw;
     margin-bottom: 3vw;
 }
 
@@ -42,7 +42,7 @@ footer img {
 }
 
 .footertext {
-    font-size: calc(0.8vw + 5px);
+    font-size: 1vw;
     color: rgba(255, 255, 255, 0.76);
     line-height: 1.5;
 }
@@ -55,8 +55,8 @@ footer img {
     display: flex;
     width: 13vw;
     justify-content: space-between;
-    font-size: calc(1.3vw + 5px);
-    height: calc(4vw + 10px);
+    font-size: 1.5vw;
+    height: 5vw;
     align-items: center;
 }
 
@@ -66,5 +66,5 @@ footer img {
     position: absolute;
     bottom: 1vw;
     right: 2vw;
-    font-size: calc(0.8vw + 5px);
+    font-size: 1vw;
 }

@@ -8,51 +8,57 @@ window.onload = function () {
         <div class="navbar">
             <div class="navleft"><a href="#bannerimg1"></a></div>
             <div class="navright" id="navright">
-                <div class="navtitle"><a href="#bannerimg1">Home</a></div>
-                <div class="navdrop">
-                    <div class="navtitle">Pages
-                        <div class="navdroplist"></div>
+                <div class="navtitle navbarcurrent" id="navbarHome"><a href="#bannerimg1">Home</a></div>
+                <div class="navtitle" id="navbarPages">
+                    <a href="" class="navdroptitle">Pages</a>
+                    <div class="navdroplist">
+                        <a href="">List 1</a>
+                        <a href="">List 2</a>
+                        <a href="">List 3</a>
                     </div>
                 </div>
-                <div class="navtitle">Tourist</div>
-                <div class="navtitle">Regions</div>
-                <div class="navdrop">
-                    <div class="navtitle">Transportations
-                        <div class="navdroplist"></div>
+                <a href="" class="navtitle" id="navbarTourist">Tourist</a>
+                <a href="" class="navtitle" id="navbarRegions">Regions</a>
+                <div class="navtitle">
+                    <a href="" class="navdroptitle">Transportations</a>
+                    <div class="navdroplist">
+                        <a href="">List 1</a>
+                        <a href="">List 2</a>
+                        <a href="">List 3</a>
                     </div>
                 </div>
-                <div class="navtitle">Blog</div>
-                <div class="navuser"><i class="fa fa-user"></i></div>
+                <a href="" class="navtitle" id="navbarBlog">Blog</a>
+                <a href="" class="navuser"><i class="fa fa-user"></i></a>
             </div>
             <div class="navbutton navradius navhide hide" id="navbutt" onclick="shownav()">
                 <div class="navicon navhide" id="navicon"><i class="fa-solid fa-bars"></i></div>
                 <div class="navitem navhide">
-                    <a href="#bannerimg1">
+                    <a href="" href="#bannerimg1">
                         <i class="fa-solid fa-house"></i>
-                        <div class="navitcap">Home</div>
+                        <a href="" class="navitcap">Home</a>
                     </a>
                 </div>
                 <div class="navitem navhide">
                     <i class="fa-solid fa-users"></i>
-                    <div class="navitcap">Pages</div>
+                    <a href="" class="navitcap">Pages</a>
                 </div>
                 <div class="navitem navhide">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <div class="navitcap">Tourist</div>
+                    <a href="" class="navitcap">Tourist</a>
                 </div>
                 <div class="navitem navhide">
                     <i class="fa-solid fa-globe"></i>
-                    <div class="navitcap">Regions</div>
+                    <a href="" class="navitcap">Regions</a>
                 </div>
                 <div class="navitem navhide">
                     <i class="fa-solid fa-bus"></i>
-                    <div class="navitcap">Transpos</div>
+                    <a href="" class="navitcap">Transpos</a>
                 </div>
                 <div class="navitem navhide">
                     <i class="fa-brands fa-squarespace"></i>
-                    <div class="navitcap">Blog</div>
+                    <a href="" class="navitcap">Blog</a>
                 </div>
-                <div class="navuser navhide"><i class="fa fa-user"></i></div>
+                <a href="" class="navuser navhide"><i class="fa fa-user"></i></a>
             </div>
         </div>
         `;

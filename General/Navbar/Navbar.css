@@ -1,11 +1,15 @@
 html {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(27, 27, 27);
     font-family: Montserrat;
     scroll-behavior: smooth;
     caret-color: transparent;
     cursor: default;
     overflow: -moz-scrollbars-none;
     -scrollbar-width: none;
+}
+
+input {
+    outline: none;
 }
 
 html::-webkit-scrollbar {
@@ -27,6 +31,10 @@ html::-webkit-scrollbar {
     --Hig: 100vh;
     --pot: calc(var(--pot) * 1);
     --pixe: 1px;
+    --title: #DD8834;
+    --high: 56.25vw;
+    --dark: rgb(27, 27, 27);
+    --light: white;
 }
 
 ::selection {
@@ -36,6 +44,7 @@ html::-webkit-scrollbar {
 
 body {
     overflow-x: hidden;
+    transition: text-shadow 0.5s ease;
 }
 
 body a {
@@ -79,9 +88,9 @@ body a {
 }
 
 .navright>.navtitle:hover a {
-    text-shadow: 0 0 5px rgba(255, 195, 139, 0.808),
-        0 0 5px rgba(255, 127, 22, 0.5),
-        0 0 5px rgba(255, 170, 100, 0.349);
+    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
+        0 0 1vw rgba(255, 127, 22, 0.5),
+        0 0 1vw rgba(255, 170, 100, 0.349);
 }
 
 .navbarcurrent a::after {
@@ -93,7 +102,7 @@ body a {
     bottom: 10%;
     left: 1.8vw;
     width: calc(100% - 3.6vw);
-    box-shadow: 0 0 5px rgba(255, 123, 0, 0.801);
+    box-shadow: 0 0 1vw rgba(255, 123, 0, 0.801);
     transition: 0.5s ease;
     transition-delay: 0.2s;
 }
@@ -119,9 +128,9 @@ body a {
 }
 
 .navtitle:hover {
-    text-shadow: 0 0 5px rgba(255, 195, 139, 0.808),
-        0 0 5px rgba(255, 127, 22, 0.5),
-        0 0 5px rgba(255, 170, 100, 0.349);
+    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
+        0 0 1vw rgba(255, 127, 22, 0.5),
+        0 0 1vw rgba(255, 170, 100, 0.349);
 }
 
 .navtitle::after {
@@ -172,7 +181,7 @@ body a {
 }
 
 .navuser i {
-    font-size: calc(1.3vw + 5px);
+    font-size: calc(1.2vw + 4px);
     width: calc(1.2vw + 4px);
     height: calc(1.2vw + 4px);
     padding: 0.9vw;
@@ -188,7 +197,7 @@ body a {
     text-shadow: 0 0 10px rgba(255, 195, 139, 0.911),
         0 0 20px rgba(255, 127, 22, 0.6),
         0 0 30px rgba(255, 170, 100, 0.4);
-    border: 3px solid rgba(255, 169, 57, 0.664);
+    border: 0.5vw solid rgba(255, 169, 57, 0.664);
 }
 
 /* Navigation Button */
@@ -202,7 +211,6 @@ body a {
     width: max-content;
     padding: 0px;
     transition: 0.5s ease;
-    transition-delay: 0s;
 }
 
 .navradius {
@@ -224,7 +232,6 @@ body a {
     padding: 1vw;
     font-size: 4vw;
     border-radius: 50%;
-    transition: text-shadow 0.5s ease;
 }
 
 .navradius .navicon {
@@ -269,18 +276,15 @@ body a {
     text-align: center;
     transition-delay: 0s;
     transition: 0.6s ease;
-}
-
-.navradius .navuser {
     opacity: 0;
 }
 
 .navbutton .navuser i {
-    font-size: 3vw;
-    width: 3vw;
-    height: 3vw;
-    padding: 1vw;
-    border: 2px solid rgb(255, 123, 0);
+    font-size: 2vw;
+    width: 2vw;
+    height: 2vw;
+    padding: 1.5vw;
+    border: 0.5vw solid rgb(255, 123, 0);
     border-radius: 50%;
     text-align: center;
     transition: 0.5s;
@@ -330,15 +334,15 @@ body a {
 }
 
 .navicon:hover {
-    text-shadow: 0 0 5px rgb(255, 53, 53),
-        0 0 5px rgba(255, 22, 22, 0.76),
-        0 0 5px rgba(255, 63, 63, 0.897);
+    text-shadow: 0 0 1vw rgb(255, 53, 53),
+        0 0 1vw rgba(255, 22, 22, 0.76),
+        0 0 1vw rgba(255, 63, 63, 0.897);
 }
 
 .navitem:hover {
-    text-shadow: 0 0 5px rgba(255, 195, 139, 0.808),
-        0 0 5px rgba(255, 127, 22, 0.5),
-        0 0 5px rgba(255, 170, 100, 0.349);
+    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
+        0 0 1vw rgba(255, 127, 22, 0.5),
+        0 0 1vw rgba(255, 170, 100, 0.349);
 }
 
 /* Responsive navbar */
@@ -445,4 +449,10 @@ body a {
         opacity: 0;
         transition: 0.2s ease;
     }
+}
+
+/* General */
+
+.title {
+    color: #DD8834;
 }
