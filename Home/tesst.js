@@ -58,43 +58,106 @@ function makeElementDraggable(el) {
     }
 }
 
-//hiển thị list khi click
+//show list//
 function shownav() {
     if (!dragging) {
         const elements = document.querySelectorAll('.navhide');
+        const multicons = document.querySelectorAll('.multicon');
         elements.forEach(function (element) {
             if (element.classList.contains('show')) {
                 element.classList.remove('show');
                 element.classList.add('hide');
+                element.classList.add('over');
             } else {
                 element.classList.add('show');
                 element.classList.remove('hide');
+                element.classList.add('disabled');
+                setTimeout(function () {
+                    element.classList.remove('over');
+                    element.classList.remove('disabled');
+                }, 1000);
             }
         });
     }
 }
 
+// Hàm kiểm tra kích thước màn hình
+function checkScreenSize() {
+    const elements = document.querySelectorAll('.navhide');
+    if (window.innerWidth > 665) {
+        elements.forEach(function (element) {
+            element.classList.remove('show');
+            element.classList.add('hide');
+            element.classList.add('over');
+        });
+    }
+}
+
+// Gắn sự kiện resize vào window
+window.addEventListener('resize', checkScreenSize);
+
 makeElementDraggable(document.getElementById("navbutt"));
 
+// Hàm để theo dõi thay đổi class
+function observeClassChanges(targetElement, classToRemove, affectedElementsSelector, classToRemoveFromAffected, classToAddFromAffected) {
+    const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.attributeName === "class") {
+                const currentClassList = mutation.target.classList;
+                // Kiểm tra nếu class `classToRemove` đã bị gỡ
+                if (!currentClassList.contains(classToRemove)) {
+                    // Lấy tất cả các thẻ có selector `affectedElementsSelector`
+                    const affectedElements = document.querySelectorAll(affectedElementsSelector);
 
-// Lấy kích thước màn hình thiết bị
-let chieuRong = window.screen.width;
-let chieuCao = window.screen.height;
-// Tính giá trị 1/1080 chiều cao
-let motPhanChieuCao = chieuCao / 1080;
-let motPhanChieuRong = chieuRong / 1920;
-// Gán giá trị cho custom properties trong CSS
-document.documentElement.style.setProperty('--wid', chieuRong + 'px');
-document.documentElement.style.setProperty('--hig', chieuCao + 'px');
+                    // Duyệt qua từng thẻ và gỡ/thêm class tương ứng
+                    affectedElements.forEach(function (affectedElement) {
+                        affectedElement.classList.remove(classToRemoveFromAffected);
+                        affectedElement.classList.add(classToAddFromAffected);
+                    });
+                }
+            }
+        });
+    });
 
-// Gán giá trị cho biến CSS --phan-chieu-cao
-document.documentElement.style.setProperty('--pix', motPhanChieuCao + 'px');
-document.documentElement.style.setProperty('--pot', motPhanChieuRong + 'px');
-
-function updateCSSVariable() {
-    const bodywidth = document.body.offsetWidth;
-    const dynamicHeight = bodywidth / 1920 + 'px';
-    document.documentElement.style.setProperty('--pixe', dynamicHeight);
-    updateCSSVariable();
-    window.addEventListener('resize', updateCSSVariable);
+    // Cấu hình observer
+    observer.observe(targetElement, { attributes: true });
 }
+
+// Lấy thẻ chỉ có class 'navradius' để theo dõi
+const elementToWatch = document.querySelector('.navradius');
+
+// Kích hoạt theo dõi thay đổi class
+observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
+
+//show multicon//
+document.querySelector('#Pages div i').parentElement.addEventListener('click', function () {
+    const multicons = document.querySelectorAll('.multiconpage');
+    multicons.forEach(function (multiconpage) {
+        const newClass = multiconpage.id;
+        if (multiconpage.classList.contains('show')) {
+            multiconpage.classList.remove('show');
+            multiconpage.classList.add('hide');
+            multiconpage.classList.remove(newClass);
+        } else {
+            multiconpage.classList.add('show');
+            multiconpage.classList.remove('hide');
+            multiconpage.classList.add(newClass);
+        }
+    });
+});
+
+document.querySelector('#Transpos div i').parentElement.addEventListener('click', function () {
+    const multicons = document.querySelectorAll('.multicontran');
+    multicons.forEach(function (multicontran) {
+        const newClass = multicontran.id;
+        if (multicontran.classList.contains('show')) {
+            multicontran.classList.remove('show');
+            multicontran.classList.add('hide');
+            multicontran.classList.remove(newClass);
+        } else {
+            multicontran.classList.add('show');
+            multicontran.classList.remove('hide');
+            multicontran.classList.add(newClass);
+        }
+    });
+});
