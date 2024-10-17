@@ -56,6 +56,10 @@ body a {
     width: 100vw;
 }
 
+#navigationbar a {
+    display: block;
+}
+
 /* Navigation bar */
 
 .navbar {
@@ -87,7 +91,7 @@ body a {
         0 0 2px rgba(255, 170, 100, 0.349);
 }
 
-.navright>.navtitle:hover a {
+.navright>.navdroptitle:hover {
     text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
         0 0 1vw rgba(255, 127, 22, 0.5),
         0 0 1vw rgba(255, 170, 100, 0.349);
@@ -167,8 +171,15 @@ body a {
     transition: 0.3s ease;
 }
 
-.navdroplist div {
+.navdroplist a {
     padding: 1vw;
+    transition: 0.3s;
+}
+
+.navdroplist a:hover {
+    text-shadow: 0 0 0.5vw rgba(255, 195, 139, 0.808),
+        0 0 0.5vw rgba(255, 127, 22, 0.5),
+        0 0 0.5vw rgba(255, 170, 100, 0.349);
 }
 
 .navtitle:hover .navdroplist {
