@@ -16,6 +16,7 @@
 .underbot {
     position: relative;
     height: var(--high);
+    margin-bottom: 13vw;
 }
 
 .underbotimg {
@@ -162,7 +163,7 @@
 .config .tourcost {
     position: absolute;
     right: 1.3vw;
-    bottom: 1vw;
+    bottom: 0vw;
     font-weight: bold;
     color: var(--title);
     font-size: 1.2vw;

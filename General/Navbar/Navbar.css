@@ -1,5 +1,4 @@
 html {
-    background-color: rgb(27, 27, 27);
     font-family: Montserrat;
     scroll-behavior: smooth;
     caret-color: transparent;
@@ -47,6 +46,7 @@ html::-webkit-scrollbar {
 }
 
 body {
+    background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     transition: text-shadow 0.5s ease;
 }
@@ -450,7 +450,38 @@ body a {
 }
 
 /* General */
+.contentzone {
+    background-color: #fff;
+    padding: 5vw 10vw;
+}
 
 .title {
     color: #DD8834;
+    font-weight: bold;
+    font-size: 1.8vw;
+    height: 3vw;
+}
+
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 0.5vw;
+}
+
+.contentzone {
+    color: black;
+}
+
+.contenttitle {
+    height: 4vw;
+    align-content: center;
+}
+
+.contenttitle i {
+    font-size: 2vw;
+    padding: 1vw 1vw 0.8vw 0;
+}
+
+.contentzone .text {
+    font-size: 1.3vw;
+    line-height: 1.3;
 }
