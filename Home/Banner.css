@@ -123,6 +123,7 @@ h1 {
     bottom: 1%;
     opacity: 70%;
     cursor: pointer;
+    transition: color 0.4s ease;
 }
 
 .bannercurrent:hover {
