@@ -42,8 +42,10 @@
 
 .underbotitem {
     display: grid;
-    grid-template-columns: repeat(1, 2fr);
+    grid-template-columns: 1fr;
     margin-left: 7.5%;
+    position: relative;
+
 }
 
 .underbotlabel {
@@ -52,15 +54,43 @@
 
 .underbotinputlist {
     box-sizing: border-box;
-    width: 85%;
+    width: 90%;
     height: 3.3vw;
-    border: 0.0001vw solid rgba(255, 255, 255, 0.479);
+    border: 0.0001vw solid rgba(255, 255, 255, 0.185);
     background-color: rgb(46, 46, 46);
     border-radius: 1vw;
     padding: 0vw 1.2vw;
     font-size: 1.5vw;
     color: white;
     align-items: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.underbotitem::after {
+    content: '\f2ec';
+    font-family: 'Font Awesome 6 Pro';
+    position: absolute;
+    right: 2.2vw;
+    top: 65%;
+    transform: rotate(180deg);
+    pointer-events: none;
+    font-size: 1vw;
+    color: #ffffff;
+}
+
+#underbotitem1::after {
+    content: '\f002';
+    font-family: 'Font Awesome 6 Pro';
+    transform: rotate(0deg);
+}
+
+#underbotitem6::after {
+    content: '';
 }
 
 #underbotsearch {
@@ -73,4 +103,5 @@
     padding: 1vw;
     font-size: 1.1vw;
     box-sizing: border-box;
+    cursor: pointer;
 }
