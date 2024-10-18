@@ -35,7 +35,6 @@
     padding: 0 10vw;
     overflow: hidden;
     align-content: center;
-    /* text-align: center; */
     font-size: 1.4vw;
     font-weight: bold;
 }
@@ -79,7 +78,7 @@
     top: 65%;
     transform: rotate(180deg);
     pointer-events: none;
-    font-size: 1vw;
+    font-size: 0.6vw;
     color: #ffffff;
 }
 
@@ -87,6 +86,7 @@
     content: '\f002';
     font-family: 'Font Awesome 6 Pro';
     transform: rotate(0deg);
+    font-size: 1vw;
 }
 
 #underbotitem6::after {
@@ -104,4 +104,70 @@
     font-size: 1.1vw;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.underbottours {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    top: calc(var(--high) / 5);
+    left: 0%;
+    height: calc(var(--high) *4 / 5 - 12vw);
+    width: 78vw;
+    padding: 6vw;
+    margin: 0 5vw;
+    align-content: center;
+    color: black;
+}
+
+.undertourimg {
+    margin: 3vw;
+    width: 20vw;
+    height: calc(var(--high) *4 / 5 - 20vw);
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.726);
+    border-radius: 0.6vw;
+}
+
+.undertourimg img {
+    height: 17vw;
+}
+
+.config {
+    padding: 0.3vw 1.5vw;
+    position: relative;
+    height: calc(var(--high) *4 / 5 - 39vw);
+}
+
+.config .tourtitle {
+    font-size: 1.05vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+.config .tourdate {
+    position: absolute;
+    font-size: 0.9vw;
+    top: 50%;
+}
+
+.config .tourfrom {
+    position: absolute;
+    font-size: 1.2vw;
+    right: 1.4vw;
+    top: 46%;
+}
+
+.config .tourcost {
+    position: absolute;
+    right: 1.3vw;
+    bottom: 1vw;
+    font-weight: bold;
+    color: var(--title);
+    font-size: 1.2vw;
+}
+
+.underbot .bannercontrol {
+    top: 50%;
 }

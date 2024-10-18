@@ -91,7 +91,7 @@ h1 {
 }
 
 .bannercontrol {
-    color: rgba(201, 201, 201, 0.507);
+    color: rgba(201, 201, 201, 0.212);
     font-size: calc(10px + 4vw);
     top: calc(50% - 5px - 2vw);
     cursor: pointer;
@@ -99,7 +99,7 @@ h1 {
 }
 
 .bannercontrol:hover {
-    color: rgb(41, 41, 41);
+    color: rgba(41, 41, 41, 0.425);
 }
 
 .bannercontrol:active {
