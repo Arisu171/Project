@@ -12,19 +12,20 @@ window.onload = function () {
                 <div class="navtitle" id="navbarPages">
                     <a href="#" class="navdroptitle">Pages</a>
                     <div class="navdroplist">
-                        <a href="#">List 1</a>
-                        <a href="#">List 2</a>
-                        <a href="#">List 3</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Our Services</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Destinations</a>
                     </div>
                 </div>
                 <a href="#" class="navtitle" id="navbarTourist">Tourist</a>
                 <a href="#" class="navtitle" id="navbarRegions">Regions</a>
-                <div class="navtitle">
+                <div class="navtitle" id="navbarTrans">
                     <a href="#" class="navdroptitle">Transportations</a>
                     <div class="navdroplist">
-                        <a href="#">List 1</a>
-                        <a href="#">List 2</a>
-                        <a href="#">List 3</a>
+                        <a href="#">Carental</a>
+                        <a href="#">Bus Shuttle</a>
+                        <a href="#">Airpot Trans</a>
                     </div>
                 </div>
                 <a href="#" class="navtitle" id="navbarBlog">Blog</a>
@@ -43,8 +44,18 @@ window.onload = function () {
                         <i class="fa-solid fa-users"></i>
                         <div class="navitcap">Pages</div>
                     </div>
-                    <a href="#" class="multicon multiconpage hide" id="multicon2">List 2</a>
-                    <a href="#" class="multicon multiconpage hide" id="multicon4">List 4</a>
+                    <a href="#" class="multicon multiconpage hide" id="multicon0">
+                        <div>About</div>
+                    </a>
+                    <a href="#" class="multicon multiconpage hide" id="multicon2">
+                        <div>Services</div>
+                    </a>
+                    <a href="#" class="multicon multiconpage hide" id="multicon4">
+                        <div>Contact</div>
+                    </a>
+                    <a href="#" class="multicon multiconpage hide" id="multicon6">
+                        <div>Dests</div>
+                    </a>
                 </div>
                 <div class="navitem navhide">
                     <a href="#">
@@ -63,9 +74,15 @@ window.onload = function () {
                         <i class="fa-solid fa-bus"></i>
                         <div class="navitcap">Transpos</div>
                     </div>
-                    <a href="#" class="multicon multicontran hide" id="multicon1">List 1</a>
-                    <a href="#" class="multicon multicontran hide" id="multicon3">List 3</a>
-                    <a href="#" class="multicon multicontran hide" id="multicon5">List 5</a>
+                    <a href="#" class="multicon multicontran hide" id="multicon1">
+                        <div>Car</div>
+                    </a>
+                    <a href="#" class="multicon multicontran hide" id="multicon3">
+                        <div>Bus</div>
+                    </a>
+                    <a href="#" class="multicon multicontran hide" id="multicon5">
+                        <div>Airport</div>
+                    </a>
                 </div>
                 <div class="navitem navhide">
                     <a href="#">
