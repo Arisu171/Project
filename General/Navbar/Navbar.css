@@ -559,12 +559,21 @@ body a {
     scale: 0.95;
 }
 
-.halfcontent {
-    height: 24vw;
-    width: 39vw;
-    padding: 3vw;
+.halfpartzone>.halfcontent {
+    height: 20vw;
+    width: 35vw;
+    padding: 5vw;
     position: relative;
     background-color: #fff;
+}
+
+.halfcontent .smalltitle {
+    font-family: 'prompt', 'montserrat';
+    font-size: 1.5vw;
+    font-weight: 300;
+    font-style: italic;
+    color: rgb(78, 78, 78);
+    margin-bottom: 1vw;
 }
 
 .halfcontent .title {
@@ -595,9 +604,9 @@ body a {
 }
 
 .halfdark {
-    height: 26vw;
+    height: 24vw;
     width: 39vw;
-    padding: 2vw 3vw;
+    padding: 3vw;
     background-color: var(--dark);
     color: white;
     overflow: hidden;
@@ -606,12 +615,12 @@ body a {
 
 .halfimg img {
     height: 30.5vw;
-    margin: -2vw -3vw;
+    margin: -3vw;
 }
 
 .halfdark .halfcontent {
-    padding: 0.7vw;
-    height: 8vw;
+    padding: 0.7vw 1.5vw;
+    height: 6vw;
 }
 
 .halflist {
