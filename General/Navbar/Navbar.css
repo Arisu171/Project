@@ -473,21 +473,21 @@ body a {
 
 /* General */
 
-.pagebannerlarge {
+.pagebanner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 0;
+}
+
+.bannerlarge {
     width: 100vw;
     height: 45vw;
     overflow: hidden;
     position: relative;
     background-color: rgba(0, 0, 0, 0.842);
     margin-bottom: 5vw;
-}
-
-.pagebannerlarge img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 0;
 }
 
 .pagebannerlarge .pagetitle {
@@ -500,7 +500,23 @@ body a {
     font-weight: 800;
 }
 
-.pagebannersmall {}
+.bannersmall {
+    width: 100vw;
+    height: 35vw;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+}
+
+.bannersmall .pagetitle {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    left: 15%;
+    top: 47%;
+    font-size: 4vw;
+    font-weight: 800;
+}
 
 .contentzone {
     background-color: #fff;
