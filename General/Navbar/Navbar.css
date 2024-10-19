@@ -481,6 +481,16 @@ body a {
     z-index: 0;
 }
 
+.pagebanner .pagetitle {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    left: 15%;
+    top: 47%;
+    font-size: 4vw;
+    font-weight: 800;
+}
+
 .bannerlarge {
     width: 100vw;
     height: 45vw;
@@ -490,32 +500,12 @@ body a {
     margin-bottom: 5vw;
 }
 
-.pagebannerlarge .pagetitle {
-    position: absolute;
-    z-index: 1;
-    color: white;
-    left: 15%;
-    top: 47%;
-    font-size: 4vw;
-    font-weight: 800;
-}
-
 .bannersmall {
     width: 100vw;
     height: 35vw;
     overflow: hidden;
     position: relative;
     background-color: rgb(0, 0, 0);
-}
-
-.bannersmall .pagetitle {
-    position: absolute;
-    z-index: 1;
-    color: white;
-    left: 15%;
-    top: 47%;
-    font-size: 4vw;
-    font-weight: 800;
 }
 
 .contentzone {
@@ -562,4 +552,6 @@ body a {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.halfcontent .text {}
+.halfcontent .text {
+    font-size: 1.3vw;
+}
