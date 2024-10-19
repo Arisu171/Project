@@ -5,6 +5,7 @@ html {
     cursor: default;
     overflow: -moz-scrollbars-none;
     -scrollbar-width: none;
+    background-color: rgb(27, 27, 27);
 }
 
 input {
@@ -48,6 +49,7 @@ html::-webkit-scrollbar {
 body {
     overflow-x: hidden;
     transition: text-shadow 0.5s ease;
+    background-color: #fff;
 }
 
 body a {
