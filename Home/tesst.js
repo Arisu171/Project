@@ -1,4 +1,3 @@
-// Move the nav and button click logic inside window.onload
 let dragging = false;
 
 function makeElementDraggable(el) {
@@ -46,8 +45,20 @@ function makeElementDraggable(el) {
 
         if (currentX < (windowWidth / 2)) {
             newX = 1;
+
+            const rightMulticons = document.querySelectorAll('[id^="rmulticon"]');
+            rightMulticons.forEach(function (element) {
+                const newId = element.id.replace('rmulticon', 'lmulticon');
+                element.id = newId;
+            });
         } else {
-            newX = windowWidth - el.offsetWidth - 1;
+            newX = windowWidth - el.offsetWidth;
+
+            const leftMulticons = document.querySelectorAll('[id^="lmulticon"]');
+            leftMulticons.forEach(function (element) {
+                const newId = element.id.replace('lmulticon', 'rmulticon');
+                element.id = newId;
+            });
         }
 
         setTimeout(() => {
@@ -58,11 +69,9 @@ function makeElementDraggable(el) {
     }
 }
 
-//show list//
 function shownav() {
     if (!dragging) {
         const elements = document.querySelectorAll('.navhide');
-        const multicons = document.querySelectorAll('.multicon');
         elements.forEach(function (element) {
             if (element.classList.contains('show')) {
                 element.classList.remove('show');
@@ -75,13 +84,12 @@ function shownav() {
                 setTimeout(function () {
                     element.classList.remove('over');
                     element.classList.remove('disabled');
-                }, 1000);
+                }, 500);
             }
         });
     }
 }
 
-// Hàm kiểm tra kích thước màn hình
 function checkScreenSize() {
     const elements = document.querySelectorAll('.navhide');
     if (window.innerWidth > 665) {
@@ -93,23 +101,13 @@ function checkScreenSize() {
     }
 }
 
-// Gắn sự kiện resize vào window
-window.addEventListener('resize', checkScreenSize);
-
-makeElementDraggable(document.getElementById("navbutt"));
-
-// Hàm để theo dõi thay đổi class
 function observeClassChanges(targetElement, classToRemove, affectedElementsSelector, classToRemoveFromAffected, classToAddFromAffected) {
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             if (mutation.attributeName === "class") {
                 const currentClassList = mutation.target.classList;
-                // Kiểm tra nếu class `classToRemove` đã bị gỡ
                 if (!currentClassList.contains(classToRemove)) {
-                    // Lấy tất cả các thẻ có selector `affectedElementsSelector`
                     const affectedElements = document.querySelectorAll(affectedElementsSelector);
-
-                    // Duyệt qua từng thẻ và gỡ/thêm class tương ứng
                     affectedElements.forEach(function (affectedElement) {
                         affectedElement.classList.remove(classToRemoveFromAffected);
                         affectedElement.classList.add(classToAddFromAffected);
@@ -119,45 +117,46 @@ function observeClassChanges(targetElement, classToRemove, affectedElementsSelec
         });
     });
 
-    // Cấu hình observer
     observer.observe(targetElement, { attributes: true });
 }
 
-// Lấy thẻ chỉ có class 'navradius' để theo dõi
-const elementToWatch = document.querySelector('.navradius');
+window.onload = function () {
+    // Make nav button draggable
+    makeElementDraggable(document.getElementById("navbutt"));
 
-// Kích hoạt theo dõi thay đổi class
-observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
+    // Attach resize event listener
+    window.addEventListener('resize', checkScreenSize);
 
-//show multicon//
-document.querySelector('#Pages div i').parentElement.addEventListener('click', function () {
-    const multicons = document.querySelectorAll('.multiconpage');
-    multicons.forEach(function (multiconpage) {
-        const newClass = multiconpage.id;
-        if (multiconpage.classList.contains('show')) {
-            multiconpage.classList.remove('show');
-            multiconpage.classList.add('hide');
-            multiconpage.classList.remove(newClass);
-        } else {
-            multiconpage.classList.add('show');
-            multiconpage.classList.remove('hide');
-            multiconpage.classList.add(newClass);
-        }
+    // Monitor changes in class
+    const elementToWatch = document.querySelector('.navradius');
+    observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
+
+    // Event listeners for show/hide multicon lists
+    document.querySelector('#Pages div i').parentElement.addEventListener('click', function () {
+        const multicons = document.querySelectorAll('.multiconpage');
+        multicons.forEach(function (multiconpage) {
+            const newClass = multiconpage.id;
+            if (multiconpage.classList.contains('show')) {
+                multiconpage.classList.remove('show');
+                multiconpage.classList.add('hide');
+            } else {
+                multiconpage.classList.add('show');
+                multiconpage.classList.remove('hide');
+            }
+        });
     });
-});
 
-document.querySelector('#Transpos div i').parentElement.addEventListener('click', function () {
-    const multicons = document.querySelectorAll('.multicontran');
-    multicons.forEach(function (multicontran) {
-        const newClass = multicontran.id;
-        if (multicontran.classList.contains('show')) {
-            multicontran.classList.remove('show');
-            multicontran.classList.add('hide');
-            multicontran.classList.remove(newClass);
-        } else {
-            multicontran.classList.add('show');
-            multicontran.classList.remove('hide');
-            multicontran.classList.add(newClass);
-        }
+    document.querySelector('#Transpos div i').parentElement.addEventListener('click', function () {
+        const multicons = document.querySelectorAll('.multicontran');
+        multicons.forEach(function (multicontran) {
+            const newClass = multicontran.id;
+            if (multicontran.classList.contains('show')) {
+                multicontran.classList.remove('show');
+                multicontran.classList.add('hide');
+            } else {
+                multicontran.classList.add('show');
+                multicontran.classList.remove('hide');
+            }
+        });
     });
-});
+};

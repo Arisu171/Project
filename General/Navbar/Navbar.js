@@ -4,7 +4,7 @@ window.onload = function () {
 
     if (navigationbar) {
         navigationbar.innerHTML = `
-        <div id="shadow"></div>
+<div id="shadow"></div>
         <div class="navbar">
             <div class="navleft"><a href="#bannerimg1"></a></div>
             <div class="navright" id="navright">
@@ -12,19 +12,20 @@ window.onload = function () {
                 <div class="navtitle" id="navbarPages">
                     <a href="#" class="navdroptitle">Pages</a>
                     <div class="navdroplist">
-                        <a href="#">List 1</a>
-                        <a href="#">List 2</a>
-                        <a href="#">List 3</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Our Services</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Destinations</a>
                     </div>
                 </div>
                 <a href="#" class="navtitle" id="navbarTourist">Tourist</a>
                 <a href="#" class="navtitle" id="navbarRegions">Regions</a>
-                <div class="navtitle">
+                <div class="navtitle" id="navbarTrans">
                     <a href="#" class="navdroptitle">Transportations</a>
                     <div class="navdroplist">
-                        <a href="#">List 1</a>
-                        <a href="#">List 2</a>
-                        <a href="#">List 3</a>
+                        <a href="#">Carental</a>
+                        <a href="#">Bus Shuttle</a>
+                        <a href="#">Airpot Trans</a>
                     </div>
                 </div>
                 <a href="#" class="navtitle" id="navbarBlog">Blog</a>
@@ -43,8 +44,18 @@ window.onload = function () {
                         <i class="fa-solid fa-users"></i>
                         <div class="navitcap">Pages</div>
                     </div>
-                    <a href="#" class="multicon multiconpage hide" id="multicon2">List 2</a>
-                    <a href="#" class="multicon multiconpage hide" id="multicon4">List 4</a>
+                    <a href="#" class="multicon multiconpage hide" id="rmulticon0">
+                        <div>About</div>
+                    </a>
+                    <a href="#" class="multicon multiconpage hide" id="rmulticon2">
+                        <div>Services</div>
+                    </a>
+                    <a href="#" class="multicon multiconpage hide" id="rmulticon4">
+                        <div>Contact</div>
+                    </a>
+                    <a href="#" class="multicon multiconpage hide" id="rmulticon6">
+                        <div>Dests</div>
+                    </a>
                 </div>
                 <div class="navitem navhide">
                     <a href="#">
@@ -63,9 +74,15 @@ window.onload = function () {
                         <i class="fa-solid fa-bus"></i>
                         <div class="navitcap">Transpos</div>
                     </div>
-                    <a href="#" class="multicon multicontran hide" id="multicon1">List 1</a>
-                    <a href="#" class="multicon multicontran hide" id="multicon3">List 3</a>
-                    <a href="#" class="multicon multicontran hide" id="multicon5">List 5</a>
+                    <a href="#" class="multicon multicontran hide" id="rmulticon1">
+                        <div>Car</div>
+                    </a>
+                    <a href="#" class="multicon multicontran hide" id="rmulticon3">
+                        <div>Bus</div>
+                    </a>
+                    <a href="#" class="multicon multicontran hide" id="rmulticon5">
+                        <div>Airport</div>
+                    </a>
                 </div>
                 <div class="navitem navhide">
                     <a href="#">
@@ -120,12 +137,9 @@ window.onload = function () {
     }
 };
 
-// Hàm để gắn lại tất cả các sự kiện và chức năng
 function attachEventHandlers() {
-    // Gán lại sự kiện kéo thả
     makeElementDraggable(document.getElementById("navbutt"));
 
-    // Gán sự kiện cho các nút Pages
     document.querySelector('#Pages div i').parentElement.addEventListener('click', function () {
         const multicons = document.querySelectorAll('.multiconpage');
         multicons.forEach(function (multiconpage) {
@@ -133,16 +147,13 @@ function attachEventHandlers() {
             if (multiconpage.classList.contains('show')) {
                 multiconpage.classList.remove('show');
                 multiconpage.classList.add('hide');
-                multiconpage.classList.remove(newClass);
             } else {
                 multiconpage.classList.add('show');
                 multiconpage.classList.remove('hide');
-                multiconpage.classList.add(newClass);
             }
         });
     });
 
-    // Gán sự kiện cho các nút Transpos
     document.querySelector('#Transpos div i').parentElement.addEventListener('click', function () {
         const multicons = document.querySelectorAll('.multicontran');
         multicons.forEach(function (multicontran) {
@@ -150,16 +161,13 @@ function attachEventHandlers() {
             if (multicontran.classList.contains('show')) {
                 multicontran.classList.remove('show');
                 multicontran.classList.add('hide');
-                multicontran.classList.remove(newClass);
             } else {
                 multicontran.classList.add('show');
                 multicontran.classList.remove('hide');
-                multicontran.classList.add(newClass);
             }
         });
     });
 
-    // Hàm kiểm tra kích thước màn hình
     function checkScreenSize() {
         const elements = document.querySelectorAll('.navhide');
         if (window.innerWidth > 665) {
@@ -172,7 +180,6 @@ function attachEventHandlers() {
     }
     window.addEventListener('resize', checkScreenSize);
 
-    // Gắn chức năng quan sát thay đổi class
     const elementToWatch = document.querySelector('.navradius');
     observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
 }
@@ -225,8 +232,20 @@ function makeElementDraggable(el) {
 
         if (currentX < (windowWidth / 2)) {
             newX = 1;
+
+            const rightMulticons = document.querySelectorAll('[id^="rmulticon"]');
+            rightMulticons.forEach(function (element) {
+                const newId = element.id.replace('rmulticon', 'lmulticon');
+                element.id = newId;
+            });
         } else {
-            newX = windowWidth - el.offsetWidth - 1;
+            newX = windowWidth - el.offsetWidth;
+
+            const leftMulticons = document.querySelectorAll('[id^="lmulticon"]');
+            leftMulticons.forEach(function (element) {
+                const newId = element.id.replace('lmulticon', 'rmulticon');
+                element.id = newId;
+            });
         }
 
         setTimeout(() => {

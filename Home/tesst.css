@@ -1,5 +1,4 @@
 html {
-    background-color: rgb(27, 27, 27);
     font-family: Montserrat;
     scroll-behavior: smooth;
     caret-color: transparent;
@@ -80,7 +79,7 @@ body a {
     left: 0px;
     width: 100%;
     height: max-content;
-    transition: background-color 0.4s;
+    transition: background-color 0.4s, backdrop-filter 0.4s;
     z-index: 100;
 }
 
@@ -89,17 +88,17 @@ body a {
     color: white;
 }
 
-.navtitle a {
-    text-shadow: 0 0 2px rgba(255, 195, 139, 0.808),
-        0 0 2px rgba(255, 127, 22, 0.5),
-        0 0 2px rgba(255, 170, 100, 0.349);
+.navtitle:hover {
+    text-shadow: 0 0 0.2vw rgba(255, 195, 139, 0.808),
+        0 0 0.2vw rgba(255, 127, 22, 0.5),
+        0 0 0.2vw rgba(255, 170, 100, 0.349);
 }
 
-.navright>.navdroptitle:hover {
+/* .navright>.navdroptitle:hover {
     text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
         0 0 1vw rgba(255, 127, 22, 0.5),
         0 0 1vw rgba(255, 170, 100, 0.349);
-}
+} */
 
 .navbarcurrent a::after {
     position: absolute;
@@ -125,20 +124,14 @@ body a {
     cursor: pointer;
     display: flex;
     padding: 0vw 1vw;
-    transition: scale 0.3s, ;
+    transition: scale 0.3s;
 }
 
 .navtitle {
     position: relative;
     padding: 1.4vw 1.6vw 1.6vw;
     line-height: 1;
-    transition: text-shadow 0.4s;
-}
-
-.navtitle:hover {
-    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
-        0 0 1vw rgba(255, 127, 22, 0.5),
-        0 0 1vw rgba(255, 170, 100, 0.349);
+    transition: text-shadow 0.4s ease;
 }
 
 .navtitle::after {
@@ -150,14 +143,14 @@ body a {
     bottom: 10%;
     left: 50%;
     width: 0%;
-    transition: 0.5s;
+    transition: left 0.5s ease, width 0.5s ease, box-shadow 0.5s ease;
     transition-delay: 0.2s;
 }
 
 .navtitle:hover::after {
     left: 1.5vw;
     width: calc(100% - 3vw);
-    box-shadow: 0 0 10px rgba(255, 123, 0, 0.801);
+    box-shadow: 0 0 1vw rgba(255, 123, 0, 0.801);
 }
 
 .navdroplist {
@@ -167,28 +160,32 @@ body a {
     font-size: calc(1.2vw + 4px);
     top: calc(4.1vw + 5px);
     left: 0px;
-    width: calc(100% - 20px);
-    min-width: 10vw;
-    padding: 0px 1vw;
+    width: 170%;
+    max-width: 15vw;
+    padding: 0;
     background-color: #080808c5;
     border-radius: 1.5vw;
     transition: 0.3s ease;
 }
 
 .navdroplist a {
-    padding: 1vw;
+    padding: 1.5vw 2vw;
     transition: 0.3s;
 }
 
 .navdroplist a:hover {
-    text-shadow: 0 0 0.5vw rgba(255, 195, 139, 0.808),
-        0 0 0.5vw rgba(255, 127, 22, 0.5),
-        0 0 0.5vw rgba(255, 170, 100, 0.349);
+    /* text-shadow: 0 0 0.3vw rgba(255, 195, 139, 0.808),
+        0 0 0.3vw rgba(255, 127, 22, 0.5),
+        0 0 0.3vw rgba(255, 170, 100, 0.349); */
+    background-color: #5e5e5ec5;
 }
 
-.navtitle:hover .navdroplist {
-    height: calc((3.2vw + 4px) * 3);
-    padding: 1vw 1vw;
+#navbarPages:hover .navdroplist {
+    height: calc((4.2vw + 5px) * 4);
+}
+
+#navbarTrans:hover .navdroplist {
+    height: calc((4.2vw + 5px) * 3);
 }
 
 .navuser {
@@ -208,11 +205,10 @@ body a {
 }
 
 .navuser:hover i {
-    box-shadow: 0 0 10px rgba(255, 123, 0, 0.801);
-    text-shadow: 0 0 10px rgba(255, 195, 139, 0.911),
-        0 0 20px rgba(255, 127, 22, 0.6),
-        0 0 30px rgba(255, 170, 100, 0.4);
-    border: 0.5vw solid rgba(255, 169, 57, 0.664);
+    box-shadow: 0 0 1vw rgba(255, 123, 0, 0.801);
+    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.911),
+        0 0 2vw rgba(255, 127, 22, 0.6),
+        0 0 3vw rgba(255, 170, 100, 0.4);
 }
 
 /* Navigation Button */
@@ -244,11 +240,8 @@ body a {
     padding: 1vw;
     font-size: 4vw;
     border-radius: 50%;
-}
-
-.navicon {
-    scale: 1;
-    transition: scale 0.5s ease;
+    scale: 0.9;
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
 }
 
 .navicon i {
@@ -335,19 +328,14 @@ body a {
     opacity: 0;
 }
 
-.navicon.show {
-    scale: 0.85;
-    transition: scale 0.4s ease;
-}
-
+.navicon.show,
 .navicon.hide {
-    scale: 0.95;
-    transition: scale 0.4s ease;
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
 }
 
 .navicon:hover {
-    text-shadow: 0 0 1vw rgb(255, 53, 53),
-        0 0 1vw rgba(255, 22, 22, 0.76),
+    text-shadow: 0 0 1vw rgb(255, 114, 114),
+        0 0 1vw rgba(255, 162, 22, 0.76),
         0 0 1vw rgba(255, 63, 63, 0.897);
 }
 
@@ -389,40 +377,81 @@ body a {
     opacity: 1;
 }
 
-#multicon0 {
-    display: none;
+.show#lmulticon0 {
+    top: 8vw;
+    left: 8.5vw;
 }
 
-.multicon1 {
-    top: -10vw;
-    left: 11vw;
+.show#lmulticon1 {
+    top: 6vw;
+    left: 10vw;
 }
 
-.multicon2 {
-    top: -6vw;
-    left: 11vw;
+.show#lmulticon2 {
+    top: 3.1vw;
+    left: 15vw;
 }
 
-.multicon3 {
+.show#lmulticon3 {
     top: -1vw;
     left: 14vw;
 }
 
-.multicon4 {
-    top: 4vw;
-    left: 11vw;
+.show#lmulticon4 {
+    top: -5.1vw;
+    left: 15vw;
 }
 
-.multicon5 {
+.show#lmulticon5 {
+    top: -8vw;
+    left: 10vw;
+}
+
+.show#lmulticon6 {
+    top: -10vw;
+    left: 8.5vw;
+}
+
+.show#rmulticon0 {
+    top: -10vw;
+    left: -8.5vw;
+}
+
+.show#rmulticon1 {
+    top: -8vw;
+    left: -10vw;
+}
+
+.show#rmulticon2 {
+    top: -5.1vw;
+    left: -15vw;
+}
+
+.show#rmulticon3 {
+    top: -1vw;
+    left: -14vw;
+}
+
+.show#rmulticon4 {
+    top: 3.1vw;
+    left: -15vw;
+}
+
+.show#rmulticon5 {
+    top: 6vw;
+    left: -10vw;
+}
+
+.show#rmulticon6 {
     top: 8vw;
-    left: 11vw;
+    left: -8.5vw;
 }
 
 @media (max-width: 768px) {
     .navbar {
         background-color: #00000000;
         backdrop-filter: blur(0px);
-        transition: 0.3s;
+        transition: background-color 0.3s, backdrop-filter 0.3s;
     }
 
     .navright {

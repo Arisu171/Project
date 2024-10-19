@@ -9,7 +9,7 @@ img {
 
 body {
     margin: 0px;
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(255, 255, 255);
     color: white;
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -36,6 +36,7 @@ h1 {
     position: relative;
     max-height: 100vh;
     margin: 0px;
+    background-color: black;
 }
 
 .bannerimg {
@@ -123,6 +124,7 @@ h1 {
     bottom: 1%;
     opacity: 70%;
     cursor: pointer;
+    transition: color 0.4s ease;
 }
 
 .bannercurrent:hover {
