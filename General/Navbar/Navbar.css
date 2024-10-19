@@ -39,6 +39,9 @@ html::-webkit-scrollbar {
     --high: 56.25vw;
     --dark: rgb(27, 27, 27);
     --light: white;
+    --color-main: #DD8834;
+    --color-main-hover: #e6790c;
+    --color-main-active: #c06f18;
 }
 
 ::selection {
@@ -516,8 +519,7 @@ body a {
 
 .title {
     font-weight: bold;
-    font-size: 1.8vw;
-    height: 3vw;
+    font-size: 2vw;
 }
 
 .underline {
@@ -550,8 +552,63 @@ body a {
     margin: 0vw 5vw 5vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    height: 70vw;
+}
+
+.halfcontent {
+    height: 30vw;
+    width: 40vw;
+    padding: 2.5vw;
+}
+
+.halfcontent .title {
+    font-weight: bold;
+    font-size: 3vw;
+    height: 3vw;
+    margin-bottom: 1vw;
 }
 
 .halfcontent .text {
-    font-size: 1.3vw;
+    font-size: 1.6vw;
+    text-align: justify;
+    line-height: 1.3;
+
+}
+
+.halfdark {
+    height: 30vw;
+    width: 40vw;
+    padding: 2.5vw;
+    background-color: var(--dark);
+    color: white;
+}
+
+.halfdark .halfcontent {
+    padding: 1vw;
+    height: 8vw;
+}
+
+.halflist {
+    display: flex;
+    align-content: center;
+}
+
+.halflist .halfcontenticon {
+    height: 8vw;
+    width: 8vw;
+}
+
+.halflist img {
+    height: 5vw;
+    margin-top: 1.2vw;
+}
+
+.halfdark .title {
+    font-size: 1.7vw;
+    margin-bottom: 0.5vw;
+    height: 1.7vw;
+}
+
+.smalltext {
+    font-size: 1.5vw;
 }
