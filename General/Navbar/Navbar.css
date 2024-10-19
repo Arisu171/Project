@@ -3,21 +3,28 @@ html {
     scroll-behavior: smooth;
     caret-color: transparent;
     cursor: default;
-    overflow: -moz-scrollbars-none;
-    -scrollbar-width: none;
     background-color: rgb(27, 27, 27);
 }
 
-input {
-    outline: none;
+::-webkit-scrollbar {
+    width: 0.8vw;
+    max-width: 7px;
+    background-color: rgb(27, 27, 27);
+    transition: width 0.4s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffa44a;
+    border-radius: 1vw;
 }
 
 .disabled {
     pointer-events: none;
 }
 
-html::-webkit-scrollbar {
-    display: none;
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 * {
@@ -49,8 +56,29 @@ html::-webkit-scrollbar {
     color: inherit;
 }
 
+
+input,
+textarea {
+    line-height: 1.5;
+    outline: none;
+    caret-color: rgba(0, 0, 0, 0.192);
+    -webkit-user-select: text;
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    -webkit-touch-callout: default;
+}
+
+input::selection,
+textarea::selection {
+    background-color: #ffa44a;
+    color: #ffffff;
+}
+
 body {
     overflow-x: hidden;
+    overflow-y: auto;
     transition: text-shadow 0.5s ease;
     background-color: #f5f5f5;
 }
@@ -75,7 +103,7 @@ body a {
     position: fixed;
     justify-content: space-between;
     background-blend-mode: overlay;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(0.8vw);
     background-color: #00000077;
     color: white;
     font-weight: bolder;
@@ -490,7 +518,7 @@ body a {
     color: white;
     left: 15%;
     top: 47%;
-    font-size: 4vw;
+    font-size: 4.5vw;
     font-weight: 700;
 }
 
@@ -519,7 +547,7 @@ body a {
 
 .title {
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 2.2vw;
 }
 
 .underline {
@@ -544,7 +572,7 @@ body a {
 }
 
 .orange {
-    color: #DD8834;
+    color: #ee8823;
 }
 
 .halfpartzone {

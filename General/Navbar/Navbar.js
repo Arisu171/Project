@@ -294,3 +294,5 @@ function observeClassChanges(targetElement, classToRemove, affectedElementsSelec
     });
     observer.observe(targetElement, { attributes: true });
 }
+
+
