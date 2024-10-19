@@ -41,6 +41,7 @@ body {
     height:100%;
     width:100%;
     overflow:hidden;
+    object-fit:cover;
 }
 .blog-content .container .child:hover .img img{
     transition:0.8s;

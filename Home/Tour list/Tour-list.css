@@ -1,0 +1,142 @@
+:root{
+    --h2-font-size:2vw;
+    --color-black: rgb(27, 26, 26);
+    --p-font-size:1.5vw;
+}
+.tour-list{
+    width:70%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:7rem;
+}
+.tour-list .content{
+    width:100%;
+    height:50vh;
+    display:flex;
+    background-color: rgb(255, 255, 247);
+    filter: drop-shadow(0px 0px 10px #2e2e2e49);
+    margin:7rem 0px 7rem 0px;
+}
+/*img*/
+.tour-list .content .img{
+    height:100%;
+    width:25vw;
+}
+.tour-list .content .img img{
+    height:100%;
+    width:auto;
+    object-fit: cover;
+}
+/*text*/
+.tour-list .content .text{
+    display:flex;
+    flex-direction: column;
+    width:45vw;
+    padding-left:4rem;
+}
+.tour-list .content .text .title{
+    height:50%;
+    display:flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.tour-list .content .text .title h2{
+    font-size:var(--h2-font-size);
+    font-weight: 800;
+}
+.tour-list .content .text .time{
+    height:50%;
+    display:flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.tour-list .content .text .time i{
+    margin:0.5rem 1.8rem 0.5rem 0.2rem;
+    font-size:1.3vw;
+}
+.tour-list .content .text .time p{
+    font-size:var(--p-font-size);
+    font-weight: 500;
+    margin:10px 0px;
+}
+/*price*/
+.tour-list .content .price{
+    width:25vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1vw;
+    position:relative;
+}
+.tour-list .content .price .vertical-line{
+    width: 3.5px;
+    border-radius: 10px;            
+    height: 90%;           
+    background-color: #E6E6E6; 
+    position:absolute;
+    left:0px;
+}
+.tour-list .content .price p:nth-of-type(1){
+    font-size: 1vw;
+}
+.tour-list .content .price h2{
+    width:80%;
+    font-size:var(--h2-font-size);
+    text-align: center;
+}
+.tour-list .content .price .star img{
+    height:1.3vw;
+}
+.tour-list .content .price p:nth-of-type(2){
+    font-size:var(--p-font-size);
+}
+.tour-list .content .price input{
+    font-size:0.8vw;
+    font-weight: 700;
+    color:white;
+    border: none; 
+    border-radius:10px;
+    background-color:var(--color-main);
+    padding:1rem;
+}
+.tour-list .content .price:hover input{
+    background-color: var(--color-main-hover);
+}
+.tour-list .content .price:active input{
+    background-color: var(--color-main-active);
+}
+/*chuyển trang*/
+.tour-page {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.tour-page a {
+    font-family: Inter;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    font-size: 2vw; 
+    margin: 1rem; 
+    color: white;
+    padding:1.5rem;
+    background-color: #E6E6E6; 
+    text-align: center; 
+}
+.tour-page a:nth-of-type(1){
+    background-color: var(--color-main);
+}
+.tour-page a:hover{
+    background-color:#e8ab11;
+}
+.tour-page a:active{
+    background-color:var(--color-main-active);
+}
