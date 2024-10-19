@@ -52,7 +52,7 @@ function makeElementDraggable(el) {
                 element.id = newId;
             });
         } else {
-            newX = windowWidth - el.offsetWidth - 1;
+            newX = windowWidth - el.offsetWidth;
 
             const leftMulticons = document.querySelectorAll('[id^="lmulticon"]');
             leftMulticons.forEach(function (element) {
@@ -80,9 +80,11 @@ function shownav() {
             } else {
                 element.classList.add('show');
                 element.classList.remove('hide');
+                element.classList.add('disabled');
                 setTimeout(function () {
                     element.classList.remove('over');
-                }, 1000);
+                    element.classList.remove('disabled');
+                }, 500);
             }
         });
     }
@@ -137,11 +139,9 @@ window.onload = function () {
             if (multiconpage.classList.contains('show')) {
                 multiconpage.classList.remove('show');
                 multiconpage.classList.add('hide');
-                multiconpage.classList.remove(newClass);
             } else {
                 multiconpage.classList.add('show');
                 multiconpage.classList.remove('hide');
-                multiconpage.classList.add(newClass);
             }
         });
     });
@@ -153,11 +153,9 @@ window.onload = function () {
             if (multicontran.classList.contains('show')) {
                 multicontran.classList.remove('show');
                 multicontran.classList.add('hide');
-                multicontran.classList.remove(newClass);
             } else {
                 multicontran.classList.add('show');
                 multicontran.classList.remove('hide');
-                multicontran.classList.add(newClass);
             }
         });
     });

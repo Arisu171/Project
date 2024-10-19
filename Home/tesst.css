@@ -79,7 +79,7 @@ body a {
     left: 0px;
     width: 100%;
     height: max-content;
-    transition: background-color 0.4s;
+    transition: background-color 0.4s, backdrop-filter 0.4s;
     z-index: 100;
 }
 
@@ -124,21 +124,15 @@ body a {
     cursor: pointer;
     display: flex;
     padding: 0vw 1vw;
-    transition: scale 0.3s, ;
+    transition: scale 0.3s;
 }
 
 .navtitle {
     position: relative;
     padding: 1.4vw 1.6vw 1.6vw;
     line-height: 1;
-    transition: text-shadow 0.4s;
+    transition: text-shadow 0.4s ease;
 }
-
-/* .navtitle:hover {
-    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
-        0 0 1vw rgba(255, 127, 22, 0.5),
-        0 0 1vw rgba(255, 170, 100, 0.349);
-} */
 
 .navtitle::after {
     position: absolute;
@@ -149,7 +143,7 @@ body a {
     bottom: 10%;
     left: 50%;
     width: 0%;
-    transition: 0.5s;
+    transition: left 0.5s ease, width 0.5s ease, box-shadow 0.5s ease;
     transition-delay: 0.2s;
 }
 
@@ -246,11 +240,8 @@ body a {
     padding: 1vw;
     font-size: 4vw;
     border-radius: 50%;
-}
-
-.navicon {
-    scale: 1;
-    transition: scale 0.5s ease;
+    scale: 0.9;
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
 }
 
 .navicon i {
@@ -337,19 +328,14 @@ body a {
     opacity: 0;
 }
 
-.navicon.show {
-    scale: 0.85;
-    transition: scale 0.4s ease;
-}
-
+.navicon.show,
 .navicon.hide {
-    scale: 0.95;
-    transition: scale 0.4s ease;
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
 }
 
 .navicon:hover {
-    text-shadow: 0 0 1vw rgb(255, 53, 53),
-        0 0 1vw rgba(255, 22, 22, 0.76),
+    text-shadow: 0 0 1vw rgb(255, 114, 114),
+        0 0 1vw rgba(255, 162, 22, 0.76),
         0 0 1vw rgba(255, 63, 63, 0.897);
 }
 
@@ -391,72 +377,72 @@ body a {
     opacity: 1;
 }
 
-.lmulticon0 {
-    top: -10vw;
-    left: 8.5vw;
-}
-
-.lmulticon1 {
-    top: -8vw;
-    left: 10vw;
-}
-
-.lmulticon2 {
-    top: -5.1vw;
-    left: 15vw;
-}
-
-.lmulticon3 {
-    top: -1vw;
-    left: 14vw;
-}
-
-.lmulticon4 {
-    top: 3.1vw;
-    left: 15vw;
-}
-
-.lmulticon5 {
-    top: 6vw;
-    left: 10vw;
-}
-
-.lmulticon6 {
+.show#lmulticon0 {
     top: 8vw;
     left: 8.5vw;
 }
 
-.rmulticon0 {
+.show#lmulticon1 {
+    top: 6vw;
+    left: 10vw;
+}
+
+.show#lmulticon2 {
+    top: 3.1vw;
+    left: 15vw;
+}
+
+.show#lmulticon3 {
+    top: -1vw;
+    left: 14vw;
+}
+
+.show#lmulticon4 {
+    top: -5.1vw;
+    left: 15vw;
+}
+
+.show#lmulticon5 {
+    top: -8vw;
+    left: 10vw;
+}
+
+.show#lmulticon6 {
+    top: -10vw;
+    left: 8.5vw;
+}
+
+.show#rmulticon0 {
     top: -10vw;
     left: -8.5vw;
 }
 
-.rmulticon1 {
+.show#rmulticon1 {
     top: -8vw;
     left: -10vw;
 }
 
-.rmulticon2 {
+.show#rmulticon2 {
     top: -5.1vw;
     left: -15vw;
 }
 
-.rmulticon3 {
+.show#rmulticon3 {
     top: -1vw;
     left: -14vw;
 }
 
-.rmulticon4 {
+.show#rmulticon4 {
     top: 3.1vw;
     left: -15vw;
 }
 
-.rmluticon5 {
+.show#rmulticon5 {
     top: 6vw;
     left: -10vw;
 }
 
-.rmulticon6 {
+.show#rmulticon6 {
     top: 8vw;
     left: -8.5vw;
 }
@@ -465,7 +451,7 @@ body a {
     .navbar {
         background-color: #00000000;
         backdrop-filter: blur(0px);
-        transition: 0.3s;
+        transition: background-color 0.3s, backdrop-filter 0.3s;
     }
 
     .navright {
