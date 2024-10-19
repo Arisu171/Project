@@ -556,6 +556,7 @@ body a {
     padding: 3vw;
     border-radius: 1vw;
     box-shadow: 0 0 2vw rgba(0, 0, 0, 0.295);
+    scale: 0.95;
 }
 
 .halfcontent {
