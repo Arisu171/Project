@@ -1,61 +1,76 @@
 :root {
     --p-anh-font-size: 5vw;
-    --h5-font-size: 1.5rem;
-    --color-main: #DD8834;
     --color-black: rgb(27, 26, 26);
-    --h3-font-size: 2rem;
-    --color-main-sp: #e6790c;
-    --h2-font-size: 2.5rem;
-    --h4-font-size: 1rem;
+    --h2-font-size: 1.1rem;
 }
 
 /*phần ảnh đầu*/
 body {
     font-size: 16px;
 }
-
-#img {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+.blog-content{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+    height:auto;
+    margin-left: auto;
+    margin-right:auto;
+    justify-content: space-around;
+    margin-top:3rem;
+    margin-bottom:3rem;
 }
-
-#img img {
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    object-fit: cover;
-    position: absolute;
+.blog-content .container{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
 }
-
-#img div {
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    background-color: #010101;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    object-fit: cover;
-    position: absolute;
-    opacity: 0.3;
+.blog-content .container .child{
+    margin:1.5rem;
+    width:calc(100% / 3);
+    height:15rem;
+    background-color:var(--color-main);
+    position:relative;
+    box-sizing: border-box;
 }
-
-#img h1 {
-    font-size: var(--p-anh-font-size);
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    /* Đặt vị trí tuyệt đối */
-    top: 50%;
-    left: 10%;
-    color: white;
-    transform: translateY(-50%);
+.blog-content .container .child .img{
+    height:100%;
+    overflow:hidden;
+}
+.blog-content .container .child .img img{
+    background-size:contain;
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+.blog-content .container .child:hover .img img{
+    transition:0.8s;
+    transform:scale(1.1);
+}
+.blog-content .container .child .filter{
+    background-color:var(--color-black);
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    position:absolute;
+    top:0px;
+    opacity:0.4;
+    display:none;
+}
+.blog-content .container .child:hover .filter{
+    display:block;
+}
+.blog-content .container .child:hover h2{
+    display:block;
+    transition:0.5s;
+}
+.blog-content .container .child h2{
+    text-align: center;
+    position:absolute;
+    font-weight: 600;
+    left:30px;
+    right:30px;
+    top:50%;
+    font-size:var(--h2-font-size);
+    color:white;
+    display:none;
 }

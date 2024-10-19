@@ -1,10 +1,8 @@
 :root{
     --p-anh-font-size:5vw;
     --h5-font-size:1.5rem;
-    --color-main:#DD8834;
     --color-black:rgb(27, 26, 26);
     --h3-font-size:2rem;
-    --color-main-sp:#e6790c;
     --h2-font-size:2.5rem;
     --h4-font-size:1rem;
 }
@@ -120,10 +118,10 @@ body{
     font-size:1.5rem;
 }
 #book .book .content1 .button button:hover{
-    background-color:var(--color-main-sp);
+    background-color:var(--color-main-hover);
 }
 #book .book .content1 .button button:active{
-    background-color:#c06f18;
+    background-color:var(--color-main-active);
 }
 /*book content 1 phần area*/
 #book .book .content1 .area{
@@ -248,10 +246,10 @@ body{
     color:white;
 }
 #book .book .content3 input:hover{
-    background-color:var(--color-main-sp);
+    background-color:var(--color-main-hover);
 }
 #book .book .content3 input:active{
-    background-color:#c06f18;
+    background-color:var(--color-main-hover);
 }
 /*why chung*/
 .why{
