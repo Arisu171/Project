@@ -564,7 +564,6 @@ body a {
     width: 35vw;
     padding: 5vw;
     position: relative;
-    background-color: #fff;
 }
 
 .halfcontent .smalltitle {
@@ -616,6 +615,11 @@ body a {
 .halfimg img {
     height: 30.5vw;
     margin: -3vw;
+}
+
+.halfimg {
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, 0.651);
+    /* z-index: 2; */
 }
 
 .halfdark .halfcontent {
