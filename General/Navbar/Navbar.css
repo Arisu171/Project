@@ -491,7 +491,7 @@ body a {
     left: 15%;
     top: 47%;
     font-size: 4vw;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .bannerlarge {
@@ -500,7 +500,7 @@ body a {
     overflow: hidden;
     position: relative;
     background-color: rgba(0, 0, 0, 0.842);
-    margin-bottom: 5vw;
+    margin-bottom: 2vw;
 }
 
 .bannersmall {
@@ -549,10 +549,13 @@ body a {
 
 .halfpartzone {
     width: 90vw;
-    margin: 0vw 5vw 5vw;
+    margin: 0vw 2vw 2vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 60vw;
+    background-color: #fff;
+    padding: 3vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 2vw rgba(0, 0, 0, 0.295);
 }
 
 .halfcontent {
@@ -560,6 +563,7 @@ body a {
     width: 39vw;
     padding: 3vw;
     position: relative;
+    background-color: #fff;
 }
 
 .halfcontent .title {
@@ -596,11 +600,12 @@ body a {
     background-color: var(--dark);
     color: white;
     overflow: hidden;
+    border-radius: 0.5vw;
 }
 
 .halfimg img {
-    height: 30vw;
-    margin: -2vw;
+    height: 30.5vw;
+    margin: -2vw -3vw;
 }
 
 .halfdark .halfcontent {
