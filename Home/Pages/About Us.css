@@ -1,0 +1,44 @@
+.meetteam {
+    margin-top: 10vw;
+}
+
+.meetteam .title {
+    font-size: 4vw;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 7vw;
+}
+
+.memberlist {
+    display: flex;
+    justify-content: center;
+    margin: 5vw;
+    gap: 5vw;
+}
+
+.member {
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 1vw;
+}
+
+.avatar {
+    width: 23vw;
+}
+
+.meminfo {
+    text-align: center;
+}
+
+.name {
+    font-size: 1.7vw;
+    font-weight: 700;
+    padding: 1vw;
+}
+
+.role {
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: rgba(27, 27, 27, 0.562);
+    padding-bottom: 1.3vw;
+}
