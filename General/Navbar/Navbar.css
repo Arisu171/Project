@@ -472,13 +472,43 @@ body a {
 }
 
 /* General */
+
+.pagebannerlarge {
+    width: 100vw;
+    height: 45vw;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.842);
+    margin-bottom: 5vw;
+}
+
+.pagebannerlarge img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 0;
+}
+
+.pagebannerlarge .pagetitle {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    left: 15%;
+    top: 47%;
+    font-size: 4vw;
+    font-weight: 800;
+}
+
+.pagebannersmall {}
+
 .contentzone {
     background-color: #fff;
-    padding: 5vw 10vw;
+    padding: 5% 10%;
+    color: black;
 }
 
 .title {
-    color: #DD8834;
     font-weight: bold;
     font-size: 1.8vw;
     height: 3vw;
@@ -487,10 +517,6 @@ body a {
 .underline {
     text-decoration: underline;
     text-underline-offset: 0.5vw;
-}
-
-.contentzone {
-    color: black;
 }
 
 .contenttitle {
@@ -506,8 +532,18 @@ body a {
 .contentzone .text {
     font-size: 1.3vw;
     line-height: 1.3;
+    margin-bottom: 1vw;
 }
 
 .orange {
     color: #DD8834;
 }
+
+.halfpartzone {
+    width: 90vw;
+    margin: 0vw 5vw 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.halfcontent .text {}
