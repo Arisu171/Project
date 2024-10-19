@@ -96,12 +96,6 @@ body a {
         0 0 0.2vw rgba(255, 170, 100, 0.349);
 }
 
-/* .navright>.navdroptitle:hover {
-    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
-        0 0 1vw rgba(255, 127, 22, 0.5),
-        0 0 1vw rgba(255, 170, 100, 0.349);
-} */
-
 .navbarcurrent a::after {
     position: absolute;
     background-color: rgba(255, 235, 216, 0.829);
@@ -125,7 +119,7 @@ body a {
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 0vw 1vw;
+    padding: 0 2.5vw 0 0;
     transition: scale 0.3s;
 }
 
@@ -176,9 +170,6 @@ body a {
 }
 
 .navdroplist a:hover {
-    /* text-shadow: 0 0 0.3vw rgba(255, 195, 139, 0.808),
-        0 0 0.3vw rgba(255, 127, 22, 0.5),
-        0 0 0.3vw rgba(255, 170, 100, 0.349); */
     background-color: #5e5e5ec5;
 }
 
