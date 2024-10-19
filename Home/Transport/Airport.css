@@ -1,0 +1,357 @@
+:root{
+    --p-anh-font-size:5vw;
+    --h5-font-size:1.5rem;
+    --color-main:#DD8834;
+    --color-black:rgb(27, 26, 26);
+    --h3-font-size:2rem;
+    --color-main-sp:#e6790c;
+    --h2-font-size:2.5rem;
+    --h4-font-size:1rem;
+}
+/*phần ảnh đầu*/
+body{
+    font-size:16px;
+}
+#img{
+    height:100vh;
+    overflow:hidden;
+    position: relative;
+}
+#img img{
+    background-size:cover;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:0;
+    object-fit: cover;
+    position: absolute;
+}
+#img h1{
+    font-size:var(--p-anh-font-size);
+    font-weight:800;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%;
+    left: 5%;
+    color:white;
+    transform: translateY(-50%);
+}
+/*phần book*/
+#book{
+    margin:5rem;
+    height:auto;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: white;
+    border-radius: 1rem;
+    filter: drop-shadow(0px 0px 10px #2e2e2e49);
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
+#book .book{
+    margin:2rem;
+}
+#book .book>.text{
+    margin-bottom:1.3rem;
+}
+#book .book .text h3{
+    font-size: var(--h3-font-size);
+    font-weight: 800;
+}
+/*content 1 phần airport*/
+#book .book .content1{
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+}
+#book .book .content1 .airport,.button,.area{
+    margin:1rem;
+}
+#book .book .content1 .airport{
+    width:45%;
+}
+#book .book .content1 .airport .text{
+    margin-bottom: 1rem;
+}
+#book .book .content1 .airport .text h4{
+    font-size: var(--h4-font-size);
+}
+#book .book .content1 .airport .main{
+    position: relative;
+}
+#book .book .content1 .airport .main input{
+    width:100%;
+    height:4rem;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content1 .airport .main img{
+    position:absolute;
+    display:inline-block;
+    top:45%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-45%);
+}
+/*book content 1 phần button*/
+#book .book .content1 .button{
+    width:10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#book .book .content1 .button button{ 
+    width:10%;
+    height:40%;
+    border: none; 
+    border-radius:50px;
+    background-color: var(--color-main);
+    color: white; 
+    position:absolute;
+    top:40%;
+}
+#book .book .content1 .button button i{
+    font-size:1.5rem;
+}
+#book .book .content1 .button button:hover{
+    background-color:var(--color-main-sp);
+}
+#book .book .content1 .button button:active{
+    background-color:#c06f18;
+}
+/*book content 1 phần area*/
+#book .book .content1 .area{
+    width:45%;
+}
+#book .book .content1 .area .text{
+    margin-bottom: 1rem;
+}
+#book .book .content1 .area .main{
+    position: relative;
+}
+#book .book .content1 .area .main input{
+    width:100%;
+    height:4rem;
+    border:1px solid black;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content1 .area .main img{
+    position:absolute;
+    top:45%;
+    padding:5px;
+    transform: translateY(-45%);
+}
+
+/*book content 2 date*/
+#book .book .content2{
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+}
+#book .book .content2 .date,.time{
+    margin:1rem;
+}
+#book .book .content2 .date{
+    width:41.5%;
+}
+#book .book .content2 .date .text{
+    margin-bottom: 1rem;
+}
+#book .book .content2 .date .text h4{
+    font-size: var(--h4-font-size);
+}
+#book .book .content2 .date .main{
+    position: relative;
+}
+#book .book .content2 .date .main input{
+    width:100%;
+    height:4rem;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content2 .date .main img{
+    position:absolute;
+    display:inline-block;
+    top:45%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-50%);
+}
+/*book content 2 time*/
+#book .book .content2 .time{
+    width:41.8%;
+}
+#book .book .content2 .time .main{
+    position: relative;
+}
+#book .book .content2 .time .text{
+    margin-bottom: 1rem;
+}
+#book .book .content2 .time .main input{
+    width:30%;
+    height:4rem;
+    border:1px solid black;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content2 .time .main img{
+    position:absolute;
+    display:inline-block;
+    top:50%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-50%);
+}
+#book .book .content2 .time .main .dropdown {
+    display: none; 
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 13%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 10;
+}
+#book .book .content2 .time .main .option {
+    padding: 10px;
+    cursor: pointer;
+}
+#book .book .content2 .time .main .option:hover {
+    background-color: #f0f0f0; 
+}
+/*book content 3*/
+#book .book .content3{
+    display:flex;
+    justify-content: center;
+    margin-top:2rem;
+}
+#book .book .content3 input{
+    display:block;
+    width:10rem;
+    height:4rem;
+    border:none;
+    border-radius: 10px;
+    box-sizing: border-box; 
+    font-size:var(--h4-font-size);
+    font-weight: 700;
+    background-color:var(--color-main);
+    color:white;
+}
+#book .book .content3 input:hover{
+    background-color:var(--color-main-sp);
+}
+#book .book .content3 input:active{
+    background-color:#c06f18;
+}
+/*why chung*/
+.why{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.why .text{
+    display:flex;
+    justify-content: center;
+    margin-top:5rem;
+}
+.why .text h2{
+    color:var(--color-main);
+    font-size: var(--h2-font-size);
+    text-align: center;
+}
+.why .container{
+    display:flex;
+    justify-content: space-between;
+    margin: 5rem;
+}
+.why .container img{
+    width:15%;
+    height: auto;
+    object-fit:contain;
+}
+.why .container .content{
+    width:75%;
+}
+.why .container .content h3{
+    font-size: var(--h3-font-size);
+    margin:1rem;
+}
+.why .container .content p{
+    font-size:2rem;
+    margin:1rem;
+    color:#929292;
+}
+/*hr*/
+hr{
+    margin:0px;
+    background-color:var(--color-main);
+    border:none;
+    width:90%;
+    text-align: center;
+    height:1.5px;
+    margin-top:2rem;
+    margin-bottom:0px;
+    margin-left:auto;
+    margin-right: auto;
+}
+/*partner*/
+.partner{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    justify-content: space-between;
+}
+.partner .content{
+    width:50%;
+    margin-top:3rem;
+}
+.partner .content h2{
+    font-size: var(--h2-font-size);
+    color:var(--color-main);
+    margin-bottom:1rem;
+}
+.partner .content p{
+    font-size:1.8rem;
+    font-weight: 300;
+}
+.partner .img{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    margin-top:3rem;
+}
+.partner .img img{
+    width:32%;
+    height:auto;
+}
+/*convenient*/
+.convenient{
+    padding-top:4rem;
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    padding-bottom:6rem;
+}
+.convenient h2{
+    font-size: var(--h2-font-size);
+    color:var(--color-main);
+    text-align: center;
+    margin:2rem;
+}
+.convenient p{
+    margin:1rem;
+    text-align: center;
+    font-weight:400;
+    font-size:larger;
+}

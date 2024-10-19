@@ -1,12 +1,12 @@
 :root{
-    --p-anh-font-size:6rem;
+    --p-anh-font-size:5vw;
     --h5-font-size:1.5rem;
     --color-main:#DD8834;
     --color-black:rgb(27, 26, 26);
     --h3-font-size:1.8rem;
-    --color-main-sp:#ff8707;
-    --h2-font-size:2.8rem;
-    --h5-font-size:1.2rem;
+    --color-main-sp:#e6790c;
+    --h2-font-size:2.5rem;
+    --h4-font-size:1rem;
 }
 /*phần ảnh đầu*/
 body{
@@ -15,13 +15,17 @@ body{
 #img{
     height:100vh;
     overflow:hidden;
+    position: relative;
 }
 #img img{
     background-size:cover;
     width:100%;
     position:absolute;
-    top:-15rem;
+    top:0px;
+    left:0px;
     z-index:0;
+    object-fit: cover;
+    position: absolute;
 }
 #img h1{
     font-size:var(--p-anh-font-size);
@@ -33,11 +37,12 @@ body{
     top: 50%;
     left: 5%;
     color:white;
+    transform: translateY(-50%);
 }
 /*phần book*/
 #book{
     margin:5rem;
-    height:80vh;
+    height:auto;
     width:90%;
     margin-left:auto;
     margin-right:auto;
@@ -50,7 +55,6 @@ body{
 }
 #book .book{
     margin:2rem;
-    background-color: aqua;
 }
 #book .book>.text{
     margin-bottom:1.3rem;
@@ -65,62 +69,455 @@ body{
     justify-content: space-between;
     position:relative;
 }
+#book .book .content1 .from,.button,.to{
+    margin:1rem;
+}
 #book .book .content1 .from{
     width:45%;
-    background-color: rgb(151, 100, 147);
+}
+#book .book .content1 .from .text{
+    margin-bottom: 1rem;
+}
+#book .book .content1 .from .text h4{
+    font-size: var(--h4-font-size);
+}
+#book .book .content1 .from .main{
+    position: relative;
 }
 #book .book .content1 .from .main input{
     width:100%;
-    height:3rem;
+    height:4rem;
     border-radius: 5px;
     padding-left:2rem;
     box-sizing: border-box;
 }
-#book .book .content1 .from .main svg{
+#book .book .content1 .from .main img{
     position:absolute;
     display:inline-block;
-    top:55%;
+    top:45%;
     pointer-events: none;
     padding:5px;
     transform: translateY(-45%);
 }
-/*content 1 phần button*/
+/*book content 1 phần button*/
 #book .book .content1 .button{
-    background-color: red;
     width:10%;
     display:flex;
     justify-content: center;
     align-items: center;
 }
 #book .book .content1 .button button{ 
-    width:50%;
-    height:50%;
-    border-radius: 50px; 
+    width:10%;
+    height:40%;
     border: none; 
+    border-radius:50px;
     background-color: var(--color-main);
     color: white; 
+    position:absolute;
+    top:40%;
 }
 #book .book .content1 .button button i{
-    font-size:1rem;
+    font-size:1.5rem;
 }
-/*content 1 phần to*/
+#book .book .content1 .button button:hover{
+    background-color:var(--color-main-sp);
+}
+#book .book .content1 .button button:active{
+    background-color:#c06f18;
+}
+/*book content 1 phần to*/
 #book .book .content1 .to{
     width:45%;
-    background-color: rgb(38, 207, 134);
+}
+#book .book .content1 .to .text{
+    margin-bottom: 1rem;
+}
+#book .book .content1 .to .main{
+    position: relative;
 }
 #book .book .content1 .to .main input{
     width:100%;
-    height:3rem;
+    height:4rem;
     border:1px solid black;
     border-radius: 5px;
     padding-left:2rem;
     box-sizing: border-box;
 }
-#book .book .content1 .to .main svg{
+#book .book .content1 .to .main img{
     position:absolute;
-    display:inline-block;
-    top:55%;
-    pointer-events: none;
+    top:45%;
     padding:5px;
     transform: translateY(-45%);
+}
+/*book content 2*/
+#book .book .content2{
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+}
+#book .book .content2 .date,.chek,.seat{
+    margin:1rem;
+}
+#book .book .content2 .date{
+    width:25%;
+}
+#book .book .content2 .date .text{
+    margin-bottom: 1rem;
+}
+#book .book .content2 .date .text h4{
+    font-size: var(--h4-font-size);
+}
+#book .book .content2 .date .main{
+    position: relative;
+}
+#book .book .content2 .date .main input{
+    width:100%;
+    height:4rem;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content2 .date .main img{
+    position:absolute;
+    display:inline-block;
+    top:45%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-50%);
+}
+/*book content2 check*/
+#book .book .content2 .check{
+    width:15%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top:1rem;
+}
+#book .book .content2 .check .text{
+    margin-bottom: 1rem;
+}
+#book .book .content2 .check button{
+    top:35%;
+    position:absolute;
+    width:50%;
+    height:50%;
+}
+#book .book .content2 .check button i{
+    font-size: 1.5rem;
+}
+/*book content 2 seat*/
+#book .book .content2 .seat{
+    width:42%;
+}
+#book .book .content2 .seat .main{
+    position: relative;
+}
+#book .book .content2 .seat .text{
+    margin-bottom: 1rem;
+}
+#book .book .content2 .seat .main input{
+    width:20%;
+    height:4rem;
+    border:1px solid black;
+    border-radius: 5px;
+    padding-left:2rem;
+    box-sizing: border-box;
+}
+#book .book .content2 .seat .main img{
+    position:absolute;
+    display:inline-block;
+    top:50%;
+    pointer-events: none;
+    padding:5px;
+    transform: translateY(-50%);
+}
+#book .book .content2 .seat .main .dropdown {
+    display: none; 
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 19%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 10;
+}
+#book .book .content2 .seat .main .option {
+    padding: 10px;
+    cursor: pointer;
+}
+#book .book .content2 .seat .main .option:hover {
+    background-color: #f0f0f0; 
+}
+/*book content 3*/
+#book .book .content3{
+    display:flex;
+    justify-content: center;
+    margin-top:2rem;
+}
+#book .book .content3 input{
+    display:block;
+    width:10rem;
+    height:4rem;
+    border:none;
+    border-radius: 10px;
+    box-sizing: border-box; 
+    font-size:var(--h4-font-size);
+    font-weight: 700;
+    background-color:var(--color-main);
+    color:white;
+}
+#book .book .content3 input:hover{
+    background-color:var(--color-main-sp);
+}
+#book .book .content3 input:active{
+    background-color:#c06f18;
+}
+/*thanh hr*/
+hr{
+    margin:0px;
+    background-color:var(--color-main);
+    border:none;
+    width:90%;
+    text-align: center;
+    height:1.5px;
+    margin-top:2rem;
+    margin-bottom:0px;
+    margin-left:auto;
+    margin-right: auto;
+}
+/*why*/
+#why{
+    margin:2rem;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*why text h2*/
+#why .h2{
+    margin-top:4rem;
+    margin-bottom:4rem;
+}
+#why .h2 h2{
+    text-align: center;
+    color:var(--color-main);
+    font-size:var(--h2-font-size);
+}
+/*why content*/
+#why .content{
+    display:flex;
+    justify-content: space-between;
+}
+#why .content .img{
+    width:30%;
+    margin:1.5rem;
+}
+#why .content .img img{
+    width:60%;
+}
+#why .content .text{
+    width:70%
+}
+#why .content .text h3{
+    font-size:var(--h3-font-size);
+    margin:2rem;
+    font-weight: 700;
+    text-align: jus;
+}
+#why .content .text p{
+    font-size:1.5rem;
+    font-weight: 400;
+    margin:2rem;
+    color:#848484;
+    letter-spacing:0.5px;
+}
+/*popular chung*/
+#popular{
+    width:80%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*popular content 1*/
+#popular .content1{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:3rem;
+    margin-bottom:3rem;
+}
+#popular .content1 h2{
+    font-size: var(--h2-font-size);
+    color:var(--color-main);
+    margin-bottom:4rem;
+}
+/*popular content 1 phần ảnh*/
+
+#popular .content1 .anh {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#popular .content1 .anh .container{
+    display:flex;
+    justify-content: space-between;
+}
+#popular .content1 .anh .container .card{
+    width:30%;
+    position:relative;
+    margin:1rem;
+    border:none;
+    overflow: hidden;
+}
+#popular .content1 .anh .container .card div{
+    background-color: black;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    opacity:0.4;
+    border:none;
+}
+#popular .content1 .anh .container .card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+#popular .content1 .anh .container .card:hover img{
+    opacity:0.6;
+}
+#popular .content1 .anh .container .card:hover p{
+    opacity:0.6;
+}
+#popular .content1 .anh .container .card p{
+    display:block;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+/*popular content 2 chung*/
+#popular .content2{
+    width:100%;
+    height:auto;
+    margin-top:4rem;
+    margin-bottom:8rem;
+}
+/*popular content 2 h2*/
+#popular .content2 h2{
+    font-size: var(--h2-font-size);
+    color:var(--color-main);
+    margin-bottom:4rem;
+    text-align: center;
+}
+/*popular content 2 table chung*/
+#popular .content2 .table{
+    width:100%;
+    height:auto;
+    height:80vh; 
+    display:flex;
+    justify-content: space-between;
+}
+#popular .content2 .table table{
+    margin:1rem;
+    width:calc(100% / 3);
+    box-sizing: border-box;
+    height:100%;
+    border:0.5px solid  #161618;
+}
+#popular .content2 .table table:nth-of-type(1){
+    margin-right:1.5rem;
+}
+#popular .content2 .table table:nth-of-type(2){
+    margin-right:1.5rem;
+}
+/*popular content 2 table heading*/
+#popular .content2 .table table:nth-of-type(1) thead{
+    background-image:url(Bus-HN-TABLE.png);
+    width:100%;
+    height:30%;
+    position: relative;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+#popular .content2 .table table:nth-of-type(2) thead{
+    background-image:url(Bus-Nha.Trang-TABLE.png);
+    width:100%;
+    height:30%;
+    position: relative;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}  
+#popular .content2 .table table:nth-of-type(3) thead{
+    background-image:url(Bus-TP.HCM-TABLE.png);
+    width:100%;
+    height:30%;
+    position: relative;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}  
+
+#popular .content2 .table table thead .thead-img{
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index: 0;
+}
+#popular .content2 .table table thead .thead-img div{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    background-color:black;
+    opacity:0.3;
+    z-index: 0;
+}
+#popular .content2 .table table thead tr:nth-of-type(1) th{
+    text-align: center;
+    height:60%;
+    position:relative;
+    z-index: 1;
+    font-size:larger;
+    padding-top:3rem;
+    font-weight: 400;
+    color:white;
+}
+#popular .content2 .table table thead tr:nth-of-type(2) th{
+    text-align: center;
+    position:relative;
+    z-index: 1;
+    font-size:large;
+    font-weight: 400;
+    color:white;
+    height:60%;
+}
+/*popular content tablebody*/
+#popular .content2 .table table tbody tr{
+    border:0.5px solid  #161618;
+}
+#popular .content2 .table table tbody tr td{
+    text-align: center;
+    z-index: 1;
+    padding-top: 3rem;
+}
+#popular .content2 .table table tbody tr td a{
+    text-decoration: underline;
+    font-size:large;
+    font-weight: 600;
+    color:#0E68EF;
+}
+#popular .content2 .table table tbody tr td a:hover{
+    color:var(--color-main-sp);
+}
+#popular .content2 .table table tbody tr td a:active{
+    color:#a46018fe;
+}
+#popular .content2 .table table tbody tr td:nth-of-type(2){
+    font-size:large;
+    font-weight: 600;
+    color:#848484;
 }

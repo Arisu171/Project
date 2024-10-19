@@ -1,0 +1,55 @@
+:root{
+    --p-anh-font-size:5vw;
+    --h5-font-size:1.5rem;
+    --color-main:#DD8834;
+    --color-black:rgb(27, 26, 26);
+    --h3-font-size:2rem;
+    --color-main-sp:#e6790c;
+    --h2-font-size:2.5rem;
+    --h4-font-size:1rem;
+}
+/*phần ảnh đầu*/
+body{
+    font-size:16px;
+}
+#img{
+    height:100vh;
+    overflow:hidden;
+    position: relative;
+}
+#img img{
+    background-size:cover;
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:0;
+    object-fit: cover;
+    position: absolute;
+}
+#img div{
+    background-size:cover;
+    width:100%;
+    height:100vh;
+    background-color: #010101;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:0;
+    object-fit: cover;
+    position: absolute;
+    opacity:0.3;
+}
+#img h1{
+    font-size:var(--p-anh-font-size);
+    font-weight:800;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%;
+    left: 10%;
+    color:white;
+    transform: translateY(-50%);
+}

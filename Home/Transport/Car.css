@@ -1,10 +1,10 @@
 :root{
-    --p-anh-font-size:6rem;
+    --p-anh-font-size:5vw;
     --h5-font-size:1.5rem;
     --color-main:#DD8834;
     --color-black:rgb(27, 26, 26);
     --h3-h4-font-size:2.3rem;
-    --color-main-sp:#ff8707;
+    --color-main-sp:#e6790c;
     --h2-font-size:2.8rem;
     --h5-font-size:1.2rem;
 }
@@ -86,17 +86,32 @@ body{
     display:flex;
     justify-content: center;
 }
-#book .book .booking .dong1 h5{
+#book .book .booking .dong1 label{
     padding:1rem 3rem;
     margin:1rem 1rem 0.5rem 1rem;
     color:var(--color-main);
-    border:1px rgb(27, 26, 26) solid;
+    border:0.5px rgb(27, 26, 26) solid;
     border-radius: 1rem;
     font-weight: 800;
+}
+#book .book .booking .dong1 label:hover{
+    background-color:var(--color-main-sp);
+    color:white;
+    border:none;
+}
+#book .book .booking .dong1 label:active{
+    background-color:#c06f18;
+}
+#book .book .booking .dong1 label input{
+    display:none;
 }
 /*dòng 2 book*/
 #book .book .booking .dong2,.dong3,.dong4, h5{
     font-weight: 700;
+    margin-bottom:1rem;
+}
+#book .book .booking .dong2 .child {
+    position:relative;
 }
 #book .book .booking .dong2 .child input{
     width: 100%;
@@ -104,27 +119,14 @@ body{
 #book .book .booking .dong2 .child svg{
     position: absolute;
     left: 10px;
-    top: 50%;
-}
-#book .book .booking .dong2 .child .cursor {
-    position: absolute;
-    top:50%;
-    left: 2rem; /* Đặt dấu nháy gần phải của input */
-    width: 1px;
-    height: 1.3em; /* Chiều cao của dấu nháy */
-    background-color: black;
-    animation: blink 0.8s step-start infinite;
-    display:none;/* Ẩn dấu nháy theo mặc định */
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    top: 25%;
 }
 /*dòng 3 book*/
 #book .book .booking .dong3 {
-    display:flex;
+    display:flex; 
+}
+#book .book .booking .dong3 h5{
+    margin-bottom:1rem;
 }
 #book .book .booking .dong3 .dad{
     flex-basis: 70%;
@@ -132,8 +134,11 @@ body{
 }
 #book .book .booking .dong3 .dad svg{
     position:absolute;
-    top:50%;
+    top:25%;
     left:calc(0% + 10px);
+}
+#book .book .booking .dong3 .dad .child{
+    position:relative;
 }
 #book .book .booking .dong3 .dad input{
     width:100%;
@@ -143,9 +148,12 @@ body{
     flex-basis: 30%;
     position:relative;
 }
+#book .book .booking .dong3 .mom .child{
+    position:relative;
+}
 #book .book .booking .dong3 .mom svg{
     position:absolute;
-    top:50%;
+    top:25%;
     left:calc(0% + 10px);
 }
 #book .book .booking .dong3 .mom input{
@@ -155,13 +163,19 @@ body{
 #book .book .booking .dong4 {
     display:flex;
 }
+#book .book .booking .dong4 h4{
+    margin-top:1rem;
+}
 #book .book .booking .dong4 .dad{
     flex-basis: 70%;
     position:relative;
 }
+#book .book .booking .dong4 .dad .child{
+    position:relative;
+}
 #book .book .booking .dong4 .dad svg{
     position:absolute;
-    top:50%;
+    top:25%;
     left:calc(0% + 10px);
 }
 #book .book .booking .dong4 .dad input{
@@ -172,26 +186,36 @@ body{
     flex-basis: 30%;
     position:relative;
 }
+#book .book .booking .dong4 .mom .child{
+    position:relative;
+}
 #book .book .booking .dong4 .mom svg{
     position:absolute;
-    top:50%;
+    top:25%;
     left:calc(0% + 10px);
 }
 #book .book .booking .dong4 .mom input{
     width:100%;
 }
 /*book dòng 5*/
-#book .book .booking .dong5 h5{
-    color:white;
-    padding:1rem 3rem;
+#book .book .booking .dong5 button{
+    display: block;
+    width: 10rem;
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 700;
     background-color: var(--color-main);
-    border-radius: 1rem;
+    color: white;
 }
-#book .book .booking .dong5 .child:hover h5{
-    background-color:#a25e19;
-    color:rgb(245, 222, 192);
+#book .book .booking .dong5 .child:hover button{
+    background-color:var(--color-main-sp);
 }
-
+#book .book .booking .dong5 .child:active button{
+    background-color:#c06f18;
+}
 /*phần partners*/
 #partners{
     height:60vh;
