@@ -190,24 +190,48 @@ let dragging = false;
 function makeElementDraggable(el) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
+    // Sự kiện chuột cho máy tính
     el.onmousedown = dragMouseDown;
+
+    // Sự kiện cảm ứng cho thiết bị di động
+    el.ontouchstart = dragTouchStart;
 
     function dragMouseDown(e) {
         e.preventDefault();
-        dragging = false;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        startDrag(e.clientX, e.clientY);
         document.onmouseup = closeDragElement;
         document.onmousemove = elementDrag;
     }
 
+    function dragTouchStart(e) {
+        const touch = e.touches[0];
+        startDrag(touch.clientX, touch.clientY);
+        document.ontouchend = closeDragElement;
+        document.ontouchmove = elementTouchDrag;
+    }
+
+    function startDrag(clientX, clientY) {
+        dragging = false;
+        pos3 = clientX;
+        pos4 = clientY;
+    }
+
     function elementDrag(e) {
         e.preventDefault();
+        dragAction(e.clientX, e.clientY);
+    }
+
+    function elementTouchDrag(e) {
+        const touch = e.touches[0];
+        dragAction(touch.clientX, touch.clientY);
+    }
+
+    function dragAction(clientX, clientY) {
         dragging = true;
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        pos1 = pos3 - clientX;
+        pos2 = pos4 - clientY;
+        pos3 = clientX;
+        pos4 = clientY;
         el.style.top = (el.offsetTop - pos2) + "px";
         el.style.left = (el.offsetLeft - pos1) + "px";
     }
@@ -215,23 +239,27 @@ function makeElementDraggable(el) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        document.ontouchend = null;
+        document.ontouchmove = null;
 
         const currentY = el.offsetTop;
         const windowHeight = window.innerHeight;
         let newY = currentY;
 
-        if (currentY < 1) {
-            newY = 1;
-        } else if (currentY > (windowHeight - el.offsetHeight - 1)) {
-            newY = windowHeight - el.offsetHeight - 1;
+        // Kiểm tra và đặt khoảng cách cách rìa trên và dưới 7px
+        if (currentY < 7) {
+            newY = 7;
+        } else if (currentY > (windowHeight - el.offsetHeight - 7)) {
+            newY = windowHeight - el.offsetHeight - 7;
         }
 
         const windowWidth = window.innerWidth;
         const currentX = el.offsetLeft;
         let newX;
 
+        // Kiểm tra và đặt khoảng cách cách rìa trái và phải 7px
         if (currentX < (windowWidth / 2)) {
-            newX = 1;
+            newX = 7;
 
             const rightMulticons = document.querySelectorAll('[id^="rmulticon"]');
             rightMulticons.forEach(function (element) {
@@ -239,7 +267,7 @@ function makeElementDraggable(el) {
                 element.id = newId;
             });
         } else {
-            newX = windowWidth - el.offsetWidth;
+            newX = windowWidth - el.offsetWidth - 7;
 
             const leftMulticons = document.querySelectorAll('[id^="lmulticon"]');
             leftMulticons.forEach(function (element) {
@@ -255,6 +283,7 @@ function makeElementDraggable(el) {
         }, 100);
     }
 }
+
 
 function shownav() {
     if (!dragging) {
