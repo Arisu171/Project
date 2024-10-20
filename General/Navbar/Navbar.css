@@ -334,7 +334,7 @@ body a {
 }
 
 .navradius.over {
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .navitem.show {
