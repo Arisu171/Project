@@ -95,7 +95,6 @@ window.onload = function () {
         </div>
         `;
 
-        // Gán lại tất cả các sự kiện sau khi cập nhật nội dung
         attachEventHandlers();
     }
 
@@ -184,16 +183,14 @@ function attachEventHandlers() {
     observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
 }
 
-// Các hàm phụ trợ
+// di chuyển nav icon
 let dragging = false;
 
 function makeElementDraggable(el) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
-    // Sự kiện chuột cho máy tính
     el.onmousedown = dragMouseDown;
 
-    // Sự kiện cảm ứng cho thiết bị di động
     el.ontouchstart = dragTouchStart;
 
     function dragMouseDown(e) {
@@ -214,7 +211,6 @@ function makeElementDraggable(el) {
         dragging = false;
         pos3 = clientX;
         pos4 = clientY;
-        document.body.style.pointerEvents = 'none';
     }
 
     function elementDrag(e) {
@@ -247,7 +243,6 @@ function makeElementDraggable(el) {
         const windowHeight = window.innerHeight;
         let newY = currentY;
 
-        // Kiểm tra và đặt khoảng cách cách rìa trên và dưới 7px
         if (currentY < 7) {
             newY = 7;
         } else if (currentY > (windowHeight - el.offsetHeight - 7)) {
@@ -258,7 +253,6 @@ function makeElementDraggable(el) {
         const currentX = el.offsetLeft;
         let newX;
 
-        // Kiểm tra và đặt khoảng cách cách rìa trái và phải 7px
         if (currentX < (windowWidth / 2)) {
             newX = 7;
 
