@@ -114,7 +114,7 @@ body a {
     width: 100%;
     height: max-content;
     transition: background-color 0.4s, backdrop-filter 0.4s;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .navbar a {
