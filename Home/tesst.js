@@ -27,6 +27,7 @@ function makeElementDraggable(el) {
         dragging = false;
         pos3 = clientX;
         pos4 = clientY;
+        document.body.style.pointerEvents = 'none';
     }
 
     function elementDrag(e) {
