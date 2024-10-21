@@ -4,7 +4,7 @@ window.onload = function () {
 
     if (navigationbar) {
         navigationbar.innerHTML = `
-<div id="shadow"></div>
+        <div id="shadow"></div>
         <div class="navbar">
             <div class="navleft"><a href="#bannerimg1"></a></div>
             <div class="navright" id="navright">
@@ -94,7 +94,6 @@ window.onload = function () {
             </div>
         </div>
         `;
-
         attachEventHandlers();
     }
 
