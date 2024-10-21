@@ -8,7 +8,8 @@ a {
     justify-content: center;
     margin: auto;
     top: calc(4.3vw + 5px);
-    background-color: var(--body-color);
+    background-color: #f5f5f591;
+    backdrop-filter: blur(0.8vw);
     position: sticky;
     z-index: 30;
 }
@@ -88,6 +89,7 @@ a {
 .destinationszone {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    z-index: 0;
 }
 
 .destimgzone {
@@ -113,7 +115,7 @@ a {
     background-color: black;
 }
 
-.destina img {
+.destimg img {
     width: 22vw;
     box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.473);
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -133,7 +135,7 @@ a {
 .destpage1,
 .destpage2 {
     height: 48vw;
-    transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6), height 0.3s ease 0.4s;
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), height 0.3s ease 0.8s;
 }
 
 .destpage1 .destimgzone,
@@ -144,7 +146,7 @@ a {
 .destpage3,
 .destpage4 {
     height: 90vw;
-    transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.3s, height 0.3s ease;
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.3s, height 0.3s ease;
 }
 
 .destpage3 .destimgzone,
@@ -166,4 +168,46 @@ a {
 
 .destpage4 {
     transform: translateX(-300vw);
+}
+
+@media (max-width: 768px) {
+    .destimgzone {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4vw;
+        width: 72vw;
+        padding: 5vw 14vw;
+    }
+
+    .destina {
+        width: 34vw;
+        height: 25vw;
+    }
+
+    .destimg {
+        width: 34vw;
+        height: 21vw;
+    }
+
+    .destimg img {
+        width: 34vw;
+    }
+
+    .destconfig {
+        font-size: 1.9vw;
+    }
+
+    .destpage1,
+    .destpage2 {
+        height: 90vw;
+    }
+
+    .destpage3,
+    .destpage4 {
+        height: 170vw;
+    }
+
+    .destbar {
+        top: 0;
+        z-index: 970;
+    }
 }

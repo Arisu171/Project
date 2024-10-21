@@ -31,7 +31,8 @@ window.onload = function () {
                 <a href="#" class="navtitle" id="navbarBlog">Blog</a>
                 <a href="#" class="navuser"><i class="fa fa-user"></i></a>
             </div>
-            <div class="navbutton navradius navhide hide" id="navbutt">
+        </div>
+        <div class="navbutton navradius navhide hide" id="navbutt">
                 <div class="navicon navhide" id="navicon" onclick="shownav()"><i class="fa-solid fa-bars"></i></div>
                 <div class="navitem navhide">
                     <a href="#bannerimg1">
@@ -92,7 +93,6 @@ window.onload = function () {
                 </div>
                 <a href="#" class="navuser navhide"><i class="fa fa-user"></i></a>
             </div>
-        </div>
         `;
         attachEventHandlers();
     }
