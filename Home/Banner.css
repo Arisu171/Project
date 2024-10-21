@@ -11,18 +11,6 @@ body {
     font-family: Montserrat;
 }
 
-h1 {
-    z-index: 1;
-    color: rgb(255, 255, 255);
-    opacity: 0.1;
-    text-align: center;
-    width: 100%;
-    font-size: 5vw;
-    margin-top: calc(var(--cao) /2 - 30px);
-    font-family: Arial, Helvetica, sans-serif;
-    position: fixed;
-}
-
 .homebanner {
     z-index: 50;
     width: 100vw;
@@ -30,6 +18,7 @@ h1 {
     overflow: hidden;
     position: relative;
     max-height: 100vh;
+    min-height: 45vw;
     margin: 0px;
     background-color: black;
 }
@@ -89,7 +78,7 @@ h1 {
 .bannercontrol {
     color: rgba(201, 201, 201, 0.212);
     font-size: calc(10px + 4vw);
-    top: calc(50% - 5px - 2vw);
+    top: calc(50% - 2vw);
     cursor: pointer;
     transition: color 0.4s ease;
 }
@@ -134,7 +123,7 @@ h1 {
     z-index: 59;
     position: absolute;
     text-align: center;
-    top: calc(var(--cao) /3 - 30px);
+    top: 30%;
     width: 60vw;
     left: 20vw;
     display: grid;

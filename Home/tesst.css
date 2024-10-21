@@ -48,6 +48,8 @@ html::-webkit-scrollbar {
 body {
     overflow-x: hidden;
     transition: text-shadow 0.5s ease;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 body a {
@@ -80,7 +82,7 @@ body a {
     width: 100%;
     height: max-content;
     transition: background-color 0.4s, backdrop-filter 0.4s;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -227,6 +229,7 @@ body a {
     scale: 0;
     opacity: 0;
     transition: height 0.5s ease, opacity 0.5s ease, scale 0.5s ease;
+    z-index: 900;
 }
 
 

@@ -95,7 +95,6 @@ window.onload = function () {
         </div>
         `;
 
-        // Gán lại tất cả các sự kiện sau khi cập nhật nội dung
         attachEventHandlers();
     }
 
@@ -184,7 +183,7 @@ function attachEventHandlers() {
     observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
 }
 
-// Các hàm phụ trợ
+// di chuyển nav icon
 let dragging = false;
 
 function makeElementDraggable(el) {
@@ -192,22 +191,44 @@ function makeElementDraggable(el) {
 
     el.onmousedown = dragMouseDown;
 
+    el.ontouchstart = dragTouchStart;
+
     function dragMouseDown(e) {
         e.preventDefault();
-        dragging = false;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        startDrag(e.clientX, e.clientY);
         document.onmouseup = closeDragElement;
         document.onmousemove = elementDrag;
     }
 
+    function dragTouchStart(e) {
+        const touch = e.touches[0];
+        startDrag(touch.clientX, touch.clientY);
+        document.ontouchend = closeDragElement;
+        document.ontouchmove = elementTouchDrag;
+    }
+
+    function startDrag(clientX, clientY) {
+        dragging = false;
+        pos3 = clientX;
+        pos4 = clientY;
+    }
+
     function elementDrag(e) {
         e.preventDefault();
+        dragAction(e.clientX, e.clientY);
+    }
+
+    function elementTouchDrag(e) {
+        const touch = e.touches[0];
+        dragAction(touch.clientX, touch.clientY);
+    }
+
+    function dragAction(clientX, clientY) {
         dragging = true;
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        pos1 = pos3 - clientX;
+        pos2 = pos4 - clientY;
+        pos3 = clientX;
+        pos4 = clientY;
         el.style.top = (el.offsetTop - pos2) + "px";
         el.style.left = (el.offsetLeft - pos1) + "px";
     }
@@ -215,15 +236,17 @@ function makeElementDraggable(el) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        document.ontouchend = null;
+        document.ontouchmove = null;
 
         const currentY = el.offsetTop;
         const windowHeight = window.innerHeight;
         let newY = currentY;
 
-        if (currentY < 1) {
-            newY = 1;
-        } else if (currentY > (windowHeight - el.offsetHeight - 1)) {
-            newY = windowHeight - el.offsetHeight - 1;
+        if (currentY < 7) {
+            newY = 7;
+        } else if (currentY > (windowHeight - el.offsetHeight - 7)) {
+            newY = windowHeight - el.offsetHeight - 7;
         }
 
         const windowWidth = window.innerWidth;
@@ -231,7 +254,7 @@ function makeElementDraggable(el) {
         let newX;
 
         if (currentX < (windowWidth / 2)) {
-            newX = 1;
+            newX = 7;
 
             const rightMulticons = document.querySelectorAll('[id^="rmulticon"]');
             rightMulticons.forEach(function (element) {
@@ -239,7 +262,7 @@ function makeElementDraggable(el) {
                 element.id = newId;
             });
         } else {
-            newX = windowWidth - el.offsetWidth;
+            newX = windowWidth - el.offsetWidth - 7;
 
             const leftMulticons = document.querySelectorAll('[id^="lmulticon"]');
             leftMulticons.forEach(function (element) {
@@ -255,6 +278,7 @@ function makeElementDraggable(el) {
         }, 100);
     }
 }
+
 
 function shownav() {
     if (!dragging) {
