@@ -5,8 +5,8 @@
 }
 
 /*phần ảnh đầu*/
-body {
-    font-size: 16px;
+html {
+    font-size: 1vw;
 }
 .blog-content{
     display:flex;

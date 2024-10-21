@@ -1,0 +1,74 @@
+:root{
+    --h2-font-size:1.5rem;
+    --color-note:#50B9EE;
+    --i-font-size:1.3rem;
+    --note-font-size:1.3rem;
+}
+html{
+    font-size:1vw;
+}
+.region{
+    padding:3rem;
+    margin-top:3rem;
+    width:70%;
+    height:80rem;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction: column;
+    gap:5rem;
+}
+.region .container{
+    height:50%;
+    display:flex;
+    gap:8rem;
+    justify-content: space-between;
+}
+.region .container .content{
+    width:50%;
+    height:auto;
+    position:relative;
+    overflow:hidden;
+    object-fit: contain;
+}
+.region .container .content .back{
+    position:absolute;
+    top:0px;
+    height:100%;
+    width:100%;
+    background-color: black;
+    opacity:1;
+}
+.region .container .content:hover img{
+    opacity:0.8;
+}
+.region .container .content img{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    
+}
+.region .container .content .text{
+    position:absolute;
+    color:white;
+    bottom:10%;
+    left:10%;
+    display:flex;
+    object-fit: contain;
+}
+.region .container .content .text i{
+    font-size: var(--i-font-size);
+    margin-right:1rem;
+}
+.region .container .content .text h2{
+    font-size: var(--h2-font-size);
+}
+.region .container .content p{
+    position:absolute;
+    color:var(--color-note);
+    bottom:10%;
+    right:10%;
+    font-size: var(--note-font-size);
+    font-weight: 600;
+}
