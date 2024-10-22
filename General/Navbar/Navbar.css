@@ -27,6 +27,10 @@ img {
     user-drag: none;
 }
 
+#navigationbar a {
+    color: white;
+}
+
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -87,6 +91,10 @@ body {
 
 body a {
     text-decoration: none;
+}
+
+#body {
+    line-height: 1.3;
 }
 
 #shadow {
@@ -554,7 +562,13 @@ body a {
 
 .title {
     font-weight: bold;
-    font-size: 2.2vw;
+    font-size: 2.5vw;
+}
+
+.orange.small.title {
+    font-size: 2vw;
+    padding: 1vw 2vw;
+    margin: 0;
 }
 
 .underline {
@@ -597,7 +611,7 @@ body a {
 .halfpartzone>.halfcontent {
     height: 20vw;
     width: 35vw;
-    padding: 5vw;
+    padding: 3vw 5vw;
     position: relative;
 }
 
@@ -614,14 +628,13 @@ body a {
     font-weight: bold;
     font-size: 3vw;
     height: 3vw;
-    margin-bottom: 1vw;
+    margin-bottom: 2vw;
 }
 
 .halfcontent .text {
     font-size: 1.3vw;
     text-align: justify;
     line-height: 1.3;
-
 }
 
 .halfcontent .button {
@@ -633,7 +646,7 @@ body a {
     color: #fff;
     background-color: var(--title);
     border-radius: 0.3vw;
-    bottom: 4vw;
+    bottom: -1vw;
     left: 5vw;
 }
 
