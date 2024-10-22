@@ -4,6 +4,7 @@ html {
     caret-color: transparent;
     cursor: default;
     background-color: rgb(27, 27, 27);
+    font-size: 1vw;
 }
 
 ::-webkit-scrollbar {

@@ -8,34 +8,34 @@ window.onload = function () {
         <div class="navbar">
             <div class="navleft"><a href="#bannerimg1"></a></div>
             <div class="navright" id="navright">
-                <div class="navtitle navbarcurrent" id="navbarHome"><a href="#">Home</a></div>
+                <div class="navtitle" id="navbarHome"><a href="https://arisu171.github.io/Project/Home/Home.html">Home</a></div>
                 <div class="navtitle" id="navbarPages">
                     <a href="#" class="navdroptitle">Pages</a>
                     <div class="navdroplist">
-                        <a href="#">About Us</a>
-                        <a href="#">Our Services</a>
-                        <a href="#">Contact Us</a>
-                        <a href="#">Destinations</a>
+                        <a href="https://arisu171.github.io/Project/Home/Pages/About Us.html">About Us</a>
+                        <a href="https://arisu171.github.io/Project/Home/Pages/Our Services.html">Our Services</a>
+                        <a href="https://arisu171.github.io/Project/Home/Pages/Contact.html">Contact Us</a>
+                        <a href="https://arisu171.github.io/Project/Home/Pages/Destinations.html">Destinations</a>
                     </div>
                 </div>
-                <a href="#" class="navtitle" id="navbarTourist">Tourist</a>
-                <a href="#" class="navtitle" id="navbarRegions">Regions</a>
+                <a href="https://arisu171.github.io/Project/Home/TourList/TourList.html" class="navtitle" id="navbarTourist">Tourist</a>
+                <a href="https://arisu171.github.io/Project/Home/Regions/Regions.html" class="navtitle" id="navbarRegions">Regions</a>
                 <div class="navtitle" id="navbarTrans">
                     <a href="#" class="navdroptitle">Transportations</a>
                     <div class="navdroplist">
-                        <a href="#">Carental</a>
-                        <a href="#">Bus Shuttle</a>
-                        <a href="#">Airpot Trans</a>
+                        <a href="https://arisu171.github.io/Project/Home/Transport/Car.html">Carental</a>
+                        <a href="https://arisu171.github.io/Project/Home/Transport/Coach.html">Bus Shuttle</a>
+                        <a href="https://arisu171.github.io/Project/Home/Transport/Airport.html">Airpot Trans</a>
                     </div>
                 </div>
-                <a href="#" class="navtitle" id="navbarBlog">Blog</a>
-                <a href="#" class="navuser"><i class="fa fa-user"></i></a>
+                <a href="https://arisu171.github.io/Project/Home/Blog/Blog.html" class="navtitle" id="navbarBlog">Blog</a>
+                <a href="https://arisu171.github.io/Project/Home/Account/Account.html" class="navuser"><i class="fa fa-user"></i></a>
             </div>
         </div>
         <div class="navbutton navradius navhide hide" id="navbutt">
                 <div class="navicon navhide" id="navicon" onclick="shownav()"><i class="fa-solid fa-bars"></i></div>
                 <div class="navitem navhide">
-                    <a href="#bannerimg1">
+                    <a href="">
                         <i class="fa-solid fa-house"></i>
                         <div class="navitcap">Home</div>
                     </a>
@@ -45,27 +45,27 @@ window.onload = function () {
                         <i class="fa-solid fa-users"></i>
                         <div class="navitcap">Pages</div>
                     </div>
-                    <a href="#" class="multicon multiconpage hide" id="rmulticon0">
+                    <a href="https://arisu171.github.io/Project/Home/Pages/About Us.html" class="multicon multiconpage hide" id="rmulticon0">
                         <div>About</div>
                     </a>
-                    <a href="#" class="multicon multiconpage hide" id="rmulticon2">
+                    <a href="https://arisu171.github.io/Project/Home/Pages/Our Services.html" class="multicon multiconpage hide" id="rmulticon2">
                         <div>Services</div>
                     </a>
-                    <a href="#" class="multicon multiconpage hide" id="rmulticon4">
+                    <a href="https://arisu171.github.io/Project/Home/Pages/Contact.html" class="multicon multiconpage hide" id="rmulticon4">
                         <div>Contact</div>
                     </a>
-                    <a href="#" class="multicon multiconpage hide" id="rmulticon6">
+                    <a href="https://arisu171.github.io/Project/Home/Pages/Destinations.html" class="multicon multiconpage hide" id="rmulticon6">
                         <div>Dests</div>
                     </a>
                 </div>
                 <div class="navitem navhide">
-                    <a href="#">
+                    <a href="https://arisu171.github.io/Project/Home/TourList/TourList.html">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div class="navitcap">Tourist</div>
                     </a>
                 </div>
                 <div class="navitem navhide">
-                    <a href="#">
+                    <a href="https://arisu171.github.io/Project/Home/Regions/Regions.html">
                         <i class="fa-solid fa-globe"></i>
                         <div class="navitcap">Regions</div>
                     </a>
@@ -75,23 +75,23 @@ window.onload = function () {
                         <i class="fa-solid fa-bus"></i>
                         <div class="navitcap">Transpos</div>
                     </div>
-                    <a href="#" class="multicon multicontran hide" id="rmulticon1">
+                    <a href="https://arisu171.github.io/Project/Home/Transport/Car.html" class="multicon multicontran hide" id="rmulticon1">
                         <div>Car</div>
                     </a>
-                    <a href="#" class="multicon multicontran hide" id="rmulticon3">
+                    <a href="https://arisu171.github.io/Project/Home/Transport/Coach.html" class="multicon multicontran hide" id="rmulticon3">
                         <div>Bus</div>
                     </a>
-                    <a href="#" class="multicon multicontran hide" id="rmulticon5">
+                    <a href="https://arisu171.github.io/Project/Home/Transport/Airport.html" class="multicon multicontran hide" id="rmulticon5">
                         <div>Airport</div>
                     </a>
                 </div>
                 <div class="navitem navhide">
-                    <a href="#">
+                    <a href="https://arisu171.github.io/Project/Home/Blog/Blog.html">
                         <i class="fa-brands fa-squarespace"></i>
                         <div class="navitcap">Blog</div>
                     </a>
                 </div>
-                <a href="#" class="navuser navhide"><i class="fa fa-user"></i></a>
+                <a href="https://arisu171.github.io/Project/Home/Account/Account.html" class="navuser navhide"><i class="fa fa-user"></i></a>
             </div>
         `;
         attachEventHandlers();
