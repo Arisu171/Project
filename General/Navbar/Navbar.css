@@ -386,12 +386,14 @@ body a {
 }
 
 #Pages,
-#Transpos {
+#Transpos,
+.navuser {
     position: relative;
 }
 
 .multiconpage,
-.multicontran {
+.multicontran,
+.multiconacc {
     position: absolute;
     height: 1.5vw;
     width: 8vw;
@@ -400,11 +402,12 @@ body a {
     font-weight: 400;
     background-color: rgba(0, 0, 0, 0.452);
     border-radius: 50%;
-    transition: 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .multiconpage.hide,
-.multicontran.hide {
+.multicontran.hide,
+.multiconacc.hide {
     top: -1vw;
     left: 0vw;
     scale: 0;
@@ -412,7 +415,8 @@ body a {
 }
 
 .multiconpage.show,
-.multicontran.show {
+.multicontran.show,
+.multiconacc.show {
     scale: 1;
     opacity: 1;
 }
@@ -485,6 +489,45 @@ body a {
 .show#rmulticon6 {
     top: 8vw;
     left: -8.5vw;
+}
+
+.show#lmulticon7 {
+    top: 1vw;
+    left: 10vw;
+}
+
+.show#lmulticon8 {
+    top: 9vw;
+    left: 6vw;
+}
+
+.show#rmulticon7 {
+    top: 1vw;
+    left: -10vw;
+}
+
+.show#rmulticon8 {
+    top: 9vw;
+    left: -6vw;
+}
+
+.multiconacc#multiconbar1,
+.multiconacc#multiconbar2 {
+    height: 2vw;
+    width: 8vw;
+    padding: 2vw;
+    border-radius: 2vw;
+    text-align: center;
+}
+
+.show#multiconbar1 {
+    top: calc(4.3vw + 5px);
+    left: -6vw;
+}
+
+.show#multiconbar2 {
+    top: calc(11vw + 5px);
+    left: -6vw;
 }
 
 @media (max-width: 768px) {

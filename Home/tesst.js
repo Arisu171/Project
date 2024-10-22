@@ -146,8 +146,10 @@ function observeClassChanges(targetElement, classToRemove, affectedElementsSelec
 
     observer.observe(targetElement, { attributes: true });
 }
-
 window.onload = function () {
+    // Giả sử `isLoggedIn` là biến kiểm tra người dùng đã đăng nhập
+    let isLoggedIn = false; // Ban đầu, trạng thái là chưa đăng nhập
+
     // Make nav button draggable
     makeElementDraggable(document.getElementById("navbutt"));
 
@@ -162,7 +164,6 @@ window.onload = function () {
     document.querySelector('#Pages div i').parentElement.addEventListener('click', function () {
         const multicons = document.querySelectorAll('.multiconpage');
         multicons.forEach(function (multiconpage) {
-            const newClass = multiconpage.id;
             if (multiconpage.classList.contains('show')) {
                 multiconpage.classList.remove('show');
                 multiconpage.classList.add('hide');
@@ -176,7 +177,6 @@ window.onload = function () {
     document.querySelector('#Transpos div i').parentElement.addEventListener('click', function () {
         const multicons = document.querySelectorAll('.multicontran');
         multicons.forEach(function (multicontran) {
-            const newClass = multicontran.id;
             if (multicontran.classList.contains('show')) {
                 multicontran.classList.remove('show');
                 multicontran.classList.add('hide');
@@ -185,5 +185,65 @@ window.onload = function () {
                 multicontran.classList.remove('hide');
             }
         });
+    });
+
+    // **New Code for navuser multicon with login condition**
+    const navUserIcons = document.querySelectorAll('.navuser');
+    navUserIcons.forEach(function (navUserIcon) {
+        navUserIcon.addEventListener('click', function () {
+            if (!isLoggedIn) {
+                // Nếu người dùng đã đăng nhập, hiển thị multiconacc (Account và Log Out)
+                const multicons = document.querySelectorAll('.multiconacc');
+                multicons.forEach(function (multiconacc) {
+                    if (multiconacc.classList.contains('show')) {
+                        multiconacc.classList.remove('show');
+                        multiconacc.classList.add('hide');
+                    } else {
+                        multiconacc.classList.add('show');
+                        multiconacc.classList.remove('hide');
+                    }
+                });
+            } else {
+                // Nếu chưa đăng nhập, hiển thị phần tử login
+                const loginElement = document.getElementById('login');
+                if (loginElement) {
+                    loginElement.classList.add('show');
+                    loginElement.classList.remove('hide');
+                }
+            }
+        });
+    });
+
+    // **New Code: Login Button Click Event**
+    const loginButton = document.getElementById('loginbutton');
+    loginButton.addEventListener('click', function () {
+        const nickname = document.getElementById('nickname').value;
+        const password = document.getElementById('password').value;
+
+        // Các bộ dữ liệu hợp lệ
+        const validCredentials = [
+            { nickname: 'Orias', password: 'Log171' },
+            { nickname: 'nobody123', password: 'nobody312' },
+            { nickname: 'sleepyyyy', password: '3123212' }
+        ];
+
+        // Kiểm tra xem thông tin đăng nhập có khớp với bộ dữ liệu hợp lệ nào không
+        const isValid = validCredentials.some(credentials =>
+            credentials.nickname === nickname && credentials.password === password
+        );
+
+        if (isValid) {
+            isLoggedIn = true; // Thay đổi trạng thái thành đã đăng nhập
+            alert("Login successful!"); // Thông báo đăng nhập thành công
+
+            // Ẩn phần tử login sau khi đăng nhập thành công
+            const loginElement = document.getElementById('login');
+            if (loginElement) {
+                loginElement.classList.remove('show');
+                loginElement.classList.add('hide');
+            }
+        } else {
+            alert("Invalid login. Please try again."); // Thông báo nếu đăng nhập không thành công
+        }
     });
 };
