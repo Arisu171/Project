@@ -5,8 +5,8 @@
 
 hr {
     width: 60vw;
-    border: 0.5px solid var(--color-main);
-    padding: 0;
+    border: 0.1px solid var(--color-main);
+    opacity: 0.5;
 }
 
 div.contentzone {
@@ -25,25 +25,138 @@ div.contentzone {
     font-size: 1.8vw;
 }
 
-.snapshots p {
+.snapshots p,
+.foodhead p {
     font-size: 1.4vw;
     font-weight: 600;
 }
 
 .slideshow {
     width: 100vw;
-    height: 45vw;
+    height: 48vw;
     position: relative;
     background-color: black;
+    overflow: hidden;
+    margin-bottom: 10vw;
 }
 
 .slideback {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 0;
 }
 
 .slideback img {
     width: 100vw;
-    z-index: ;
+    z-index: 0;
+}
+
+.slidecontent {
+    position: absolute;
+    left: 0;
+    width: 80vw;
+    padding: 10vw;
+    top: 0;
+    z-index: 10;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+
+.slideimg {
+    background-color: black;
+    width: 20vw;
+    height: 28vw;
+    overflow: hidden;
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.452);
+}
+
+.slideimg img {
+    opacity: 1;
+    width: 20vw;
+}
+
+.slidecontrol,
+.slidecurrent {
+    position: absolute;
+    z-index: 60;
+}
+
+.slidecontrol {
+    color: rgba(201, 201, 201, 0.493);
+    font-size: calc(10px + 4vw);
+    top: calc(50% - 2vw);
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+.slidecontrol:hover {
+    color: rgba(41, 41, 41, 0.658);
+}
+
+.slidecontrol:active {
+    color: rgba(0, 0, 0, 0.76);
+}
+
+#slidecontrolprev {
+    left: 2vw;
+}
+
+#slidecontrolnext {
+    right: 2vw;
+}
+
+.slidecurrent {
+    font-size: 1.3vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 16vw;
+    left: 42vw;
+    bottom: 3%;
+    opacity: 90%;
+    cursor: pointer;
+    transition: color 0.4s ease;
+    color: white;
+}
+
+.slidecurrent:hover {
+    color: rgb(148, 148, 148);
+}
+
+.slidecurrent :active {
+    color: rgb(27, 27, 27);
+}
+
+.foodmenu img {
+    width: 27vw;
+}
+
+.menuleft,
+.menuright {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+    padding-bottom: 5vw;
+}
+
+.foodconfig {
+    width: 40vw;
+}
+
+.foodconfig .title {
+    text-align: left;
+    padding: 0vw 2vw 2vw;
+    font-size: 3vw;
+}
+
+.foodconfig p {
+    font-size: 1.4vw;
+    text-align: left;
+}
+
+.foodimg {
+    width: 100%;
 }
