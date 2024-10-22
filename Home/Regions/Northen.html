@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../General/reset.css">
     <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
-    <link rel="stylesheet" href="Northen.css">
+    <link rel="stylesheet" href="Region.css">
 
     <title>Northen</title>
 </head>
@@ -36,8 +36,8 @@
     </header>
     <div id="navigationbar"></div><!--link của nav-->
     <div id="body">
-        <div class="north-title">
-            <h2>DISCOVER NORTHEN VIETNAM</h2>
+        <div class="regionhead contentzone">
+            <h2 class="title orange">DISCOVER NORTHEN VIETNAM</h2>
             <p>
                 Experience the charm of Northern Vietnam, a region known for its
                 breathtaking landscapes and rich cultural heritage. From the
@@ -52,50 +52,50 @@
             </p>
         </div>
         <hr>
-        <div class="north-snapshots">
-            <h2>SNAPSHOOTS OF NORTHEN</h2>
+        <div class="snapshots contentzone">
+            <h2 class="title orange">SNAPSHOOTS OF NORTHEN</h2>
             <p>Northern Vietnam is famous for Ha Long Bay, Sapa, and
                 Trang An. Ha Long Bay features majestic limestone islands,
                 Sapa has terraced rice fields, and Trang An boasts unique
                 caves and waterways.</p>
         </div>
-        <div class="north-slideshow">
-            <div class="back"></div>
-            <img class="img-main" src="NORTH-SLIDESHOW-MAIN.png" alt="anh">
-            <div class="img-slide">
-                <div class="arow">
-                    <a class="left" onclick="move()"><i class="fa-regular fa-arrow-left"></i></a>
+        <div class="slideshow">
+            <div class="slideback"><img src="NORTH-SLIDESHOW-MAIN.png" alt=""></div>
+            <div class="slidecontent">
+                <div class="slideimg" id="slideimg1">
+                    <img src="Tourimg1.png" alt="">
+                    <div class="config">
+                        <div class="tourtitle">THUY XUAN INCENSE VILLAGE - HUE</div>
+                        <span class="tourdate"><i class="fa-sharp fa-regular fa-timer"></i> 1 days</span>
+                        <span class="tourfrom">From</span>
+                        <div class="tourcost">800.000 VND </div>
+                    </div>
                 </div>
-                <div class="img-show">
-                    <img class="img-none" src="NORTH-SHOW1.png" alt="anh">
-                    <img class="img-none" src="NORTH-SHOW2.png" alt="anh">
-                    <img class="img-none" src="NORTH-SHOW3.png" alt="anh">
-                    <img class="img-none" src="NORTH-SHOW2.png" alt="anh">
-                    <img class="img-none" src="NORTH-SHOW2.png" alt="anh">
-                    <img class="img-none" src="NORTH-SHOW3.png" alt="anh">
-                    <img class="img-none" src="NORTH-SHOW2.png" alt="anh">
+                <div class="slideimg" id="slideimg2">
+                    <img src="Tourimg2.png" alt="">
+                    <div class="config">
+                        <div class="tourtitle">BA NA HILLS - DA NANG CITY </div>
+                        <span class="tourdate"><i class="fa-sharp fa-regular fa-timer"></i> 3 days</span>
+                        <span class="tourfrom">From</span>
+                        <div class="tourcost">5.000.000 VND</div>
+                    </div>
                 </div>
-                <div class="arow">
-                    <a class="right" onclick="move()"><i class="fa-regular fa-arrow-right"></i></a>
+                <div class="slideimg" id="slideimg3">
+                    <img src="Tourimg3.png" alt="">
+                    <div class="config">
+                        <div class="tourtitle">MUI NE - PHAN THIET</div>
+                        <span class="tourdate"><i class="fa-sharp fa-regular fa-timer"></i> 3 days </span>
+                        <span class="tourfrom">From</span>
+                        <div class="tourcost">5.000.000 VND</div>
+                    </div>
                 </div>
-            </div>
-            <div class="dot">
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
-                <span class="dot-icon" onclick="updateicon()"></span>
             </div>
         </div>
-    </div>
     </div>
     <footer id="pagefooter"></footer>
     <script src="../../General/Footer/Footer.js"></script>
     <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
-    <script src="Home.js"></script>
+    <script src="Region.js"></script>
 </body>
 
 </html>
