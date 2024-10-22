@@ -1,6 +1,36 @@
 .title {
-    text-align: center;
     padding: 3vw;
+}
+
+#regionbody .halfdark {
+    height: 28vw;
+    width: 39vw;
+    padding: 3vw;
+    background-color: var(--dark);
+    color: white;
+    overflow: hidden;
+    border-radius: 1.5vw;
+}
+
+#regionbody .halfimg img {
+    height: 36.5vw;
+    margin: -4vw;
+}
+
+#regionbody .halfpartzone>.halfcontent {
+    height: 28vw;
+    width: 35vw;
+    padding: 3vw 5vw;
+    position: relative;
+}
+
+.title.mid {
+    text-align: center;
+}
+
+.title.left {
+    padding: 0vw 2vw 2vw;
+    text-align: left;
 }
 
 hr {
@@ -147,8 +177,6 @@ div.contentzone {
 }
 
 .foodconfig .title {
-    text-align: left;
-    padding: 0vw 2vw 2vw;
     font-size: 3vw;
 }
 
@@ -162,9 +190,11 @@ div.contentzone {
     width: 100%;
 }
 
-.servicezone {
+.servicezone.contentzone {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    width: 80vw;
+    padding: 5vw 10vw 7vw;
 }
 
 .servicezone .title {
@@ -174,14 +204,14 @@ div.contentzone {
 .servicecosts {
     width: 50vw;
     padding: 2vw;
-    margin-left: -5vw
+    margin-left: 0vw
 }
 
 .servicecost {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 50vw;
-    height: 20vw;
+    width: 51vw;
+    height: 22vw;
     gap: 1vw;
     border-radius: 1vw;
     overflow: hidden;
@@ -192,7 +222,7 @@ div.contentzone {
 
 .servicecost img {
     background-color: rgb(255, 199, 161);
-    height: 20vw;
+    height: 22vw;
 }
 
 .costzone {
@@ -301,4 +331,18 @@ div.contentzone {
 
 .reason {
     border-top: 1px solid rgba(0, 0, 0, 0.281);
+}
+
+/* region rieng */
+
+.regionhead p {
+    text-align: left;
+    margin-bottom: 3vw;
+    line-height: 1.7;
+}
+
+.regionaddress {
+    margin-top: 2vw;
+    font-size: 1.3vw;
+    font-weight: 600;
 }
