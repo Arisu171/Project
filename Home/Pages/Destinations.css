@@ -1,0 +1,213 @@
+a {
+    color: black;
+}
+
+.destbar {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    top: calc(4.3vw + 5px);
+    background-color: #f5f5f591;
+    backdrop-filter: blur(0.8vw);
+    position: sticky;
+    z-index: 30;
+}
+
+.destopt {
+    padding: 1.4vw 2vw;
+    font-size: 1.6vw;
+    font-weight: 800;
+    position: relative;
+    cursor: pointer;
+}
+
+.destopt::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left: 50%;
+    bottom: 0.5vw;
+    background-color: var(--color-main);
+    transition: all 0.5s ease;
+}
+
+.destopt:hover::after {
+    width: calc(100% - 3vw);
+    left: 1.5vw;
+}
+
+.destcurrent::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: calc(100% - 3vw);
+    left: 1.5vw;
+    bottom: 0.5vw;
+    background-color: var(--color-main);
+    transition: all 0.5s ease;
+}
+
+.destcontrol {
+    width: 98vw;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.destctrl {
+    padding: 1.7vw;
+    width: 1.6vw;
+    height: 1.6vw;
+    text-align: center;
+    font-size: 1.9vw;
+    font-weight: 700;
+    margin: 1vw;
+    background-color: rgba(0, 0, 0, 0.11);
+    border-radius: 50%;
+    color: var(--color-main);
+    cursor: pointer;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.destctrl:hover {
+    background-color: var(--color-main);
+    color: white;
+}
+
+.destctrl:active {
+    background-color: var(--color-main-active);
+}
+
+.destctrl.ctrlcurrent {
+    background-color: var(--color-main);
+    color: white;
+}
+
+.destinationszone {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    z-index: 0;
+}
+
+.destimgzone {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5vw;
+    width: 71vw;
+    padding: 5vw 14.5vw;
+    text-align: center;
+}
+
+.destina {
+    /* background-color: white; */
+    width: 22vw;
+    height: 18vw;
+}
+
+.destimg {
+    width: 22vw;
+    height: 14vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    background-color: black;
+}
+
+.destimg img {
+    width: 22vw;
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.473);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.destina:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.destconfig {
+    font-size: 1.7vw;
+    font-weight: 600;
+    margin-top: 1.5vw;
+}
+
+.destpage1,
+.destpage2 {
+    height: 48vw;
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), height 0.3s ease 0.8s;
+}
+
+.destpage1 .destimgzone,
+.destpage2 .destimgzone {
+    height: 0;
+}
+
+.destpage3,
+.destpage4 {
+    height: 90vw;
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0.3s, height 0.3s ease;
+}
+
+.destpage3 .destimgzone,
+.destpage4 .destimgzone {
+    height: 0;
+}
+
+.destpage1 {
+    transform: translateX(0);
+}
+
+.destpage2 {
+    transform: translateX(-100vw);
+}
+
+.destpage3 {
+    transform: translateX(-200vw);
+}
+
+.destpage4 {
+    transform: translateX(-300vw);
+}
+
+@media (max-width: 768px) {
+    .destimgzone {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4vw;
+        width: 72vw;
+        padding: 5vw 14vw;
+    }
+
+    .destina {
+        width: 34vw;
+        height: 25vw;
+    }
+
+    .destimg {
+        width: 34vw;
+        height: 21vw;
+    }
+
+    .destimg img {
+        width: 34vw;
+    }
+
+    .destconfig {
+        font-size: 1.9vw;
+    }
+
+    .destpage1,
+    .destpage2 {
+        height: 90vw;
+    }
+
+    .destpage3,
+    .destpage4 {
+        height: 170vw;
+    }
+
+    .destbar {
+        top: 0;
+        z-index: 970;
+    }
+}

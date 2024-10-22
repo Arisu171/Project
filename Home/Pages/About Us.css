@@ -9,6 +9,10 @@
     margin-bottom: 7vw;
 }
 
+.membertotal {
+    scale: 0.7;
+}
+
 .memberlist {
     display: flex;
     justify-content: center;
