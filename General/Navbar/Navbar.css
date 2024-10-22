@@ -27,6 +27,10 @@ img {
     user-drag: none;
 }
 
+#navigationbar a {
+    color: white;
+}
+
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
