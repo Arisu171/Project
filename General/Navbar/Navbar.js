@@ -201,7 +201,7 @@ window.onload = function () {
         const navUserIcons = document.querySelectorAll('.navuser');
         navUserIcons.forEach(function (navUserIcon) {
             navUserIcon.addEventListener('click', function () {
-                if (!isLoggedIn) {
+                if (isLoggedIn) {
                     toggleMulticons('.multiconacc');
                 } else {
                     const loginElement = document.getElementById('login');
