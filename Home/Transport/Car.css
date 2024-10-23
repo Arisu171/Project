@@ -5,47 +5,28 @@
     --color-black:rgb(27, 26, 26);
     --h3-h4-font-size:2.3rem;
     --color-main-sp:#e6790c;
-    --h2-font-size:2.8rem;
-    --h5-font-size:1.2rem;
+    --h2-font-size:2.3rem;
+    --h5-font-size:1.5rem;
 }
 /*phần ảnh đầu*/
 body{
     font-size:16px;
 }
-#img{
-    height:100vh;
-    overflow:hidden;
-}
-#img img{
-    background-size:cover;
-    width:100%;
-    position:absolute;
-    top:-15rem;
-    z-index:0;
-}
-#img h1{
-    font-size:var(--p-anh-font-size);
-    font-weight:800;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    position: absolute; /* Đặt vị trí tuyệt đối */
-    top: 50%;
-    left: 5%;
-    color:white;
-}
+
 /*phần book*/
 #book{
-    margin-top:5rem;
     width:100%;
-    height:90vh;
+    height:auto;
     display: flex;
     align-items: center; 
     justify-content: center;
 }
 #book .book{
-    width:90%;
-    height:90%;
+    padding:2rem;
+    box-sizing: border-box;
+    margin:3rem;
+    width:70%;
+    height:100%;
     background-color: white;
     border-radius: 1rem;
     filter: drop-shadow(0px 0px 10px #2e2e2e49);
@@ -73,10 +54,11 @@ body{
 #book .book .booking .dong .child{
     display:flex;
     width:100%;
-    justify-content: center;;
+    justify-content: center;
 }
 #book .book .booking .dong .child input{
     height:2rem;
+    font-size:1rem;
     border-radius: 0.5rem;
     border:1px var(--color-black) solid;
     padding: 0.5rem 1rem 0.5rem 2rem;
@@ -87,24 +69,34 @@ body{
     justify-content: center;
 }
 #book .book .booking .dong1 label{
-    padding:1rem 3rem;
+    padding:1rem 2rem;
     margin:1rem 1rem 0.5rem 1rem;
     color:var(--color-main);
     border:0.5px rgb(27, 26, 26) solid;
     border-radius: 1rem;
     font-weight: 800;
 }
-#book .book .booking .dong1 label:hover{
+#book .book .booking .dong1 label .custom-radio{
+    font-size:1rem;
+}
+#book .book .booking .dong1 label input {
+    display: none;
+}
+/*#book .book .booking .dong1 label:hover{
     background-color:var(--color-main-sp);
     color:white;
     border:none;
 }
+#book .book .booking .dong1 label .custom-radio{
+    width:100%;
+    height:100%;
+    display:inline-block;
+}
 #book .book .booking .dong1 label:active{
     background-color:#c06f18;
-}
-#book .book .booking .dong1 label input{
-    display:none;
-}
+}*/
+
+
 /*dòng 2 book*/
 #book .book .booking .dong2,.dong3,.dong4, h5{
     font-weight: 700;
@@ -115,11 +107,14 @@ body{
 }
 #book .book .booking .dong2 .child input{
     width: 100%;
+    padding-left:2.8rem;
 }
-#book .book .booking .dong2 .child svg{
+#book .book .booking .dong2 .child i{
     position: absolute;
-    left: 10px;
-    top: 25%;
+    left: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:1.3rem;
 }
 /*dòng 3 book*/
 #book .book .booking .dong3 {
@@ -132,10 +127,15 @@ body{
     flex-basis: 70%;
     position:relative;
 }
-#book .book .booking .dong3 .dad svg{
+#book .book .booking .dong3 .dad input{
+    padding-left:2.8rem;
+}
+#book .book .booking .dong3 .dad i{
     position:absolute;
-    top:25%;
-    left:calc(0% + 10px);
+    left: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:1.3rem;
 }
 #book .book .booking .dong3 .dad .child{
     position:relative;
@@ -151,10 +151,15 @@ body{
 #book .book .booking .dong3 .mom .child{
     position:relative;
 }
-#book .book .booking .dong3 .mom svg{
+#book .book .booking .dong3 .mom .child input{
+    padding-left: 2.8rem;
+}
+#book .book .booking .dong3 .mom i{
     position:absolute;
-    top:25%;
-    left:calc(0% + 10px);
+    left: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:1.3rem;
 }
 #book .book .booking .dong3 .mom input{
     width:100%;
@@ -173,14 +178,17 @@ body{
 #book .book .booking .dong4 .dad .child{
     position:relative;
 }
-#book .book .booking .dong4 .dad svg{
+#book .book .booking .dong4 .dad i{
     position:absolute;
-    top:25%;
-    left:calc(0% + 10px);
+    left: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:1.3rem;
 }
 #book .book .booking .dong4 .dad input{
     width:100%;
     margin-right:2rem;
+    padding-left:2.8rem;
 }
 #book .book .booking .dong4 .mom{
     flex-basis: 30%;
@@ -189,13 +197,16 @@ body{
 #book .book .booking .dong4 .mom .child{
     position:relative;
 }
-#book .book .booking .dong4 .mom svg{
+#book .book .booking .dong4 .mom i{
     position:absolute;
-    top:25%;
-    left:calc(0% + 10px);
+    left: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:1.3rem;
 }
 #book .book .booking .dong4 .mom input{
     width:100%;
+    padding-left:2.8rem;
 }
 /*book dòng 5*/
 #book .book .booking .dong5 button{
@@ -218,14 +229,16 @@ body{
 }
 /*phần partners*/
 #partners{
-    height:60vh;
+    height:auto;
     width:100%;
     display:flex;
     justify-content: center;
+    margin-top:5rem;
+    margin-bottom:5rem;
 } 
 #partners .partners{
-    height:80%;
-    width:80%;
+    height:100%;
+    width:70%;
     display:flex;
     align-items: center;
     position:relative;
@@ -263,11 +276,11 @@ body{
 
 .why {
     flex-grow: 1;
-    width: 90%;
+    width: 80%;
     margin-left:auto;
     margin-right:auto;
     height: auto;
-    padding-bottom:3rem;
+    margin-bottom:5rem;
 }
 .car-rental {
     width: 100%;
@@ -319,7 +332,7 @@ body{
     padding:1rem 0px;
 }
 .why .content .dad p{
-    font-size:medium;
+    font-size:1.3rem;
     text-align: center;
     line-height:1.2;
     font-weight: 500;
@@ -328,6 +341,7 @@ body{
 .car-rental {
     display:flex;
     justify-content: center;
+    margin:2rem;
 }
 .car-rental .dad{
     width:80%;
@@ -341,7 +355,7 @@ body{
     margin:1rem;
 }
 .car-rental .dad p{
-    font-size:x-large;
+    font-size:1.5rem;
     text-align: center;
     line-height:1.2;
     font-weight: 500;
@@ -351,7 +365,7 @@ body{
 .with-driver {
     display:flex;
     justify-content: center;
-    margin-top:2rem;
+    margin:2rem;
 }
 .with-driver .dad{
     width:80%;
@@ -365,7 +379,7 @@ body{
     margin:1rem;
 }
 .with-driver .dad p{
-    font-size:x-large;
+    font-size:1.5rem;
     text-align: center;
     line-height:1.2;
     font-weight: 500;
@@ -374,9 +388,11 @@ body{
 
 /*phần general*/
 .general{
-    width:90%;
-    margin:auto;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
     height:100%;
+    margin-bottom:3rem;
 }
 /*phần general table h2*/
 .general .h2 {
@@ -403,49 +419,40 @@ body{
 }
 .general .table table thead tr th{
     padding:1.5rem;
-    font-size:1.3rem;
+    font-size:1.5rem;
 }
 .general .table table tbody tr td {
     padding:1rem;
 }
 .general .table tbody tr td p{
     font-weight: 600;
-    font-size:larger;
+    font-size:1rem;
 }
 .general .table table tbody tr td  ul{
     margin:1rem;
 }
 .general .table table tbody tr td  ul li{
-    font-size:large;
+    font-size:1rem;
     position:relative;
     margin:0.5rem 1rem;
+    list-style-type: disc;
 }
 
-.general .table table tbody tr td ul li::before{
-    content: '';
-    display: inline-block;
-    border-radius: 999px;
-    position:absolute;
-    top:0px;
-    width: 4px;
-    height: 4px;
-    background-color: black;
-    top:15%;
-    left:-20px;
-}
 .general .table tbody tr td .note{
     font-style: italic;
     font-weight:300;
+    font-size:1rem;
 }
 .general .table tbody tr td .information{
     font-weight:400;
+    font-size:1rem;
 }
 /*thanh hr*/
 hr{
     margin:0px;
     background-color:var(--color-main);
     border:none;
-    width:90%;
+    width:80%;
     text-align: center;
     height:1.5px;
     margin-top:2rem;
@@ -485,85 +492,8 @@ hr{
     margin:10px;
 }
 
-/*footer*/
-footer{
-    width:100%;
-    height:50vh;
-    background-color:#161618;
+@media only screen and (max-width: 740px)/*web mobile*/{
+    #book{
+        
+    }
 }
-footer .content{
-    width:85%;
-    height:100%;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
-    justify-content: space-between;
-}
-
-
-footer .content .content1{
-    margin-top:2rem;
-    width:calc(100% / 3);
-}
-footer .content .content1 p:nth-child(1){
-    color:white;
-    font-weight: 700;
-}
-footer .content .content1 p:nth-last-child(1){
-    color:white;
-    opacity:0.7;
-    font-size:larger;
-    margin-top:2rem;
-}
-
-
-footer .content .content2 {
-    margin-top: 2rem;
-    width: calc(100% / 3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-footer .content .content2 p {
-    color: white;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-footer .content .content2 .dong {
-    display: flex;
-    justify-content: center; 
-    flex-wrap: wrap; 
-}
-
-footer .content .content2 img {
-    width: 100%; 
-    max-width: 5rem;
-    height: auto; 
-    margin: 0.3rem; 
-}
-
-footer .content .content3{
-    margin-top:2rem;
-    width:calc(100% / 3);
-    display:flex;
-    flex-direction: column;
-}
-footer .content .content3 .text p{
-    font-size:larger;
-    color:white;
-    opacity:0.7;
-    margin:0.3rem;
-}
-footer .content .content3 .heading{
-    color:white;
-    font-weight: 700;
-    margin-bottom:2rem;
-}
-footer .content .content3 .icon i{
-    margin-top:3rem;
-    color:white;
-    font-size:x-large;
-}
-

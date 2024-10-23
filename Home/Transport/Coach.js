@@ -31,9 +31,15 @@ const swapButton = document.getElementById('swap-button');
 
 // Thêm sự kiện cho nút hoán đổi
 swapButton.addEventListener('click', () => {
-    // Lưu giá trị của "From" vào biến tạm
     const temp = fromInput.value;
-    // Hoán đổi giá trị
     fromInput.value = toInput.value;
     toInput.value = temp;
+});
+
+document.querySelector('.custom-checkbox').addEventListener('click', function () {
+    const checkbox = this.querySelector('input');
+    const display = this.querySelector('.checkbox-display');
+    
+    checkbox.checked = !checkbox.checked; // Đảo ngược trạng thái checked
+    display.classList.toggle('checked', checkbox.checked); // Thêm hoặc bỏ lớp "checked" để thay đổi màu sắc
 });
