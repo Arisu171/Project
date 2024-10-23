@@ -844,19 +844,6 @@ input#nickname {
     line-height: 1.3;
 }
 
-.halfcontent .button {
-    position: absolute;
-    font-size: 1.3vw;
-    font-weight: bold;
-    width: max-content;
-    padding: 1.5vw 1.7vw;
-    color: #fff;
-    background-color: var(--title);
-    border-radius: 0.3vw;
-    bottom: -1vw;
-    left: 5vw;
-}
-
 .halfdark {
     height: 24vw;
     width: 39vw;
