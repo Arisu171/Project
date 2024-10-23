@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../General/reset.css">
     <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
-    <link rel="stylesheet" href="NAME.css">
+    <link rel="stylesheet" href="Register.css">
     <title>Flarista</title>
 </head>
 
@@ -36,47 +36,89 @@
             <div class="reginfos">
                 <div class="resinfo">
                     <label for="username">Username*</label>
-                    <input class="reginput" id="reginput1"></input>
+                    <input type="text" class="reginput" id="reginput1">
+                    <div class="error-message" id="error-username"></div>
                 </div>
+                <div></div>
                 <div class="resinfo">
                     <label for="password">Password*</label>
-                    <input class="reginput" id="reginput2"></input>
+                    <input type="password" class="reginput" id="reginput2">
+                    <div class="error-message" id="error-password"></div>
                 </div>
                 <div class="resinfo">
                     <label for="confirm">Confirm Password*</label>
-                    <input class="reginput" id="reginput3"></input>
+                    <input type="password" class="reginput" id="reginput3">
+                    <div class="error-message" id="error-confirm"></div>
                 </div>
                 <div class="resinfo">
                     <label for="firstname">First Name*</label>
-                    <input class="reginput" id="reginput4"></input>
+                    <input type="text" class="reginput" id="reginput4">
+                    <div class="error-message" id="error-firstname"></div>
                 </div>
                 <div class="resinfo">
                     <label for="lastname">Last Name*</label>
-                    <input class="reginput" id="reginput5"></input>
+                    <input type="text" class="reginput" id="reginput5">
+                    <div class="error-message" id="error-lastname"></div>
                 </div>
                 <div class="resinfo">
                     <label for="phone">Phone*</label>
-                    <input class="reginput" id="reginput7"></input>
+                    <input type="number" class="reginput" id="reginput7">
+                    <div class="error-message" id="error-phone"></div>
                 </div>
                 <div class="resinfo">
                     <label for="email">Email*</label>
-                    <input class="reginput" id="reginput8"></input>
+                    <input type="text" class="reginput" id="reginput8">
+                    <div class="error-message" id="error-email"></div>
                 </div>
                 <div class="resinfo">
                     <label for="birthdate">Birth Date*</label>
-                    <input class="reginput" id="reginput6"></input>
+                    <select id="thang" name="thang">
+                        <option value="" disabled selected>Month</option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+                    <select id="ngay" name="ngay">
+                        <option value="" disabled selected>Date</option>
+                    </select>
+                    <select id="nam" name="nam">
+                        <option value="" disabled selected>Year</option>
+                    </select>
+                    <div class="error-message" id="error-birthdate"></div>
                 </div>
                 <div class="resinfo">
-                    <label for="coutry">Country</label>
-                    <input class="reginput" id="reginput9"></input>
+                    <label for="country">Country*</label>
+                    <input type="text" class="reginput" id="reginput9">
+                    <div class="error-message" id="error-country"></div>
                 </div>
             </div>
+            <div class="Terms">
+                <span><input type="checkbox"></span>
+                <span>Creating an account means you're okay with our <span> Terms of Service </span>
+                    and <span> Privacy Statement.</span></span>
+            </div>
+            <div id="signupBtn">SIGN UP</div>
+            <div class="fbgg">
+                <div class="fb"><i class="fa-brands fa-facebook"></i> <span>Continute With Facebook</span></div>
+                <div class="gg"><i class="fa-brands fa-google"></i><span>Continute With Google</span></div>
+            </div>
+            <hr>
+
         </div>
     </div>
     <footer id="pagefooter"></footer>
     <script src="../../General/Footer/Footer.js"></script>
     <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
-    <script src="Home.js"></script>
+    <script src="Register.js"></script>
 </body>
 
 </html>
