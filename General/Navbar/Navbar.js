@@ -1,15 +1,13 @@
 window.onload = function () {
-    // Trạng thái đăng nhập
-    let isLoggedIn = false;
 
-    // Gán HTML cho navigation bar và footer trước khi gắn sự kiện
+    let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const storedNickname = localStorage.getItem("nickname");
+
     setNavigationBar();
     setPageFooter();
 
-    // Gắn các sự kiện sau khi DOM đã được cập nhật
     attachEventHandlers();
 
-    // **New Code: Login Button Click Event**
     const loginButton = document.getElementById('loginbutton');
     if (loginButton) {
         loginButton.addEventListener('click', handleLogin);
@@ -197,11 +195,13 @@ window.onload = function () {
         <div id="copyright">© Copyright 2024 – Flarista Travel</div>`;
         }
     }
-    // **New Code: Set isLoggedIn to false when clicking on elements with class "hide"**
+
     const hideElements = document.querySelectorAll('.out');
     hideElements.forEach(function (element) {
         element.addEventListener('click', function () {
             isLoggedIn = false;
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("username");
             toggleMulticons('.multiconacc');
         });
     });
@@ -209,16 +209,13 @@ window.onload = function () {
     function attachEventHandlers() {
         makeElementDraggable(document.getElementById("navbutt"));
 
-        // Attach resize event listener
         window.addEventListener('resize', checkScreenSize);
 
-        // Monitor changes in class
         const elementToWatch = document.querySelector('.navradius');
         if (elementToWatch) {
             observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
         }
 
-        // Event listeners for multicon lists
         const pagesIcon = document.querySelector('#Pages div i');
         if (pagesIcon) {
             pagesIcon.parentElement.addEventListener('click', toggleMulticons.bind(null, '.multiconpage'));
@@ -229,13 +226,11 @@ window.onload = function () {
             transposIcon.parentElement.addEventListener('click', toggleMulticons.bind(null, '.multicontran'));
         }
 
-        // Add click listener to the navigation button
         const navButton = document.getElementById("navicon");
         if (navButton) {
             navButton.addEventListener("click", shownav);
         }
 
-        // Event listeners for nav user account
         const navUserIcons = document.querySelectorAll('.navuser');
         navUserIcons.forEach(function (navUserIcon) {
             navUserIcon.addEventListener('click', function () {
@@ -319,7 +314,7 @@ window.onload = function () {
         observer.observe(targetElement, { attributes: true });
     }
 
-    // Dragging functionality
+    // Dragging 
     let dragging = false;
 
     function makeElementDraggable(el) {
@@ -327,6 +322,8 @@ window.onload = function () {
 
         el.onmousedown = dragMouseDown;
         el.ontouchstart = dragTouchStart;
+
+        window.addEventListener("resize", updatePositionOnResize);
 
         function dragMouseDown(e) {
             e.preventDefault();
@@ -374,6 +371,10 @@ window.onload = function () {
             document.ontouchend = null;
             document.ontouchmove = null;
 
+            updateElementPosition();
+        }
+
+        function updateElementPosition() {
             const currentY = el.offsetTop;
             const windowHeight = window.innerHeight;
             let newY = currentY;
@@ -405,37 +406,38 @@ window.onload = function () {
                     element.id = newId;
                 });
             }
-
             setTimeout(() => {
                 el.style.left = newX + "px";
                 el.style.top = newY + "px";
                 dragging = false;
             }, 100);
         }
+
+        function updatePositionOnResize() {
+            updateElementPosition();
+        }
     }
 
-    // Login handling function
     function handleLogin() {
         const nickname = document.getElementById('nickname').value;
         const password = document.getElementById('password').value;
 
-        // Các bộ dữ liệu hợp lệ
         const validCredentials = [
             { nickname: 'Orias', password: 'Log171' },
             { nickname: 'nobody123', password: 'nobody312' },
             { nickname: 'sleepyyyy', password: '3123212' }
         ];
 
-        // Kiểm tra thông tin đăng nhập
         const isValid = validCredentials.some(credentials =>
             credentials.nickname === nickname && credentials.password === password
         );
 
         if (isValid) {
             isLoggedIn = true;
-            alert("Login successful!");
 
-            // Ẩn phần tử login
+            localStorage.setItem("isLoggedIn", true);
+            localStorage.setItem("nickname", nickname);
+
             const loginElement = document.getElementById('login');
             const loginBack = document.getElementById('loginback');
             if (loginElement) {

@@ -561,20 +561,18 @@ body a {
     transform: translate(-50%, -50%) scale(0);
     color: rgb(27, 27, 27);
     opacity: 0;
-    z-index: -1;
+    z-index: 1000;
 }
 
 #login.show {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
-    z-index: 1000;
     transition: opacity 0.3s ease 0.1s, transform 0.5s cubic-bezier(.33, 1.88, .63, .91);
 }
 
 #login.hide {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
-    z-index: -1;
     transition: opacity 0.4s ease 0.2s, transform 0.5s cubic-bezier(.86, -0.6, 1, .75);
 }
 
@@ -662,16 +660,15 @@ input#nickname {
     left: 0;
     top: 0;
     transition: opacity 0.3s ease;
+    z-index: 980;
 }
 
 #loginback.show {
     opacity: 1;
-    z-index: 980;
     scale: 1;
 }
 
 #loginback.hide {
-    z-index: -1;
     opacity: 0;
     scale: 0;
 }

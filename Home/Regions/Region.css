@@ -1,5 +1,6 @@
 .title {
     padding: 3vw;
+    
 }
 
 #regionbody .halfdark {
@@ -353,4 +354,13 @@ div.contentzone {
     margin-top: 2vw;
     font-size: 1.3vw;
     font-weight: 600;
+}
+.tourname{
+    text-transform: uppercase;
+}
+.pagetitle{
+    text-transform: uppercase;
+}
+.orange.small.title{
+    text-transform: uppercase;
 }

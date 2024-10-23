@@ -1,174 +1,230 @@
-:root {
-    --h2-font-size: 2vw;
-    --color-black: rgb(27, 26, 26);
-    --p-font-size: 1.5vw;
+.servicezone.contentzone {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 400vw;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6)
 }
 
-html {
-    font-size: 1vw;
-}
-#body-tour-list{
-    width:100%;
-    height:auto;
-}
-.tour-list {
-    width: 70%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 7rem;
+#regionbody .servicezone.contentzone {
+    grid-template-columns: repeat(1, 1fr);
 }
 
-.tour-list .content {
-    width: 100%;
-    height: 20rem;
-    display: flex;
-    background-color: rgb(255, 255, 247);
-    filter: drop-shadow(0px 0px 10px #2e2e2e49);
-    margin: 6rem 0px 6rem 0px;
+.servicezone .title {
+    grid-column: 1/3;
 }
 
-/*img*/
-.tour-list .content .img {
-    height: auto;
-    width: 25vw;
+#regionbody .servicecosts {
+    margin: 6vw 12vw;
+    transform: scale(1.2);
 }
 
-.tour-list .content .img img {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
+.servicecosts {
+
+    width: 55vw;
+    padding: 3vw 22.5vw 0vw;
+    margin-left: 0vw;
 }
 
-/*text*/
-.tour-list .content .text {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 2rem;
-    padding-bottom:2rem;
-    padding-right:2rem;
-}
-
-.tour-list .content .text .title {
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.tour-list .content .text .title h2 {
-    font-size: var(--h2-font-size);
-    font-weight: 800;
-}
-
-.tour-list .content .text .time {
-    height: 50%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.tour-list .content .text .time i {
-    margin: 0.5rem 1.8rem 0.5rem 0.2rem;
-    font-size: 1.3vw;
-}
-
-.tour-list .content .text .time p {
-    font-size: var(--p-font-size);
-    font-weight: 500;
-    margin: 0.4rem 0px;
-}
-
-/*price*/
-.tour-list .content .price {
-    width: 25vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.servicecost {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 51vw;
+    height: 22vw;
     gap: 1vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.438);
+    margin: 4vw 0;
+}
+
+.servicecost img {
+    background-color: rgb(255, 199, 161);
+    height: 22vw;
+}
+
+.costzone {
+    width: 9vw;
+    padding: 0vw 1vw;
+    margin: 2vw 0vw;
+    text-align: center;
+    font-size: 1vw;
+    border-left: 0.01vw solid rgba(0, 0, 0, 0.103);
+}
+
+.textfrom {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 2vw 0 1vw;
+}
+
+.cost {
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.rate {
+    margin: 0.8vw 0;
+    font-size: 0.8em;
+}
+
+.reviewnum {
+    font-size: 1.1em;
+    margin-bottom: 2vw;
+}
+
+.costzone a.detailbutt {
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    padding: 1em;
+    background-color: var(--color-main);
+    margin-top: 1.6vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.serviceinfo {
+    width: 19vw;
+    padding: 2vw 1vw;
+    font-size: 1vw;
     position: relative;
 }
 
-.tour-list .content .price .vertical-line {
-    width: 3.5px;
-    border-radius: 10px;
-    height: 90%;
-    background-color: #E6E6E6;
+.serviceinfo div {
+    margin-bottom: 1vw;
+}
+
+.tourinfo {
     position: absolute;
-    left: 0px;
+    bottom: 0;
 }
 
-.tour-list .content .price p:nth-of-type(1) {
-    font-size: 1vw;
-}
-
-.tour-list .content .price h2 {
-    width: 80%;
-    font-size: var(--h2-font-size);
-    text-align: center;
-}
-
-.tour-list .content .price .star img {
-    height: 1.3vw;
-}
-
-.tour-list .content .price p:nth-of-type(2) {
-    font-size: var(--p-font-size);
-}
-
-.tour-list .content .price input {
-    font-size: 0.8vw;
+.tourname {
+    font-size: 1.5em;
     font-weight: 700;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--color-main);
-    padding: 1rem;
+    margin-bottom: 5vw;
+    text-align: LEFT;
 }
 
-.tour-list .content .price:hover input {
-    background-color: var(--color-main-hover);
+.serviceinfo i {
+    margin-right: 0.8vw;
 }
 
-.tour-list .content .price:active input {
-    background-color: var(--color-main-active);
+.whybook,
+.bookquest {
+    width: 22vw;
+    padding: 2vw 0 0;
+    margin: 10vw 3vw;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, 0.075);
 }
 
-/*chuyển trang*/
-.tour-page {
+.reasonhead {
+    font-size: 1.4em;
+    margin: 0 0 1vw 0;
+    padding: 0 2vw;
+}
+
+.getquest {
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 0 2vw;
+}
+
+.reason,
+.reason1,
+.questxt {
+    font-size: 1.1em;
+    padding: 1.5vw 2vw;
+    line-height: 1.3;
+
+}
+
+.qinfo {
+    color: var(--color-main);
+    font-size: 1.15em;
+    padding: 0.5vw 2vw 1.5vw 3vw;
+}
+
+.reason {
+    border-top: 1px solid rgba(0, 0, 0, 0.281);
+}
+
+/* region rieng */
+
+.regionhead p {
+    text-align: left;
+    margin-bottom: 3vw;
+    line-height: 1.7;
+}
+
+.regionaddress {
+    margin-top: 2vw;
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+.tourname {
+    text-transform: uppercase;
+}
+
+.pagetitle {
+    text-transform: uppercase;
+}
+
+.destcontrol {
+    width: 98vw;
+    padding: 1vw;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+
 }
 
-.tour-page a {
-    font-family: Inter;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    font-size: 2vw;
-    margin: 1rem;
-    color: white;
-    padding: 1.5rem;
-    background-color: #E6E6E6;
+.destctrl {
+    padding: 1.5vw;
+    width: 1.9vw;
+    height: 1.9vw;
     text-align: center;
+    font-size: 1.9vw;
+    font-weight: 700;
+    margin: 0vw 1vw 4vw;
+    background-color: rgba(0, 0, 0, 0.11);
+    border-radius: 50%;
+    color: var(--color-main);
+    cursor: pointer;
+    transition: color 0.4s ease, background-color 0.4s ease;
 }
 
-.tour-page a:nth-of-type(1) {
+.destctrl:hover {
     background-color: var(--color-main);
+    color: white;
 }
 
-.tour-page a:hover {
-    background-color: #e8ab11;
-}
-
-.tour-page a:active {
+.destctrl:active {
     background-color: var(--color-main-active);
+}
+
+.destctrl.ctrlcurrent {
+    background-color: var(--color-main);
+    color: white;
+}
+
+.servicepage1 {
+    transform: translateX(0);
+}
+
+.servicepage2 {
+    transform: translateX(-100vw);
+}
+
+.servicepage3 {
+    transform: translateX(-200vw);
+}
+
+.servicepage4 {
+    transform: translateX(-300vw);
 }
