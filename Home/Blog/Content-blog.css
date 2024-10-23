@@ -1,8 +1,11 @@
 :root{
     --color-black:rgb(27, 26, 26);
     --color-write:rgba(217, 217, 217, 0.3);
-    --h3-font-size:1.8rem;
-    --p-font-size:1.5rem;
+    --h3-font-size:2.3rem;
+    --h3-mobile-font-size:2.8rem;
+    --p-font-size:1.8rem;
+    --p-mobile-font-size:2rem;
+    --placeholder-mobile-font-size:1.5rem;
 }
 html {
     font-size:1vw;
@@ -138,7 +141,7 @@ html {
     align-items: center;
 }
 .write .post input{
-    font-size:1rem;
+    font-size:1.5rem;
     font-weight: 700;
     color:white;
     height:40%;
@@ -153,4 +156,39 @@ html {
 }
 .write .post:active input{
     background-color:var(--color-main-active);
+}
+@media only screen and (max-width: 740px)/*web mobile*/ {
+    .blog-content .char p{
+        font-size:2.5rem;
+    }
+    .blog-main h3{
+        font-size:var(--h3-mobile-font-size);
+        font-weight:700;
+    }
+    .blog-main p{
+        font-size:var(--p-mobile-font-size);
+        font-weight:500;
+    }
+    .write h2{
+        font-size:2rem;
+    }
+    .write p{
+        font-size:1.8rem;
+    }
+    .write .custom input,textarea{
+        border:0.1px solid rgba(18, 18, 18, 0.277);
+        font-size:var(--placeholder-mobile-font-size);
+    }
+    .write .custom .comment::placeholder{
+        font-size:var(--placeholder-mobile-font-size);
+    }
+    .write .custom .name::placeholder{
+        font-size:var(--placeholder-mobile-font-size);
+    }
+    .write .custom .email::placeholder{
+        font-size:var(--placeholder-mobile-font-size);
+    }
+    .write .custom .web::placeholder{
+        font-size:var(--placeholder-mobile-font-size);
+    }
 }

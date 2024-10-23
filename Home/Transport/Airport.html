@@ -1,160 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airport-Transport</title>
-    <link rel="stylesheet" href="/project/General/reset.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="../../General/reset.css">
     <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
     <link rel="stylesheet" href="Airport.css">
+
+    <title>Flarista-Airport</title>
 </head>
+
 <body>
-    <div id="navigationbar"></div>
-    <script src="../../General/Navbar/Navbar.js"></script>
-    <div id="img">
-        <img src="BACK-MAIN.jpg">
-        <h1>AIRPORT TRANSPORT</h1>
-    </div>
-    <div id="book">
-        <div class="book">
+    <header>
+        <div id="navigationbar"></div>
+        <div class="pagebanner bannerlarge">
+            <img src="BACK-MAIN.jpg" alt="anh">
+            <div class="pagetitle">AIRPORT TRANSPORT</div>
+        </div>
+    </header>
+    <!--link của nav-->
+    <div id="body">
+        <div id="book">
+            <div class="book">
+                <div class="text">
+                    <h3>Airport Transport</h3>
+                </div>
+                <div class="content1">
+                    <div class="airport">
+                        <div class="text">
+                            <h4>From airport</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-thin fa-plane-engines"></i>
+                            <input type="text" id="from-input" placeholder="E.g Narita International Airport">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button type="button" id="swap-button">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+    
+                    <div class="area">
+                        <div class="text">
+                            <h4>From area, address, building</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-sharp fa-light fa-location-dot"></i>
+                            <input type="text"  id="to-input" placeholder="Enter City, Terminal, or other">
+                        </div>
+                    </div>
+                </div>
+                <div class="content2">
+                    <div class="date">
+                        <div class="text">
+                            <h4>Pick-up Date</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-light fa-calendar-days"></i>
+                            <input type="date">
+                        </div>
+                    </div>
+    
+                    <div class="time">
+                        <div class="text">
+                            <h4>Time</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-sharp fa-light fa-clock"></i>
+                            <input type="time">
+                        </div>
+                    </div>
+                </div>
+                <div class="content3">
+                    <input type="submit" value="SEARCH">
+                </div>
+            </div>
+        </div>
+        <div class="why">
             <div class="text">
-                <h3>Airport Transport</h3>
+                <h2>Why Book Airport Transfer Or Airport Transportations 
+                    Through Flarista??</h2>
             </div>
-            <div class="content1">
-                <div class="airport">
-                    <div class="text">
-                        <h4>From airport</h4>
-                    </div>
-                    <div class="main">
-                        <img src="AIRPORT-Plane.svg" alt="ảnh">
-                        <input type="text" id="from-input" placeholder="E.g Narita International Airport">
-                    </div>
-                </div>
-                <div class="button">
-                    <button type="button" id="swap-button">
-                        <i class="fa-solid fa-rotate"></i>
-                    </button>
-                </div>
-
-                <div class="area">
-                    <div class="text">
-                        <h4>From area, address, building</h4>
-                    </div>
-                    <div class="main">
-                        <img src="AIRPORT-Location.svg" alt="ảnh">
-                        <input type="text"  id="to-input" placeholder="Enter City, Terminal, or other">
-                    </div>
+            <div class="container">
+                <img src="AIRPORT-Why1.webp" alt="ảnh">
+                <div class="content">
+                    <h3>Suit Your Needs</h3>
+                    <p>With options ranging from private cars to airport buses, find the most suitable ride to get you to or from the airport.</p>
                 </div>
             </div>
-            <div class="content2">
-                <div class="date">
-                    <div class="text">
-                        <h4>Pick-up Date</h4>
-                    </div>
-                    <div class="main">
-                        <img src="AIRPORT-DATE.svg" alt="ảnh">
-                        <input type="date">
-                    </div>
-                </div>
-
-                <div class="time">
-                    <div class="text">
-                        <h4>Time</h4>
-                    </div>
-                    <div class="main">
-                        <img  src="AIRPORT-Time.svg" alt="ảnh"> 
-                        <input type="time">
-                    </div>
+            <div class="container">
+                <img src="AIRPORT-Why2.webp" alt="ảnh">
+                <div class="content">
+                    <h3>Worry-free</h3>
+                    <p>Book in advance to avoid queue at the airport. With an 
+                        all-inclusive price that covers toll and parking, 
+                        no need to worry of extra charges.
+                    </p>
                 </div>
             </div>
-            <div class="content3">
-                <input type="submit" value="SEARCH">
+            <div class="container">
+                <img src="AIRPORT-Why3.webp" alt="ảnh">
+                <div class="content">
+                    <h3>Selected Partners</h3>
+                    <p>With your comfort as our priority, we have chosen 
+                        to work with only the most experienced players 
+                        in the industry.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="why">
-        <div class="text">
-            <h2>Why book airport transfer or airport transportations 
-                through Flarista?</h2>
-        </div>
-        <div class="container">
-            <img src="AIRPORT-Why1.webp" alt="ảnh">
+        <hr>
+        <div class="partner">
             <div class="content">
-                <h3>Suit Your Needs</h3>
-                <p>With options ranging from private cars to airport buses, find the most suitable ride to get you to or from the airport.</p>
-            </div>
-        </div>
-        <div class="container">
-            <img src="AIRPORT-Why2.webp" alt="ảnh">
-            <div class="content">
-                <h3>Worry-free</h3>
-                <p>Book in advance to avoid queue at the airport. With an 
-                    all-inclusive price that covers toll and parking, 
-                    no need to worry of extra charges.
+                <h2>Airport Transfer Partners</h2>
+                <p>We team up with top domestic and foreign transportation
+                    companies to give you a comfortable ride from and
+                    to the airport.
                 </p>
             </div>
-        </div>
-        <div class="container">
-            <img src="AIRPORT-Why3.webp" alt="ảnh">
-            <div class="content">
-                <h3>Selected Partners</h3>
-                <p>With your comfort as our priority, we have chosen 
-                    to work with only the most experienced players 
-                    in the industry.
-                </p>
+            <div class="img">
+                <div class="dong">
+                    <img src="AIRPORT-Partners1.png" alt="ảnh">
+                    <img src="AIRPORT-Partners2.png" alt="ảnh">
+                    <img src="AIRPORT-Partners3.png" alt="ảnh">
+                </div>
+                <div class="dong">
+                    <img src="AIRPORT-Partners4.png" alt="ảnh">
+                    <img src="AIRPORT-Partners5.png" alt="ảnh">
+                    <img src="AIRPORT-Partners6.png" alt="ảnh">
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="partner">
-        <div class="content">
-            <h2>Airport Transfer Partners</h2>
-            <p>We team up with top domestic and foreign transportation
-                companies to give you a comfortable ride from and
-                to the airport.
+        <div class="convenient">
+            <h2>Convenient Trip with Flarista Airport Transfer</h2>
+            <p>Flarista Travel and Lifestyle SuperApp has elevated the convenience of airport travel
+                with its Airport Transfer service. This feature caters to users seeking a seamless journey
+                 to or from the airport, whether via private cars, taxis, shuttles, or trains. Accessible
+                 through Flarista’s website or app, it simplifies the booking process, ensuring quick access
+                 to trusted transportation partners, including Golden Bird, Big Bird Airport Shuttle, and
+                 international providers like KLIA Express and Conxxe.
             </p>
+            <p> With a range of transport options, users can select services that best fit their needs,
+                supported by transparent price listings and schedules. Popular routes, such as
+                Soekarno-Hatta International Airport to Bandung and Halim Perdanakusuma Airport to
+                Bekasi, are covered by top domestic and foreign operators. Passengers also enjoy benefits
+                like guaranteed waiting times in case of flight delays and all-inclusive pricing, which means
+                no hidden costs for tolls or parking fees.
+            </p>
+            <p> Flarista makes the entire process hassle-free—no need to queue
+                for a ride upon arrival. Just present your Flarista voucher,
+                and you’re ready to go. Whether using public or private transport,
+                Flarista ensures a smooth, worry-free experience for travelers
+                looking to enhance their airport journeys.</p>
         </div>
-        <div class="img">
-            <div class="dong">
-                <img src="AIRPORT-Partners1.png" alt="ảnh">
-                <img src="AIRPORT-Partners2.png" alt="ảnh">
-                <img src="AIRPORT-Partners3.png" alt="ảnh">
-            </div>
-            <div class="dong">
-                <img src="AIRPORT-Partners4.png" alt="ảnh">
-                <img src="AIRPORT-Partners5.png" alt="ảnh">
-                <img src="AIRPORT-Partners6.png" alt="ảnh">
-            </div>
-        </div>
-    </div>
-    <div class="convenient">
-        <h2>Convenient Trip with Flarista Airport Transfer</h2>
-        <p>Flarista Travel and Lifestyle SuperApp has elevated the convenience of airport travel
-            with its Airport Transfer service. This feature caters to users seeking a seamless journey
-             to or from the airport, whether via private cars, taxis, shuttles, or trains. Accessible
-             through Flarista’s website or app, it simplifies the booking process, ensuring quick access
-             to trusted transportation partners, including Golden Bird, Big Bird Airport Shuttle, and
-             international providers like KLIA Express and Conxxe.
-        </p>
-        <p> With a range of transport options, users can select services that best fit their needs,
-            supported by transparent price listings and schedules. Popular routes, such as
-            Soekarno-Hatta International Airport to Bandung and Halim Perdanakusuma Airport to
-            Bekasi, are covered by top domestic and foreign operators. Passengers also enjoy benefits
-            like guaranteed waiting times in case of flight delays and all-inclusive pricing, which means
-            no hidden costs for tolls or parking fees.
-        </p>
-        <p> Flarista makes the entire process hassle-free—no need to queue
-            for a ride upon arrival. Just present your Flarista voucher,
-            and you’re ready to go. Whether using public or private transport,
-            Flarista ensures a smooth, worry-free experience for travelers
-            looking to enhance their airport journeys.</p>
     </div>
     <footer id="pagefooter"></footer>
+    <script src="../../General/Footer/Footer.js"></script>
+    <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
+    <script src="Home.js"></script>
     <script src="Airport.js"></script>
 </body>
+
+</html>

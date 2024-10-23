@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https: //fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="../../General/reset.css">
+    <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../../General/Footer/Footer.css">
+    <link rel="stylesheet" href="Register.css">
+    <title>Flarista</title>
+</head>
+
+<body>
+    <div id="navigationbar"></div><!--link của nav-->
+    <div id="body">
+        <div class="pagebanner bannerlarge">
+            <img src="Accbanner.png" alt="">
+            <div class="pagetitle">REGISTER</div>
+        </div>
+        <div class="registerzone">
+            <div class="reginfos">
+                <div class="resinfo">
+                    <label for="username">Username*</label>
+                    <input type="text" class="reginput" id="reginput1">
+                    <div class="error-message" id="error-username"></div>
+                </div>
+                <div></div>
+                <div class="resinfo">
+                    <label for="password">Password*</label>
+                    <input type="password" class="reginput" id="reginput2">
+                    <div class="error-message" id="error-password"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="confirm">Confirm Password*</label>
+                    <input type="password" class="reginput" id="reginput3">
+                    <div class="error-message" id="error-confirm"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="firstname">First Name*</label>
+                    <input type="text" class="reginput" id="reginput4">
+                    <div class="error-message" id="error-firstname"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="lastname">Last Name*</label>
+                    <input type="text" class="reginput" id="reginput5">
+                    <div class="error-message" id="error-lastname"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="phone">Phone*</label>
+                    <input type="number" class="reginput" id="reginput7">
+                    <div class="error-message" id="error-phone"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="email">Email*</label>
+                    <input type="text" class="reginput" id="reginput8">
+                    <div class="error-message" id="error-email"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="birthdate">Birth Date*</label>
+                    <select id="thang" name="thang">
+                        <option value="" disabled selected>Month</option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+                    <select id="ngay" name="ngay">
+                        <option value="" disabled selected>Date</option>
+                    </select>
+                    <select id="nam" name="nam">
+                        <option value="" disabled selected>Year</option>
+                    </select>
+                    <div class="error-message" id="error-birthdate"></div>
+                </div>
+                <div class="resinfo">
+                    <label for="country">Country*</label>
+                    <input type="text" class="reginput" id="reginput9">
+                    <div class="error-message" id="error-country"></div>
+                </div>
+            </div>
+            <div class="Terms">
+                <span><input type="checkbox"></span>
+                <span>Creating an account means you're okay with our <span> Terms of Service </span>
+                    and <span> Privacy Statement.</span></span>
+            </div>
+            <div id="signupBtn">SIGN UP</div>
+            <div class="fbgg">
+                <div class="fb"><i class="fa-brands fa-facebook"></i> <span>Continute With Facebook</span></div>
+                <div class="gg"><i class="fa-brands fa-google"></i><span>Continute With Google</span></div>
+            </div>
+            <hr>
+
+        </div>
+    </div>
+    <footer id="pagefooter"></footer>
+    <script src="../../General/Footer/Footer.js"></script>
+    <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
+    <script src="Register.js"></script>
+</body>
+
+</html>
