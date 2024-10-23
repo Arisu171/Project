@@ -1,28 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const content = document.getElementById('body-tour-list');
+document.addEventListener("DOMContentLoaded", function () {
+    const destCtrls = document.querySelectorAll(".destctrl");
+    const destinationsZone = document.querySelector(".servicezone");
 
-    function loadPage(file) {
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", file, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    // Thay thế nội dung của `body-tour-list` bằng nội dung mới
-                    content.innerHTML = xhr.responseText;
-                } else {
-                    console.error("Lỗi khi tải trang: " + xhr.status);
-                }
+    // Hàm để loại bỏ các lớp hiện tại và thêm lớp mới
+    function changeActiveClass(elements, activeClass, index) {
+        elements.forEach((el, idx) => {
+            if (idx === index) {
+                el.classList.add(activeClass);
+            } else {
+                el.classList.remove(activeClass);
             }
-        };
-        
-        // Xử lý nếu có lỗi xảy ra
-        xhr.onerror = function() {
-            console.error("Yêu cầu AJAX gặp sự cố.");
-        };
-
-        xhr.send();
+        });
     }
 
-    // Gắn hàm `loadPage` vào toàn cục để có thể truy cập từ các thẻ `a` trong HTML
-    window.loadPage = loadPage;
+    // Hàm để thay đổi trang của destination zone
+    function changeDestinationPage(index) {
+        destinationsZone.className = `contentzone servicezone servicepage${index + 1}`;
+    }
+
+    // Hàm xử lý việc thay đổi trạng thái của destopt và destctrl cùng lúc
+    function updateClasses(index) {
+        changeActiveClass(destCtrls, "ctrlcurrent", index);
+        changeDestinationPage(index);
+    }
+
+    // Xử lý sự kiện khi nhấn các nút destctrl
+    destCtrls.forEach((ctrl, index) => {
+        ctrl.addEventListener("click", () => {
+            updateClasses(index);
+        });
+    });
 });
