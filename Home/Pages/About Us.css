@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     margin: 5vw;
-    gap: 5vw;
+    gap: 0vw 5vw;
 }
 
 .member {
