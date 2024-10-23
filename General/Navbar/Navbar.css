@@ -514,21 +514,33 @@ body a {
 
 .multiconacc#multiconbar1,
 .multiconacc#multiconbar2 {
-    height: 2vw;
-    width: 8vw;
-    padding: 2vw;
-    border-radius: 2vw;
+    padding: 1.75vw;
+    border-radius: 0.1vw;
     text-align: center;
+    width: 8vw;
+    height: 1.5vw;
+    font-size: 1.5vw;
+}
+
+.navusers a.multicon.out#multiconbar2 {
+    color: rgb(255, 125, 147);
+    font-weight: 700;
+}
+
+.navusers a.multicon#multiconbar1 {
+    color: rgb(255, 251, 0);
+    font-weight: 700;
 }
 
 .show#multiconbar1 {
-    top: calc(4.3vw + 5px);
-    left: -6vw;
+    top: calc(4vw + 5px);
+    left: -3.5vw;
 }
 
 .show#multiconbar2 {
-    top: calc(11vw + 5px);
-    left: -6vw;
+    top: calc(9vw + 5px);
+    padding-top: 0.75vw;
+    left: -3.5vw;
 }
 
 #login {
@@ -546,9 +558,24 @@ body a {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     color: rgb(27, 27, 27);
-    transition: opacity 0.3s ease, scale 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+#login.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1000;
+    transition: opacity 0.3s ease 0.1s, transform 0.5s cubic-bezier(.33, 1.88, .63, .91);
+}
+
+#login.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1;
+    transition: opacity 0.4s ease 0.2s, transform 0.5s cubic-bezier(.86, -0.6, 1, .75);
 }
 
 .loginzone {
@@ -573,12 +600,13 @@ body a {
     border: 1px solid var(--color-main);
     border-radius: 100vw;
     height: 10%;
-    padding: 2% 5%;
-    width: 90%;
+    padding: 2% 8%;
+    width: 84%;
     margin: 1.5% 0;
     caret-color: #DD8834;
     color: #e6790c;
     font-weight: 500;
+    font-size: 4em;
 }
 
 #login label {
@@ -626,26 +654,26 @@ input#nickname {
     color: #c06f18;
 }
 
-#login.show {
-    opacity: 1;
-    scale: 1;
-    z-index: 1000;
+#loginback {
+    background-color: rgba(0, 0, 0, 0.01);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
 }
 
-#login.hide {
+#loginback.show {
+    opacity: 1;
+    z-index: 980;
+    scale: 1;
+}
+
+#loginback.hide {
+    z-index: -1;
     opacity: 0;
     scale: 0;
-    z-index: -1;
-}
-
-.navusers a.multicon.out#multiconbar2 {
-    color: rgb(255, 125, 147);
-    font-weight: 700;
-}
-
-.navusers a.multicon#multiconbar1 {
-    color: rgb(255, 251, 0);
-    font-weight: 700;
 }
 
 .multiconacc.multicon {
