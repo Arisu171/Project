@@ -2,46 +2,19 @@
     --p-anh-font-size:5vw;
     --h5-font-size:1.5rem;
     --color-black:rgb(27, 26, 26);
-    --h3-font-size:2rem;
-    --h2-font-size:2.5rem;
+    --h3-font-size:1.5rem;
+    --h2-font-size:2.8rem;
     --h4-font-size:1rem;
 }
 /*phần ảnh đầu*/
-body{
-    font-size:16px;
-}
-#img{
-    height:100vh;
-    overflow:hidden;
-    position: relative;
-}
-#img img{
-    background-size:cover;
-    width:100%;
-    position:absolute;
-    top:0px;
-    left:0px;
-    z-index:0;
-    object-fit: cover;
-    position: absolute;
-}
-#img h1{
-    font-size:var(--p-anh-font-size);
-    font-weight:800;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    position: absolute; /* Đặt vị trí tuyệt đối */
-    top: 50%;
-    left: 5%;
-    color:white;
-    transform: translateY(-50%);
+html{
+    font-size:1vw;
 }
 /*phần book*/
 #book{
-    margin:5rem;
+    margin:3.5rem;
     height:auto;
-    width:90%;
+    width:80%;
     margin-left:auto;
     margin-right:auto;
     background-color: white;
@@ -86,16 +59,18 @@ body{
     width:100%;
     height:4rem;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.8rem;
     box-sizing: border-box;
 }
-#book .book .content1 .airport .main img{
+#book .book .content1 .airport .main i{
+    font-size:1.3rem;
+    font-weight: 300;
     position:absolute;
     display:inline-block;
-    top:45%;
+    top:50%;
     pointer-events: none;
-    padding:5px;
-    transform: translateY(-45%);
+    padding:0.5rem;
+    transform: translateY(-50%);
 }
 /*book content 1 phần button*/
 #book .book .content1 .button{
@@ -138,14 +113,18 @@ body{
     height:4rem;
     border:1px solid black;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.5rem;
     box-sizing: border-box;
 }
-#book .book .content1 .area .main img{
+#book .book .content1 .area .main i{
+    font-size:1.3rem;
+    font-weight: 300;
     position:absolute;
-    top:45%;
-    padding:5px;
-    transform: translateY(-45%);
+    display:inline-block;
+    top:50%;
+    pointer-events: none;
+    padding:0.5rem;
+    transform: translateY(-50%);
 }
 
 /*book content 2 date*/
@@ -158,7 +137,7 @@ body{
     margin:1rem;
 }
 #book .book .content2 .date{
-    width:41.5%;
+    width:40.8%;
 }
 #book .book .content2 .date .text{
     margin-bottom: 1rem;
@@ -173,20 +152,22 @@ body{
     width:100%;
     height:4rem;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.5rem;
     box-sizing: border-box;
 }
-#book .book .content2 .date .main img{
+#book .book .content2 .date .main i{
+    font-size:1.3rem;
+    font-weight: 300;
     position:absolute;
     display:inline-block;
-    top:45%;
+    top:48%;
     pointer-events: none;
-    padding:5px;
+    padding:0.5rem;
     transform: translateY(-50%);
 }
 /*book content 2 time*/
 #book .book .content2 .time{
-    width:41.8%;
+    width:41%;
 }
 #book .book .content2 .time .main{
     position: relative;
@@ -195,19 +176,21 @@ body{
     margin-bottom: 1rem;
 }
 #book .book .content2 .time .main input{
-    width:30%;
+    width:40%;
     height:4rem;
     border:1px solid black;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.5rem;
     box-sizing: border-box;
 }
-#book .book .content2 .time .main img{
+#book .book .content2 .time .main i{
+    font-size:1.3rem;
+    font-weight: 300;
     position:absolute;
     display:inline-block;
     top:50%;
     pointer-events: none;
-    padding:5px;
+    padding:0.5rem;
     transform: translateY(-50%);
 }
 #book .book .content2 .time .main .dropdown {
@@ -236,7 +219,7 @@ body{
 #book .book .content3 input{
     display:block;
     width:10rem;
-    height:4rem;
+    height:3rem;
     border:none;
     border-radius: 10px;
     box-sizing: border-box; 
@@ -249,11 +232,11 @@ body{
     background-color:var(--color-main-hover);
 }
 #book .book .content3 input:active{
-    background-color:var(--color-main-hover);
+    background-color:var(--color-main-active);
 }
 /*why chung*/
 .why{
-    width:80%;
+    width:75%;
     margin-left:auto;
     margin-right:auto;
 }
@@ -320,7 +303,7 @@ hr{
     margin-bottom:1rem;
 }
 .partner .content p{
-    font-size:1.8rem;
+    font-size:1.5rem;
     font-weight: 300;
 }
 .partner .img{
@@ -330,7 +313,7 @@ hr{
     margin-top:3rem;
 }
 .partner .img img{
-    width:32%;
+    width:30%;
     height:auto;
 }
 /*convenient*/
@@ -351,5 +334,8 @@ hr{
     margin:1rem;
     text-align: center;
     font-weight:400;
-    font-size:larger;
+    font-size:1.3rem;
+}
+@media only screen and (max-width: 740px)/*web mobile*/{
+    
 }

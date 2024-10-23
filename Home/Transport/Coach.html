@@ -1,275 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coach-Transport</title>
-    <link rel="stylesheet" href="/project/General/reset.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="../../General/reset.css">
     <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
     <link rel="stylesheet" href="Coach.css">
-    
+
+    <title>Flarista-Coach</title>
 </head>
+
 <body>
-    <div id="navigationbar"></div>
-    <script src="../../General/Navbar/Navbar.js"></script>
-    <div id="img">
-        <img src="BACK-MAIN.jpg">
-        <h1>BUS & SHUTTLE</h1>
-    </div>
-
-    <div id="book">
-        <div class="book">
-            <div class="text">
-                <h3>Bus & Shuttle Ticket</h3>
+    <header>
+        <div id="navigationbar"></div>
+        <div class="pagebanner bannerlarge">
+            <img src="BACK-MAIN.jpg" alt="anh">
+            <div class="pagetitle">BUS & SHUTTLE</div>
+        </div>
+    </header>
+    <div id="body">
+        <div id="book">
+            <div class="book">
+                <div class="text">
+                    <h3>Bus & Shuttle Ticket</h3>
+                </div>
+                <div class="content1">
+                    <div class="from">
+                        <div class="text">
+                            <h4>From</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-light fa-bus"></i>
+                            <input type="text"id="from-input" placeholder="Enter City, Terminal, or other">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button type="button"id="swap-button">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+    
+                    <div class="to">
+                        <div class="text">
+                            <h4>To</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-light fa-bus"></i>
+                            <input type="text"  id="to-input" placeholder="Enter City, Terminal, or other">
+                        </div>
+                    </div>
+                </div>
+                <div class="content2">
+                    <div class="date">
+                        <div class="text">
+                            <h4>Date</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-light fa-calendar-days"></i>
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="check">
+                        <div class="text">
+                            <h4>Roundtrip</h4>
+                        </div>
+                        <label>
+                            <input type="checkbox">
+                            <i class="fa-thin fa-check"></i>
+                        </label>
+                    </div>
+                    <div class="seat">
+                        <div class="text">
+                            <h4>No. of Seats</h4>
+                        </div>
+                        <div class="main">
+                            <i class="fa-light fa-user"></i>
+                            <input type="text" id="seat-input" readonly>
+                            <div class="dropdown" id="dropdown">
+                                <div class="option">1 </div>
+                                <div class="option">2 </div>
+                                <div class="option">3 </div>
+                                <div class="option">4 </div>
+                                <div class="option">5 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content3">
+                    <input type="submit" value="SEARCH">
+                </div>
             </div>
+        </div>
+        <hr>
+        <div id="why">
+            <div class="h2">
+                <h2>Why buy bus & shuttle tickets online at Flarista?</h2>
+            </div>
+            <div class="content content1">
+                <div class="img">
+                    <img src="why-coach-1.webp">
+                </div>
+                <div class="text">
+                    <h3>Hassle-free</h3>
+                    <p>Buy bus and shuttle tickets anytime and anywhere with Flarista. No more wasting time going to the terminal or agent office, now you can buy tickets from the comfort of home.</p>
+                </div>
+            </div>
+            <div class="content content2">
+                <div class="text">
+                    <h3>24-hour Customer Service</h3>
+                    <p>We provide 24-hour Customer Service. So, anytime you have a problem or question, call, chat, or send us a message from your Flarista App. We’ll be there, always</p>
+                </div>
+                <div class="img">
+                    <img src="why-coach-2.webp">
+                </div>
+            </div>
+            <div class="content content3">
+                <div class="img">
+                    <img src="why-coach-3.webp">
+                </div>
+                <div class="text">
+                    <h3>Complete Info</h3>
+                    <p>From bus and shuttle schedules, routes, boarding and arrival points, and ticket prices, to their photos and facilities, you can find them all at Flarista. We give a complete info to help you decide the best bus or shuttle for you.</p>
+                </div>
+            </div>
+            <div class="content content4">
+                <div class="text">
+                    <h3>Easy Payment</h3>
+                    <p>Whether you want to pay via bank transfer, credit card, or with cash at your favorite mini markets, we’ve got you covered.</p>
+                </div>
+                <div class="img">
+                    <img src="why-coach-4.webp">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="popular">
             <div class="content1">
-                <div class="from">
-                    <div class="text">
-                        <h4>From</h4>
+                <h2>Popular Shuttle Destination</h2>
+                <div class="anh">
+                    <div class="container">
+                        <div class="card">
+                            <img src="Bus-Vũng Tàu.png" alt="Vũng Tàu">
+                            <div></div>
+                            <p>Shuttle Ticket to Vũng Tàu</p>
+                        </div>
+                        <div class="card">
+                            <img src="Bus-Đà Lạt.png" alt="Đà Lạt">
+                            <div></div>
+                            <p>Shuttle Ticket to Đà Lạt</p>
+                        </div>
+                        <div class="card">
+                            <img src="Bus-Nha Trang.png" alt="Nha Trang">
+                            <div></div>
+                            <p>Shuttle Ticket to Nha Trang</p>
+                        </div>
                     </div>
-                    <div class="main">
-                        <img src="BUS-From.To.svg">
-                        <input type="text"id="from-input" placeholder="Enter City, Terminal, or other">
-                    </div>
-                </div>
-                <div class="button">
-                    <button type="button"id="swap-button">
-                        <i class="fa-solid fa-rotate"></i>
-                    </button>
-                </div>
-
-                <div class="to">
-                    <div class="text">
-                        <h4>To</h4>
-                    </div>
-                    <div class="main">
-                        <img src="BUS-From.To.svg">
-                        <input type="text"  id="to-input" placeholder="Enter City, Terminal, or other">
-                    </div>
-                </div>
-            </div>
-            <div class="content2">
-                <div class="date">
-                    <div class="text">
-                        <h4>Date</h4>
-                    </div>
-                    <div class="main">
-                        <img src="BUS-Date.svg">
-                        <input type="date">
-                    </div>
-                </div>
-                <div class="check">
-                    <div class="text">
-                        <h4>Roundtrip</h4>
-                    </div>
-                    <button type="button">
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                </div>
-                <div class="seat">
-                    <div class="text">
-                        <h4>No. of Seats</h4>
-                    </div>
-                    <div class="main">
-                        <img  src="BUS-Seat.svg">
-                        <input type="text" id="seat-input" readonly>
-                        <div class="dropdown" id="dropdown">
-                            <div class="option">1 </div>
-                            <div class="option">2 </div>
-                            <div class="option">3 </div>
-                            <div class="option">4 </div>
-                            <div class="option">5 </div>
+                    <div class="container">
+                        <div class="card">
+                            <img src="Bus-Phan Thieets.png" alt="Phan Thiết">
+                            <div></div>
+                            <p>Shuttle Ticket to Phan Thiết</p>
+                        </div>
+                        <div class="card">
+                            <img src="Bus-TP.HCM.png" alt="TP.HCM">
+                            <div></div>
+                            <p>Shuttle Ticket to TP.HCM</p>
+                        </div>
+                        <div class="card">
+                            <img src="Bus-Da Nang.png" alt="Đà Nẵng">
+                            <div></div>
+                            <p>Shuttle Ticket to Đà Nẵng</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="content3">
-                <input type="submit" value="SEARCH">
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div id="why">
-        <div class="h2">
-            <h2>Why buy bus & shuttle tickets online at Flarista?</h2>
-        </div>
-        <div class="content content1">
-            <div class="img">
-                <img src="why-coach-1.webp">
-            </div>
-            <div class="text">
-                <h3>Hassle-free</h3>
-                <p>Buy bus and shuttle tickets anytime and anywhere with Flarista. No more wasting time going to the terminal or agent office, now you can buy tickets from the comfort of home.</p>
-            </div>
-        </div>
-        <div class="content content2">
-            <div class="text">
-                <h3>24-hour Customer Service</h3>
-                <p>We provide 24-hour Customer Service. So, anytime you have a problem or question, call, chat, or send us a message from your Flarista App. We’ll be there, always</p>
-            </div>
-            <div class="img">
-                <img src="why-coach-2.webp">
-            </div>
-        </div>
-        <div class="content content3">
-            <div class="img">
-                <img src="why-coach-3.webp">
-            </div>
-            <div class="text">
-                <h3>Complete Info</h3>
-                <p>From bus and shuttle schedules, routes, boarding and arrival points, and ticket prices, to their photos and facilities, you can find them all at Flarista. We give a complete info to help you decide the best bus or shuttle for you.</p>
-            </div>
-        </div>
-        <div class="content content4">
-            <div class="text">
-                <h3>Easy Payment</h3>
-                <p>Whether you want to pay via bank transfer, credit card, or with cash at your favorite mini markets, we’ve got you covered.</p>
-            </div>
-            <div class="img">
-                <img src="why-coach-4.webp">
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div id="popular">
-        <div class="content1">
-            <h2>Popular Shuttle Destination</h2>
-            <div class="anh">
-                <div class="container">
-                    <div class="card">
-                        <img src="Bus-Vũng Tàu.png" alt="Vũng Tàu">
-                        <div></div>
-                        <p>Shuttle Ticket to Vũng Tàu</p>
-                    </div>
-                    <div class="card">
-                        <img src="Bus-Đà Lạt.png" alt="Đà Lạt">
-                        <div></div>
-                        <p>Shuttle Ticket to Đà Lạt</p>
-                    </div>
-                    <div class="card">
-                        <img src="Bus-Nha Trang.png" alt="Nha Trang">
-                        <div></div>
-                        <p>Shuttle Ticket to Nha Trang</p>
-                    </div>
+            <div class="content2">
+                <h2>Popular Shuttle Destination</h2>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Shuttle tickets from</th>
+                            </tr>
+                            <tr>
+                                <th>Ha Noi to:</th>
+                                <th>Price from:</th>
+                            </tr>
+                            <th class="thead-img" colspan="2">
+                                <div></div>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="javascript:void(0);">Quang Ninh</a></td>
+                                <td>260.000 VND</td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:void(0);">Sapa</a></td>
+                                <td>200.000 VND</td>
+                            </tr>
+                            <tr>
+                                <td><a href="">Vinh</a></td>
+                                <td>320.000 VND</td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th  colspan="2">Nha Trang to:</th>
+                            </tr>
+                            <tr>
+                                <th>Nha Trang to</th>
+                                <th>Price from:</th>
+                            </tr>
+                            <th class="thead-img" colspan="2">
+                                <div></div>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="javascript:void(0);">Tp.HCM</a></td>
+                                <td>260.000 VND</td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:void(0);">Da Lat</a></td>
+                                <td>200.000 VND</td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:void(0);">Da Nang</a></td>
+                                <td>320.000 VND</td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th  colspan="2">Shuttle tickets from</th>
+                            </tr>
+                            <tr>
+                                <th>Tp.HCM to:</th>
+                                <th>Price from:</th>
+                            </tr>
+                            <th class="thead-img" colspan="2">
+                                <div></div>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="javascript:void(0);">Da Lat</a></td>
+                                <td>260.000 VND</td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:void(0);">Vung Tau</a></td>
+                                <td>200.000 VND</td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:void(0);">Ha Noi</a></td>
+                                <td>320.000 VND</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="container">
-                    <div class="card">
-                        <img src="Bus-Phan Thieets.png" alt="Phan Thiết">
-                        <div></div>
-                        <p>Shuttle Ticket to Phan Thiết</p>
-                    </div>
-                    <div class="card">
-                        <img src="Bus-TP.HCM.png" alt="TP.HCM">
-                        <div></div>
-                        <p>Shuttle Ticket to TP.HCM</p>
-                    </div>
-                    <div class="card">
-                        <img src="Bus-Da Nang.png" alt="Đà Nẵng">
-                        <div></div>
-                        <p>Shuttle Ticket to Đà Nẵng</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content2">
-            <h2>Popular Shuttle Destination</h2>
-            <div class="table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="2">Shuttle tickets from</th>
-                        </tr>
-                        <tr>
-                            <th>Ha Noi to:</th>
-                            <th>Price from:</th>
-                        </tr>
-                        <th class="thead-img" colspan="2">
-                            <div></div>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="javascript:void(0);">Quang Ninh</a></td>
-                            <td>260.000 VND</td>
-                        </tr>
-                        <tr>
-                            <td><a href="javascript:void(0);">Sapa</a></td>
-                            <td>200.000 VND</td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Vinh</a></td>
-                            <td>320.000 VND</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th  colspan="2">Nha Trang to:</th>
-                        </tr>
-                        <tr>
-                            <th>Nha Trang to</th>
-                            <th>Price from:</th>
-                        </tr>
-                        <th class="thead-img" colspan="2">
-                            <div></div>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="javascript:void(0);">Tp.HCM</a></td>
-                            <td>260.000 VND</td>
-                        </tr>
-                        <tr>
-                            <td><a href="javascript:void(0);">Da Lat</a></td>
-                            <td>200.000 VND</td>
-                        </tr>
-                        <tr>
-                            <td><a href="javascript:void(0);">Da Nang</a></td>
-                            <td>320.000 VND</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th  colspan="2">Shuttle tickets from</th>
-                        </tr>
-                        <tr>
-                            <th>Tp.HCM to:</th>
-                            <th>Price from:</th>
-                        </tr>
-                        <th class="thead-img" colspan="2">
-                            <div></div>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="javascript:void(0);">Da Lat</a></td>
-                            <td>260.000 VND</td>
-                        </tr>
-                        <tr>
-                            <td><a href="javascript:void(0);">Vung Tau</a></td>
-                            <td>200.000 VND</td>
-                        </tr>
-                        <tr>
-                            <td><a href="javascript:void(0);">Ha Noi</a></td>
-                            <td>320.000 VND</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
     <footer id="pagefooter"></footer>
+    <script src="../../General/Footer/Footer.js"></script>
+    <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
+    <script src="Home.js"></script>
     <script src="Coach.js"></script>
 </body>
+
 </html>

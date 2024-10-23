@@ -1,5 +1,5 @@
 :root{
-    --p-anh-font-size:5vw;
+    --p-anh-font-size:5rem;
     --h5-font-size:1.5rem;
     --color-main:#DD8834;
     --color-black:rgb(27, 26, 26);
@@ -10,40 +10,13 @@
 }
 /*phần ảnh đầu*/
 body{
-    font-size:16px;
-}
-#img{
-    height:100vh;
-    overflow:hidden;
-    position: relative;
-}
-#img img{
-    background-size:cover;
-    width:100%;
-    position:absolute;
-    top:0px;
-    left:0px;
-    z-index:0;
-    object-fit: cover;
-    position: absolute;
-}
-#img h1{
-    font-size:var(--p-anh-font-size);
-    font-weight:800;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    position: absolute; /* Đặt vị trí tuyệt đối */
-    top: 50%;
-    left: 5%;
-    color:white;
-    transform: translateY(-50%);
+    font-size:1vw;
 }
 /*phần book*/
 #book{
     margin:5rem;
     height:auto;
-    width:90%;
+    width:80%;
     margin-left:auto;
     margin-right:auto;
     background-color: white;
@@ -88,16 +61,18 @@ body{
     width:100%;
     height:4rem;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.8rem;
     box-sizing: border-box;
 }
-#book .book .content1 .from .main img{
+#book .book .content1 .from .main i{
+    font-size:1.3rem;
+    font-weight: 300;
     position:absolute;
     display:inline-block;
-    top:45%;
+    top:50%;
     pointer-events: none;
-    padding:5px;
-    transform: translateY(-45%);
+    padding:0.5rem;
+    transform: translateY(-50%);
 }
 /*book content 1 phần button*/
 #book .book .content1 .button{
@@ -140,14 +115,18 @@ body{
     height:4rem;
     border:1px solid black;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.8rem;
     box-sizing: border-box;
 }
-#book .book .content1 .to .main img{
+#book .book .content1 .to .main i{
+    font-size:1.3rem;
+    font-weight: 300;
     position:absolute;
-    top:45%;
-    padding:5px;
-    transform: translateY(-45%);
+    display:inline-block;
+    top:50%;
+    pointer-events: none;
+    padding:0.5rem;
+    transform: translateY(-50%);
 }
 /*book content 2*/
 #book .book .content2{
@@ -174,20 +153,22 @@ body{
     width:100%;
     height:4rem;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.8rem;
     box-sizing: border-box;
 }
-#book .book .content2 .date .main img{
+#book .book .content2 .date .main i{
+    font-size:1.5rem;
+    font-weight: 300;
     position:absolute;
     display:inline-block;
-    top:45%;
+    top:50%;
     pointer-events: none;
-    padding:5px;
+    padding:0.5rem;
     transform: translateY(-50%);
 }
 /*book content2 check*/
 #book .book .content2 .check{
-    width:15%;
+    width:10%;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -197,14 +178,22 @@ body{
 #book .book .content2 .check .text{
     margin-bottom: 1rem;
 }
-#book .book .content2 .check button{
-    top:35%;
-    position:absolute;
-    width:50%;
-    height:50%;
+#book .book .content2 .check label{
+    position:relative;
+    width:30%;
+    height:30%;
 }
-#book .book .content2 .check button i{
-    font-size: 1.5rem;
+#book .book .content2 .check label input{
+    width:100%;
+    height:100%;
+}
+#book .book .content2 .check label i{
+    font-size: 0.5rem;
+    display:none;
+}
+#book .book .content2 .check label input:checked i{
+    display: inline-block; 
+    color: green;
 }
 /*book content 2 seat*/
 #book .book .content2 .seat{
@@ -221,15 +210,17 @@ body{
     height:4rem;
     border:1px solid black;
     border-radius: 5px;
-    padding-left:2rem;
+    padding-left:2.8rem;
     box-sizing: border-box;
 }
-#book .book .content2 .seat .main img{
+#book .book .content2 .seat .main i{
+    font-size:1.5rem;
+    font-weight: 300;
     position:absolute;
     display:inline-block;
     top:50%;
     pointer-events: none;
-    padding:5px;
+    padding:0.5rem;
     transform: translateY(-50%);
 }
 #book .book .content2 .seat .main .dropdown {

@@ -2,6 +2,7 @@
     --p-anh-font-size: 5vw;
     --color-black: rgb(27, 26, 26);
     --h2-font-size: 1.1rem;
+    --h2-font-size-mobile:3.5rem;
 }
 
 /*phần ảnh đầu*/
@@ -74,4 +75,36 @@ html {
     font-size:var(--h2-font-size);
     color:white;
     display:none;
+}
+@media only screen and (max-width: 740px)/*web mobile*/ {
+    .blog-content{
+        display:flex;
+        flex-direction: flex;
+        width:70%;
+        margin-left:auto;
+        margin-right:auto;
+        box-sizing: border-box;
+    }
+    .blog-content .container{
+        display:flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .blog-content .container .child{
+        width:100%;
+        height:auto;
+        margin-right:0px;
+        margin-left:0px;
+        background:none;
+    }
+    .blog-content .container .child .img{
+        width:100%;
+    }
+    .blog-content .container .child .img img{
+        width:100%;
+        height:100%;
+    }
+    .blog-content .container .child h2{
+        font-size:var(--h2-font-size-mobile);
+    }
 }
