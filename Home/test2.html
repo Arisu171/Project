@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="../../General/reset.css">
+    <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../../General/Footer/Footer.css">
+    <link rel="stylesheet" href="NAME.css">
+    <title>Flarista</title>
+</head>
+
+<body>
+    <div id="body">
+        <div class="pagebanner banner">
+            <img src="Pagesbanner.png" alt="">
+            <div class="pagetitle">ABOUT US</div>
+        </div>
+    </div>
+    <!-- <script src="../../General/Footer/Footer.js"></script>
+    <script src="../../General/Navbar/Navbar.js"></script> -->
+    <script>
+        function loadTesstContent() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "tesst.html", true); // Đảm bảo đường dẫn đúng
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = xhr.responseText;
+                        console.log("Nội dung từ tesst.html:", xhr.responseText);
+
+                        var tesstBodyContent = tempDiv.querySelector('#body');
+
+                        if (tesstBodyContent) {
+                            // Chèn nội dung từ tesst.html vào vị trí id="bodie" của test2.html
+                            document.getElementById('body').innerHTML = tesstBodyContent.innerHTML;
+                            console.log("Nội dung đã được chèn vào #body.");
+                        } else {
+                            console.warn("Không tìm thấy phần tử #body trong tesst.html.");
+                        }
+
+                        // Thêm các tệp CSS và JS từ tesst.html
+                        addTesstResources();
+                    } else {
+                        console.error("Lỗi khi tải tesst.html. Mã trạng thái:", xhr.status);
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function addTesstResources() {
+            // Thêm CSS
+            addCSS("tesst.css");
+            addCSS("Banner.css");
+
+            // Thêm JavaScript
+            addScript("tesst.js");
+            addScript("Banner.js");
+        }
+
+        function addCSS(file) {
+            if (!document.querySelector(`link[href="${file}"]`)) {
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = file;
+                document.head.appendChild(link);
+                console.log("Đã thêm CSS:", file);
+            }
+        }
+
+        function addScript(file) {
+            if (!document.querySelector(`script[src="${file}"]`)) {
+                var script = document.createElement('script');
+                script.src = file;
+                document.body.appendChild(script);
+                console.log("Đã thêm JavaScript:", file);
+            }
+        }
+
+        window.onload = function () {
+            loadTesstContent();
+        };
+
+    </script>
+</body>
+
+</html>
