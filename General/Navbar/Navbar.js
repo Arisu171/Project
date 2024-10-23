@@ -328,6 +328,8 @@ window.onload = function () {
         el.onmousedown = dragMouseDown;
         el.ontouchstart = dragTouchStart;
 
+        window.addEventListener("resize", updatePositionOnResize);
+
         function dragMouseDown(e) {
             e.preventDefault();
             startDrag(e.clientX, e.clientY);
@@ -374,6 +376,10 @@ window.onload = function () {
             document.ontouchend = null;
             document.ontouchmove = null;
 
+            updateElementPosition();
+        }
+
+        function updateElementPosition() {
             const currentY = el.offsetTop;
             const windowHeight = window.innerHeight;
             let newY = currentY;
@@ -405,12 +411,15 @@ window.onload = function () {
                     element.id = newId;
                 });
             }
-
             setTimeout(() => {
                 el.style.left = newX + "px";
                 el.style.top = newY + "px";
                 dragging = false;
             }, 100);
+        }
+
+        function updatePositionOnResize() {
+            updateElementPosition();
         }
     }
 
