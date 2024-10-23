@@ -20,7 +20,7 @@
     color: rgb(255, 0, 34);
 }
 
-label {
+.registerzone label {
     display: block;
     margin: 0 0 0.5vw;
     font-size: 1.5em;
@@ -38,8 +38,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-input,
-select {
+.registerzone input,
+.registerzone select {
     border: 0.05vw solid #ffd2ac;
     font-size: 1.4em;
     padding: 0.8vw 1.5vw;
@@ -50,7 +50,7 @@ select {
     border-radius: 0.5vw;
 }
 
-select {
+.registerzone select {
     width: 30%;
     cursor: pointer;
     padding: 0.5vw 1vw;
@@ -60,7 +60,7 @@ select {
     margin: 0 4%;
 }
 
-option {
+.registerzone option {
     cursor: pointer;
 }
 
