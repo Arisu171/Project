@@ -146,7 +146,7 @@ window.onload = function () {
         var pagefooter = document.getElementById('pagefooter');
         if (pagefooter) {
             pagefooter.innerHTML = `
-        <div id="loginback"></div>
+        <div id="loginback" class="hide"></div> 
         <div class="login hide" id="login">
             <div class="loginzone">
                 <div class="logintitle">SIGN IN</div>
@@ -243,9 +243,12 @@ window.onload = function () {
                     toggleMulticons('.multiconacc');
                 } else {
                     const loginElement = document.getElementById('login');
+                    const loginBack = document.getElementById('loginback');
                     if (loginElement) {
                         loginElement.classList.add('show');
                         loginElement.classList.remove('hide');
+                        loginBack.classList.add('show');
+                        loginBack.classList.remove('hide');
                     }
                 }
             });
@@ -434,12 +437,23 @@ window.onload = function () {
 
             // Ẩn phần tử login
             const loginElement = document.getElementById('login');
+            const loginBack = document.getElementById('loginback');
             if (loginElement) {
                 loginElement.classList.remove('show');
                 loginElement.classList.add('hide');
+                loginBack.classList.remove('show');
+                loginBack.classList.add('show');
             }
         } else {
             alert("Invalid login. Please try again.");
         }
     }
+    const loginBack = document.getElementById('loginback');
+    const loginElement = document.getElementById('login');
+    loginBack.addEventListener('click', () => {
+        loginBack.classList.remove('show');
+        loginElement.classList.remove('show');
+        loginBack.classList.add('hide');
+        loginElement.classList.add('hide');
+    });
 };
