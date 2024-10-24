@@ -478,7 +478,6 @@ function clearPreviousResources() {
         '../General/reset.css',
         'main.css',
         'Banner.css',
-        'Home.css',
     ];
     const jsToKeep = [
         'main.js',
