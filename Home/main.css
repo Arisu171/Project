@@ -1,11 +1,10 @@
 html {
-    font-family: Montserrat;
     scroll-behavior: smooth;
-    caret-color: transparent;
     cursor: default;
     background-color: rgb(27, 27, 27);
     font-size: 1vw;
 }
+
 
 ::-webkit-scrollbar {
     width: 0.8vw;
@@ -579,7 +578,7 @@ div.show#rmulticon8 {
 .logintitle {
     text-align: center;
     font-size: 6em;
-    font-family: 'jost';
+    font-family: jost;
     font-weight: 600;
     color: var(--color-main-hover);
     margin-bottom: 10%;
