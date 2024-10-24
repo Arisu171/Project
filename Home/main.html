@@ -12,7 +12,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -26,6 +27,7 @@
 
 <body>
     <div id="navigationbar">
+        <div class="fade-overlay"></div>
         <div id="shadow"></div>
         <div class="navbar">
             <div class="navleft"><a href="#bannerimg1"></a></div>
@@ -57,7 +59,7 @@
                     <div class="navuser">
                         <i class="fa fa-user"></i>
                     </div>
-                    <div onclick="loadAccount()" class="multicon multiconacc hide" id="multiconbar1">
+                    <div onclick="loadDashboard()" class="multicon multiconacc hide" id="multiconbar1">
                         <div>Account</div>
                     </div>
                     <div onclick="logOut()" class="multicon multiconacc hide out" id="multiconbar2">
@@ -129,7 +131,7 @@
                 <div class="navuser navitem navhide" id="navuser">
                     <i class="fa fa-user"></i>
                 </div>
-                <div onclick="loadAccount()" class="multicon multiconacc hide" id="rmulticon7">
+                <div onclick="loadDashboard()" class="multicon multiconacc hide" id="rmulticon7">
                     <i class="fa-duotone fa-solid fa-user"></i>
                 </div>
                 <div onclick="logOut()" class="multicon multiconacc hide out" id="rmulticon8">
@@ -137,9 +139,240 @@
                 </div>
             </div>
         </div>
+
     </div><!--link của nav-->
     <div id="body">
-
+        <div class="homebanner" id="homebanner">
+            <img src="Banner-1.png" alt="" class="bannerimg bannerimg1" id="bannerimg1">
+            <img src="Banner-2.png" alt="" class="bannerimg bannerimg2" id="bannerimg2">
+            <img src="Banner-3.png" alt="" class="bannerimg bannerimg3" id="bannerimg3">
+            <img src="Banner-4.png" alt="" class="bannerimg bannerimg4" id="bannerimg4">
+            <img src="Banner-5.png" alt="" class="bannerimg bannerimg5" id="bannerimg5">
+            <div class="bannercontrol" id="bannercontrolprev" onclick="prev()">
+                <i class="fa-solid fa-circle-chevron-left"></i>
+            </div>
+            <div class="bannercontrol" id="bannercontrolnext" onclick="next()">
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+            <div class="bannercurrent">
+                <div id="bannercurent1"><i class="fa-solid fa-circle"></i></div>
+                <div id="bannercurent2"><i class="fa-regular fa-circle"></i></div>
+                <div id="bannercurent3"><i class="fa-regular fa-circle"></i></div>
+                <div id="bannercurent4"><i class="fa-regular fa-circle"></i></div>
+                <div id="bannercurent5"><i class="fa-regular fa-circle"></i></div>
+            </div>
+            <div class="bannercontent">
+                <div class="bannertitle">
+                    <div id="line1">Extraordinary natural</div>
+                    <div id="line2">and cultural charm</div>
+                </div>
+                <div class="bannerbio">Exploring Vietnam is an unforgettable adventure</div>
+                <div class="bannersearchbar">
+                    <div id="bannersearchbarleft">
+                        <div class="searchbaroption" id="searchbaroption1">
+                            <i class="fa-light fa-calendar-days"></i>
+                            <div class="optext">Date</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="searchbaroption" id="searchbaroption2">
+                            <i class="fa-regular fa-wallet"></i>
+                            <div class="optext">Budget</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="searchbaroption" id="searchbaroption3">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="optext">People</div>
+                        </div>
+                    </div>
+                    <div class="searchbarinput">
+                        <input type="text" placeholder="SEARCH">
+                        <i class="fa-regular fa-circle" id="searchiconx"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="underbanner">
+            <div class="undertop">
+                <div class="undertopitem" id="undertopitem1">
+                    <div class="undertoptext">50+ DESTINATIONS</div>
+                </div>
+                <div class="undertopitem" id="undertopitem2">
+                    <div class="undertoptext">BEST PRICE GUARANTEE</div>
+                </div>
+                <div class="undertopitem" id="undertopitem3">
+                    <div class="undertoptext">GREAT CUSTOMER</div>
+                </div>
+                <div class="undertopitem" id="undertopitem4">
+                    <div class="undertoptext">SUPER FAST BOOKING</div>
+                </div>
+            </div>
+            <div class="underbot">
+                <img src="BodyHoiAn.png" alt="" class="underbotimg">
+                <div class="underbotlist">
+                    <div class="underbotitem" id="underbotitem1">
+                        <label for="Keywords" class="underbotlabel">Keywords</label>
+                        <select class="underbotinputlist">
+                            <option value="" class="underbotlistitem">Option 1</option>
+                            <option value="" class="underbotlistitem">Option 2</option>
+                            <option value="" class="underbotlistitem">Option 3</option>
+                            <option value="" class="underbotlistitem">Option 4</option>
+                            <option value="" class="underbotlistitem">Option 5</option>
+                        </select>
+                    </div>
+                    <div class="underbotitem" id="underbotitem2">
+                        <label for="Activity" class="underbotlabel">Activity</label>
+                        <select class="underbotinputlist">
+                            <option value="" class="underbotlistitem">Option 1</option>
+                            <option value="" class="underbotlistitem">Option 2</option>
+                            <option value="" class="underbotlistitem">Option 3</option>
+                            <option value="" class="underbotlistitem">Option 4</option>
+                            <option value="" class="underbotlistitem">Option 5</option>
+                        </select>
+                    </div>
+                    <div class="underbotitem" id="underbotitem3">
+                        <label for="Destinations" class="underbotlabel">Destination</label>
+                        <select class="underbotinputlist">
+                            <option value="" class="underbotlistitem">Option 1</option>
+                            <option value="" class="underbotlistitem">Option 2</option>
+                            <option value="" class="underbotlistitem">Option 3</option>
+                            <option value="" class="underbotlistitem">Option 4</option>
+                            <option value="" class="underbotlistitem">Option 5</option>
+                        </select>
+                    </div>
+                    <div class="underbotitem" id="underbotitem4">
+                        <label for="Duration" class="underbotlabel">Duration</label>
+                        <select class="underbotinputlist">
+                            <option value="" class="underbotlistitem">Option 1</option>
+                            <option value="" class="underbotlistitem">Option 2</option>
+                            <option value="" class="underbotlistitem">Option 3</option>
+                            <option value="" class="underbotlistitem">Option 4</option>
+                            <option value="" class="underbotlistitem">Option 5</option>
+                        </select>
+                    </div>
+                    <div class="underbotitem" id="underbotitem5">
+                        <label for="Date" class="underbotlabel">Date</label>
+                        <select class="underbotinputlist">
+                            <option value="" class="underbotlistitem">Option 1</option>
+                            <option value="" class="underbotlistitem">Option 2</option>
+                            <option value="" class="underbotlistitem">Option 3</option>
+                            <option value="" class="underbotlistitem">Option 4</option>
+                            <option value="" class="underbotlistitem">Option 5</option>
+                        </select>
+                    </div>
+                    <div class="underbotitem" id="underbotitem6">
+                        <label for="Search" class="underbotlabel"></label>
+                        <div class="underbotsearch" id="underbotsearch">SEARCH</div>
+                    </div>
+                </div>
+                <div class="bannercontrol" id="bannercontrolprev" onclick="underprev()">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </div>
+                <div class="bannercontrol" id="bannercontrolnext" onclick="undernext()">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+                <div class="underbottours">
+                    <div class="undertourimg" id="undertourimg1">
+                        <img src="Tourimg1.png" alt="">
+                        <div class="config">
+                            <div class="tourtitle">THUY XUAN INCENSE VILLAGE - HUE</div>
+                            <span class="tourdate"><i class="fa-sharp fa-regular fa-timer"></i> 1 days</span>
+                            <span class="tourfrom">From</span>
+                            <div class="tourcost">800.000 VND </div>
+                        </div>
+                    </div>
+                    <div class="undertourimg" id="undertourimg2">
+                        <img src="Tourimg2.png" alt="">
+                        <div class="config">
+                            <div class="tourtitle">BA NA HILLS - DA NANG CITY </div>
+                            <span class="tourdate"><i class="fa-sharp fa-regular fa-timer"></i> 3 days</span>
+                            <span class="tourfrom">From</span>
+                            <div class="tourcost">5.000.000 VND</div>
+                        </div>
+                    </div>
+                    <div class="undertourimg" id="undertourimg3">
+                        <img src="Tourimg3.png" alt="">
+                        <div class="config">
+                            <div class="tourtitle">MUI NE - PHAN THIET</div>
+                            <span class="tourdate"><i class="fa-sharp fa-regular fa-timer"></i> 3 days </span>
+                            <span class="tourfrom">From</span>
+                            <div class="tourcost">5.000.000 VND</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contentzone">
+            <div class="contenttitle">
+                <i class="fa-sharp fa-light fa-location-dot"></i>
+                <span class="title orange underline"> EXPLOREVIETNAM'S FOUR CORNERS</span>
+            </div>
+            <div class="text fulltext">Vietnam is a land of stunning contrasts, where each region offers a unique
+                tapestry of culture, history, and natural beauty. From the towering mountains and terraced rice fields
+                of the North, to the golden beaches and ancient cities of the Central region, the bustling life of the
+                South, and the untamed wilderness of the Central Highlands - every corner of Vietnam is a new adventure
+                waiting to be discovered.
+            </div>
+        </div>
+        <div class="fourpart">
+            <div class="fourimg" id="fourimg1">
+                <img src="fourimg1.png" alt="">
+                <div class="imgtitle">
+                    <i class="fa-sharp fa-light fa-location-dot"></i>
+                    <span>Northen Vietnam</span>
+                </div>
+                <div class="tournum">5 Tours</div>
+            </div>
+            <div class="fourimg" id="fourimg2">
+                <img src="fourimg2.png" alt="">
+                <div class="imgtitle">
+                    <i class="fa-sharp fa-light fa-location-dot"></i>
+                    <span>Central Vietnam</span>
+                </div>
+                <div class="tournum">5 Tours</div>
+            </div>
+            <div class="fourimg" id="fourimg3">
+                <img src="fourimg3.png" alt="">
+                <div class="imgtitle">
+                    <i class="fa-sharp fa-light fa-location-dot"></i>
+                    <span>Southern Vietnam</span>
+                </div>
+                <div class="tournum">4 Tours</div>
+            </div>
+            <div class="fourimg" id="fourimg4">
+                <img src="fourimg4.png" alt="">
+                <div class="imgtitle">
+                    <i class="fa-sharp fa-light fa-location-dot"></i>
+                    <span>Central Highlands</span>
+                </div>
+                <div class="tournum">4 Tours</div>
+            </div>
+        </div>
+        <div class="homefooter">
+            <div class="homefooterimg" id="homefooterimg">
+                <div class="footerimgtitle">
+                    <span class="white">DISCOUNT</span>
+                    <span class="orange">&nbsp10-30% OFF</span>
+                </div>
+                <div class="footerimgconfig">Save on your next adventure with exclusive travel discount!</div>
+                <div class="footerimgbutt">Save Promotion Tours</div>
+                <img src="homefooter.png" alt="">
+            </div>
+            <div class="homefooterbot" id="homefooterbot">
+                <div class="footerbottitle">Why Book With Us?</div>
+                <div class="footerbotpart" id="footerbotpart1">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="white">5000+ CUSTOMER</span>
+                </div>
+                <div class="footerbotpart" id="footerbotpart2">
+                    <i class="fa-regular fa-bolt"></i>
+                    <span class="white">QUICK BOOKING</span>
+                </div>
+                <div class="footerbotpart" id="footerbotpart3">
+                    <i class="fa-regular fa-lock-keyhole"></i>
+                    <span class="white">SECURE PAYMENT</span>
+                </div>
+            </div>
+        </div>
     </div>
     <footer id="pagefooter">
         <div id="loginback"></div>
@@ -194,6 +427,10 @@
     </footer>
     <script src="main.js"></script>
     <script src="Home.js"></script>
+    <script src="Banner.js"></script>
+    <script>
+
+    </script>
 </body>
 
 

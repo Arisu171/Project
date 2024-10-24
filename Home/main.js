@@ -345,7 +345,22 @@ function loadRegions() {
     clearPreviousResources();
     loadContent('./Regions/Regions.html', ['./Regions/Regions.js'], ['./Regions/Regions.css']);
 }
-
+function loadCentralRegion() {
+    clearPreviousResources();
+    loadContent('./Regions/Central Region.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+}
+function loadCentralHighland() {
+    clearPreviousResources();
+    loadContent('./Regions/Central Highland.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+}
+function loadNothern() {
+    clearPreviousResources();
+    loadContent('./Regions/Nothern.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+}
+function loadCentralRegion() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+}
 function loadCarRental() {
     clearPreviousResources();
     loadContent('./Transport/Car.html', ['./Transport/Car.js'], ['./Transport/Car.css']);
@@ -381,7 +396,7 @@ function loadDashboard() {
     loadContent('./Account/Dashboard.html', ['./Account/Dashboard.js'], ['./Account/Dashboard.css']);
 }
 
-function loadChangepass(){
+function loadChangepass() {
     clearPreviousResources();
     loadContent('./Account/Change-pass.html', ['./Account/Dashboard.js'], ['./Account/Dashboard.css']);
 }
