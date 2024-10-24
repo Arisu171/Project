@@ -1,194 +1,236 @@
-:root{
-    --color-black:rgb(27, 26, 26);
-    --color-write:rgba(217, 217, 217, 0.3);
-    --h3-font-size:2.3rem;
-    --h3-mobile-font-size:2.8rem;
-    --p-font-size:1.8rem;
-    --p-mobile-font-size:2rem;
-    --placeholder-mobile-font-size:1.5rem;
+:root {
+    --color-black: rgb(27, 26, 26);
+    --color-write: rgba(217, 217, 217, 0.3);
+    --h3-font-size: 2.3rem;
+    --h3-mobile-font-size: 2.8rem;
+    --p-font-size: 1.8rem;
+    --p-mobile-font-size: 2rem;
+    --placeholder-mobile-font-size: 1.5rem;
 }
+
 html {
-    font-size:1vw;
+    font-size: 1vw;
 }
+
 /*blog content*/
-.blog-content{
-    width:80%;
-    height:auto;
-    margin-left:auto;
-    margin-right:auto;
+.blog-content {
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 /*blog char*/
-.char p{
-    display:inline-block;
-    font-size:1.5rem;
-    font-weight:400;
-    margin-bottom:2.5rem;
-    margin-top:2.5rem;
-    color:var(--color-black);
+.char p {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    color: var(--color-black);
 }
-.char p:nth-of-type(1){
-    color:var(--color-main);
-    margin-right:2rem;
+
+.char p:nth-of-type(1) {
+    color: var(--color-main);
+    margin-right: 2rem;
     font-weight: 700;
 }
+
 /*blog content*/
-.blog-main h3{
-    font-size:var(--h3-font-size);
-    color:var(--color-black);
-    margin-bottom:2rem;
-    font-weight:700;
+.blog-main h3 {
+    font-size: var(--h3-font-size);
+    color: var(--color-black);
+    margin-bottom: 2rem;
+    font-weight: 700;
 }
-.blog-main p{
-    font-size:var(--p-font-size);
-    color:var(--color-black);
+
+.blog-main p {
+    font-size: var(--p-font-size);
+    color: var(--color-black);
     font-weight: 400;
-    margin-bottom:1.5rem;
+    margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
 }
-.blog-main .img{
-    width:85%;
-    height:auto;
-    overflow:hidden;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:3rem;
-    margin-top:3rem;
+
+.blog-main .img {
+    width: 85%;
+    height: auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
-.blog-main .img1 img{
-    width:100%;
+
+.blog-main .img1 img {
+    width: 100%;
 }
-.blog-main .img2{
-    display:flex;
+
+.blog-main .img2 {
+    display: flex;
     justify-content: space-around;
 }
-.blog-main .img2 img{
-    width:40%;
+
+.blog-main .img2 img {
+    width: 40%;
 }
-.blog-main .img3{
-    width:70%;
+
+.blog-main .img3 {
+    width: 70%;
 }
-.blog-main .img3 img{
-    width:100%;
+
+.blog-main .img3 img {
+    width: 100%;
 }
-.write{
+
+.write {
     background-color: var(--color-write);
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-    height:auto;
-    padding:1rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 1rem;
     box-sizing: border-box;
-    margin-top:4rem;
-    margin-bottom:4rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
-.write h2{
+
+.write h2 {
     text-align: center;
-    color:var(--color-main);
-    margin:2rem;
+    color: var(--color-main);
+    margin: 2rem;
 }
-.write .custom{
-    width:90%;
-    height:80%;
-    display:grid;
+
+.write .custom {
+    width: 90%;
+    height: 80%;
+    display: grid;
     grid-template-rows: 3fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-left:auto;
-    margin-right:auto;
-    gap:1rem;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem;
 }
-.write .custom input,textarea{
-    width:100%;
-    height: auto; 
-    font-size: 16px; 
-    padding:10px;
+
+.write .custom input,
+textarea {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    padding: 10px;
     box-sizing: border-box;
     font-family: inter;
 }
+
 .write .custom .comment {
-    height:100%;
-    grid-row: 1 / 2; /* Comment ở hàng đầu tiên */
-    grid-column: 1 / 3; /* Comment chiếm cả 2 cột (kéo dài từ cột 1 đến cột 3) */
+    height: 100%;
+    grid-row: 1 / 2;
+    /* Comment ở hàng đầu tiên */
+    grid-column: 1 / 3;
+    /* Comment chiếm cả 2 cột (kéo dài từ cột 1 đến cột 3) */
 }
-.write .custom .name{
+
+.write .custom .name {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
 }
-.write .custom .email{
+
+.write .custom .email {
     grid-row: 2 /3;
     grid-column: 2 / 3;
 }
-.write .custom .web{
-    grid-row:3 / 4;
+
+.write .custom .web {
+    grid-row: 3 / 4;
     grid-column: 1 / 3;
 }
-.write p{
-    font-size:1.3rem;
-    margin:1rem;
-    margin-left:auto;
-    margin-right:auto;
-    width:90%;
+
+.write p {
+    font-size: 1.3rem;
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     font-family: inter;
-    margin-top:1.5rem;
-    margin-bottom:1.5rem;
-    color:var(--color-black);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
 }
-.write .post{
-    width:90%;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
+
+.write .post {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.write .post input{
-    font-size:1.5rem;
+
+.write .post input {
+    font-size: 1.5rem;
     font-weight: 700;
-    color:white;
-    height:40%;
-    border: none; 
-    border-radius:10px;
-    background-color:var(--color-main);
-    padding:1.3rem;
-    margin:2rem;
+    color: white;
+    height: 40%;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-main);
+    padding: 1.3rem;
+    margin: 2rem;
+    cursor: pointer;
 }
-.write .post:hover input{
-    background-color:var(--color-main-hover);
+
+.write .post:hover input {
+    background-color: var(--color-main-hover);
 }
-.write .post:active input{
-    background-color:var(--color-main-active);
+
+.write .post:active input {
+    background-color: var(--color-main-active);
 }
-@media only screen and (max-width: 740px)/*web mobile*/ {
-    .blog-content .char p{
-        font-size:2.5rem;
+
+@media only screen and (max-width: 740px)
+/*web mobile*/
+    {
+    .blog-content .char p {
+        font-size: 2.5rem;
     }
-    .blog-main h3{
-        font-size:var(--h3-mobile-font-size);
-        font-weight:700;
+
+    .blog-main h3 {
+        font-size: var(--h3-mobile-font-size);
+        font-weight: 700;
     }
-    .blog-main p{
-        font-size:var(--p-mobile-font-size);
-        font-weight:500;
+
+    .blog-main p {
+        font-size: var(--p-mobile-font-size);
+        font-weight: 500;
     }
-    .write h2{
-        font-size:2rem;
+
+    .write h2 {
+        font-size: 2rem;
     }
-    .write p{
-        font-size:1.8rem;
+
+    .write p {
+        font-size: 1.8rem;
     }
-    .write .custom input,textarea{
-        border:0.1px solid rgba(18, 18, 18, 0.277);
-        font-size:var(--placeholder-mobile-font-size);
+
+    .write .custom input,
+    textarea {
+        border: 0.1px solid rgba(18, 18, 18, 0.277);
+        font-size: var(--placeholder-mobile-font-size);
     }
-    .write .custom .comment::placeholder{
-        font-size:var(--placeholder-mobile-font-size);
+
+    .write .custom .comment::placeholder {
+        font-size: var(--placeholder-mobile-font-size);
     }
-    .write .custom .name::placeholder{
-        font-size:var(--placeholder-mobile-font-size);
+
+    .write .custom .name::placeholder {
+        font-size: var(--placeholder-mobile-font-size);
     }
-    .write .custom .email::placeholder{
-        font-size:var(--placeholder-mobile-font-size);
+
+    .write .custom .email::placeholder {
+        font-size: var(--placeholder-mobile-font-size);
     }
-    .write .custom .web::placeholder{
-        font-size:var(--placeholder-mobile-font-size);
+
+    .write .custom .web::placeholder {
+        font-size: var(--placeholder-mobile-font-size);
     }
 }

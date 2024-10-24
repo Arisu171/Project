@@ -1,208 +1,105 @@
-// Hàm tải nội dung trang Home
-function loadHome() {
-    clearPreviousResources(); // Xóa CSS và JS cũ
-    loadContent('./Home.html', 'Home.js', ['./Home.css']);
-}
+let currentBanner = 5;
+let isTransitioning = false;
+const totalBanners = document.querySelectorAll('.bannerimg').length;
+let autoSlideInterval;
 
-// Hàm tải nội dung trang About Us
-function loadAboutUs() {
-    clearPreviousResources();
-    loadContent('./Pages/About Us.html', 'About Us.js', ['./Pages/About Us.css']);
-}
-
-// Hàm tải nội dung trang Services
-function loadServices() {
-    clearPreviousResources();
-    loadContent('./Pages/Services.html', 'Services.js', ['./Pages/Services.css']);
-}
-
-// Hàm tải nội dung trang Contact Us
-function loadContact() {
-    clearPreviousResources();
-    loadContent('./Pages/Contact Us.html', 'Contact Us.js', ['./Pages/Contact Us.css']);
-}
-
-// Hàm tải nội dung trang Destinations
-function loadDestinations() {
-    clearPreviousResources();
-    loadContent('./Pages/Destinations.html', 'Destinations.js', ['./Pages/Destinations.css']);
-}
-
-// Hàm tải nội dung trang Tourist
-function loadTourist() {
-    clearPreviousResources();
-    loadContent('./Tourist/Tourist.html', 'Tourist.js', ['./Tourist/Tourist.css']);
-}
-
-// Hàm tải nội dung trang Regions
-function loadRegions() {
-    clearPreviousResources();
-    loadContent('./Regions/Regions.html', 'Regions.js', ['./Regions/Regions.css']);
-}
-
-// Hàm tải nội dung trang Car Rental
-function loadCarRental() {
-    clearPreviousResources();
-    loadContent('./Transport/Carental.html', 'Carental.js', ['./Transport/Carental.css']);
-}
-
-// Hàm tải nội dung trang Bus Shuttle
-function loadBusShuttle() {
-    clearPreviousResources();
-    loadContent('./Transport/BusShuttle.html', 'BusShuttle.js', ['./Transport/BusShuttle.css']);
-}
-
-// Hàm tải nội dung trang Airport Trans
-function loadAirportTrans() {
-    clearPreviousResources();
-    loadContent('./Transport/AirportTrans.html', 'AirportTrans.js', ['./Transport/AirportTrans.css']);
-}
-
-// Hàm tải nội dung trang Blog
-function loadBlog() {
-    clearPreviousResources();
-    loadContent('./Blog/Blog.html', 'Blog.js', ['./Blog/Blog.css']);
-}
-
-// Hàm tải nội dung trang Account
-function loadAccount() {
-    clearPreviousResources();
-    loadContent('./Account/Register.html', 'Register.js', ['./Account/Register.css']);
-}
-
-// Hàm tổng quát để tải nội dung từ các tệp khác
-function loadContent(htmlFile, jsFile, cssFiles = []) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", htmlFile, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var tempDiv = document.createElement('div');
-            tempDiv.innerHTML = xhr.responseText;
-
-            var bodyContent = tempDiv.querySelector('#body');
-
-            if (bodyContent) {
-                document.getElementById('body').innerHTML = bodyContent.innerHTML;
-                console.log(`Nội dung đã được chèn từ ${htmlFile}`);
-
-                addResources(cssFiles, jsFile).then(() => {
-                    reinitializeOldScripts();
-                });
-            }
-        }
-    };
-    xhr.send();
-}
-
-// Hàm thêm CSS và tải JavaScript
-function addResources(cssFiles, jsFile) {
-    return new Promise((resolve) => {
-        let promises = [];
-        if (cssFiles && cssFiles.length > 0) {
-            cssFiles.forEach((cssFile) => {
-                promises.push(addCSS(cssFile));
-            });
-        }
-        if (jsFile) {
-            promises.push(loadScripts([jsFile]));
-        }
-
-        Promise.all(promises).then(() => {
-            resolve();
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Document is ready. Total banners:", totalBanners);
+    updateDots();
+    document.querySelectorAll('.bannerimg').forEach((banner, index) => {
+        banner.classList.add(`bannerimg${index + 1}`);
     });
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 1000);
+    startAutoSlide();
+});
+
+function startAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(next, 5000);
 }
 
-// Hàm xóa các tệp CSS và JS đã được tải từ trước đó
-function clearPreviousResources() {
-    document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
-        if (!link.href.includes('main.css')) { // Giữ lại CSS trang chủ
-            link.remove();
-        }
-    });
-
-    document.querySelectorAll('script').forEach((script) => {
-        if (!script.src.includes('main.js')) { // Giữ lại JS trang chủ
-            script.remove();
-        }
-    });
-}
-
-// Hàm thêm tệp CSS
-function addCSS(file) {
-    return new Promise((resolve) => {
-        if (!document.querySelector(`link[href="${file}"]`)) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = file;
-            link.onload = function () {
-                console.log(`CSS đã tải: ${file}`);
-                resolve();
-            };
-            document.head.appendChild(link);
+function updateDots() {
+    let dots = document.querySelectorAll('.bannercurrent div i');
+    console.log("Updating dots:", dots);
+    dots.forEach((dot, index) => {
+        if (index + 1 === currentBanner) {
+            dot.classList.remove('fa-regular');
+            dot.classList.add('fa-solid');
         } else {
-            resolve();
+            dot.classList.remove('fa-solid');
+            dot.classList.add('fa-regular');
         }
     });
 }
 
-function loadScripts(scripts) {
-    return Promise.all(scripts.map(file => {
-        return new Promise((resolve) => {
-            if (!document.querySelector(`script[src="${file}"]`)) {
-                let newScript = document.createElement('script');
-                newScript.src = file;
-                newScript.onload = function () {
-                    console.log(`Đã tải script: ${file}`);
-                    resolve();
-                };
-                document.body.appendChild(newScript);
-            } else {
-                console.log(`Script đã tồn tại: ${file}, không cần tải lại.`);
-                resolve();
-            }
-        });
-    }));
+function next() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    let banners = document.querySelectorAll('.bannerimg');
+    banners.forEach((banner) => {
+        let currentClass = banner.classList[1];
+        let currentNumber = parseInt(currentClass.replace('bannerimg', ''));
+        let newNumber = currentNumber < totalBanners ? currentNumber + 1 : 1;
+        banner.classList.replace(currentClass, `bannerimg${newNumber}`);
+    });
+    currentBanner = currentBanner < totalBanners ? currentBanner + 1 : 1;
+    updateDots();
+    setTimeout(() => {
+        isTransitioning = false;
+    }, 1000);
 }
 
+function prev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
 
-// Khởi động lại các chức năng cũ từ các script trước đó
-function reinitializeOldScripts() {
-    // Gọi lại các hàm từ các tệp JS cũ nếu cần
-    if (typeof startAutoSlide === "function") {
+    let banners = document.querySelectorAll('.bannerimg');
+    banners.forEach((banner) => {
+        let currentClass = banner.classList[1];
+        let currentNumber = parseInt(currentClass.replace('bannerimg', ''));
+        let newNumber = currentNumber > 1 ? currentNumber - 1 : totalBanners;
+        banner.classList.replace(currentClass, `bannerimg${newNumber}`);
+    });
+    currentBanner = currentBanner > 1 ? currentBanner - 1 : totalBanners;
+    updateDots();
+    setTimeout(() => {
+        isTransitioning = false;
+    }, 1000);
+}
+
+function goToBanner(index) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    console.log("Navigating to banner:", index);
+
+    let banners = document.querySelectorAll('.bannerimg');
+    let difference = currentBanner - index;
+    banners.forEach((banner) => {
+        let currentClass = banner.classList[1];
+        let currentNumber = parseInt(currentClass.replace('bannerimg', ''));
+        let newNumber = (currentNumber - difference + totalBanners) % totalBanners || totalBanners;
+        banner.classList.replace(currentClass, `bannerimg${newNumber}`);
+    });
+
+    currentBanner = index;
+    updateDots();
+
+    setTimeout(() => {
+        isTransitioning = false;
+    }, 1000);
+}
+
+document.querySelectorAll('.bannercurrent div').forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        goToBanner(index + 1);
         startAutoSlide();
-    }
-
-    if (typeof attachEventHandlers === "function") {
-        attachEventHandlers();
-    }
-
-    if (typeof validateField === "function") {
-        console.log("Đảm bảo tất cả các hàm kiểm tra nhập liệu vẫn hoạt động");
-    }
-
-    if (typeof attachEventHandlers === "function") {
-        attachEventHandlers();
-        console.log("Đã chạy lại attachEventHandlers.");
-    }
-
-    console.log("Đã khởi động lại các chức năng cần thiết.");
-}
-
-// Hàm xử lý đăng xuất (được gắn lại trong reinitializeScripts)
-function handleLogout() {
-    isLoggedIn = false;
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("username");
-    toggleMulticons('.multiconacc');
-}
-
-console.log("Đã khởi chạy lại các chức năng cũ.");
-
-// Gọi hàm AJAX khi trang tải
-window.addEventListener("load", function () {
-    loadNavbarContent();
+    });
 });
-window.addEventListener("load", function () {
-    loadFooterContent();
-});
+
+updateDots();
+setTimeout(() => {
+    next();
+    startAutoSlide();
+}, 500);
