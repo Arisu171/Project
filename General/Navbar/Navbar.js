@@ -195,7 +195,6 @@ window.onload = function () {
         <div id="copyright">© Copyright 2024 – Flarista Travel</div>`;
         }
     }
-
     const hideElements = document.querySelectorAll('.out');
     hideElements.forEach(function (element) {
         element.addEventListener('click', function () {
