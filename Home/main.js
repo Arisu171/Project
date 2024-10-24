@@ -3,7 +3,7 @@ window.onload = function () {
     let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     const storedNickname = localStorage.getItem("nickname");
 
-    attachEventHandlers(); // Gắn các sự kiện cần thiết
+    attachEventHandlers();
 
     const loginButton = document.getElementById('loginbutton');
     if (loginButton) {
@@ -286,6 +286,7 @@ function addFontAwesome() {
 
 addFontAwesome();
 
+//AJAX
 function loadHome() {
     clearPreviousResources();
     loadContent('Home.html', ['Home.js'], ['Home.css']);
@@ -407,6 +408,7 @@ function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     xhr.send();
 }
 
+//CSS
 function addCSSResources(cssFiles) {
     return new Promise((resolve) => {
         let promises = [];
@@ -437,6 +439,7 @@ function addCSS(file) {
     });
 }
 
+//JS
 function addJSResources(jsFiles) {
     return new Promise((resolve) => {
         let loadedScripts = [];
@@ -452,6 +455,7 @@ function addJSResources(jsFiles) {
 
 function addJS(file) {
     return new Promise((resolve) => {
+        // Kiểm tra nếu script đã được thêm, không thêm lại
         if (!document.querySelector(`script[src="${file}"]`)) {
             const script = document.createElement('script');
             script.src = file;
@@ -467,6 +471,7 @@ function addJS(file) {
     });
 }
 
+// Xóa CSS JS 
 function clearPreviousResources() {
     const cssToKeep = [
         '../font-awesome-6.6.0-pro-full-main/css/all.css',
@@ -495,6 +500,26 @@ function clearPreviousResources() {
     });
 }
 
+function reattachGoogleFonts() {
+    const existingFontLinks = [
+        'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
+    ];
+
+    existingFontLinks.forEach((href) => {
+        if (!document.querySelector(`link[href="${href}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+            console.log(`Google Font đã được gắn lại: ${href}`);
+        }
+    });
+}
+
 function reinitializeOldScripts() {
     if (typeof startAutoSlide === "function") {
         startAutoSlide();
@@ -511,14 +536,20 @@ function reinitializeOldScripts() {
         console.log("Đã cập nhật lại các dots điều hướng.");
     }
 
-    console.log("Đã khởi động lại các chức năng cần thiết cho slideshow.");
+    // Khởi động lại hàm khởi tạo dropdown ngày tháng
+    initializeDateDropdown();
+    console.log("Đã khởi động lại danh sách ngày và năm.");
+
+    reattachGoogleFonts();
+    console.log("Đã gắn lại Google Fonts.");
 }
+
+
 
 function handleDotClick(index) {
     goToBanner(index);
     startAutoSlide();
 }
-
 
 function toggleFade(show) {
     let fadeOverlay = document.querySelector('.fade-overlay');
@@ -538,4 +569,79 @@ function toggleFade(show) {
     } else {
         fadeOverlay.classList.remove('active');
     }
+}
+
+function initializeDateDropdown() {
+    const ngaySelect = document.getElementById('ngay');
+    const thangSelect = document.getElementById('thang');
+    const namSelect = document.getElementById('nam');
+
+    // Kiểm tra các phần tử tồn tại trước khi thao tác
+    if (!ngaySelect || !thangSelect || !namSelect) {
+        console.warn("Các phần tử chọn ngày, tháng, năm không tồn tại.");
+        return;
+    }
+
+    // Khởi tạo năm từ 1950 đến năm hiện tại
+    for (let i = 1950; i <= new Date().getFullYear(); i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.text = i;
+        namSelect.appendChild(option);
+    }
+
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    function getDaysInMonth(month, year) {
+        if (month === 2) {
+            return isLeapYear(year) ? 29 : 28;
+        } else if ([4, 6, 9, 11].includes(month)) {
+            return 30;
+        } else {
+            return 31;
+        }
+    }
+
+    function initializeDays() {
+        ngaySelect.innerHTML = '<option value="" disabled selected>Day</option>';
+        for (let i = 1; i <= 31; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.text = i;
+            ngaySelect.appendChild(option);
+        }
+    }
+
+    function updateDays() {
+        const month = parseInt(thangSelect.value);
+        const year = parseInt(namSelect.value);
+        if (isNaN(month) || isNaN(year)) {
+            return;
+        }
+
+        const currentDay = parseInt(ngaySelect.value);
+        const daysInMonth = getDaysInMonth(month, year);
+
+        if (currentDay > daysInMonth) {
+            initializeDays();
+        } else if (ngaySelect.options.length - 1 !== daysInMonth) {
+            ngaySelect.innerHTML = '<option value="" disabled selected>Day</option>';
+            for (let i = 1; i <= daysInMonth; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.text = i;
+                ngaySelect.appendChild(option);
+            }
+            if (currentDay) {
+                ngaySelect.value = currentDay;
+            }
+        }
+    }
+
+    initializeDays();
+
+    thangSelect.addEventListener('change', updateDays);
+    namSelect.addEventListener('change', updateDays);
 }
