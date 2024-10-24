@@ -1,258 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../font-awesome-6.6.0-pro-full-main/css/all.css">
-    <link rel="stylesheet" href="tesst.css">
-    <link rel="stylesheet" href="../General/Footer/Footer.css">
-    <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="Banner.css">
-    <title>Flarista-Home</title>
-</head>
+    <title>Chỉnh sửa Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
 
+        .profile-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 600px;
+            position: relative;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            color: #2b57a8;
+        }
+
+        .profile-header button {
+            background: none;
+            border: none;
+            color: #2b57a8;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-info div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-info span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        #editProfile {
+            display: none;
+        }
+
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 90%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
 <body>
-    <div id="navigationbar">
-        <div id="shadow"></div>
-        <div class="navbar">
-            <div class="navleft"><a href="#bannerimg1"></a></div>
-            <div class="navright" id="navright">
-                <div class="navtitle" id="navbarHome"><a
-                        onclick="loadContent('tesst.html')">Home</a></div>
-                <div class="navtitle" id="navbarPages">
-                    <a href="#" class="navdroptitle">Pages</a>
-                    <div class="navdroplist">
-                        <a href="https://arisu171.github.io/Project/Home/Pages/About Us.html">About Us</a>
-                        <a href="https://arisu171.github.io/Project/Home/Pages/Our Services.html">Our Services</a>
-                        <a href="https://arisu171.github.io/Project/Home/Pages/Contact.html">Contact Us</a>
-                        <a href="https://arisu171.github.io/Project/Home/Pages/Destinations.html">Destinations</a>
-                    </div>
-                </div>
-                <a onclick="loadContent('TourList/TourList.html')">Tourist</a>
-                <a href="https://arisu171.github.io/Project/Home/Regions/Regions.html" class="navtitle"
-                    id="navbarRegions">Regions</a>
-                <div class="navtitle" id="navbarTrans">
-                    <a href="#" class="navdroptitle">Transportations</a>
-                    <div class="navdroplist">
-                        <a href="https://arisu171.github.io/Project/Home/Transport/Car.html">Carental</a>
-                        <a href="https://arisu171.github.io/Project/Home/Transport/Coach.html">Bus Shuttle</a>
-                        <a href="https://arisu171.github.io/Project/Home/Transport/Airport.html">Airpot Trans</a>
-                    </div>
-                </div>
-                <a href="https://arisu171.github.io/Project/Home/Blog/Blog.html" class="navtitle"
-                    id="navbarBlog">Blog</a>
-                <div class="navusers">
-                    <div class="navuser">
-                        <i class="fa fa-user"></i>
-                    </div>
-                    <a href="#navuser" class="multicon multiconacc hide" id="multiconbar1">
-                        <div>Account</div>
-                    </a>
-                    <a href="#navuser" class="multicon multiconacc hide out" id="multiconbar2">
-                        <div>Log Out</div>
-                    </a>
-                </div>
+    <div class="profile-card">
+        <div class="profile-header">
+            <h2>My Profile</h2>
+            <button onclick="showEditForm()">Edit Profile</button>
+        </div>
+
+        <div id="profileInfo" class="profile-info">
+            <div>
+                <span>Name</span>
+                <p>Trần Thị Thu Phương</p>
+            </div>
+            <div>
+                <span>Gender</span>
+                <p>Male</p>
+            </div>
+            <div>
+                <span>Birth Date</span>
+                <p>1987-03-02</p>
+            </div>
+            <div>
+                <span>Country</span>
+                <p>India</p>
+            </div>
+            <div>
+                <span>Email</span>
+                <p>tttphuong2@ms.daihocthudo.edu.vn</p>
+            </div>
+            <div>
+                <span>Phone</span>
+                <p>0123456789</p>
             </div>
         </div>
-        <div class="navbutton navradius navhide hide" id="navbutt">
-            <div class="navicon navhide" id="navicon" onclick="shownav()"><i class="fa-solid fa-bars"></i></div>
-            <div class="navitem navhide">
-                <a href="">
-                    <i class="fa-solid fa-house"></i>
-                    <div class="navitcap">Home</div>
-                </a>
+
+        <div id="editProfile" class="profile-info">
+            <div>
+                <span>Name</span>
+                <input type="text" value="Trần Thị Thu Phương">
             </div>
-            <div class="navitem navhide" id="Pages">
-                <div>
-                    <i class="fa-solid fa-users"></i>
-                    <div class="navitcap">Pages</div>
-                </div>
-                <a href="https://arisu171.github.io/Project/Home/Pages/About Us.html" class="multicon multiconpage hide"
-                    id="rmulticon0" >
-                    <div>About</div>
-                </a>
-                <a href="https://arisu171.github.io/Project/Home/Pages/Our Services.html"
-                    class="multicon multiconpage hide" id="rmulticon2">
-                    <div>Services</div>
-                </a>
-                <a href="https://arisu171.github.io/Project/Home/Pages/Contact.html" class="multicon multiconpage hide"
-                    id="rmulticon4">
-                    <div>Contact</div>
-                </a>
-                <a href="https://arisu171.github.io/Project/Home/Pages/Destinations.html"
-                    class="multicon multiconpage hide" id="rmulticon6">
-                    <div>Dests</div>
-                </a>
+            <div>
+                <span>Gender</span>
+                <input type="text" value="Male">
             </div>
-            <div class="navitem navhide">
-                <a href="https://arisu171.github.io/Project/Home/TourList/TourList.html">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <div class="navitcap">Tourist</div>
-                </a>
+            <div>
+                <span>Birth Date</span>
+                <input type="date" value="1987-03-02">
             </div>
-            <div class="navitem navhide">
-                <a href="https://arisu171.github.io/Project/Home/Regions/Regions.html">
-                    <i class="fa-solid fa-globe"></i>
-                    <div class="navitcap">Regions</div>
-                </a>
+            <div>
+                <span>Country</span>
+                <input type="text" value="India">
             </div>
-            <div class="navitem navhide" id="Transpos">
-                <div>
-                    <i class="fa-solid fa-bus"></i>
-                    <div class="navitcap">Transpos</div>
-                </div>
-                <a href="https://arisu171.github.io/Project/Home/Transport/Car.html" class="multicon multicontran hide"
-                    id="rmulticon1">
-                    <div>Car</div>
-                </a>
-                <a href="https://arisu171.github.io/Project/Home/Transport/Coach.html"
-                    class="multicon multicontran hide" id="rmulticon3">
-                    <div>Bus</div>
-                </a>
-                <a href="https://arisu171.github.io/Project/Home/Transport/Airport.html"
-                    class="multicon multicontran hide" id="rmulticon5">
-                    <div>Airport</div>
-                </a>
+            <div>
+                <span>Email</span>
+                <input type="email" value="tttphuong2@ms.daihocthudo.edu.vn">
             </div>
-            <div class="navitem navhide">
-                <a href="https://arisu171.github.io/Project/Home/Blog/Blog.html">
-                    <i class="fa-brands fa-squarespace"></i>
-                    <div class="navitcap">Blog</div>
-                </a>
+            <div>
+                <span>Phone</span>
+                <input type="text" value="0123456789">
             </div>
-            <div class="navusers">
-                <div class="navuser navitem navhide" id="navuser">
-                    <i class="fa fa-user"></i>
-                </div>
-                <a href="#navuser" class="multicon multiconacc hide" id="rmulticon7">
-                    <i class="fa-duotone fa-solid fa-user"></i>
-                </a>
-                <a href="#navuser" class="multicon multiconacc hide out" id="rmulticon8">
-                    <i class="fa-duotone fa-solid fa-right-from-bracket"></i>
-                </a>
+            <div style="grid-column: span 2; text-align: right;">
+                <button onclick="saveProfile()">Save</button>
+                <button onclick="cancelEdit()">Cancel</button>
             </div>
         </div>
-    </div><!--link của nav-->
-    <div id="body">
-        <div class="homebanner" id="homebanner">
-            <img src="Banner1.jpg" alt="" class="bannerimg bannerimg1" id="bannerimg1">
-            <img src="Banner2.jpg" alt="" class="bannerimg bannerimg2" id="bannerimg2">
-            <img src="Banner3.jpg" alt="" class="bannerimg bannerimg3" id="bannerimg3">
-            <img src="Banner4.jpg" alt="" class="bannerimg bannerimg4" id="bannerimg4">
-            <img src="Banner5.jpg" alt="" class="bannerimg bannerimg5" id="bannerimg5">
-            <div class="bannercontrol" id="bannercontrolprev" onclick="prev()">
-                <i class="fa-solid fa-circle-chevron-left"></i>
-            </div>
-            <div class="bannercontrol" id="bannercontrolnext" onclick="next()">
-                <i class="fa-solid fa-circle-chevron-right"></i>
-            </div>
-            <div class="bannercurrent">
-                <div id="bannercurent1"><i class="fa-solid fa-circle"></i></div>
-                <div id="bannercurent2"><i class="fa-regular fa-circle"></i></div>
-                <div id="bannercurent3"><i class="fa-regular fa-circle"></i></div>
-                <div id="bannercurent4"><i class="fa-regular fa-circle"></i></div>
-                <div id="bannercurent5"><i class="fa-regular fa-circle"></i></div>
-            </div>
-            <div class="bannercontent">
-                <div class="bannertitle">
-                    <div id="line1">Extraordinary natural</div>
-                    <div id="line2">and cultural charm</div>
-                </div>
-                <div class="bannerbio">Exploring Vietnam is an unforgettable adventure</div>
-                <div class="bannersearchbar">
-                    <div id="bannersearchbarleft">
-                        <div class="searchbaroption" id="searchbaroption1">
-                            <i class="fa-light fa-calendar-days"></i>
-                            <div class="optext">Date</div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="searchbaroption" id="searchbaroption2">
-                            <i class="fa-regular fa-wallet"></i>
-                            <div class="optext">Budget</div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="searchbaroption" id="searchbaroption3">
-                            <i class="fa-regular fa-user"></i>
-                            <div class="optext">People</div>
-                        </div>
-                    </div>
-                    <div class="searchbarinput">
-                        <input type="text" placeholder="SEARCH">
-                        <i class="fa-regular fa-circle" id="searchiconx"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <script src="Banner.js"></script>link banner -->
-        <footer id="pagefooter">
-            <div id="loginback"></div>
-            <div class="login hide" id="login">
-                <div class="loginzone">
-                    <div class="logintitle">SIGN IN</div>
-                    <label for="nickname">Username or Email</label>
-                    <input type="text" class="nickname" id="nickname">
-                    <label for="password">Password</label>
-                    <input type="password" class="password" id="password">
-                    <div class="passforgot">Forgot Password?</div>
-                    <div class="loginbutton" id="loginbutton">SIGN IN</div>
-                    <a href="https://arisu171.github.io/Project/Home/Account/Register.html" class="registerlink">
-                        <div>DO NOT HAVE AN ACCOUNT?</div>
-                        <div>CREATE AN ACCOUNT</div>
-                    </a>
-                </div>
-            </div>
-            <div class="footercontent">
-                <div class="footerpart" id="footerabout">
-                    <h3 class="footertitle">FLARISTA</h3>
-                    <div class="footertext">Discover Vietnam with exclusive deals and exceptional service.</div>
-                </div>
-                <div class="footerpart" id="footerdestination">
-                    <h3 class="footertitle">TOP DESTINATIONS</h3>
-                    <div class="footerimg">
-                        <img src="https://arisu171.github.io/Project/General/Footer/img1.png" alt="">
-                        <img src="https://arisu171.github.io/Project/General/Footer/img2.png" alt="">
-                        <img src="https://arisu171.github.io/Project/General/Footer/img3.png" alt="">
-                        <img src="https://arisu171.github.io/Project/General/Footer/img4.png" alt="">
-                        <img src="https://arisu171.github.io/Project/General/Footer/img5.png" alt="">
-                        <img src="https://arisu171.github.io/Project/General/Footer/img6.png" alt="">
-                    </div>
-                </div>
-                <div class="footerpart" id="footercontact">
-                    <h3 class="footertitle">CONTACT INFO</h3>
-                    <div class="footertext">
-                        <p>Address: 21 Hoan Kiem Street - Ha Noi</p>
-                        <p>Phone: +84 6868 888</p>
-                        <p>Contact: FlaristaTravel@gmail.com</p>
-                    </div>
-                    <div id="footericon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <i class="fa-brands fa-tiktok"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                    </div>
-                </div>
-            </div>
-            <div id="copyright">© Copyright 2024 – Flarista Travel</div>
-        </footer>
     </div>
 
-    <script src="tesst.js"></script>
-</body>
+    <script>
+        function showEditForm() {
+            document.getElementById('profileInfo').style.display = 'none';
+            document.getElementById('editProfile').style.display = 'grid';
+        }
 
+        function cancelEdit() {
+            document.getElementById('profileInfo').style.display = 'grid';
+            document.getElementById('editProfile').style.display = 'none';
+        }
+
+        function saveProfile() {
+            const profileInputs = document.querySelectorAll('#editProfile input');
+            const profileData = document.querySelectorAll('#profileInfo p');
+
+            profileInputs.forEach((input, index) => {
+                profileData[index].textContent = input.value;
+            });
+
+            document.getElementById('profileInfo').style.display = 'grid';
+            document.getElementById('editProfile').style.display = 'none';
+        }
+    </script>
+</body>
 </html>

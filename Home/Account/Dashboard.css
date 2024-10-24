@@ -1,0 +1,134 @@
+:root{
+    --h2-font-size:2.5rem;
+    --p-font-size:1.8rem;
+}
+html{
+    font-size:1vw;
+}
+.dashboardcontent{
+    background-color: red;
+    width:100%;
+    height:500vh;
+    padding:10rem;
+    box-sizing: border-box;
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+.dashboardcontent h2{
+    color:var(--color-main);
+    font-size: var(--h2-font-size);
+    margin:2rem;
+}
+.dashboardcontent a{
+    font-size: var(--p-font-size);
+    margin:2rem;
+    display:block;
+    
+}
+.dashboardcontent p{
+    font-size: var(--p-font-size);
+}
+/*menu*/
+.dashboardcontent .dash-menu{
+    background-color: aliceblue;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width:100%;
+}
+.dashboardcontent .dash-menu i{
+    margin-right:2rem;
+    font-size:2rem;
+}
+.dashboardcontent .dash-menu div{
+    text-align:start;
+}
+.dashboardcontent .dash-menu .sign-out hr{
+    width:100%;
+}
+/*content*/
+.dashboardcontent .dash-content{
+    background-color:rgb(189, 240, 255);
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    width:100%;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.profile-card, .booking-card, .review-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #2b57a8;
+    margin: 0;
+}
+
+.edit-btn, .view-btn, .action-btn {
+    background-color: #2b57a8;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: flex;
+    margin-top: 20px;
+}
+
+.profile-photo {
+    flex: 0 0 80px;
+}
+
+.profile-photo img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.details div {
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+.action-btn {
+    background-color: #ff6b6b;
+}

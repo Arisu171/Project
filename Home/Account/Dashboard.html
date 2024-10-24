@@ -33,9 +33,104 @@
             <img src="Dashboardbanner.png" alt="">
             <div class="pagetitle">CUSTOMER - DASHBOARD</div>
         </div>
-        <div class="dashboardcontent"></div>
+        <div class="dashboardcontent">
+            <div class="dash-menu">
+                <div class="account">
+                    <h2>MY ACCOUNT</h2>
+                    <a><i class="fa-light fa-address-card"></i>Profile</a>
+                    <a><i class="fa-light fa-lock"></i>Change Password</a>
+                </div>
+                <div class="tour-booking">
+                    <h2>TOUR BOOKING</h2>
+                    <a><i class="fa-sharp fa-light fa-clipboard-list"></i>My Booking</a>
+                    <a><i class="fa-sharp fa-light fa-file-invoice-dollar"></i>Invoces</a>
+                    <a><i class="fa-sharp fa-solid fa-star-sharp"></i>Reviews</a>
+                    <a><i class="fa-light fa-heart"></i>Wish List</a>
+                </div>
+                <div class="sign-out">
+                    <hr>
+                    <a><i class="fa-light fa-lock"></i></a>
+                    <hr>
+                </div>
+                <div class="need-help">
+                    <h2>NEED HELP</h2>
+                    <p class="icon-phone"><i class="fa-solid fa-phone"></i> 012.345.6789</p>
+                    <p class="email">support@flarista.com</p>
+                </div>
+            </div>
+            <div class="dash-content">
+                <div class="my-profile">
+                    <div class="profile-card">
+                        <div class="header">
+                            <h2>My Profile</h2>
+                            <button class="edit-btn">Edit Profile</button>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-photo">
+                                <img src="https://via.placeholder.com/80" alt="Profile Photo">
+                            </div>
+                            <div class="details">
+                                <div><strong>Name:</strong> Trần Thị Thu Phương</div>
+                                <div><strong>Gender:</strong> Male</div>
+                                <div><strong>Birth Date:</strong> 1987-03-02</div>
+                                <div><strong>Country:</strong> India</div>
+                                <div><strong>Email:</strong> ttphuong2@ms.daihocthudo.edu.vn</div>
+                                <div><strong>Phone:</strong> 0123456789</div>
+                                <div><strong>Contact Address:</strong> Name</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-card">
+                    <div class="header">
+                        <h2>Current Booking</h2>
+                        <button class="view-btn">View All Booking</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tour Name</th>
+                                <th>Travel Date</th>
+                                <th>Total</th>
+                                <th>Payment Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tên tour</td>
+                                <td>Thời gian của tour</td>
+                                <td>Giá</td>
+                                <td>Đã xác nhận và đang chờ xử lý</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="review-card">
+                    <div class="header">
+                        <h2>Review</h2>
+                        <button class="view-btn">View All Reviews</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tour Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tên tour</td>
+                                <td>Chờ đánh giá</td>
+                                <td><button class="action-btn">Đánh giá</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer id="pagefooter"></footer>
+    <!--<footer id="pagefooter"></footer>-->
     <script src="../../General/Footer/Footer.js"></script>
     <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
     <script src="Dashboard.js"></script>
