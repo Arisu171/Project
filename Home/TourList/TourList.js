@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function uptobody() {
     const destCtrls = document.querySelectorAll(".destctrl");
     const destinationsZone = document.querySelector(".servicezone");
 
@@ -26,10 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateClasses(index);
         });
     });
-});
-
-function uptobody() {
     setTimeout(function () {
-        window.location.href = "#body";
+        window.location.href = "#port";
     }, 1000);
 };

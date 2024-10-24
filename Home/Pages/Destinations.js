@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+});
+
+function changeDest() {
     const destOpts = document.querySelectorAll(".destopt");
     const destCtrls = document.querySelectorAll(".destctrl");
     const destinationsZone = document.querySelector(".destinationszone");
@@ -39,4 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateClasses(index);
         });
     });
-});
+    setTimeout(function () {
+        window.location.href = "#port";
+    }, 1000);
+};
