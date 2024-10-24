@@ -1,263 +1,125 @@
-window.onload = function () {
-    // Trạng thái đăng nhập
-    let isLoggedIn = false;
+/*function loadRegisterContent() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "./Account/Register.html", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = xhr.responseText;
 
-    // Gắn các sự kiện sau khi DOM đã được cập nhật
-    attachEventHandlers();
+            var registerBodyContent = tempDiv.querySelector('#body');
 
-    // **New Code: Login Button Click Event**
-    const loginButton = document.getElementById('loginbutton');
-    if (loginButton) {
-        loginButton.addEventListener('click', handleLogin);
-    }
+            if (registerBodyContent) {
 
-    // **New Code: Set isLoggedIn to false when clicking on elements with class "hide"**
-    const hideElements = document.querySelectorAll('.out');
-    hideElements.forEach(function (element) {
-        element.addEventListener('click', function () {
-            isLoggedIn = false;
-            toggleMulticons('.multiconacc');
+                document.getElementById('body').innerHTML = registerBodyContent.innerHTML;
+                console.log("Nội dung đã được chèn vào #body.");
+
+                addRegisterResources().then(() => {
+
+                    loadScripts(['./Account/Register.js']).then(() => {
+                        reinitializeOldScripts();
+                    });
+                });
+            }
+        }
+    };
+    xhr.send();
+}
+
+function addRegisterResources() {
+    return new Promise((resolve) => {
+        // Thêm CSS trước
+        Promise.all([
+            addCSS("./Account/Register.css")
+        ]).then(() => {
+            resolve();
         });
     });
+}
 
-    function attachEventHandlers() {
-        // Make navigation button draggable
-        const navButt = document.getElementById("navbutt");
-        if (navButt) {
-            makeElementDraggable(navButt);
-        }
-
-        // Attach resize event listener
-        window.addEventListener('resize', checkScreenSize);
-
-        // Monitor changes in class
-        const elementToWatch = document.querySelector('.navradius');
-        if (elementToWatch) {
-            observeClassChanges(elementToWatch, 'show', '.multicon', 'show', 'hide');
-        }
-
-        // Event listeners for multicon lists
-        const pagesIcon = document.querySelector('#Pages div i');
-        if (pagesIcon) {
-            pagesIcon.parentElement.addEventListener('click', toggleMulticons.bind(null, '.multiconpage'));
-        }
-
-        const transposIcon = document.querySelector('#Transpos div i');
-        if (transposIcon) {
-            transposIcon.parentElement.addEventListener('click', toggleMulticons.bind(null, '.multicontran'));
-        }
-
-        // Add click listener to the navigation button
-        const navButton = document.getElementById("navicon");
-        if (navButton) {
-            navButton.addEventListener("click", shownav);
-        }
-
-        // Event listeners for nav user account
-        const navUserIcons = document.querySelectorAll('.navuser');
-        navUserIcons.forEach(function (navUserIcon) {
-            navUserIcon.addEventListener('click', function () {
-                if (isLoggedIn) {
-                    toggleMulticons('.multiconacc');
-                } else {
-                    const loginElement = document.getElementById('login');
-                    if (loginElement) {
-                        loginElement.classList.add('show');
-                        loginElement.classList.remove('hide');
-                    }
-                }
-            });
-        });
-    }
-
-    function toggleMulticons(selector) {
-        const multicons = document.querySelectorAll(selector);
-        multicons.forEach(function (multicon) {
-            if (multicon.classList.contains('show')) {
-                multicon.classList.remove('show');
-                multicon.classList.add('hide');
-            } else {
-                multicon.classList.add('show');
-                multicon.classList.remove('hide');
-            }
-        });
-    }
-
-    function checkScreenSize() {
-        const elements = document.querySelectorAll('.navhide');
-        if (window.innerWidth > 665) {
-            elements.forEach(function (element) {
-                element.classList.remove('show');
-                element.classList.add('hide');
-                element.classList.add('over');
-            });
-        }
-    }
-
-    function shownav() {
-        if (!dragging) {
-            const elements = document.querySelectorAll('.navhide');
-            elements.forEach(function (element) {
-                if (element.classList.contains('show')) {
-                    element.classList.remove('show');
-                    element.classList.add('hide');
-                    element.classList.add('over');
-                } else {
-                    element.classList.add('show');
-                    element.classList.remove('hide');
-                    element.classList.add('disabled');
-                    setTimeout(function () {
-                        element.classList.remove('over');
-                        element.classList.remove('disabled');
-                    }, 500);
-                }
-            });
-        }
-    }
-
-    function observeClassChanges(targetElement, classToRemove, affectedElementsSelector, classToRemoveFromAffected, classToAddFromAffected) {
-        const observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                if (mutation.attributeName === "class") {
-                    const currentClassList = mutation.target.classList;
-                    if (!currentClassList.contains(classToRemove)) {
-                        const affectedElements = document.querySelectorAll(affectedElementsSelector);
-                        affectedElements.forEach(function (affectedElement) {
-                            affectedElement.classList.remove(classToRemoveFromAffected);
-                            affectedElement.classList.add(classToAddFromAffected);
-                        });
-                    }
-                }
-            });
-        });
-
-        observer.observe(targetElement, { attributes: true });
-    }
-
-    // Dragging functionality
-    let dragging = false;
-
-    function makeElementDraggable(el) {
-        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-
-        el.onmousedown = dragMouseDown;
-        el.ontouchstart = dragTouchStart;
-
-        function dragMouseDown(e) {
-            e.preventDefault();
-            startDrag(e.clientX, e.clientY);
-            document.onmouseup = closeDragElement;
-            document.onmousemove = elementDrag;
-        }
-
-        function dragTouchStart(e) {
-            const touch = e.touches[0];
-            startDrag(touch.clientX, touch.clientY);
-            document.ontouchend = closeDragElement;
-            document.ontouchmove = elementTouchDrag;
-        }
-
-        function startDrag(clientX, clientY) {
-            dragging = false;
-            pos3 = clientX;
-            pos4 = clientY;
-        }
-
-        function elementDrag(e) {
-            e.preventDefault();
-            dragAction(e.clientX, e.clientY);
-        }
-
-        function elementTouchDrag(e) {
-            const touch = e.touches[0];
-            dragAction(touch.clientX, touch.clientY);
-        }
-
-        function dragAction(clientX, clientY) {
-            dragging = true;
-            pos1 = pos3 - clientX;
-            pos2 = pos4 - clientY;
-            pos3 = clientX;
-            pos4 = clientY;
-            el.style.top = (el.offsetTop - pos2) + "px";
-            el.style.left = (el.offsetLeft - pos1) + "px";
-        }
-
-        function closeDragElement() {
-            document.onmouseup = null;
-            document.onmousemove = null;
-            document.ontouchend = null;
-            document.ontouchmove = null;
-
-            const currentY = el.offsetTop;
-            const windowHeight = window.innerHeight;
-            let newY = currentY;
-
-            if (currentY < 7) {
-                newY = 7;
-            } else if (currentY > (windowHeight - el.offsetHeight - 7)) {
-                newY = windowHeight - el.offsetHeight - 7;
-            }
-
-            const windowWidth = window.innerWidth;
-            const currentX = el.offsetLeft;
-            let newX;
-
-            if (currentX < (windowWidth / 2)) {
-                newX = 7;
-
-                const rightMulticons = document.querySelectorAll('[id^="rmulticon"]');
-                rightMulticons.forEach(function (element) {
-                    const newId = element.id.replace('rmulticon', 'lmulticon');
-                    element.id = newId;
-                });
-            } else {
-                newX = windowWidth - el.offsetWidth - 7;
-
-                const leftMulticons = document.querySelectorAll('[id^="lmulticon"]');
-                leftMulticons.forEach(function (element) {
-                    const newId = element.id.replace('lmulticon', 'rmulticon');
-                    element.id = newId;
-                });
-            }
-
-            setTimeout(() => {
-                el.style.left = newX + "px";
-                el.style.top = newY + "px";
-                dragging = false;
-            }, 100);
-        }
-    }
-
-    // Login handling function
-    function handleLogin() {
-        const nickname = document.getElementById('nickname').value;
-        const password = document.getElementById('password').value;
-
-        // Các bộ dữ liệu hợp lệ
-        const validCredentials = [
-            { nickname: 'Orias', password: 'Log171' },
-            { nickname: 'nobody123', password: 'nobody312' },
-            { nickname: 'sleepyyyy', password: '3123212' }
-        ];
-
-        // Kiểm tra thông tin đăng nhập
-        const isValid = validCredentials.some(credentials =>
-            credentials.nickname === nickname && credentials.password === password
-        );
-
-        if (isValid) {
-            isLoggedIn = true;
-            alert("Login successful!");
-
-            // Ẩn phần tử login
-            const loginElement = document.getElementById('login');
-            if (loginElement) {
-                loginElement.classList.remove('show');
-                loginElement.classList.add('hide');
-            }
+function addCSS(file) {
+    return new Promise((resolve) => {
+        if (!document.querySelector(`link[href="${file}"]`)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = file;
+            link.onload = function () {
+                console.log(`CSS đã tải: ${file}`);
+                resolve();
+            };
+            document.head.appendChild(link);
         } else {
-            alert("Invalid login. Please try again.");
+            resolve(); // Nếu CSS đã tồn tại, tiếp tục
         }
+    });
+}
+
+function loadScripts(scripts) {
+    return Promise.all(scripts.map(file => {
+        return new Promise((resolve) => {
+            if (!document.querySelector(`script[src="${file}"]`)) {
+                let newScript = document.createElement('script');
+                newScript.src = file;
+                newScript.onload = function () {
+                    console.log(`Đã tải script: ${file}`);
+                    resolve();
+                };
+                document.body.appendChild(newScript);
+            } else {
+                console.log(`Script đã tồn tại: ${file}, không cần tải lại.`);
+                resolve();
+            }
+        });
+    }));
+}*/
+function loadContent(file) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", file, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("body").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+} 
+
+
+// Khởi động lại các chức năng cũ từ các script trước đó
+/*function reinitializeOldScripts() {
+    // Gọi lại các hàm từ các tệp JS cũ nếu cần
+    if (typeof startAutoSlide === "function") {
+        startAutoSlide();
     }
-};
+
+    if (typeof attachEventHandlers === "function") {
+        attachEventHandlers();
+    }
+
+    if (typeof validateField === "function") {
+        console.log("Đảm bảo tất cả các hàm kiểm tra nhập liệu vẫn hoạt động");
+    }
+
+    if (typeof attachEventHandlers === "function") {
+        attachEventHandlers();
+        console.log("Đã chạy lại attachEventHandlers.");
+    }
+
+    console.log("Đã khởi động lại các chức năng cần thiết.");
+}
+
+// Hàm xử lý đăng xuất (được gắn lại trong reinitializeScripts)
+function handleLogout() {
+    isLoggedIn = false;
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+    toggleMulticons('.multiconacc');
+}
+
+console.log("Đã khởi chạy lại các chức năng cũ.");
+
+// Gọi hàm AJAX khi trang tải
+window.addEventListener("load", function () {
+    loadNavbarContent();
+});
+window.addEventListener("load", function () {
+    loadFooterContent();
+});*/

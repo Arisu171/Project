@@ -23,6 +23,238 @@
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
     <link rel="stylesheet" href="TourList.css">
     <title>Flarista</title>
+    <style>
+        .servicezone.contentzone {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 400vw;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+#regionbody .servicezone.contentzone {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.servicezone .title {
+    grid-column: 1/3;
+}
+
+#regionbody .servicecosts {
+    margin: 6vw 12vw;
+    transform: scale(1.2);
+}
+
+.servicecosts {
+
+    width: 55vw;
+    padding: 3vw 22.5vw 0vw;
+    margin-left: 0vw;
+}
+
+.servicecost {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 51vw;
+    height: 22vw;
+    gap: 1vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.438);
+    margin: 4vw 0;
+}
+
+.servicecost img {
+    background-color: rgb(255, 199, 161);
+    height: 22vw;
+}
+
+.costzone {
+    width: 9vw;
+    padding: 0vw 1vw;
+    margin: 2vw 0vw;
+    text-align: center;
+    font-size: 1vw;
+    border-left: 0.01vw solid rgba(0, 0, 0, 0.103);
+}
+
+.textfrom {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 2vw 0 1vw;
+}
+
+.cost {
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.rate {
+    margin: 0.8vw 0;
+    font-size: 0.8em;
+}
+
+.reviewnum {
+    font-size: 1.1em;
+    margin-bottom: 2vw;
+}
+
+.costzone a.detailbutt {
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    padding: 1em;
+    background-color: var(--color-main);
+    margin-top: 1.6vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.serviceinfo {
+    width: 19vw;
+    padding: 2vw 1vw;
+    font-size: 1vw;
+    position: relative;
+}
+
+.serviceinfo div {
+    margin-bottom: 1vw;
+}
+
+.tourinfo {
+    position: absolute;
+    bottom: 0;
+}
+
+.tourname {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 5vw;
+    text-align: LEFT;
+}
+
+.serviceinfo i {
+    margin-right: 0.8vw;
+}
+
+.whybook,
+.bookquest {
+    width: 22vw;
+    padding: 2vw 0 0;
+    margin: 10vw 3vw;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.reasonhead {
+    font-size: 1.4em;
+    margin: 0 0 1vw 0;
+    padding: 0 2vw;
+}
+
+.getquest {
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 0 2vw;
+}
+
+.reason,
+.reason1,
+.questxt {
+    font-size: 1.1em;
+    padding: 1.5vw 2vw;
+    line-height: 1.3;
+
+}
+
+.qinfo {
+    color: var(--color-main);
+    font-size: 1.15em;
+    padding: 0.5vw 2vw 1.5vw 3vw;
+}
+
+.reason {
+    border-top: 1px solid rgba(0, 0, 0, 0.281);
+}
+
+/* region rieng */
+
+.regionhead p {
+    text-align: left;
+    margin-bottom: 3vw;
+    line-height: 1.7;
+}
+
+.regionaddress {
+    margin-top: 2vw;
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+.tourname {
+    text-transform: uppercase;
+}
+
+.pagetitle {
+    text-transform: uppercase;
+}
+
+.destcontrol {
+    width: 98vw;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.destctrl {
+    padding: 1.5vw;
+    width: 1.9vw;
+    height: 1.9vw;
+    text-align: center;
+    font-size: 1.9vw;
+    font-weight: 700;
+    margin: 0vw 1vw 4vw;
+    background-color: rgba(0, 0, 0, 0.11);
+    border-radius: 50%;
+    color: var(--color-main);
+    cursor: pointer;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.destctrl:hover {
+    background-color: var(--color-main);
+    color: white;
+}
+
+.destctrl:active {
+    background-color: var(--color-main-active);
+}
+
+.destctrl.ctrlcurrent {
+    background-color: var(--color-main);
+    color: white;
+}
+
+.servicepage1 {
+    transform: translateX(0);
+}
+
+.servicepage2 {
+    transform: translateX(-100vw);
+}
+
+.servicepage3 {
+    transform: translateX(-200vw);
+}
+
+.servicepage4 {
+    transform: translateX(-300vw);
+}
+    </style>
 </head>
 
 <body>
