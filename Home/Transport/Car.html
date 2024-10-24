@@ -21,15 +21,13 @@
 </head>
 
 <body>
-    <header>
-        <div id="navigationbar"></div>
-        <div class="pagebanner bannersmall">
-            <img src="BACK-MAIN.jpg" alt="anh">
-            <div class="pagetitle">CAR RENTAL</div>
-        </div>
-    </header>
+    <div id="navigationbar"></div>
 
     <div id="body">
+        <div class="pagebanner bannersmall">
+            <img src="BACK-MAIN.jpg" alt="anh">
+             <div class="pagetitle">CAR RENTAL</div>
+        </div>
         <div id="book">
             <div class="book">
                 <div class="booking">
@@ -53,35 +51,38 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="dong3 dong">
                         <div class="dad">
                             <h5>Start date</h5>
                             <div class="child">
                                 <i class="fa-light fa-calendar-days"></i>
-                                <input type="date">
+                                <input type="date" class="desktop-input" onclick="responsiveInput()">
                             </div>
                         </div>
                         <div class="mom">
                             <h5>Start time</h5>
                             <div class="child">
-                                <i class="fa-sharp fa-light fa-clock"></i>
+                                <i class="fa-sharp fa-light fa-clock" onclick="responsiveInput()"></i>
                                 <input type="time">
                             </div>
                         </div>
                     </div>
+
                     <div class="dong4 dong">
                         <div class="dad">
                             <h5>End date</h5>
                             <div class="child">
                                 <i class="fa-light fa-calendar-days"></i>
-                                <input type="date">
+                                <input type="date" class="desktop-input" >
                             </div>
                         </div>
                         <div class="mom">
                             <h5>End time</h5>
                             <div class="child">
                                 <i class="fa-sharp fa-light fa-clock"></i>
-                                <input type="time">
+                                <input type="time" class="desktop-input">
+                                <input type="datetime-local" class="mobile-input" style="display: none;">
                             </div>
                         </div>
                     </div>
@@ -160,21 +161,25 @@
         <div class="car-rental">
             <div class="dad">
                 <h2>Car Rental</h2>
-                <p>Renting a car is the best option for flexible travel when traveling with family or friends.
-                    With Flarista, you can freely search for cars with detailed price lists and book a car in a snap.
-                </p>
-                <p>In particular, the car usage time is up to 24 hours for each rental day.</p>
+                <div class="text">
+                    <p>Renting a car is the best option for flexible travel when traveling with family or friends.
+                        With Flarista, you can freely search for cars with detailed price lists and book a car in a snap.
+                    </p>
+                    <p>In particular, the car usage time is up to 24 hours for each rental day.</p>
+                </div>
             </div>
         </div>
         <div class="with-driver">
             <div class="dad">
                 <h2>With Driver</h2>
-                <p>Convenient transportation is a very important issue when you travel. Especially when you want
-                    to have an easy, hassle-free trip to explore many tourist destinations, renting a car with a driver
-                    is a reasonable choice.With the development of digital technology, you can
-                    easily enjoy car rental services through Flarista.
-                </p>
-                <p> Easily compare prices from our trusted partners and find the service that suits your needs.</p>
+                <div class="text">
+                    <p>Convenient transportation is a very important issue when you travel. Especially when you want
+                        to have an easy, hassle-free trip to explore many tourist destinations, renting a car with a driver
+                        is a reasonable choice.With the development of digital technology, you can
+                        easily enjoy car rental services through Flarista.
+                    </p>
+                    <p> Easily compare prices from our trusted partners and find the service that suits your needs.</p>
+                </div>
             </div>
         </div>
         <hr>
@@ -283,10 +288,9 @@
         </div>
     </div>
     <footer id="pagefooter"></footer>
+    <script src="Car.js"></script>
     <script src="../../General/Footer/Footer.js"></script>
     <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
-    <script src="Home.js"></script>
-    <script src="Car.js"></script>
 </body>
 
 </html>

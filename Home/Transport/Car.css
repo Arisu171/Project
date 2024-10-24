@@ -10,7 +10,7 @@
 }
 /*phần ảnh đầu*/
 body{
-    font-size:16px;
+    font-size:1vw;
 }
 
 /*phần book*/
@@ -493,7 +493,110 @@ hr{
 }
 
 @media only screen and (max-width: 740px)/*web mobile*/{
-    #book{
-        
+    #book .book{
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
     }
+    #book .book .booking h5 {
+        font-size:3rem;
+    }
+    #book .book .booking .dong2, .dong3, .dong4{
+        height:calc(100% / 4);
+    }
+    #book .book .booking .dong1 label{
+        padding:0.8rem;
+    }
+    #book .book .booking .dong .child input {
+        height:8rem;
+        padding-left:5rem;
+        font-size:2.5rem;
+    }
+    #book .book .booking .dong .dad i{
+        font-size:3rem;
+        top:45%;
+    }
+    #book .book .booking .dong3{
+        width:100%;
+        display:block;
+    }
+    #book .book .booking .dong3 .dad input{
+        margin:0px;
+    }
+    #book .book .booking .dong3 .mom{
+        display:none;
+    }
+    #book .book .booking .dong3 .dad{
+        width:100%;
+    }
+    #book .book .booking .dong4{
+        width:100%;
+        display:block;
+    }
+    #book .book .booking .dong4 .dad input{
+        margin:0px;
+    }
+    #book .book .booking .dong4 .mom{
+        display:none;
+    }
+    #book .book .booking .dong5 button{
+        width:30rem;
+        height:5rem;
+        font-size:2rem;
+    }
+    #partners{
+        display:none;
+    }
+    .why{
+        display:none;
+    }
+    .car-rental{
+        width:80%;
+        height:auto;
+        margin-right:auto;
+        margin-left:auto;
+    }
+    .car-rental .dad{
+        display:grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 1fr;
+    }
+    .car-rental .dad h2{
+        font-size: 5rem;
+    }
+    .car-rental .dad p{
+        font-size:1.8rem;
+        text-align: justify;
+    }
+    .car-rental .dad p:nth-of-type(2){
+        display:none;
+    }
+    .with-driver{
+        width:80%;
+        height:auto;
+        margin-right:auto;
+        margin-left:auto;
+    }
+    .with-driver .dad{
+        display:grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 1fr;
+    }
+    .with-driver .dad h2{
+        font-size: 5rem;;
+    }
+    .with-driver .dad p{
+        font-size:1.8rem;
+        text-align: justify;
+    }
+    .with-driver .dad p:nth-of-type(2){
+        display:none;
+    }
+    .general{
+        display:none;
+    }
+    #book .book .booking .dong1 label .custom-radio {
+        font-size:1.8rem;
+    }
+   
 }
