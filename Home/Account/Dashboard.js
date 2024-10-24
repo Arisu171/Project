@@ -1,52 +1,83 @@
-function loadHomeContent() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../Home/Home.html", true); // Đường dẫn tương đối từ Dashboard.html
+let previousContent = ''; // Biến lưu nội dung trước
+
+function loadDash(file) {
+    // Lưu nội dung hiện tại vào previousContent
+    const dashContentElements = document.getElementsByClassName("dash-content");
+    if (dashContentElements.length > 0) {
+        previousContent = dashContentElements[0].innerHTML;
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", file, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var tempDiv = document.createElement('div');
-            tempDiv.innerHTML = xhr.responseText;
-
-            var homeContent = tempDiv.querySelector('body');
-
-            if (homeContent) {
-                // Chèn nội dung từ Home.html vào vị trí id="body" của Dashboard.html
-                document.getElementById('body').innerHTML = homeContent.innerHTML;
+            for (let i = 0; i < dashContentElements.length; i++) {
+                dashContentElements[i].innerHTML = xhr.responseText;
             }
-
-            // Thêm các tệp CSS và JS từ Home
-            addHomeResources();
         }
     };
     xhr.send();
 }
 
-function addHomeResources() {
-    // Thêm CSS
-    addCSS("../Home/tesst.css");
-    addCSS("../Home/Banner.css");
-
-    // Thêm JavaScript
-    addScript("../Home/tesst.js");
-    addScript("../Home/Banner.js");
-}
-
-function addCSS(file) {
-    if (!document.querySelector(`link[href="${file}"]`)) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = file;
-        document.head.appendChild(link);
+function loadPreviousContent() {
+    const dashContentElements = document.getElementsByClassName("dash-content");
+    if (dashContentElements.length > 0) {
+        // Giữ lại nội dung hiện tại trước khi thay đổi
+        const currentContent = dashContentElements[0].innerHTML;
+        for (let i = 0; i < dashContentElements.length; i++) {
+            dashContentElements[i].innerHTML = previousContent;
+        }
+        // Cập nhật previousContent với nội dung hiện tại trước khi thay đổi
+        previousContent = currentContent;
     }
 }
+// Hàm để khôi phục lại nội dung trước đó
 
-function addScript(file) {
-    if (!document.querySelector(`script[src="${file}"]`)) {
-        var script = document.createElement('script');
-        script.src = file;
-        document.body.appendChild(script);
+/*hàm chỉnh profile*/
+function toggleEdit() {
+    const inputs = document.querySelectorAll('.profile-card .details input');
+    const editBtn = document.querySelector('.edit-btn');
+    const isEditing = editBtn.classList.contains('editing');
+    const pen=document.getElementsByClassName('fa-pen');
+    if (isEditing) {
+        inputs.forEach(input => {
+            input.setAttribute('readonly', true);
+        });
+        for (let i = 0; i < pen.length; i++) {
+            pen[i].style.display = 'none';
+        }
+        editBtn.textContent = 'Edit Profile';
+    } 
+    else {
+        inputs.forEach(input => {
+            input.removeAttribute('readonly');
+        });
+        for (let i = 0; i < pen.length; i++) {
+            pen[i].style.display = 'inline-block';
+        }
+        editBtn.textContent = 'Save Profile';
     }
+    editBtn.classList.toggle('editing');
 }
 
-window.addEventListener("load", function () {
-    loadHomeContent();
-});
+/*hoán đổi giá trị change-pass*/
+function togglePassword(inputId, button) {
+    const input = document.getElementById(inputId);
+    const eyeIcon = button.parentElement.querySelector('.fa-eye');
+    const eyeSlashIcon = button.parentElement.querySelector('.fa-eye-slash');
+
+    if (input.type === 'password') {
+        input.type = 'text'; // Hiển thị mật khẩu
+        eyeIcon.parentElement.style.display = 'none'; // Ẩn nút hiện tại
+        eyeSlashIcon.parentElement.style.display = 'inline-block'; // Hiển thị nút kia
+    } else {
+        input.type = 'password'; // Ẩn mật khẩu
+        eyeIcon.parentElement.style.display = 'inline-block'; // Hiển thị nút hiện tại
+        eyeSlashIcon.parentElement.style.display = 'none'; // Ẩn nút kia
+    }
+}
+function nhap(){
+    alert('BẠN ĐÃ ĐỔI MẬT KHẨU THÀNH CÔNG');
+}
+
+

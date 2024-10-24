@@ -376,6 +376,15 @@ function loadRegisterContent() {
     clearPreviousResources();
     loadContent('./Account/Register.html', ['./Account/Register.js'], ['./Account/Register.css']);
 }
+function loadDashboard() {
+    clearPreviousResources();
+    loadContent('./Account/Dashboard.html', ['./Account/Dashboard.js'], ['./Account/Dashboard.css']);
+}
+
+function loadChangepass(){
+    clearPreviousResources();
+    loadContent('./Account/Change-pass.html', ['./Account/Dashboard.js'], ['./Account/Dashboard.css']);
+}
 
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     clearPreviousResources();
