@@ -9,7 +9,7 @@
     --h4-font-size:1rem;
 }
 /*phần ảnh đầu*/
-body{
+html{
     font-size:1vw;
 }
 /*phần book*/
@@ -428,7 +428,7 @@ hr{
 /*popular content 2 table chung*/
 #popular .content2 .table{
     width:100%;
-    height:30rem; 
+    height:auto; 
     display:flex;
     justify-content: space-between;
 }
@@ -445,7 +445,11 @@ hr{
 #popular .content2 .table table:nth-of-type(2){
     margin-right:1.5rem;
 }
-/*popular content 2 table heading*/
+/*popular content 2 table heading*/ 
+#popular .content2 .table table thead{
+    padding:2rem;
+    height:auto;
+}
 #popular .content2 .table table:nth-of-type(1) thead{
     background-image:url(Bus-HN-TABLE.png);
     width:100%;
@@ -664,5 +668,17 @@ hr{
     #popular .content1 .anh .container .card p{
         font-size:3rem;
     }
-    #popular .content2
+    #popular .content2 .table{
+        display:grid;
+        width:75%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #popular .content2 .table table{
+        width:100%;
+        height:auto;
+    }
+    #popular .content2 .table table thead{
+        width:100%;
+    }
 }
