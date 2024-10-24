@@ -217,7 +217,7 @@ html{
 }
 /*book content 2 seat*/
 #book .book .content2 .seat{
-    width:42%;
+    width:41.3%;
 }
 #book .book .content2 .seat .main{
     position: relative;
@@ -428,7 +428,7 @@ hr{
 /*popular content 2 table chung*/
 #popular .content2 .table{
     width:100%;
-    height:auto; 
+    height:30rem; 
     display:flex;
     justify-content: space-between;
 }
@@ -446,10 +446,6 @@ hr{
     margin-right:1.5rem;
 }
 /*popular content 2 table heading*/ 
-#popular .content2 .table table thead{
-    padding:2rem;
-    height:auto;
-}
 #popular .content2 .table table:nth-of-type(1) thead{
     background-image:url(Bus-HN-TABLE.png);
     width:100%;
@@ -582,7 +578,7 @@ hr{
     }
     #book .book .content1 .button button i{
         font-size:2rem;
-        top:1.4rem;
+        top:1.2rem;
         right:1rem;
         position:absolute;
     }
@@ -603,6 +599,9 @@ hr{
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         width:100%;
+    }
+    #book .book .content2 .date .main i {
+        top:45%;
     }
     #book .book .content1 .date .main input{
         border-radius: 1rem;
@@ -668,17 +667,7 @@ hr{
     #popular .content1 .anh .container .card p{
         font-size:3rem;
     }
-    #popular .content2 .table{
-        display:grid;
-        width:75%;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #popular .content2 .table table{
-        width:100%;
-        height:auto;
-    }
-    #popular .content2 .table table thead{
-        width:100%;
+    #popular .content2{
+        display:none;
     }
 }
