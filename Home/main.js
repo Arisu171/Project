@@ -291,7 +291,7 @@ addFontAwesome();
 function loadHome() {
     // Xóa các tài nguyên trước và tải lại các tài nguyên cần thiết cho Home
     clearPreviousResources();
-    loadContent('Home.html', ['Banner.js'], ['Home.css', 'Banner.css', '../font-awesome-6.6.0-pro-full-main/css/all.css']);
+    loadContent('Home.html', ['Home.js'], ['Home.css']);
 }
 
 // Hàm tải nội dung trang About Us
@@ -455,11 +455,9 @@ function clearPreviousResources() {
         '../font-awesome-6.6.0-pro-full-main/css/all.css',
         '../General/reset.css',
         'main.css',
-        'Home.css' // Thêm Banner.css vào danh sách cần giữ lại
     ];
     const jsToKeep = [
         'main.js',
-        'Home.js' // Nếu cần giữ lại Banner.js, thêm vào đây
     ];
 
     // Xóa các tệp CSS không cần thiết
