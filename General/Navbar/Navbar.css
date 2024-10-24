@@ -208,12 +208,12 @@ body a {
     transition: 0.3s ease;
 }
 
-.navdroplist a {
+.navdroplist div {
     padding: 1.5vw 2vw;
     transition: 0.3s;
 }
 
-.navdroplist a:hover {
+.navdroplist div:hover {
     background-color: #5e5e5ec5;
 }
 
@@ -391,9 +391,9 @@ body a {
     position: relative;
 }
 
-.multiconpage,
-.multicontran,
-.multiconacc {
+div.multiconpage,
+div.multicontran,
+div.multiconacc {
     position: absolute;
     height: 1.5vw;
     width: 8vw;
@@ -422,92 +422,92 @@ body a {
     opacity: 1;
 }
 
-.show#lmulticon0 {
+div.show#lmulticon0 {
     top: 8vw;
     left: 8.5vw;
 }
 
-.show#lmulticon1 {
+div.show#lmulticon1 {
     top: 6vw;
     left: 10vw;
 }
 
-.show#lmulticon2 {
+div.show#lmulticon2 {
     top: 3.1vw;
     left: 15vw;
 }
 
-.show#lmulticon3 {
+div.show#lmulticon3 {
     top: -1vw;
     left: 14vw;
 }
 
-.show#lmulticon4 {
+div.show#lmulticon4 {
     top: -5.1vw;
     left: 15vw;
 }
 
-.show#lmulticon5 {
+div.show#lmulticon5 {
     top: -8vw;
     left: 10vw;
 }
 
-.show#lmulticon6 {
+div.show#lmulticon6 {
     top: -10vw;
     left: 8.5vw;
 }
 
-.show#rmulticon0 {
+div.show#rmulticon0 {
     top: -10vw;
     left: -8.5vw;
 }
 
-.show#rmulticon1 {
+div.show#rmulticon1 {
     top: -8vw;
     left: -10vw;
 }
 
-.show#rmulticon2 {
+div.show#rmulticon2 {
     top: -5.1vw;
     left: -15vw;
 }
 
-.show#rmulticon3 {
+div.show#rmulticon3 {
     top: -1vw;
     left: -14vw;
 }
 
-.show#rmulticon4 {
+div.show#rmulticon4 {
     top: 3.1vw;
     left: -15vw;
 }
 
-.show#rmulticon5 {
+div.show#rmulticon5 {
     top: 6vw;
     left: -10vw;
 }
 
-.show#rmulticon6 {
+div.show#rmulticon6 {
     top: 8vw;
     left: -8.5vw;
 }
 
-.show#lmulticon7 {
+div.show#lmulticon7 {
     top: 1vw;
     left: 10vw;
 }
 
-.show#lmulticon8 {
+div.show#lmulticon8 {
     top: 9vw;
     left: 6vw;
 }
 
-.show#rmulticon7 {
+div.show#rmulticon7 {
     top: 1vw;
     left: -10vw;
 }
 
-.show#rmulticon8 {
+div.show#rmulticon8 {
     top: 9vw;
     left: -6vw;
 }
@@ -522,12 +522,12 @@ body a {
     font-size: 1.5vw;
 }
 
-.navusers a.multicon.out#multiconbar2 {
+.navusers div.multicon.out#multiconbar2 {
     color: rgb(255, 125, 147);
     font-weight: 700;
 }
 
-.navusers a.multicon#multiconbar1 {
+.navusers div.multicon#multiconbar1 {
     color: rgb(255, 251, 0);
     font-weight: 700;
 }
