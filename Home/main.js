@@ -3,7 +3,7 @@ window.onload = function () {
     let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     const storedNickname = localStorage.getItem("nickname");
 
-    attachEventHandlers(); // Gắn các sự kiện cần thiết
+    attachEventHandlers();
 
     const loginButton = document.getElementById('loginbutton');
     if (loginButton) {
@@ -286,68 +286,81 @@ function addFontAwesome() {
 
 addFontAwesome();
 
-// Hàm tải nội dung trang Home
+//AJAX
 function loadHome() {
-    // Xóa các tài nguyên trước và tải lại các tài nguyên cần thiết cho Home
     clearPreviousResources();
     loadContent('Home.html', ['Home.js'], ['Home.css']);
 }
 
-// Hàm tải nội dung trang About Us
 function loadAboutUs() {
     clearPreviousResources();
     loadContent('./Pages/About Us.html', ['./Pages/About Us.js'], ['./Pages/About Us.css']);
 }
 
-// Hàm tải nội dung trang Services
 function loadServices() {
     clearPreviousResources();
     loadContent('./Pages/Our Services.html', ['./Pages/Our Services.js'], ['./Pages/Our Services.css']);
 }
 
-// Hàm tải nội dung trang Contact Us
 function loadContact() {
     clearPreviousResources();
     loadContent('./Pages/Contact Us.html', ['./Pages/Contact Us.js'], ['./Pages/Contact Us.css']);
 }
 
-// Hàm tải nội dung trang Destinations
 function loadDestinations() {
     clearPreviousResources();
     loadContent('./Pages/Destinations.html', ['./Pages/Destinations.js'], ['./Pages/Destinations.css']);
 }
 
-// Hàm tải nội dung trang Tourist
 function loadTourList() {
     clearPreviousResources();
     loadContent('./TourList/TourList.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
+function loadCatBa() {
+    clearPreviousResources();
+    loadContent('./TourList/CatBa.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+}
+function loadMaiChau() {
+    clearPreviousResources();
+    loadContent('./TourList/MaiChau.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+}
+function loadMausoleum() {
+    clearPreviousResources();
+    loadContent('./TourList/Mausoleum.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+}
+function loadCuLaoCham() {
+    clearPreviousResources();
+    loadContent('./TourList/CuLaoCham.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+}
+function loadOfficeSG() {
+    clearPreviousResources();
+    loadContent('./TourList/OfficeSG.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+}
+function loadGreenHill() {
+    clearPreviousResources();
+    loadContent('./TourList/GreenHill.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+}
 
-// Hàm tải nội dung trang Regions
 function loadRegions() {
     clearPreviousResources();
     loadContent('./Regions/Regions.html', ['./Regions/Regions.js'], ['./Regions/Regions.css']);
 }
 
-// Hàm tải nội dung trang Car Rental
 function loadCarRental() {
     clearPreviousResources();
     loadContent('./Transport/Car.html', ['./Transport/Car.js'], ['./Transport/Car.css']);
 }
 
-// Hàm tải nội dung trang Bus Shuttle
 function loadBusShuttle() {
     clearPreviousResources();
     loadContent('./Transport/Coach.html', ['./Transport/Coach.js'], ['./Transport/Coach.css']);
 }
 
-// Hàm tải nội dung trang Airport Trans
 function loadAirportTrans() {
     clearPreviousResources();
     loadContent('./Transport/Airport.html', ['./Transport/Airport.js'], ['./Transport/Airport.css']);
 }
 
-// Hàm tải nội dung trang Blog
 function loadBlog() {
     clearPreviousResources();
     loadContent('./Blog/Blog.html', ['./Blog/Blog.js'], ['./Blog/Blog.css']);
@@ -355,20 +368,17 @@ function loadBlog() {
 
 function loadBlogContent(pgnm) {
     clearPreviousResources();
-    // Tạo đường dẫn URL HTML từ thư mục Blog
     const pgmurl = `./Blog/${pgnm}.html`;
     loadContent(pgmurl, ['./Blog/Content-blog.js'], ['./Blog/Content-blog.css']);
 }
 
-// Hàm tải nội dung trang Account
 function loadRegisterContent() {
     clearPreviousResources();
     loadContent('./Account/Register.html', ['./Account/Register.js'], ['./Account/Register.css']);
 }
 
-// Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
-    clearPreviousResources(); // Xóa CSS và JS cũ trước khi tải mới
+    clearPreviousResources();
 
     toggleFade(true);
 
@@ -386,21 +396,19 @@ function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
                     document.getElementById('body').innerHTML = bodyContent.innerHTML;
                     console.log(`Nội dung đã được chèn từ ${htmlFile}`);
 
-                    // Thêm CSS trước khi JS để tránh xung đột
                     addCSSResources(cssFiles).then(() => {
-                        // Đảm bảo chỉ tải JS sau khi CSS đã hoàn tất
                         addJSResources(jsFiles).then(() => {
-                            reinitializeOldScripts(); // Khởi động lại các hàm cần thiết
+                            reinitializeOldScripts();
                         });
                     });
                 }
-            }, 300); // Thời gian chờ 0.3 giây (300ms)
+            }, 300);
         }
     };
     xhr.send();
 }
 
-// Hàm thêm tệp CSS
+//CSS
 function addCSSResources(cssFiles) {
     return new Promise((resolve) => {
         let promises = [];
@@ -414,7 +422,6 @@ function addCSSResources(cssFiles) {
     });
 }
 
-// Hàm thêm từng tệp CSS
 function addCSS(file) {
     return new Promise((resolve) => {
         if (!document.querySelector(`link[href="${file}"]`)) {
@@ -432,7 +439,7 @@ function addCSS(file) {
     });
 }
 
-// Hàm thêm tệp JavaScript sau khi CSS đã được thêm thành công
+//JS
 function addJSResources(jsFiles) {
     return new Promise((resolve) => {
         let loadedScripts = [];
@@ -446,9 +453,9 @@ function addJSResources(jsFiles) {
     });
 }
 
-// Hàm thêm từng tệp JavaScript với async
 function addJS(file) {
     return new Promise((resolve) => {
+        // Kiểm tra nếu script đã được thêm, không thêm lại
         if (!document.querySelector(`script[src="${file}"]`)) {
             const script = document.createElement('script');
             script.src = file;
@@ -464,21 +471,19 @@ function addJS(file) {
     });
 }
 
-// Hàm xóa các tệp CSS và JS đã được tải từ trước đó, trừ các tệp cần giữ lại
+// Xóa CSS JS 
 function clearPreviousResources() {
     const cssToKeep = [
         '../font-awesome-6.6.0-pro-full-main/css/all.css',
         '../General/reset.css',
         'main.css',
         'Banner.css',
-        'Home.css',// Thêm các tệp cần giữ lại
     ];
     const jsToKeep = [
         'main.js',
-        'Banner.js' // Thêm các tệp cần giữ lại
+        'Banner.js',
     ];
 
-    // Xóa các tệp CSS không cần thiết
     document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
         const href = link.getAttribute('href');
         if (!cssToKeep.includes(href)) {
@@ -486,7 +491,6 @@ function clearPreviousResources() {
         }
     });
 
-    // Xóa các tệp JavaScript không cần thiết
     document.querySelectorAll('script').forEach((script) => {
         const src = script.getAttribute('src');
         if (src && !jsToKeep.includes(src)) {
@@ -495,39 +499,60 @@ function clearPreviousResources() {
     });
 }
 
+function reattachGoogleFonts() {
+    const existingFontLinks = [
+        'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Koulen&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
+    ];
+
+    existingFontLinks.forEach((href) => {
+        if (!document.querySelector(`link[href="${href}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+            console.log(`Google Font đã được gắn lại: ${href}`);
+        }
+    });
+}
+
 function reinitializeOldScripts() {
-    // Đảm bảo rằng các hàm khởi tạo slideshow được chạy lại
     if (typeof startAutoSlide === "function") {
         startAutoSlide();
         console.log("Đã khởi động lại slideshow tự động.");
     }
 
-    // Gán lại các sự kiện cho các điểm điều hướng (dots)
     document.querySelectorAll('.bannercurrent div').forEach((dot, index) => {
-        dot.removeEventListener('click', handleDotClick); // Xóa sự kiện cũ trước khi gán lại
+        dot.removeEventListener('click', handleDotClick);
         dot.addEventListener('click', handleDotClick.bind(null, index + 1));
     });
 
-    // Thiết lập lại chỉ số hiện tại và cập nhật các điểm điều hướng (dots)
     if (typeof updateDots === "function") {
         updateDots();
         console.log("Đã cập nhật lại các dots điều hướng.");
     }
 
-    console.log("Đã khởi động lại các chức năng cần thiết cho slideshow.");
+    // Khởi động lại hàm khởi tạo dropdown ngày tháng
+    initializeDateDropdown();
+    console.log("Đã khởi động lại danh sách ngày và năm.");
+
+    reattachGoogleFonts();
+    console.log("Đã gắn lại Google Fonts.");
 }
 
-// Hàm xử lý khi click vào dot
+
+
 function handleDotClick(index) {
     goToBanner(index);
-    startAutoSlide(); // Khởi động lại slideshow tự động khi người dùng chuyển
+    startAutoSlide();
 }
-
 
 function toggleFade(show) {
     let fadeOverlay = document.querySelector('.fade-overlay');
 
-    // Nếu lớp phủ không tồn tại, hãy tạo nó
     if (!fadeOverlay) {
         fadeOverlay = document.createElement('div');
         fadeOverlay.className = 'fade-overlay';
@@ -535,13 +560,87 @@ function toggleFade(show) {
     }
 
     if (show) {
-        fadeOverlay.classList.add('active'); // Hiển thị lớp phủ
+        fadeOverlay.classList.add('active');
 
-        // Tự động ẩn lớp phủ sau 2 giây
         setTimeout(() => {
             fadeOverlay.classList.remove('active');
-        }, 500); // 2 giây để khớp với CSS
+        }, 500);
     } else {
-        fadeOverlay.classList.remove('active'); // Ẩn lớp phủ ngay lập tức
+        fadeOverlay.classList.remove('active');
     }
+}
+
+function initializeDateDropdown() {
+    const ngaySelect = document.getElementById('ngay');
+    const thangSelect = document.getElementById('thang');
+    const namSelect = document.getElementById('nam');
+
+    // Kiểm tra các phần tử tồn tại trước khi thao tác
+    if (!ngaySelect || !thangSelect || !namSelect) {
+        console.warn("Các phần tử chọn ngày, tháng, năm không tồn tại.");
+        return;
+    }
+
+    // Khởi tạo năm từ 1950 đến năm hiện tại
+    for (let i = 1950; i <= new Date().getFullYear(); i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.text = i;
+        namSelect.appendChild(option);
+    }
+
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    function getDaysInMonth(month, year) {
+        if (month === 2) {
+            return isLeapYear(year) ? 29 : 28;
+        } else if ([4, 6, 9, 11].includes(month)) {
+            return 30;
+        } else {
+            return 31;
+        }
+    }
+
+    function initializeDays() {
+        ngaySelect.innerHTML = '<option value="" disabled selected>Day</option>';
+        for (let i = 1; i <= 31; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.text = i;
+            ngaySelect.appendChild(option);
+        }
+    }
+
+    function updateDays() {
+        const month = parseInt(thangSelect.value);
+        const year = parseInt(namSelect.value);
+        if (isNaN(month) || isNaN(year)) {
+            return;
+        }
+
+        const currentDay = parseInt(ngaySelect.value);
+        const daysInMonth = getDaysInMonth(month, year);
+
+        if (currentDay > daysInMonth) {
+            initializeDays();
+        } else if (ngaySelect.options.length - 1 !== daysInMonth) {
+            ngaySelect.innerHTML = '<option value="" disabled selected>Day</option>';
+            for (let i = 1; i <= daysInMonth; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.text = i;
+                ngaySelect.appendChild(option);
+            }
+            if (currentDay) {
+                ngaySelect.value = currentDay;
+            }
+        }
+    }
+
+    initializeDays();
+
+    thangSelect.addEventListener('change', updateDays);
+    namSelect.addEventListener('change', updateDays);
 }

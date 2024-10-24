@@ -31,27 +31,23 @@ function uptobody() {
     }, 1000);
 };
 
-document.querySelectorAll('.servicecost').forEach(service => {
-    const img = service.querySelector('img');
-    const detailButton = service.querySelector('.detailbutt');
+document.querySelectorAll('.detailbutt').forEach(detailButton => {
+    detailButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
 
-    if (img && detailButton) {
+        const img = this.closest('.servicecost').querySelector('img');
+        if (img) {
+            // Lấy tên ảnh và loại bỏ phần mở rộng .png
+            const imgName = img.getAttribute('src').split('.')[0];
+            const baseName = imgName.replace('Cost', '');
+            const functionName = `load${baseName}`;
 
-        const imgName = img.getAttribute('src').split('.')[0];
-        const baseName = imgName.replace('Cost', '');
-        const functionName = `load${baseName}`;
-
-        detailButton.addEventListener('click', function (event) {
-            event.preventDefault();
-
+            // Gọi hàm JavaScript tương ứng nếu tồn tại
             if (typeof window[functionName] === "function") {
                 window[functionName]();
+            } else {
+                console.log(`Function ${functionName} does not exist`);
             }
-
-            const href = detailButton.getAttribute('href');
-            if (href) {
-                window.location.href = href;
-            }
-        });
-    }
+        }
+    });
 });
