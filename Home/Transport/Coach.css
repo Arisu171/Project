@@ -535,3 +535,133 @@ hr{
     font-weight: 600;
     color:#848484;
 }
+@media only screen and (max-width: 740px)/*web mobile*/{
+    #book .book{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:3rem;
+        margin-bottom:3rem;
+    }
+    #book .book h3{
+        text-align: center;
+    }
+    #book .book .content1{
+        display:grid;
+        grid-template-columns: 1fr 0.1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #book .book .content1 .from{
+        grid-column:1 / 2;
+        grid-row: 1 / 2;
+        width:100%;
+    }
+    #book .book .content1 .from .main input{
+        border-radius: 1rem;
+    }
+
+    #book .book .content1 .button{
+        grid-column: 2 / 3;
+        grid-row:1 / 2;
+        display:inline-block;
+        width:100%;
+        height:100%;
+        position:relative;
+    }
+    #book .book .content1 .button button{
+        position:relative;
+        width:70%;
+        height:50%;
+        text-align: center;
+        top:2rem;
+        left:1rem;
+    }
+    #book .book .content1 .button button i{
+        font-size:2rem;
+        top:1.4rem;
+        right:1rem;
+        position:absolute;
+    }
+    #book .book .content1 .to{
+        grid-column:1 / 3;
+        grid-row: 2 / 3;
+        width:100%;
+    }
+    #book .book .content1 .to .main input{
+        border-radius: 1rem;
+    }
+    #book .book .content2{
+        display:grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    #book .book .content2 .date{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width:100%;
+    }
+    #book .book .content1 .date .main input{
+        border-radius: 1rem;
+    }
+    #book .book .content2 .check{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        width:50%;
+        height:100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #book .book .content1 .check .seat input{
+        border-radius: 1rem;
+    }
+    #book .book .content2 .seat{
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        width:100%;
+    }
+    #book .book .content2 .seat .main .dropdown {
+        width:100%;
+    }
+    #book .book .content2 .seat .main .dropdown .option{
+        font-size:2rem;
+    }
+    #book .book .content2 .seat .main input{
+        width:100%;
+    }
+    #book .book .content3{
+        margin-left:auto;
+        margin-right:auto;
+        width:80%;
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    #book .book .content3 input{
+        width:100%;
+        border-radius: 1rem;
+    }
+    hr:nth-last-of-type(2){
+        display:none;
+    }
+    #why{
+        display:none;
+    }
+    #popular{
+        width:75%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #popular .content1 .anh .container{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    #popular .content1 .anh .container .card{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #popular .content1 .anh .container .card p{
+        font-size:3rem;
+    }
+}
