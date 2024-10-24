@@ -30,3 +30,28 @@ function uptobody() {
         window.location.href = "#port";
     }, 1000);
 };
+
+document.querySelectorAll('.servicecost').forEach(service => {
+    const img = service.querySelector('img');
+    const detailButton = service.querySelector('.detailbutt');
+
+    if (img && detailButton) {
+
+        const imgName = img.getAttribute('src').split('.')[0];
+        const baseName = imgName.replace('Cost', '');
+        const functionName = `load${baseName}`;
+
+        detailButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (typeof window[functionName] === "function") {
+                window[functionName]();
+            }
+
+            const href = detailButton.getAttribute('href');
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    }
+});

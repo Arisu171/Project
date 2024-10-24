@@ -470,7 +470,8 @@ function clearPreviousResources() {
         '../font-awesome-6.6.0-pro-full-main/css/all.css',
         '../General/reset.css',
         'main.css',
-        'Banner.css' // Thêm các tệp cần giữ lại
+        'Banner.css',
+        'Home.css',// Thêm các tệp cần giữ lại
     ];
     const jsToKeep = [
         'main.js',
