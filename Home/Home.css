@@ -1,5 +1,262 @@
 .underbanner {}
 
+.homebanner {
+    z-index: 50;
+    width: 100vw;
+    height: calc(100vw * 9 / 16);
+    overflow: hidden;
+    position: relative;
+    max-height: 100vh;
+    min-height: 45vw;
+    margin: 0px;
+    background-color: black;
+}
+
+.bannerimg {
+    width: 100%;
+    position: absolute;
+    z-index: 50;
+    top: 0;
+}
+
+.bannerimg1 {
+    transform: translateX(200%);
+    z-index: 50;
+    transition: transform 0.8s ease, opacity 0.5s ease;
+    transition-delay: 0.2s;
+    opacity: 0.44;
+}
+
+.bannerimg2 {
+    transform: translateX(100%);
+    z-index: 51;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition-delay: 0.2s;
+    opacity: 0.4;
+}
+
+.bannerimg3 {
+    transform: translateX(0);
+    z-index: 52;
+    opacity: 1;
+    transition: transform 1s ease;
+}
+
+.bannerimg4 {
+    transform: translateX(-100%);
+    z-index: 51;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition-delay: 0.2s;
+    opacity: 0.4;
+}
+
+.bannerimg5 {
+    transform: translateX(-200%);
+    z-index: 50;
+    transition: transform 0.8s ease, opacity 0.5s ease;
+    transition-delay: 0.2s;
+    opacity: 0.4;
+}
+
+.bannercontrol,
+.bannercurrent {
+    position: absolute;
+    z-index: 60;
+}
+
+.bannercontrol {
+    color: rgba(201, 201, 201, 0.212);
+    font-size: calc(10px + 4vw);
+    top: calc(50% - 2vw);
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+.bannercontrol:hover {
+    color: rgba(41, 41, 41, 0.425);
+}
+
+.bannercontrol:active {
+    color: rgba(0, 0, 0, 0.596);
+}
+
+#bannercontrolprev {
+    left: 2vw;
+}
+
+#bannercontrolnext {
+    right: 2vw;
+}
+
+.bannercurrent {
+    font-size: 1.3vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 16vw;
+    left: 42vw;
+    bottom: 1%;
+    opacity: 70%;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+.bannercurrent:hover {
+    color: rgb(148, 148, 148);
+}
+
+.bannercurrent :active {
+    color: rgb(27, 27, 27);
+}
+
+.bannercontent {
+    z-index: 59;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    width: 60vw;
+    left: 20vw;
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+}
+
+.bannertitle {
+    color: white;
+    font-size: 6vw;
+    font-family: "Koulen", sans-serif;
+    line-height: 1;
+    text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.705);
+}
+
+.bannerbio {
+    font-size: 2vw;
+    font-family: "Inter", sans-serif;
+    margin-top: 1vw;
+    margin-bottom: 2.5vw;
+    color: rgb(233, 233, 233);
+}
+
+.bannersearchbar {
+    margin: auto;
+    width: 60vw;
+    height: 5vw;
+    background-color: rgba(0, 0, 0, 0.226);
+    border-radius: 100vw;
+    backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.897);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bannersearchbarleft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+}
+
+.searchbaroption {
+    display: flex;
+    height: 5vw;
+    align-items: center;
+    font-size: 1.8vw;
+    transition: scale 0.3s ease, color 0.3s ease;
+}
+
+.searchbaroption:hover {
+    color: rgb(255, 246, 204);
+    scale: 1.05;
+    cursor: pointer;
+}
+
+.searchbaroption i {
+    font-size: 2.3vw;
+    width: 2.3vw;
+    height: 2.3vw;
+    padding: 0.35vw;
+}
+
+#searchbaroption1 {
+    margin-left: 2.8vw;
+}
+
+.line {
+    height: 2vw;
+    width: 0.5px;
+    background-color: rgba(255, 255, 255, 0.479);
+}
+
+.optext {
+    color: white;
+    margin-left: 1.4vw;
+}
+
+.searchbarinput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vw;
+    width: 18vw;
+    margin-right: 0px;
+}
+
+.searchbarinput input[type="text"] {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    width: 10vw;
+    margin: 1vw;
+    font-size: 1.8vw;
+    text-align: center;
+    color: white;
+    caret-color: rgba(255, 255, 255, 0.582);
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.589);
+}
+
+#searchiconx {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+#searchiconx::after {
+    position: absolute;
+    background-color: black;
+    width: 4vw;
+    height: 4vw;
+    top: 0px;
+    left: 0px;
+}
+
+#searchiconx:hover {
+    scale: 1.25;
+    color: rgb(255, 246, 204);
+    background-color: rgba(0, 0, 0, 0.137);
+}
+
+input,
+textarea {
+    line-height: 1.5;
+    outline: none;
+    caret-color: rgba(0, 0, 0, 0.192);
+    -webkit-user-select: text;
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    -webkit-touch-callout: default;
+}
+
 .undertop {
     width: 90vw;
     height: 2vw;
@@ -365,4 +622,8 @@
     font-size: 2vw;
     padding: 1vw;
     color: rgb(32, 32, 32)
+}
+
+body {
+    color: #ffffff;
 }

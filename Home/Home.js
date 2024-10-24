@@ -3,6 +3,18 @@ let isTransitioning = false;
 const totalBanners = document.querySelectorAll('.bannerimg').length;
 let autoSlideInterval;
 
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Document is ready. Total banners:", totalBanners);
+    updateDots();
+    document.querySelectorAll('.bannerimg').forEach((banner, index) => {
+        banner.classList.add(`bannerimg${index + 1}`);
+    });
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 1000);
+    startAutoSlide();
+});
+
 function startAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(next, 5000);

@@ -284,7 +284,6 @@ function addFontAwesome() {
     }
 }
 
-// Gọi hàm này mỗi lần cần đảm bảo Font Awesome có mặt
 addFontAwesome();
 
 // Hàm tải nội dung trang Home
@@ -357,40 +356,45 @@ function loadBlog() {
 function loadBlogContent(pgnm) {
     clearPreviousResources();
     // Tạo đường dẫn URL HTML từ thư mục Blog
-    const url = `./Blog/${pgnm}.html`;
-    loadContent(url, ['./Blog/Content-blog.js'], ['./Blog/Content-blog.css']);
+    const pgmurl = `./Blog/${pgnm}.html`;
+    loadContent(pgmurl, ['./Blog/Content-blog.js'], ['./Blog/Content-blog.css']);
 }
 
 // Hàm tải nội dung trang Account
-function loadAccount() {
+function loadRegisterContent() {
     clearPreviousResources();
     loadContent('./Account/Register.html', ['./Account/Register.js'], ['./Account/Register.css']);
 }
-
 
 // Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     clearPreviousResources(); // Xóa CSS và JS cũ trước khi tải mới
 
+    toggleFade(true);
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", htmlFile, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var tempDiv = document.createElement('div');
-            tempDiv.innerHTML = xhr.responseText;
+            setTimeout(() => {
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = xhr.responseText;
 
-            var bodyContent = tempDiv.querySelector('#body');
+                var bodyContent = tempDiv.querySelector('#body');
 
-            if (bodyContent) {
-                document.getElementById('body').innerHTML = bodyContent.innerHTML;
-                console.log(`Nội dung đã được chèn từ ${htmlFile}`);
+                if (bodyContent) {
+                    document.getElementById('body').innerHTML = bodyContent.innerHTML;
+                    console.log(`Nội dung đã được chèn từ ${htmlFile}`);
 
-                // Thêm CSS trước
-                addCSSResources(cssFiles).then(() => {
-                    // Thêm JavaScript ngay sau khi HTML đã được thêm
-                    addJSResources(jsFiles);
-                });
-            }
+                    // Thêm CSS trước khi JS để tránh xung đột
+                    addCSSResources(cssFiles).then(() => {
+                        // Đảm bảo chỉ tải JS sau khi CSS đã hoàn tất
+                        addJSResources(jsFiles).then(() => {
+                            reinitializeOldScripts(); // Khởi động lại các hàm cần thiết
+                        });
+                    });
+                }
+            }, 300); // Thời gian chờ 0.3 giây (300ms)
         }
     };
     xhr.send();
@@ -410,28 +414,7 @@ function addCSSResources(cssFiles) {
     });
 }
 
-// Hàm thêm tệp JavaScript ngay lập tức sau khi HTML được thêm
-function addJSResources(jsFiles) {
-    const bodyContainer = document.getElementById('body');
-
-    jsFiles.forEach((file) => {
-        if (!document.querySelector(`script[src="${file}"]`)) {
-            const script = document.createElement('script');
-            script.src = file;
-            script.onload = function () {
-                console.log(`JavaScript đã tải: ${file}`);
-            };
-            // Thêm script ngay sau nội dung HTML đã được chèn
-            if (bodyContainer) {
-                bodyContainer.appendChild(script);
-            } else {
-                document.body.appendChild(script); // Dự phòng nếu không tìm thấy bodyContainer
-            }
-        }
-    });
-}
-
-// Hàm thêm từng tệp CSS (giữ nguyên từ trước)
+// Hàm thêm từng tệp CSS
 function addCSS(file) {
     return new Promise((resolve) => {
         if (!document.querySelector(`link[href="${file}"]`)) {
@@ -449,15 +432,49 @@ function addCSS(file) {
     });
 }
 
+// Hàm thêm tệp JavaScript sau khi CSS đã được thêm thành công
+function addJSResources(jsFiles) {
+    return new Promise((resolve) => {
+        let loadedScripts = [];
+        jsFiles.forEach((file) => {
+            loadedScripts.push(addJS(file));
+        });
+
+        Promise.all(loadedScripts).then(() => {
+            resolve();
+        });
+    });
+}
+
+// Hàm thêm từng tệp JavaScript với async
+function addJS(file) {
+    return new Promise((resolve) => {
+        if (!document.querySelector(`script[src="${file}"]`)) {
+            const script = document.createElement('script');
+            script.src = file;
+            script.async = true;
+            script.onload = function () {
+                console.log(`JavaScript đã tải: ${file}`);
+                resolve();
+            };
+            document.body.appendChild(script);
+        } else {
+            resolve();
+        }
+    });
+}
+
 // Hàm xóa các tệp CSS và JS đã được tải từ trước đó, trừ các tệp cần giữ lại
 function clearPreviousResources() {
     const cssToKeep = [
         '../font-awesome-6.6.0-pro-full-main/css/all.css',
         '../General/reset.css',
         'main.css',
+        'Banner.css' // Thêm các tệp cần giữ lại
     ];
     const jsToKeep = [
         'main.js',
+        'Banner.js' // Thêm các tệp cần giữ lại
     ];
 
     // Xóa các tệp CSS không cần thiết
@@ -476,24 +493,54 @@ function clearPreviousResources() {
         }
     });
 }
+
 function reinitializeOldScripts() {
-    // Gọi lại các hàm từ các tệp JS cũ nếu cần
+    // Đảm bảo rằng các hàm khởi tạo slideshow được chạy lại
     if (typeof startAutoSlide === "function") {
         startAutoSlide();
+        console.log("Đã khởi động lại slideshow tự động.");
     }
 
-    if (typeof attachEventHandlers === "function") {
-        attachEventHandlers();
+    // Gán lại các sự kiện cho các điểm điều hướng (dots)
+    document.querySelectorAll('.bannercurrent div').forEach((dot, index) => {
+        dot.removeEventListener('click', handleDotClick); // Xóa sự kiện cũ trước khi gán lại
+        dot.addEventListener('click', handleDotClick.bind(null, index + 1));
+    });
+
+    // Thiết lập lại chỉ số hiện tại và cập nhật các điểm điều hướng (dots)
+    if (typeof updateDots === "function") {
+        updateDots();
+        console.log("Đã cập nhật lại các dots điều hướng.");
     }
 
-    if (typeof validateField === "function") {
-        console.log("Đảm bảo tất cả các hàm kiểm tra nhập liệu vẫn hoạt động");
+    console.log("Đã khởi động lại các chức năng cần thiết cho slideshow.");
+}
+
+// Hàm xử lý khi click vào dot
+function handleDotClick(index) {
+    goToBanner(index);
+    startAutoSlide(); // Khởi động lại slideshow tự động khi người dùng chuyển
+}
+
+
+function toggleFade(show) {
+    let fadeOverlay = document.querySelector('.fade-overlay');
+
+    // Nếu lớp phủ không tồn tại, hãy tạo nó
+    if (!fadeOverlay) {
+        fadeOverlay = document.createElement('div');
+        fadeOverlay.className = 'fade-overlay';
+        document.body.appendChild(fadeOverlay);
     }
 
-    if (typeof attachEventHandlers === "function") {
-        attachEventHandlers();
-        console.log("Đã chạy lại attachEventHandlers.");
-    }
+    if (show) {
+        fadeOverlay.classList.add('active'); // Hiển thị lớp phủ
 
-    console.log("Đã khởi động lại các chức năng cần thiết.");
+        // Tự động ẩn lớp phủ sau 2 giây
+        setTimeout(() => {
+            fadeOverlay.classList.remove('active');
+        }, 500); // 2 giây để khớp với CSS
+    } else {
+        fadeOverlay.classList.remove('active'); // Ẩn lớp phủ ngay lập tức
+    }
 }
