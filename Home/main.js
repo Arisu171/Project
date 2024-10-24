@@ -274,80 +274,82 @@ window.onload = function () {
         loginElement.classList.add('hide');
     });
 };
-// Hàm tải nội dung trang Home với 2 file CSS và 2 file JS
+// Hàm tải nội dung trang Home
 function loadHome() {
-    clearPreviousResources(); // Xóa CSS và JS cũ
+    clearPreviousResources();
     loadContent('Home.html', ['Home.js', 'Banner.js'], ['Home.css', 'Banner.css']);
 }
 
 // Hàm tải nội dung trang About Us
 function loadAboutUs() {
     clearPreviousResources();
-    loadContent('./Pages/About Us.html', './Pages/About Us.js', ['./Pages/About Us.css']);
+    loadContent('./Pages/About Us.html', ['./Pages/About Us.js'], ['./Pages/About Us.css']);
 }
 
 // Hàm tải nội dung trang Services
 function loadServices() {
     clearPreviousResources();
-    loadContent('./Pages/Our Services.html', './Pages/Our Services.js', ['./Pages/Our Services.css']);
+    loadContent('./Pages/Our Services.html', ['./Pages/Our Services.js'], ['./Pages/Our Services.css']);
 }
 
 // Hàm tải nội dung trang Contact Us
 function loadContact() {
     clearPreviousResources();
-    loadContent('./Pages/Contact Us.html', 'Contact Us.js', ['./Pages/Contact Us.css']);
+    loadContent('./Pages/Contact Us.html', ['./Pages/Contact Us.js'], ['./Pages/Contact Us.css']);
 }
 
 // Hàm tải nội dung trang Destinations
 function loadDestinations() {
     clearPreviousResources();
-    loadContent('./Pages/Destinations.html', 'Destinations.js', ['./Pages/Destinations.css']);
+    loadContent('./Pages/Destinations.html', ['./Pages/Destinations.js'], ['./Pages/Destinations.css']);
 }
 
 // Hàm tải nội dung trang Tourist
 function loadTourList() {
     clearPreviousResources();
-    loadContent('./TourList/TourList.html', 'TourList.js', ['./TourList/TourList.css']);
+    loadContent('./TourList/TourList.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
 
 // Hàm tải nội dung trang Regions
 function loadRegions() {
     clearPreviousResources();
-    loadContent('./Regions/Regions.html', 'Regions.js', ['./Regions/Regions.css']);
+    loadContent('./Regions/Regions.html', ['./Regions/Regions.js'], ['./Regions/Regions.css']);
 }
 
 // Hàm tải nội dung trang Car Rental
 function loadCarRental() {
     clearPreviousResources();
-    loadContent('./Transport/Car.html', 'Car.js', ['./Transport/Car.css']);
+    loadContent('./Transport/Car.html', ['./Transport/Car.js'], ['./Transport/Car.css']);
 }
 
 // Hàm tải nội dung trang Bus Shuttle
 function loadBusShuttle() {
     clearPreviousResources();
-    loadContent('./Transport/Coach.html', 'Coach.js', ['./Transport/Coach.css']);
+    loadContent('./Transport/Coach.html', ['./Transport/Coach.js'], ['./Transport/Coach.css']);
 }
 
 // Hàm tải nội dung trang Airport Trans
 function loadAirportTrans() {
     clearPreviousResources();
-    loadContent('./Transport/Airport.html', 'Airport.js', ['./Transport/Airport.css']);
+    loadContent('./Transport/Airport.html', ['./Transport/Airport.js'], ['./Transport/Airport.css']);
 }
 
 // Hàm tải nội dung trang Blog
 function loadBlog() {
     clearPreviousResources();
-    loadContent('./Blog/Blog.html', './Blog/Blog.js', ['./Blog/Blog.css']);
+    loadContent('./Blog/Blog.html', ['./Blog/Blog.js'], ['./Blog/Blog.css']);
 }
 
 // Hàm tải nội dung trang Account
 function loadAccount() {
     clearPreviousResources();
-    loadContent('./Account/Register.html', 'Register.js', ['./Account/Register.css']);
+    loadContent('./Account/Register.html', ['./Account/Register.js'], ['./Account/Register.css']);
 }
 
-// Hàm tổng quát để tải nội dung từ các tệp khác (đã chỉnh sửa)
+// Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
+    clearPreviousResources(); // Xóa CSS và JS cũ trước khi tải mới
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", htmlFile, true);
     xhr.onreadystatechange = function () {
@@ -361,8 +363,10 @@ function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
                 document.getElementById('body').innerHTML = bodyContent.innerHTML;
                 console.log(`Nội dung đã được chèn từ ${htmlFile}`);
 
-                addResources(cssFiles, jsFiles).then(() => {
-                    reinitializeOldScripts();
+                // Thêm CSS trước
+                addCSSResources(cssFiles).then(() => {
+                    // Thêm JavaScript ngay sau khi HTML đã được thêm
+                    addJSResources(jsFiles);
                 });
             }
         }
@@ -370,18 +374,13 @@ function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     xhr.send();
 }
 
-// Hàm thêm CSS và tải JavaScript (đã chỉnh sửa)
-function addResources(cssFiles, jsFiles) {
+// Hàm thêm tệp CSS
+function addCSSResources(cssFiles) {
     return new Promise((resolve) => {
         let promises = [];
-        if (cssFiles && cssFiles.length > 0) {
-            cssFiles.forEach((cssFile) => {
-                promises.push(addCSS(cssFile));
-            });
-        }
-        if (jsFiles && jsFiles.length > 0) {
-            promises.push(loadScripts(jsFiles));
-        }
+        cssFiles.forEach((cssFile) => {
+            promises.push(addCSS(cssFile));
+        });
 
         Promise.all(promises).then(() => {
             resolve();
@@ -389,6 +388,44 @@ function addResources(cssFiles, jsFiles) {
     });
 }
 
+// Hàm thêm tệp JavaScript ngay lập tức sau khi HTML được thêm
+function addJSResources(jsFiles) {
+    const bodyContainer = document.getElementById('body');
+
+    jsFiles.forEach((file) => {
+        if (!document.querySelector(`script[src="${file}"]`)) {
+            const script = document.createElement('script');
+            script.src = file;
+            script.onload = function () {
+                console.log(`JavaScript đã tải: ${file}`);
+            };
+            // Thêm script ngay sau nội dung HTML đã được chèn
+            if (bodyContainer) {
+                bodyContainer.appendChild(script);
+            } else {
+                document.body.appendChild(script); // Dự phòng nếu không tìm thấy bodyContainer
+            }
+        }
+    });
+}
+
+// Hàm thêm từng tệp CSS (giữ nguyên từ trước)
+function addCSS(file) {
+    return new Promise((resolve) => {
+        if (!document.querySelector(`link[href="${file}"]`)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = file;
+            link.onload = function () {
+                console.log(`CSS đã tải: ${file}`);
+                resolve();
+            };
+            document.head.appendChild(link);
+        } else {
+            resolve();
+        }
+    });
+}
 
 // Hàm xóa các tệp CSS và JS đã được tải từ trước đó, trừ các tệp cần giữ lại
 function clearPreviousResources() {
@@ -414,24 +451,6 @@ function clearPreviousResources() {
         const src = script.getAttribute('src');
         if (src && !jsToKeep.includes(src)) {
             script.remove();
-        }
-    });
-}
-
-// Hàm thêm tệp CSS
-function addCSS(file) {
-    return new Promise((resolve) => {
-        if (!document.querySelector(`link[href="${file}"]`)) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = file;
-            link.onload = function () {
-                console.log(`CSS đã tải: ${file}`);
-                resolve();
-            };
-            document.head.appendChild(link);
-        } else {
-            resolve();
         }
     });
 }
