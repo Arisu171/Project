@@ -274,10 +274,24 @@ window.onload = function () {
         loginElement.classList.add('hide');
     });
 };
+
+function addFontAwesome() {
+    if (!document.querySelector(`link[href="../font-awesome-6.6.0-pro-full-main/css/all.css"]`)) {
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '../font-awesome-6.6.0-pro-full-main/css/all.css';
+        document.head.appendChild(link);
+    }
+}
+
+// Gọi hàm này mỗi lần cần đảm bảo Font Awesome có mặt
+addFontAwesome();
+
 // Hàm tải nội dung trang Home
 function loadHome() {
+    // Xóa các tài nguyên trước và tải lại các tài nguyên cần thiết cho Home
     clearPreviousResources();
-    loadContent('Home.html', ['Home.js', 'Banner.js'], ['Home.css', 'Banner.css']);
+    loadContent('Home.html', ['Banner.js'], ['Home.css', 'Banner.css', '../font-awesome-6.6.0-pro-full-main/css/all.css']);
 }
 
 // Hàm tải nội dung trang About Us
@@ -340,11 +354,19 @@ function loadBlog() {
     loadContent('./Blog/Blog.html', ['./Blog/Blog.js'], ['./Blog/Blog.css']);
 }
 
+function loadBlogContent(pgnm) {
+    clearPreviousResources();
+    // Tạo đường dẫn URL HTML từ thư mục Blog
+    const url = `./Blog/${pgnm}.html`;
+    loadContent(url, ['./Blog/Content-blog.js'], ['./Blog/Content-blog.css']);
+}
+
 // Hàm tải nội dung trang Account
 function loadAccount() {
     clearPreviousResources();
     loadContent('./Account/Register.html', ['./Account/Register.js'], ['./Account/Register.css']);
 }
+
 
 // Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
@@ -433,9 +455,11 @@ function clearPreviousResources() {
         '../font-awesome-6.6.0-pro-full-main/css/all.css',
         '../General/reset.css',
         'main.css',
+        'Home.css' // Thêm Banner.css vào danh sách cần giữ lại
     ];
     const jsToKeep = [
         'main.js',
+        'Home.js' // Nếu cần giữ lại Banner.js, thêm vào đây
     ];
 
     // Xóa các tệp CSS không cần thiết
@@ -453,4 +477,25 @@ function clearPreviousResources() {
             script.remove();
         }
     });
+}
+function reinitializeOldScripts() {
+    // Gọi lại các hàm từ các tệp JS cũ nếu cần
+    if (typeof startAutoSlide === "function") {
+        startAutoSlide();
+    }
+
+    if (typeof attachEventHandlers === "function") {
+        attachEventHandlers();
+    }
+
+    if (typeof validateField === "function") {
+        console.log("Đảm bảo tất cả các hàm kiểm tra nhập liệu vẫn hoạt động");
+    }
+
+    if (typeof attachEventHandlers === "function") {
+        attachEventHandlers();
+        console.log("Đã chạy lại attachEventHandlers.");
+    }
+
+    console.log("Đã khởi động lại các chức năng cần thiết.");
 }
