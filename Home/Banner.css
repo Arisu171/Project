@@ -6,7 +6,6 @@ body {
     margin: 0px;
     background-color: rgb(255, 255, 255);
     color: white;
-    opacity: 0;
     transition: opacity 0.5s ease;
     font-family: Montserrat;
 }

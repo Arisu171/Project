@@ -3,7 +3,8 @@ let isTransitioning = false;
 const totalBanners = document.querySelectorAll('.bannerimg').length;
 let autoSlideInterval;
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Document is ready. Total banners:", totalBanners);
     updateDots();
     document.querySelectorAll('.bannerimg').forEach((banner, index) => {
         banner.classList.add(`bannerimg${index + 1}`);
@@ -21,6 +22,7 @@ function startAutoSlide() {
 
 function updateDots() {
     let dots = document.querySelectorAll('.bannercurrent div i');
+    console.log("Updating dots:", dots);
     dots.forEach((dot, index) => {
         if (index + 1 === currentBanner) {
             dot.classList.remove('fa-regular');
@@ -70,6 +72,7 @@ function prev() {
 function goToBanner(index) {
     if (isTransitioning) return;
     isTransitioning = true;
+    console.log("Navigating to banner:", index);
 
     let banners = document.querySelectorAll('.bannerimg');
     let difference = currentBanner - index;

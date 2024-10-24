@@ -33,7 +33,7 @@
             <div class="navleft"><a href="#bannerimg1"></a></div>
             <div class="navright" id="navright">
                 <div class="navtitle" id="navbarHome"><a
-                        href="https://arisu171.github.io/Project/Home/Home.html">Home</a></div>
+                        onclick="loadContent('tesst.html')">Home</a></div>
                 <div class="navtitle" id="navbarPages">
                     <a href="#" class="navdroptitle">Pages</a>
                     <div class="navdroplist">
@@ -43,8 +43,7 @@
                         <a href="https://arisu171.github.io/Project/Home/Pages/Destinations.html">Destinations</a>
                     </div>
                 </div>
-                <a href="https://arisu171.github.io/Project/Home/TourList/TourList.html" class="navtitle"
-                    id="navbarTourist">Tourist</a>
+                <a onclick="loadContent('TourList/TourList.html')">Tourist</a>
                 <a href="https://arisu171.github.io/Project/Home/Regions/Regions.html" class="navtitle"
                     id="navbarRegions">Regions</a>
                 <div class="navtitle" id="navbarTrans">
@@ -84,7 +83,7 @@
                     <div class="navitcap">Pages</div>
                 </div>
                 <a href="https://arisu171.github.io/Project/Home/Pages/About Us.html" class="multicon multiconpage hide"
-                    id="rmulticon0">
+                    id="rmulticon0" >
                     <div>About</div>
                 </a>
                 <a href="https://arisu171.github.io/Project/Home/Pages/Our Services.html"
@@ -199,60 +198,60 @@
                 </div>
             </div>
         </div>
-        <script src="Banner.js"></script><!--link banner-->
+        <!-- <script src="Banner.js"></script>link banner -->
+        <footer id="pagefooter">
+            <div id="loginback"></div>
+            <div class="login hide" id="login">
+                <div class="loginzone">
+                    <div class="logintitle">SIGN IN</div>
+                    <label for="nickname">Username or Email</label>
+                    <input type="text" class="nickname" id="nickname">
+                    <label for="password">Password</label>
+                    <input type="password" class="password" id="password">
+                    <div class="passforgot">Forgot Password?</div>
+                    <div class="loginbutton" id="loginbutton">SIGN IN</div>
+                    <a href="https://arisu171.github.io/Project/Home/Account/Register.html" class="registerlink">
+                        <div>DO NOT HAVE AN ACCOUNT?</div>
+                        <div>CREATE AN ACCOUNT</div>
+                    </a>
+                </div>
+            </div>
+            <div class="footercontent">
+                <div class="footerpart" id="footerabout">
+                    <h3 class="footertitle">FLARISTA</h3>
+                    <div class="footertext">Discover Vietnam with exclusive deals and exceptional service.</div>
+                </div>
+                <div class="footerpart" id="footerdestination">
+                    <h3 class="footertitle">TOP DESTINATIONS</h3>
+                    <div class="footerimg">
+                        <img src="https://arisu171.github.io/Project/General/Footer/img1.png" alt="">
+                        <img src="https://arisu171.github.io/Project/General/Footer/img2.png" alt="">
+                        <img src="https://arisu171.github.io/Project/General/Footer/img3.png" alt="">
+                        <img src="https://arisu171.github.io/Project/General/Footer/img4.png" alt="">
+                        <img src="https://arisu171.github.io/Project/General/Footer/img5.png" alt="">
+                        <img src="https://arisu171.github.io/Project/General/Footer/img6.png" alt="">
+                    </div>
+                </div>
+                <div class="footerpart" id="footercontact">
+                    <h3 class="footertitle">CONTACT INFO</h3>
+                    <div class="footertext">
+                        <p>Address: 21 Hoan Kiem Street - Ha Noi</p>
+                        <p>Phone: +84 6868 888</p>
+                        <p>Contact: FlaristaTravel@gmail.com</p>
+                    </div>
+                    <div id="footericon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright">© Copyright 2024 – Flarista Travel</div>
+        </footer>
     </div>
 
-    <footer id="pagefooter">
-        <div id="loginback"></div>
-        <div class="login hide" id="login">
-            <div class="loginzone">
-                <div class="logintitle">SIGN IN</div>
-                <label for="nickname">Username or Email</label>
-                <input type="text" class="nickname" id="nickname">
-                <label for="password">Password</label>
-                <input type="password" class="password" id="password">
-                <div class="passforgot">Forgot Password?</div>
-                <div class="loginbutton" id="loginbutton">SIGN IN</div>
-                <a href="https://arisu171.github.io/Project/Home/Account/Register.html" class="registerlink">
-                    <div>DO NOT HAVE AN ACCOUNT?</div>
-                    <div>CREATE AN ACCOUNT</div>
-                </a>
-            </div>
-        </div>
-        <div class="footercontent">
-            <div class="footerpart" id="footerabout">
-                <h3 class="footertitle">FLARISTA</h3>
-                <div class="footertext">Discover Vietnam with exclusive deals and exceptional service.</div>
-            </div>
-            <div class="footerpart" id="footerdestination">
-                <h3 class="footertitle">TOP DESTINATIONS</h3>
-                <div class="footerimg">
-                    <img src="https://arisu171.github.io/Project/General/Footer/img1.png" alt="">
-                    <img src="https://arisu171.github.io/Project/General/Footer/img2.png" alt="">
-                    <img src="https://arisu171.github.io/Project/General/Footer/img3.png" alt="">
-                    <img src="https://arisu171.github.io/Project/General/Footer/img4.png" alt="">
-                    <img src="https://arisu171.github.io/Project/General/Footer/img5.png" alt="">
-                    <img src="https://arisu171.github.io/Project/General/Footer/img6.png" alt="">
-                </div>
-            </div>
-            <div class="footerpart" id="footercontact">
-                <h3 class="footertitle">CONTACT INFO</h3>
-                <div class="footertext">
-                    <p>Address: 21 Hoan Kiem Street - Ha Noi</p>
-                    <p>Phone: +84 6868 888</p>
-                    <p>Contact: FlaristaTravel@gmail.com</p>
-                </div>
-                <div id="footericon">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-tiktok"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-        <div id="copyright">© Copyright 2024 – Flarista Travel</div>
-    </footer>
     <script src="tesst.js"></script>
 </body>
 

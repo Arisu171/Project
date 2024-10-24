@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="../General/reset.css">
+    <link rel="stylesheet" href="../General/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../General/Footer/Footer.css">
+    <link rel="stylesheet" href="NAME.css">
+    <title>Flarista</title>
+</head>
+
+<body>
+    <div id="navigationbar"></div>
+    <div id="body">
+        <div class="pagebanner banner">
+            <img src="Pagesbanner.png" alt="">
+            <div class="pagetitle">ABOUT US</div>
+        </div>
+    </div>
+    <footer id="pagefooter"></footer>
+    <script src="../General/Footer/Footer.js"></script>
+    <script src="../General/Navbar/Navbar.js"></script>
+    <script>
+        function loadTesstContent() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "tesst.html", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = xhr.responseText;
+
+                    var tesstBodyContent = tempDiv.querySelector('#body');
+
+                    if (tesstBodyContent) {
+                        // Chèn nội dung từ tesst.html vào vị trí id="body" của test2.html
+                        document.getElementById('body').innerHTML = tesstBodyContent.innerHTML;
+                        console.log("Nội dung đã được chèn vào #body.");
+
+                        // Thêm các tệp CSS trước, sau đó nạp các tệp JavaScript sau khi CSS được tải
+                        addTesstResources().then(() => {
+                            // Sau khi các tệp CSS được tải, nạp các tệp JavaScript
+                            loadScripts(['tesst.js', 'Banner.js']);
+                        });
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function addTesstResources() {
+            return new Promise((resolve) => {
+                // Thêm CSS trước
+                Promise.all([
+                    addCSS("tesst.css"),
+                    addCSS("Banner.css") // Thêm Banner.css
+                ]).then(() => {
+                    resolve();
+                });
+            });
+        }
+
+        function addCSS(file) {
+            return new Promise((resolve) => {
+                if (!document.querySelector(`link[href="${file}"]`)) {
+                    var link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = file;
+                    link.onload = function () {
+                        console.log(`CSS đã tải: ${file}`);
+                        resolve();
+                    };
+                    document.head.appendChild(link);
+                } else {
+                    resolve(); // Nếu CSS đã tồn tại, tiếp tục
+                }
+            });
+        }
+
+        function loadScripts(scripts) {
+            scripts.forEach(file => {
+                // Kiểm tra nếu script chưa tồn tại thì thêm vào
+                if (!document.querySelector(`script[src="${file}"]`)) {
+                    let newScript = document.createElement('script');
+                    newScript.src = file;
+                    newScript.onload = function () {
+                        console.log(`Đã tải script: ${file}`);
+                    };
+                    document.body.appendChild(newScript);
+                } else {
+                    console.log(`Script đã tồn tại: ${file}, không cần tải lại.`);
+                }
+            });
+
+            // Khởi chạy lại các hàm nếu cần
+            reinitializeFunctions();
+        }
+
+        // Hàm để khởi chạy lại các chức năng cần thiết từ Banner.js hoặc tesst.js
+        function reinitializeFunctions() {
+            // Giả sử bạn có hàm cần gọi lại từ Banner.js
+            if (typeof initializeBannerScripts === "function") {
+                initializeBannerScripts();
+                console.log("Đã khởi chạy lại các chức năng Banner.");
+            }
+
+            // Gọi thêm các hàm từ tesst.js nếu cần
+        }
+
+        window.onload = function () {
+            loadTesstContent();
+        };
+    </script>
+</body>
+
+</html>

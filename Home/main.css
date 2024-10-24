@@ -1,0 +1,968 @@
+html {
+    font-family: Montserrat;
+    scroll-behavior: smooth;
+    caret-color: transparent;
+    cursor: default;
+    background-color: rgb(27, 27, 27);
+    font-size: 1vw;
+}
+
+::-webkit-scrollbar {
+    width: 0.8vw;
+    max-width: 7px;
+    background-color: rgb(27, 27, 27);
+    transition: width 0.4s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffa44a;
+    border-radius: 1vw;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+#navigationbar div {
+    color: white;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --Wid: 100vw;
+    --Hig: 100vh;
+    --pot: calc(var(--pot) * 1);
+    --pixe: 1px;
+    --title: #DD8834;
+    --high: 56.25vw;
+    --dark: rgb(27, 27, 27);
+    --light: white;
+    --color-main: #DD8834;
+    --color-main-hover: #ff8103;
+    --color-main-active: #a8641b;
+    --body-color: #f5f5f5;
+}
+
+::selection {
+    background: transparent;
+    color: inherit;
+}
+
+
+input,
+textarea {
+    line-height: 1.5;
+    outline: none;
+    caret-color: rgba(0, 0, 0, 0.192);
+    -webkit-user-select: text;
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    -webkit-touch-callout: default;
+}
+
+input::selection,
+textarea::selection {
+    background-color: #ffa44a;
+    color: #ffffff;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: text-shadow 0.5s ease;
+    background-color: #f5f5f5;
+}
+
+body a {
+    text-decoration: none;
+}
+
+#body {
+    line-height: 1.3;
+}
+
+#shadow {
+    position: fixed;
+    width: 100vw;
+}
+
+#navigationbar a {
+    display: block;
+}
+
+/* Navigation bar */
+
+.navbar {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(0.8vw);
+    background-color: #00000077;
+    color: white;
+    font-weight: bolder;
+    font-size: calc(1.3vw + 5px);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: max-content;
+    transition: background-color 0.4s, backdrop-filter 0.4s;
+    z-index: 950;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navtitle:hover {
+    text-shadow: 0 0 0.2vw rgba(255, 195, 139, 0.808),
+        0 0 0.2vw rgba(255, 127, 22, 0.5),
+        0 0 0.2vw rgba(255, 170, 100, 0.349);
+}
+
+.navbarcurrent a::after {
+    position: absolute;
+    background-color: rgba(255, 235, 216, 0.829);
+    content: '';
+    height: calc(0.3vw + 1px);
+    border-radius: 100vw;
+    bottom: 10%;
+    left: 1.8vw;
+    width: calc(100% - 3.6vw);
+    box-shadow: 0 0 1vw rgba(255, 123, 0, 0.801);
+    transition: 0.5s ease;
+    transition-delay: 0.2s;
+}
+
+.navleft {
+    cursor: pointer;
+    padding: 0vw 1vw;
+    z-index: 950;
+}
+
+.navright {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 0 2.5vw 0 0;
+    transition: scale 0.3s;
+    z-index: 950;
+}
+
+.navtitle {
+    position: relative;
+    padding: 1.4vw 1.6vw 1.6vw;
+    line-height: 1;
+    transition: text-shadow 0.4s ease;
+}
+
+.navtitle::after {
+    position: absolute;
+    background-color: rgba(255, 213, 174, 0.829);
+    content: '';
+    height: calc(0.3vw + 1px);
+    border-radius: 100vw;
+    bottom: 10%;
+    left: 50%;
+    width: 0%;
+    transition: left 0.5s ease, width 0.5s ease, box-shadow 0.5s ease;
+    transition-delay: 0.2s;
+}
+
+.navtitle:hover::after {
+    left: 1.5vw;
+    width: calc(100% - 3vw);
+    box-shadow: 0 0 1vw rgba(255, 123, 0, 0.801);
+}
+
+.navdroplist {
+    height: 0;
+    overflow-y: hidden;
+    position: absolute;
+    font-size: calc(1.2vw + 4px);
+    top: calc(4.1vw + 5px);
+    left: 0px;
+    width: 170%;
+    max-width: 17vw;
+    padding: 0;
+    background-color: #080808c5;
+    border-radius: 1.5vw;
+    transition: 0.3s ease;
+}
+
+.navdroplist div {
+    padding: 1.5vw 2vw;
+    transition: 0.3s;
+}
+
+.navdroplist div:hover {
+    background-color: #5e5e5ec5;
+}
+
+#navbarPages:hover .navdroplist {
+    height: calc((4.2vw + 5px) * 4);
+}
+
+#navbarTrans:hover .navdroplist {
+    height: calc((4.2vw + 5px) * 3);
+}
+
+.navuser {
+    padding: 0px 0px 0px 2vw;
+}
+
+.navuser i {
+    font-size: calc(1.2vw + 4px);
+    width: calc(1.2vw + 4px);
+    height: calc(1.2vw + 4px);
+    padding: 0.9vw;
+    border: 0.25vw solid rgb(255, 123, 0);
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s;
+    transition-delay: 0.1s;
+}
+
+.navuser:hover i {
+    box-shadow: 0 0 1vw rgba(255, 123, 0, 0.801);
+    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.911),
+        0 0 2vw rgba(255, 127, 22, 0.6),
+        0 0 3vw rgba(255, 170, 100, 0.4);
+}
+
+/* Navigation Button */
+
+.navbutton {
+    position: fixed;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(3px);
+    color: white;
+    width: max-content;
+    padding: 0px;
+    top: 0.5vw;
+    right: 0.5vw;
+    background-color: #00000066;
+    border-radius: 100vw;
+    scale: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease, scale 0.5s ease;
+    z-index: 1000;
+}
+
+
+.navbutton div {
+    cursor: pointer;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    z-index: 1000;
+}
+
+.navicon {
+    text-align: center;
+    padding: 1vw;
+    font-size: 4vw;
+    border-radius: 50%;
+    scale: 0.9;
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
+    z-index: 1000;
+}
+
+.navicon i {
+    text-align: center;
+    width: 4vw;
+    padding: 1vw;
+}
+
+.navitem i {
+    font-size: 3vw;
+    margin: 0.7vw 0px;
+    transition: 0.5s ease;
+}
+
+.navitcap {
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+.navitem {
+    width: 7vw;
+    height: 7vw;
+    padding: 0.5vw;
+    text-align: center;
+    transition-delay: 0.4s;
+    transition: height 0.7s ease;
+}
+
+.navradius .navitem {
+    opacity: 0;
+}
+
+.navbutton .navuser {
+    padding: 1vw;
+    width: 6vw;
+    height: 6vw;
+    text-align: center;
+    transition-delay: 0s;
+    transition: 0.6s ease;
+    opacity: 0;
+}
+
+.navbutton .navuser i {
+    font-size: 2vw;
+    width: 2vw;
+    height: 2vw;
+    padding: 1.5vw;
+    border: 0.5vw solid rgb(255, 123, 0);
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s ease;
+    transition-delay: 0.1s;
+}
+
+.navradius .navitem {
+    opacity: 0;
+}
+
+.navradius.show {
+    height: 65vw;
+}
+
+.navradius.hide {
+    height: 8vw;
+}
+
+.navradius.over {
+    overflow-y: hidden;
+}
+
+.navitem.show {
+    opacity: 1;
+}
+
+.navitem.hide {
+    opacity: 0;
+}
+
+.navuser.show {
+    opacity: 1;
+}
+
+.navuser.hide {
+    opacity: 0;
+}
+
+.navicon.show,
+.navicon.hide {
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
+}
+
+.navicon:hover {
+    text-shadow: 0 0 1vw rgb(255, 114, 114),
+        0 0 1vw rgba(255, 162, 22, 0.76),
+        0 0 1vw rgba(255, 63, 63, 0.897);
+}
+
+.navitem:hover {
+    text-shadow: 0 0 1vw rgba(255, 195, 139, 0.808),
+        0 0 1vw rgba(255, 127, 22, 0.5),
+        0 0 1vw rgba(255, 170, 100, 0.349);
+}
+
+#Pages,
+#Transpos,
+.navusers {
+    position: relative;
+}
+
+div.multiconpage,
+div.multicontran,
+div.multiconacc {
+    position: absolute;
+    height: 1.5vw;
+    width: 8vw;
+    font-size: 1.5vw;
+    padding: 3.25vw 0;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+.multiconpage.hide,
+.multicontran.hide,
+.multiconacc.hide {
+    top: -1vw;
+    left: 0vw;
+    scale: 0;
+    opacity: 0;
+}
+
+.multiconpage.show,
+.multicontran.show,
+.multiconacc.show {
+    scale: 1;
+    opacity: 1;
+}
+
+div.show#lmulticon0 {
+    top: 8vw;
+    left: 8.5vw;
+}
+
+div.show#lmulticon1 {
+    top: 6vw;
+    left: 10vw;
+}
+
+div.show#lmulticon2 {
+    top: 3.1vw;
+    left: 15vw;
+}
+
+div.show#lmulticon3 {
+    top: -1vw;
+    left: 14vw;
+}
+
+div.show#lmulticon4 {
+    top: -5.1vw;
+    left: 15vw;
+}
+
+div.show#lmulticon5 {
+    top: -8vw;
+    left: 10vw;
+}
+
+div.show#lmulticon6 {
+    top: -10vw;
+    left: 8.5vw;
+}
+
+div.show#rmulticon0 {
+    top: -10vw;
+    left: -8.5vw;
+}
+
+div.show#rmulticon1 {
+    top: -8vw;
+    left: -10vw;
+}
+
+div.show#rmulticon2 {
+    top: -5.1vw;
+    left: -15vw;
+}
+
+div.show#rmulticon3 {
+    top: -1vw;
+    left: -14vw;
+}
+
+div.show#rmulticon4 {
+    top: 3.1vw;
+    left: -15vw;
+}
+
+div.show#rmulticon5 {
+    top: 6vw;
+    left: -10vw;
+}
+
+div.show#rmulticon6 {
+    top: 8vw;
+    left: -8.5vw;
+}
+
+div.show#lmulticon7 {
+    top: 1vw;
+    left: 10vw;
+}
+
+div.show#lmulticon8 {
+    top: 9vw;
+    left: 6vw;
+}
+
+div.show#rmulticon7 {
+    top: 1vw;
+    left: -10vw;
+}
+
+div.show#rmulticon8 {
+    top: 9vw;
+    left: -6vw;
+}
+
+.multiconacc#multiconbar1,
+.multiconacc#multiconbar2 {
+    padding: 1.75vw;
+    border-radius: 0.1vw;
+    text-align: center;
+    width: 8vw;
+    height: 1.5vw;
+    font-size: 1.5vw;
+}
+
+.navusers div.multicon.out#multiconbar2 {
+    color: rgb(255, 125, 147);
+    font-weight: 700;
+}
+
+.navusers div.multicon#multiconbar1 {
+    color: rgb(255, 251, 0);
+    font-weight: 700;
+}
+
+.show#multiconbar1 {
+    top: calc(4vw + 5px);
+    left: -3.5vw;
+}
+
+.show#multiconbar2 {
+    top: calc(9vw + 5px);
+    padding-top: 0.75vw;
+    left: -3.5vw;
+}
+
+#login {
+    background-color: #ffffff;
+    width: 90vw;
+    max-width: 39vh;
+    min-width: 24vw;
+    height: 90vw;
+    max-height: 39vh;
+    min-height: 24vw;
+    padding: 5vw;
+    border: 0.2vw solid var(--color-main);
+    border-radius: 2vw;
+    box-shadow: 0 0 2vw rgba(0, 0, 0, 0.596);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgb(27, 27, 27);
+    opacity: 0;
+    z-index: 1000;
+}
+
+#login.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.3s ease 0.1s, transform 0.5s cubic-bezier(.33, 1.88, .63, .91);
+}
+
+#login.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity 0.4s ease 0.2s, transform 0.5s cubic-bezier(.86, -0.6, 1, .75);
+}
+
+.loginzone {
+    width: 100%;
+    height: 100%;
+    padding: 3% 12%;
+    box-sizing: border-box;
+    font-size: clamp(0.39vh, 0.9vw, 0.24vw);
+}
+
+.logintitle {
+    text-align: center;
+    font-size: 6em;
+    font-family: 'jost';
+    font-weight: 600;
+    color: var(--color-main-hover);
+    margin-bottom: 10%;
+}
+
+#login input {
+    display: block;
+    border: 1px solid var(--color-main);
+    border-radius: 100vw;
+    height: 10%;
+    padding: 2% 8%;
+    width: 84%;
+    margin: 1.5% 0;
+    caret-color: #DD8834;
+    color: #e6790c;
+    font-weight: 500;
+    font-size: 4em;
+}
+
+#login label {
+    display: block;
+    font-size: 3.5em;
+    margin: 1.5% 5%;
+}
+
+input#nickname {
+    margin: 1.5% 0 9%;
+}
+
+.passforgot {
+    font-size: 3em;
+    text-align: right;
+    color: #ee7802;
+    cursor: pointer;
+    margin: 0 1.5% 10%;
+}
+
+#loginbutton {
+    margin: auto;
+    width: fit-content;
+    font-size: 4em;
+    padding: 3% 6%;
+    background-color: #DD8834;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 3vw;
+}
+
+#loginbutton:hover {
+    background-color: var(--color-main-active);
+}
+
+.registerlink {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 2.5em;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #c06f18;
+}
+
+#loginback {
+    background-color: rgba(0, 0, 0, 0.01);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+    z-index: 980;
+}
+
+#loginback.show {
+    opacity: 1;
+    scale: 1;
+}
+
+#loginback.hide {
+    opacity: 0;
+    scale: 0;
+}
+
+.multiconacc.multicon {
+    height: 3vw;
+    width: 3vw;
+    padding: 2.5vw;
+}
+
+.multiconacc i {
+    font-size: 3vw;
+}
+
+.multiconacc#rmulticon8,
+.multiconacc#lmulticon8 {
+    color: rgb(255, 63, 143);
+}
+
+.multiconacc#rmulticon7,
+.multiconacc#lmulticon7 {
+    color: rgb(255, 178, 63);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        background-color: #00000000;
+        backdrop-filter: blur(0px);
+        transition: background-color 0.3s, backdrop-filter 0.3s;
+    }
+
+    .navright {
+        scale: 0;
+    }
+
+    .navradius {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* Responsive Navbutton */
+
+@media (min-width: 769px) {
+    .navbutton {
+        scale: 0;
+        opacity: 0;
+    }
+
+    .navbutton div {
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+/* General */
+
+.pagebanner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 0;
+}
+
+.pagebanner .pagetitle {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    left: 15%;
+    top: 47%;
+    font-size: 4.5vw;
+    font-weight: 700;
+}
+
+.bannerlarge {
+    width: 100vw;
+    height: 45vw;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.842);
+    margin-bottom: 2vw;
+}
+
+.bannersmall {
+    width: 100vw;
+    height: 35vw;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+}
+
+.contentzone {
+    background-color: #fff;
+    padding: 5% 10%;
+    color: black;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2.5vw;
+}
+
+.orange.small.title {
+    font-size: 2vw;
+    padding: 1vw 2vw;
+    margin: 0;
+}
+
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 0.5vw;
+}
+
+.contenttitle {
+    height: 4vw;
+    align-content: center;
+}
+
+.contenttitle i {
+    font-size: 2vw;
+    padding: 1vw 1vw 0.8vw 0;
+}
+
+.contentzone .text {
+    font-size: 1.3vw;
+    line-height: 1.3;
+    margin-bottom: 1vw;
+}
+
+.orange {
+    color: #ee8823;
+}
+
+.halfpartzone {
+    width: 90vw;
+    margin: 0vw 2vw 2vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    padding: 3vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 2vw rgba(0, 0, 0, 0.295);
+    scale: 0.95;
+}
+
+.halfpartzone>.halfcontent {
+    height: 20vw;
+    width: 35vw;
+    padding: 3vw 5vw;
+    position: relative;
+}
+
+.halfcontent .smalltitle {
+    font-family: 'prompt', 'montserrat';
+    font-size: 1.5vw;
+    font-weight: 300;
+    font-style: italic;
+    color: rgb(78, 78, 78);
+    margin-bottom: 1vw;
+}
+
+.halfcontent .title {
+    font-weight: bold;
+    font-size: 3vw;
+    height: 3vw;
+    margin-bottom: 2vw;
+}
+
+.halfcontent .text {
+    font-size: 1.3vw;
+    text-align: justify;
+    line-height: 1.3;
+}
+
+.halfdark {
+    height: 24vw;
+    width: 39vw;
+    padding: 3vw;
+    background-color: var(--dark);
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5vw;
+}
+
+.halfimg img {
+    height: 30.5vw;
+    margin: -3vw;
+}
+
+.halfimg {
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, 0.651);
+    /* z-index: 2; */
+}
+
+.halfdark .halfcontent {
+    padding: 0.7vw 1.5vw;
+    height: 6vw;
+}
+
+.halflist {
+    display: flex;
+    align-content: center;
+}
+
+.halflist .halfcontenticon {
+    height: 8vw;
+    width: 8vw;
+}
+
+.halflist img {
+    height: 5vw;
+    margin-top: 1vw;
+}
+
+.halfdark .title {
+    font-size: 1.7vw;
+    margin-bottom: 0.5vw;
+    height: 1.7vw;
+}
+
+.smalltext {
+    font-size: 1.2vw;
+}
+
+/* footer */
+#pagefooter {
+    width: 100vw;
+    height: calc(100vw *5/16);
+    position: relative;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    z-index: 400;
+}
+
+.footercontent {
+    position: absolute;
+    right: 1vw;
+    top: 2vw;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerpart {
+    width: 26vw;
+    margin: 2vw;
+}
+
+.footertitle {
+    font-size: 1.3vw;
+    margin-bottom: 3vw;
+    font-family: "Prompt", montserrat;
+}
+
+#footerdestination .footertitle {
+    margin-bottom: 1.8vw;
+    text-align: center;
+}
+
+.footerimg {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+}
+
+footer img {
+    width: 8vw;
+    margin: 0.25vw;
+}
+
+.footertext {
+    font-size: 1vw;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.5;
+}
+
+.footertext p {
+    margin: 0.3vw;
+}
+
+#footericon {
+    display: flex;
+    width: 13vw;
+    justify-content: space-between;
+    font-size: 1.5vw;
+    height: 5vw;
+    align-items: center;
+}
+
+#copyright {
+    font-family: "Inter", sans-serif;
+    color: rgba(255, 255, 255, 0.815);
+    position: absolute;
+    bottom: 1vw;
+    right: 2vw;
+    font-size: 1vw;
+}

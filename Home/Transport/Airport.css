@@ -2,9 +2,10 @@
     --p-anh-font-size:5vw;
     --h5-font-size:1.5rem;
     --color-black:rgb(27, 26, 26);
-    --h3-font-size:1.5rem;
+    --h3-font-size:1.8rem;
     --h2-font-size:2.8rem;
     --h4-font-size:1rem;
+    --h3-mobile-font-size:2rem;
 }
 /*phần ảnh đầu*/
 html{
@@ -58,7 +59,7 @@ html{
 #book .book .content1 .airport .main input{
     width:100%;
     height:4rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     padding-left:2.8rem;
     box-sizing: border-box;
 }
@@ -83,7 +84,7 @@ html{
     width:10%;
     height:40%;
     border: none; 
-    border-radius:50px;
+    border-radius:50rem;
     background-color: var(--color-main);
     color: white; 
     position:absolute;
@@ -112,7 +113,7 @@ html{
     width:100%;
     height:4rem;
     border:1px solid black;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     padding-left:2.5rem;
     box-sizing: border-box;
 }
@@ -151,7 +152,7 @@ html{
 #book .book .content2 .date .main input{
     width:100%;
     height:4rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     padding-left:2.5rem;
     box-sizing: border-box;
 }
@@ -179,7 +180,7 @@ html{
     width:40%;
     height:4rem;
     border:1px solid black;
-    border-radius: 5px;
+    border-radius: 0.5rem;;
     padding-left:2.5rem;
     box-sizing: border-box;
 }
@@ -221,7 +222,7 @@ html{
     width:10rem;
     height:3rem;
     border:none;
-    border-radius: 10px;
+     border-radius: 0.5rem;
     box-sizing: border-box; 
     font-size:var(--h4-font-size);
     font-weight: 700;
@@ -337,5 +338,133 @@ hr{
     font-size:1.3rem;
 }
 @media only screen and (max-width: 740px)/*web mobile*/{
-    
+    #book .book{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #book .book .content1{
+        display:grid;
+        grid-template-columns: 1fr 0.1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #book .book .content1 input{
+        font-size:1.5rem;
+    }
+    #book .book .content1 .airport{
+        width:100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #book .book .content1 .button{
+        grid-column: 2 / 3;
+        grid-row:1 / 2;
+        display:inline-block;
+        width:100%;
+        height:100%;
+        position:relative;
+    }
+    #book .book .content1 .button button{
+        position:relative;
+        width:70%;
+        height:50%;
+        text-align: center;
+        top:2rem;
+        left:1rem;
+    }
+    #book .book .content1 .button button i{
+        font-size:2rem;
+        top:1.4rem;
+        right:1rem;
+        position:absolute;
+    }
+    #book .book .content1 .area{
+        width:100%;
+        grid-column: 1 / 3;
+        grid-row:2 / 3
+    }
+    #book .book .content2{
+        display:grid;
+        width:100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap:2rem;
+    }
+    #book .book .content2 .date{
+        width:100%;
+    }
+    #book .book .content2 .date .main input{
+        width:100%;
+        font-size:1.5rem;
+    }
+    #book .book .content2 .time{
+        width:100%;
+    }
+    #book .book .content2 .time .main input{
+        width:100%;
+        font-size:1.5rem;
+    }
+    #book .book .content3{
+        display:grid;
+        width:100%;
+        grid-template-columns:1fr;
+        grid-template-rows: 1fr;
+    }
+    #book .book .content3 input{
+        margin-right:auto;
+        margin-left:auto;
+        width:80%;
+        text-align: center;
+    }
+    .why{
+        display:flex;
+        flex-direction: column;
+        gap:2rem;
+    }
+    .why .container{
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        flex-direction: column;
+        gap:2rem;
+        margin:0px;
+    }
+    .why .container .content {
+        display:flex;
+        flex-direction: column;
+    }
+    .why .container .content h3{
+        width:100%;
+        text-align: center;
+        font-size: var(--h3-mobile-font-size);
+    }
+    .why .container .content p{
+        text-align:center;
+    }
+    .partner {
+        display:grid;
+        width:70%;
+        margin-right:auto;
+        margin-left:auto;
+        gap:1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        margin-bottom:10rem;
+    }
+    .partner .content {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        width:100%;
+    }
+    .partner .img{
+        width:100%;
+        grid-column: 2 / 3;
+        grid-row:1 / 2;
+    }
+    .convenient{
+        display:none;
+    }
+    .partner .img img{
+        width:32%;
+    }
 }
