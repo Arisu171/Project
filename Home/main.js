@@ -1030,7 +1030,7 @@ function applyFilters(region, type, time, reviews, cost) {
         if (cost !== '0' && itemCost !== cost) matchesFilter = false;
 
         if (matchesFilter) {
-            item.style.display = 'block';
+            item.style.display = 'grid';
         } else {
             unmatchedItems.push(item);
         }
@@ -1039,7 +1039,7 @@ function applyFilters(region, type, time, reviews, cost) {
     if (unmatchedItems.length <= 2) {
         unmatchedItems.forEach(item => {
             otherSuggestions.appendChild(item);
-            item.style.display = 'block';
+            item.style.display = 'grid';
         });
     } else {
         unmatchedItems.forEach(item => {
