@@ -90,16 +90,80 @@ function goToBanner(index) {
         isTransitioning = false;
     }, 1000);
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const regionOptions = [
+        { value: "1", text: "Northern Region" },
+        { value: "2", text: "Southern Region" },
+        { value: "3", text: "Central Region" },
+        { value: "4", text: "Central Highland" },
+        { value: "0", text: "All Regions" }
+    ];
 
-document.querySelectorAll('.bannercurrent div').forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        goToBanner(index + 1);
-        startAutoSlide();
+    const typeOptions = [
+        { value: "1", text: "Beach" },
+        { value: "2", text: "City" },
+        { value: "3", text: "Nature" },
+        { value: "4", text: "Outdoor" },
+        { value: "0", text: "All Types" }
+    ];
+
+    const destinationOptions = [
+        { value: "1", text: "Ha Long Bay" },
+        { value: "2", text: "Da Nang" },
+        { value: "3", text: "Ho Chi Minh City" },
+        { value: "4", text: "Sapa" },
+        { value: "5", text: "Phu Quoc" },
+        { value: "0", text: "All Destinations" }
+    ];
+
+    const timeOptions = [
+        { value: "1", text: "< 1 day" },
+        { value: "2", text: "1 - 2 days" },
+        { value: "3", text: "3 - 4 days" },
+        { value: "4", text: "> 4 days" },
+        { value: "0", text: "All Times" }
+    ];
+
+    const costOptions = [
+        { value: "1", text: "Low" },
+        { value: "2", text: "Middle" },
+        { value: "3", text: "High" },
+        { value: "0", text: "All Costs" }
+    ];
+
+    function updateSelectOptions(selectElement, options) {
+        selectElement.innerHTML = "";
+
+        options.forEach(opt => {
+            const option = document.createElement('option');
+            option.value = opt.value;
+            option.text = opt.text;
+            selectElement.appendChild(option);
+        });
+    }
+
+    const regionSelect = document.querySelector('#underbotitem1 .underbotinputlist');
+    const typeSelect = document.querySelector('#underbotitem2 .underbotinputlist');
+    const destinationSelect = document.querySelector('#underbotitem3 .underbotinputlist');
+    const timeSelect = document.querySelector('#underbotitem4 .underbotinputlist');
+    const costSelect = document.querySelector('#underbotitem5 .underbotinputlist');
+
+    updateSelectOptions(regionSelect, regionOptions);
+    updateSelectOptions(typeSelect, typeOptions);
+    updateSelectOptions(destinationSelect, destinationOptions);
+    updateSelectOptions(timeSelect, timeOptions);
+    updateSelectOptions(costSelect, costOptions);
+
+    document.getElementById("underbotsearch").addEventListener("click", () => {
+        const selectedRegion = regionSelect.value;
+        const selectedType = typeSelect.value;
+        const selectedDestination = destinationSelect.value;
+        const selectedTime = timeSelect.value;
+        const selectedCost = costSelect.value;
+
+        const searchParams = `?region=${selectedRegion}&type=${selectedType}&destination=${selectedDestination}&time=${selectedTime}&cost=${selectedCost}`;
+        console.log("Searching with parameters:", searchParams);
+
+        window.location.href = `search.html${searchParams}`;
     });
 });
-
-updateDots();
-setTimeout(() => {
-    next();
-    startAutoSlide();
-}, 500);
