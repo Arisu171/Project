@@ -322,23 +322,23 @@ function loadCatBa() {
 }
 function loadMaiChau() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadMausoleum() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadCuLaoCham() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadOfficeSG() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadGreenHill() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadRegions() {
     clearPreviousResources();
@@ -447,7 +447,7 @@ function loadHue() {
     clearPreviousResources();
     loadContent('./Regions/Central/Hue.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
 }
-// Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
+
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     clearPreviousResources();
 
@@ -469,7 +469,7 @@ function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
 
                     addCSSResources(cssFiles).then(() => {
                         addJSResources(jsFiles).then(() => {
-                            reinitializeOldScripts(); // Khởi động lại các chức năng cần thiết sau AJAX
+                            reinitializeOldScripts();
                         });
                     });
                 }
@@ -1079,3 +1079,24 @@ function reinitializeContent() {
     reinitializeOldScripts();
     console.log("Content reinitialized.");
 }
+
+let timeout;
+
+function resetTimer() {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(Logoutt, 3000);
+}
+
+function Logoutt() {
+    localStorage.setItem("isLoggedIn", False);
+    localStorage.setItem("nickname", nickname);
+}
+
+document.addEventListener('mousemove', resetTimer);
+document.addEventListener('keypress', resetTimer);
+document.addEventListener('click', resetTimer);
+document.addEventListener('scroll', resetTimer);
+document.addEventListener('touchstart', resetTimer);
+
+resetTimer();
