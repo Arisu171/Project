@@ -668,3 +668,72 @@ function initializeDateDropdown() {
     thangSelect.addEventListener('change', updateDays);
     namSelect.addEventListener('change', updateDays);
 }
+
+// search
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const region = urlParams.get('region') || '0';
+    const type = urlParams.get('type') || '0';
+    const time = urlParams.get('time') || '0';
+    const reviews = urlParams.get('reviews') || '0';
+    const cost = urlParams.get('cost') || '0';
+
+    // Lọc và hiển thị phần tử dựa trên tham số từ URL
+    applyFilters(region, type, time, reviews, cost);
+});
+
+function applyFilters(region, type, time, reviews, cost) {
+    const tourItems = document.querySelectorAll('.tour-item');
+    const otherSuggestions = document.getElementById('other-suggestions');
+
+    let unmatchedItems = []; // Danh sách các phần tử không khớp
+
+    tourItems.forEach(item => {
+        const itemRegion = item.getAttribute('data-region');
+        const itemType = item.getAttribute('data-type');
+        const itemTime = item.getAttribute('data-time');
+        const itemReviews = item.getAttribute('data-reviews');
+        const itemCost = item.getAttribute('data-cost');
+
+        let matchesFilter = true;
+
+        // Kiểm tra từng thuộc tính
+        if (region !== '0' && itemRegion !== region) {
+            item.style.display = 'none'; // Ẩn nếu không khớp region
+            return; // Dừng tại đây vì điều kiện chính không khớp
+        }
+        if (type !== '0' && itemType !== type) {
+            matchesFilter = false;
+        }
+        if (time !== '0' && itemTime !== time) {
+            matchesFilter = false;
+        }
+        if (reviews !== '0' && itemReviews !== reviews) {
+            matchesFilter = false;
+        }
+        if (cost !== '0' && itemCost !== cost) {
+            matchesFilter = false;
+        }
+
+        // Xử lý dựa trên kết quả khớp bộ lọc
+        if (matchesFilter) {
+            item.style.display = 'block'; // Hiển thị nếu khớp tất cả điều kiện
+        } else {
+            unmatchedItems.push(item); // Đưa phần tử vào danh sách không khớp
+        }
+    });
+
+    // Kiểm tra và xử lý các phần tử không khớp
+    if (unmatchedItems.length <= 2) {
+        unmatchedItems.forEach(item => {
+            otherSuggestions.appendChild(item); // Đưa vào mục đề xuất khác
+            item.style.display = 'block'; // Hiển thị phần tử
+        });
+    } else {
+        // Nếu quá 2 phần tử không khớp hoặc bất kỳ phần tử nào trong đó là region, ẩn tất cả
+        unmatchedItems.forEach(item => {
+            item.style.display = 'none';
+        });
+    }
+}
