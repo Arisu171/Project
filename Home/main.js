@@ -322,23 +322,23 @@ function loadCatBa() {
 }
 function loadMaiChau() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
 function loadMausoleum() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
 function loadCuLaoCham() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
 function loadOfficeSG() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
 function loadGreenHill() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
 }
 function loadRegions() {
     clearPreviousResources();
@@ -399,7 +399,54 @@ function loadChangepass() {
     clearPreviousResources();
     loadContent('./Account/Change-pass.html', ['./Account/Dashboard.js'], ['./Account/Dashboard.css']);
 }
-
+function loadHaNoi() {
+    clearPreviousResources();
+    loadContent('./Regions/Northen/Hanoi.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadQuangNinh() {
+    clearPreviousResources();
+    loadContent('./Regions/Northen/QuangNinh.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadNinhBinh() {
+    clearPreviousResources();
+    loadContent('./Regions/Northen/NinhBinh.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadHCM() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern/HCM.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadCanTho() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern/CanTho.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadPhuQuoc() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern/PhuQuoc.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadDaLat() {
+    clearPreviousResources();
+    loadContent('./Regions/Highlands/DaLat.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadKonTum() {
+    clearPreviousResources();
+    loadContent('./Regions/Highlands/KonTum.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadBuonMaThuot() {
+    clearPreviousResources();
+    loadContent('./Regions/Highlands/BuonMaThuot.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadDaNang() {
+    clearPreviousResources();
+    loadContent('./Regions/Central/DaNang.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadHoiAn() {
+    clearPreviousResources();
+    loadContent('./Regions/Central/HoiAn.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadHue() {
+    clearPreviousResources();
+    loadContent('./Regions/Central/Hue.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
 // Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     clearPreviousResources();
