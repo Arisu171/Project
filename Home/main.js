@@ -322,23 +322,23 @@ function loadCatBa() {
 }
 function loadMaiChau() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadMausoleum() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadCuLaoCham() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadOfficeSG() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadGreenHill() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./TourList/TourList.css', './Pay/Pay.css']);
 }
 function loadRegions() {
     clearPreviousResources();
@@ -1084,13 +1084,14 @@ let timeout;
 
 function resetTimer() {
     clearTimeout(timeout);
-
     timeout = setTimeout(Logoutt, 3000);
 }
 
 function Logoutt() {
-    localStorage.setItem("isLoggedIn", False);
-    localStorage.setItem("nickname", nickname);
+    isLoggedIn = false;
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+    toggleMulticons('.multiconacc');
 }
 
 document.addEventListener('mousemove', resetTimer);
