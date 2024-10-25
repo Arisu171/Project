@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../font-awesome-6.6.0-pro-full-main/css/all.css">
+    <link rel="stylesheet" href="../../General/reset.css">
+    <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
+    <link rel="stylesheet" href="../../General/Footer/Footer.css">
+    <link rel="stylesheet" href="Car.css">
+
+    <title>Flarista-Car</title>
+</head>
+
+<body>
+    <div id="navigationbar"></div>
+
+    <div id="body">
+        <div class="pagebanner bannersmall">
+            <img src="BACK-MAIN-TRANSPORT.jpg" alt="anh">
+             <div class="pagetitle">CAR RENTAL</div>
+        </div>
+        <div id="book">
+            <div class="book">
+                <div class="booking">
+                    <div class="dong1 dong">
+                        <label onclick="check(this)">
+                            <input type="radio" name="driving_option" value="self-driving">
+                            <span class="custom-radio">SELF-DRIVING</span>
+                        </label>
+                        <label onclick="check(this)">
+                            <input type="radio" name="driving_option" value="with_drive">
+                            <span class="custom-radio">WITH DRIVE</span>
+                        </label>
+                    </div>
+                    
+                    <div class="dong2 dong">
+                        <div class="dad">
+                            <h5>Your car rental location</h5>
+                            <div class="child">
+                                <i class="fa-sharp fa-light fa-location-dot"></i>
+                                <input type="text" placeholder="Fill in city, airport, or hotel">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dong3 dong">
+                        <div class="dad">
+                            <h5>Start date</h5>
+                            <div class="child">
+                                <i class="fa-light fa-calendar-days"></i>
+                                <input type="date" class="desktop-input" onclick="responsiveInput()">
+                            </div>
+                        </div>
+                        <div class="mom">
+                            <h5>Start time</h5>
+                            <div class="child">
+                                <i class="fa-sharp fa-light fa-clock" onclick="responsiveInput()"></i>
+                                <input type="time">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dong4 dong">
+                        <div class="dad">
+                            <h5>End date</h5>
+                            <div class="child">
+                                <i class="fa-light fa-calendar-days"></i>
+                                <input type="date" class="desktop-input" >
+                            </div>
+                        </div>
+                        <div class="mom">
+                            <h5>End time</h5>
+                            <div class="child">
+                                <i class="fa-sharp fa-light fa-clock"></i>
+                                <input type="time" class="desktop-input">
+                                <input type="datetime-local" class="mobile-input" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dong5 dong">
+                        <div class="child">
+                            <button>Find a car</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="partners">
+            <div class="partners">
+                <div class="text">
+                    <h3>CAR RENTAL PARTNERS</h3>
+                    <h4>Favourite car rental partners</h4>
+                    <p>We work with reputable car rental partners
+                        around the world to get you wherever you
+                        need to go.</p>
+                </div>
+                <div class="brand">
+                    <img src="BMW.svg 1.png">
+                    <img src="logo-Mercedes-Benz 1.png">
+                    <img src="pngimg.com - lexus_PNG22 1.png">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="why">
+            <div class="text">
+                <h2>Why Should You Rent A Car On Flarista</h2>
+            </div>
+            <div class="content">
+                <div class="dad">
+                    <div class="child">
+                        <img src="why1.svg">
+                        <h5>SAVE TIME</h5>
+                        <p>Easily rent a car anywhere,
+                            anytime. Compare cars from
+                            our trusted partners on one
+                            platform, finding the right car
+                            for you is easier than ever.</p>
+                    </div>
+                </div>
+                <div class="dad">
+                    <div class="child">
+                        <img src="why2.svg">
+                        <h5>High quality service
+                            from trusted partners</h5>
+                        <p>Our trusted partners provide quality services
+                            ensuring that you have a safe, comfortable and
+                            memorable trip.</p>
+                    </div>
+                </div>
+                <div class="dad">
+                    <div class="child">
+                        <img src="why3.svg">
+                        <h5>Real reviews
+                            from users</h5>
+                        <p>Real reviews from other users
+                            help you find the right car.</p>
+                    </div>
+                </div>
+                <div class="dad">
+                    <div class="child">
+                        <img src="why4.svg">
+                        <h5>Real reviews
+                            from users</h5>
+                        <p>Real reviews from other users
+                            help you find the right car.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-rental">
+            <div class="dad">
+                <h2>Car Rental</h2>
+                <div class="text">
+                    <p>Renting a car is the best option for flexible travel when traveling with family or friends.
+                        With Flarista, you can freely search for cars with detailed price lists and book a car in a snap.
+                    </p>
+                    <p>In particular, the car usage time is up to 24 hours for each rental day.</p>
+                </div>
+            </div>
+        </div>
+        <div class="with-driver">
+            <div class="dad">
+                <h2>With Driver</h2>
+                <div class="text">
+                    <p>Convenient transportation is a very important issue when you travel. Especially when you want
+                        to have an easy, hassle-free trip to explore many tourist destinations, renting a car with a driver
+                        is a reasonable choice.With the development of digital technology, you can
+                        easily enjoy car rental services through Flarista.
+                    </p>
+                    <p> Easily compare prices from our trusted partners and find the service that suits your needs.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="general">
+            <div class="h2">
+                <h2>General requirements when renting a car
+                </h2>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>General requirements when renting a self-drive car</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>Include</p>
+                                <ul>
+                                    <li>Insurance for car and passengers</li>
+                                    <li>Vehicle usage time up to 24 hours per rental day</li>
+                                </ul>
+                                <p>Not included</p>
+                                <ul>
+                                    <li>Fuel costs, pick up/drop off outside the centre and
+                                        insurance claims</li>
+                                </ul>
+                                <p>Pick up location</p>
+                                <ul>
+                                    <li>Free pick up and drop off at airport and in city center</li>
+                                </ul>
+                                <p>Required documents</p>
+                                <ul>
+                                    <li>Original ID/passport, driver's license, personal credit
+                                        card or family credit card (photo of family card (KK)
+                                        or marriage certificate must be shared with rental
+                                        partner prior to pick-up to verify family member's
+                                        credit card)</li>
+                                </ul>
+                                <p class="note">Note: Social media accounts and a photo of your ID are also
+                                    required. If you do not have a social media account, the
+                                    provider will request additional documents for verification.
+                                    Learn more in the Terms and Conditions section.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>General requirements when renting a car with driver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>Include</p>
+                                <ul>
+                                    <li>Using the car in the city</li>
+                                    <li>Rental period up to 12 hours or until 23:59 for each
+                                        rental day</li>
+                                </ul>
+                                <p>Not included</p>
+                                <ul>
+                                    <li>Fuel, parking fees, road tolls, driver's meal allowance
+                                        and tips</li>
+                                    <li>Driver accommodation fee in case of moving out of the
+                                        central area</li>
+                                    <li>Using the car outside the city</li>
+                                </ul>
+                                <p>Pick up location</p>
+                                <ul>
+                                    <li>Free pick up and drop off at airport and in city center</li>
+                                </ul>
+                                <p class="information">The driver will contact you 12 - 24 hours before the pick-up
+                                    time. In case of same-day rental, the driver will contact
+                                    you promptly after your booking is confirmed.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="popular">
+            <div class="text">
+                <h2>Popular Car Rental Location</h2>
+            </div>
+            <div class="img">
+                <div class="dong">
+                    <img src="3-Copy-1-890x501.png">
+                    <img src="31.png">
+                    <img src="cross-2024-Den-218-218.png">
+                </div>
+                <div class="dong">
+                    <img src="everestmauden-SFJD0.png">
+                    <img src="Honda Civic Type R.png">
+                    <img src="k3-xam.png">
+                </div>
+                <div class="dong">
+                    <img src="land-rover-range-rover-phien-ban-autobiography-lwb-50-v8.png">
+                    <img src="mau-xe-mercedes-maybach-s-650-anthracite-blue-metallic.png">
+                    <img src="rolls-royce-ghost.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="pagefooter"></footer>
+    <script src="Car.js"></script>
+    <script src="../../General/Footer/Footer.js"></script>
+    <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
+</body>
+
+</html>
