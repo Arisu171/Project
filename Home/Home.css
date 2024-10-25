@@ -299,8 +299,8 @@ textarea {
     top: 0%;
     left: 0%;
     height: calc(var(--high) / 5);
-    width: 80vw;
-    padding: 0 10vw;
+    width: 90vw;
+    padding: 0 5vw;
     overflow: hidden;
     align-content: center;
     font-size: 1.4vw;
@@ -312,7 +312,6 @@ textarea {
     grid-template-columns: 1fr;
     margin-left: 7.5%;
     position: relative;
-
 }
 
 .underbotlabel {
@@ -321,13 +320,13 @@ textarea {
 
 .underbotinputlist {
     box-sizing: border-box;
-    width: 90%;
+    width: 100%;
     height: 3.3vw;
     border: 0.0001vw solid rgba(255, 255, 255, 0.185);
     background-color: rgb(46, 46, 46);
     border-radius: 1vw;
     padding: 0vw 1.2vw;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     color: white;
     align-items: center;
     appearance: none;
@@ -342,8 +341,8 @@ textarea {
     content: '\f2ec';
     font-family: 'Font Awesome 6 Pro';
     position: absolute;
-    right: 2.2vw;
-    top: 65%;
+    right: 1.2vw;
+    bottom: 20%;
     transform: rotate(180deg);
     pointer-events: none;
     font-size: 0.6vw;
@@ -355,6 +354,7 @@ textarea {
     font-family: 'Font Awesome 6 Pro';
     transform: rotate(0deg);
     font-size: 1vw;
+    bottom: 16%;
 }
 
 #underbotitem6::after {

@@ -90,22 +90,8 @@ function goToBanner(index) {
         isTransitioning = false;
     }, 1000);
 }
-
-document.querySelectorAll('.bannercurrent div').forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        goToBanner(index + 1);
-        startAutoSlide();
-    });
-});
-
-updateDots();
-setTimeout(() => {
-    next();
-    startAutoSlide();
-}, 500);
-
 document.addEventListener("DOMContentLoaded", () => {
-    const keywordOptions = [
+    const regionOptions = [
         { value: "1", text: "Northern Region" },
         { value: "2", text: "Southern Region" },
         { value: "3", text: "Central Region" },
@@ -113,12 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { value: "0", text: "All Regions" }
     ];
 
-    const activityOptions = [
+    const typeOptions = [
         { value: "1", text: "Beach" },
         { value: "2", text: "City" },
         { value: "3", text: "Nature" },
         { value: "4", text: "Outdoor" },
-        { value: "0", text: "All Activities" }
+        { value: "0", text: "All Types" }
     ];
 
     const destinationOptions = [
@@ -130,20 +116,19 @@ document.addEventListener("DOMContentLoaded", () => {
         { value: "0", text: "All Destinations" }
     ];
 
-    const durationOptions = [
+    const timeOptions = [
         { value: "1", text: "< 1 day" },
         { value: "2", text: "1 - 2 days" },
         { value: "3", text: "3 - 4 days" },
         { value: "4", text: "> 4 days" },
-        { value: "0", text: "All Durations" }
+        { value: "0", text: "All Times" }
     ];
 
-    const dateOptions = [
-        { value: "2023-11-10", text: "November 10, 2023" },
-        { value: "2023-12-15", text: "December 15, 2023" },
-        { value: "2024-01-05", text: "January 5, 2024" },
-        { value: "2024-03-20", text: "March 20, 2024" },
-        { value: "0", text: "Any Date" }
+    const costOptions = [
+        { value: "1", text: "Low" },
+        { value: "2", text: "Middle" },
+        { value: "3", text: "High" },
+        { value: "0", text: "All Costs" }
     ];
 
     function updateSelectOptions(selectElement, options) {
@@ -157,26 +142,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const keywordSelect = document.querySelector('#underbotitem1 .underbotinputlist');
-    const activitySelect = document.querySelector('#underbotitem2 .underbotinputlist');
+    const regionSelect = document.querySelector('#underbotitem1 .underbotinputlist');
+    const typeSelect = document.querySelector('#underbotitem2 .underbotinputlist');
     const destinationSelect = document.querySelector('#underbotitem3 .underbotinputlist');
-    const durationSelect = document.querySelector('#underbotitem4 .underbotinputlist');
-    const dateSelect = document.querySelector('#underbotitem5 .underbotinputlist');
+    const timeSelect = document.querySelector('#underbotitem4 .underbotinputlist');
+    const costSelect = document.querySelector('#underbotitem5 .underbotinputlist');
 
-    updateSelectOptions(keywordSelect, keywordOptions);
-    updateSelectOptions(activitySelect, activityOptions);
+    updateSelectOptions(regionSelect, regionOptions);
+    updateSelectOptions(typeSelect, typeOptions);
     updateSelectOptions(destinationSelect, destinationOptions);
-    updateSelectOptions(durationSelect, durationOptions);
-    updateSelectOptions(dateSelect, dateOptions);
+    updateSelectOptions(timeSelect, timeOptions);
+    updateSelectOptions(costSelect, costOptions);
 
     document.getElementById("underbotsearch").addEventListener("click", () => {
-        const selectedKeyword = keywordSelect.value;
-        const selectedActivity = activitySelect.value;
+        const selectedRegion = regionSelect.value;
+        const selectedType = typeSelect.value;
         const selectedDestination = destinationSelect.value;
-        const selectedDuration = durationSelect.value;
-        const selectedDate = dateSelect.value;
+        const selectedTime = timeSelect.value;
+        const selectedCost = costSelect.value;
 
-        const searchParams = `?region=${selectedKeyword}&type=${selectedActivity}&destination=${selectedDestination}&duration=${selectedDuration}&date=${selectedDate}`;
+        const searchParams = `?region=${selectedRegion}&type=${selectedType}&destination=${selectedDestination}&time=${selectedTime}&cost=${selectedCost}`;
         console.log("Searching with parameters:", searchParams);
 
         window.location.href = `search.html${searchParams}`;
