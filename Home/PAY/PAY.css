@@ -1,0 +1,71 @@
+.booking-summary {
+    width: 20rem; /* Đặt chiều rộng của thẻ */
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.summary-header {
+    background-color: #fdbb5f;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.summary-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.summary-header span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.summary-details, .guest-info {
+    padding: 1rem;
+    border-bottom: 0.1rem solid #ccc;
+}
+
+.summary-details h3, .guest-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+}
+
+.summary-details strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+}
+
+.detail-item p {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.detail-item span {
+    font-weight: normal;
+    color: #333;
+}
+
+.guest-info {
+    padding: 1rem;
+}
+
+.guest-info p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    color: #333;
+}
