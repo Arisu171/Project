@@ -1047,16 +1047,13 @@ function applyFilters(region, type, time, reviews, cost) {
         });
     }
 }
-
 document.getElementById("underbotsearch").addEventListener("click", () => {
-
     const selectedRegion = document.querySelector('#underbotitem1 .underbotinputlist').value;
     const selectedType = document.querySelector('#underbotitem2 .underbotinputlist').value;
     const selectedTime = document.querySelector('#underbotitem3 .underbotinputlist').value;
     const selectedCost = document.querySelector('#underbotitem4 .underbotinputlist').value;
 
     const searchParams = `?region=${selectedRegion}&type=${selectedType}&time=${selectedTime}&cost=${selectedCost}`;
-
     console.log("Searching with parameters:", searchParams);
 
     const xhr = new XMLHttpRequest();
@@ -1066,11 +1063,25 @@ document.getElementById("underbotsearch").addEventListener("click", () => {
             const contentContainer = document.getElementById('content');
             contentContainer.innerHTML = xhr.responseText;
 
+            // Chèn file CSS nếu chưa có
+            addSearchCSS();
+
             reinitializeContent();
         }
     };
     xhr.send();
 });
+
+function addSearchCSS() {
+    // Kiểm tra xem file CSS đã được thêm vào chưa
+    if (!document.querySelector("link[href='Search.css']")) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "Search.css";
+        document.head.appendChild(link);
+        console.log("Search.css đã được thêm.");
+    }
+}
 
 function reinitializeContent() {
 
@@ -1089,12 +1100,20 @@ function resetTimer() {
 }
 
 function Logoutt() {
-
+    const loginElement = document.getElementById('login');
+    const loginBack = document.getElementById('loginback');
+    const navUserIcons = document.querySelectorAll('.navuser');
+    loginBack.classList.remove('show');
+    loginElement.classList.remove('show');
+    loginBack.classList.add('hide');
+    loginElement.classList.add('hide');
     isLoggedIn = false;
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("username");
-    toggleMulticons('.multiconacc');
-    console.log("Đã logout do không có tương tác trong 5 phút.");
+    navUserIcons.forEach(function (navUserIcon) {
+        toggleMulticons('.multiconacc');
+    });
+    console.log("Đã logout do không có tương tác trong 3s.");
 }
 
 
