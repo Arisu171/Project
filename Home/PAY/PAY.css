@@ -1,71 +1,104 @@
-.booking-summary {
-    width: 20rem; /* Đặt chiều rộng của thẻ */
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+:root{
+    --h1-font-size:2.3rem;
+    --h2-font-size:1.8rem;
+    --h3-font-size:1.3rem;
+    --main-color:#DD8834;
+}
+html{
+    font-size:1vw;
 }
 
-.summary-header {
-    background-color: #fdbb5f;
-    color: #fff;
-    padding: 1rem;
+.pay-content{
+    display:flex;
+    width:100%;
+    height:auto;
+    padding:3rem;
+    box-sizing: border-box;
+}
+.pay-content .pay-methood{
+    width:70%;
+    height:auto;
+    padding:5rem;
+    box-sizing: border-box;
+}
+.pay-content .pay-booking{
+    width:30%;
+    height:auto;
+    background-color:bisque;
+    padding:5rem;
+    box-sizing: border-box;
+}
+.pay-content .pay-methood{
+    box-shadow: 0 0 15px rgba(26, 25, 25, 0.234);
+    border-radius: 1rem;
+}
+.pay-content .pay-methood .pay-title{
+    margin:2rem;
+}
+.pay-content .pay-methood .pay-title h1{
+    font-size:var(--h1-font-size);
+    margin:2rem 0px;
+}
+.pay-content .pay-methood .pay-title h2{
+    font-size:var(--h2-font-size);
+    color:var(--color-main);
+    margin:1rem 0px;
+}
+.pay-content .pay-methood .pay-title p{
+    font-size:1.3rem;
+    font-weight: 500;
+    margin:1rem 0px;
+}
+.pay-content .pay-methood .pay-how>h3{
+    font-size:var(--h3-font-size);
+    color:#cd7a28;
+    text-align: center;
+    text-decoration: underline;
+}
+.pay-content .pay-methood .pay-how{
+    margin:2rem;
+}
+.pay-content .pay-methood .pay-how h3{
+    font-size:var(--h3-font-size);
+    margin:2rem;
+} 
+.pay-content .pay-methood .pay-how .pay-selection{
+    background-color: rgb(242, 240, 236);
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    height:auto;
+    padding:2rem;
+}
+.pay-content .pay-methood .pay-how .pay-selection hr{
+    width:80%;
+    color:var(--color-main);
+    margin:3rem;
+}
+.pay-content .pay-methood .pay-how .pay-selection h3{
+    font-size:var(--h3-font-size);
+    text-align:center;
+    margin:2rem;
+}
+.pay-content .pay-methood .pay-how .pay-selection .pay-img{
+    width:100%;
     text-align: center;
 }
-
-.summary-header h2 {
-    margin: 0;
-    font-size: 1.4rem;
+.pay-content .pay-methood .pay-how .pay-selection .pay-img a{
+    margin:2rem;
+    background-size: contain;
 }
-
-.summary-header span {
-    font-size: 1rem;
-    font-weight: bold;
+.pay-content .pay-methood .pay-how .pay-selection .pay-img img{
+    background-size: contain;
+    width:20%;
 }
-
-.summary-details, .guest-info {
-    padding: 1rem;
-    border-bottom: 0.1rem solid #ccc;
+.pay-content .pay-methood .pay-how .pay-selection .pay-img img:hover{
+    opacity:0.7;
 }
-
-.summary-details h3, .guest-info h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0 0 0.5rem 0;
-}
-
-.summary-details strong {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.detail-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    padding: 0.3rem 0;
-}
-
-.detail-item p {
-    margin: 0;
-    font-weight: 600;
-    color: #333;
-}
-
-.detail-item span {
-    font-weight: normal;
-    color: #333;
-}
-
-.guest-info {
-    padding: 1rem;
-}
-
-.guest-info p {
-    font-size: 0.9rem;
-    margin: 0.3rem 0;
-    color: #333;
+#payment{
+    width:100%;
+    height:auto;
+    margin:2rem;
+    display:flex;
+    justify-content: center;
 }

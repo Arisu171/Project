@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../General/reset.css">
     <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
-    <link rel="stylesheet" href="project/Home/PAY/PAY.css">
+    <link rel="stylesheet" href="PAY.css">
 
     <title>Flarista</title>
 </head>
@@ -23,40 +23,71 @@
 <body>
     <div id="navigationbar"></div><!--link của nav-->
     <div id="body">
-        
-        <div class="booking-summary">
-            <div class="summary-header">
-                <h2>Xperience Summary</h2>
-                <span>Booking code: 11003</span>
+        <div class="pagebanner bannersmall">
+            <img src="back-pay.png" alt="anh">
+        </div>
+        <div class="pay-content">
+            <div class="pay-methood">
+                <div class="pay-title">
+                    <h1>HOW WOULD YOU LIKE TO PAY?</h1>
+                    <h2>Payment methoods</h2>
+                    <p class="note">Flarista has 3 types of payment</p>
+                    <h3>1.Paypal</h3>
+                    <h3>2.Credit Card</h3>
+                    <h3>3.Online Banking</h3>
+                    <p>Flarista supports payment gateways that allow you to purchase tours using various popular payment methods.</p>
+                </div>
+                <div class="pay-how">
+                    <h3>How to payment</h3>
+                    <div class="pay-selection">
+                        <h3>Please select a payment method</h3>
+                        <hr>
+                        <div class="pay-img">
+                            <a onclick="loadPay('PAYPAL.html')"><img src="PayPal.png" alt="anh"></a>
+                            <a onclick="loadPay('VNPAY.html')"> <img src="VN PAY.png" alt="anh"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="payment">
+
+                </div>
             </div>
-            <div class="summary-details">
-                <h3>BOOKING DETAILS</h3>
-                <p><strong>HANOI - CAT BA TOUR 2 DAYS 1 NIGHT</strong></p>
-                <div class="detail-item">
-                    <p>Tour day</p>
-                    <span>Thu, Oct 29, 2024</span>
+            <div class="pay-booking">
+                <div class="booking-summary">
+                    <div class="summary-header">
+                        <h2>Xperience Summary</h2>
+                        <span>Booking code: 11003</span>
+                    </div>
+                    <div class="summary-details">
+                        <h3>BOOKING DETAILS</h3>
+                        <p><strong>HANOI - CAT BA TOUR 2 DAYS 1 NIGHT</strong></p>
+                        <div class="detail-item">
+                            <p>Tour day</p>
+                            <span>Thu, Oct 29, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <p>Apply for</p>
+                            <span>Adults: 1</span>
+                        </div>
+                        <div class="detail-item">
+                            <p>Time frame</p>
+                            <span>12:30 PM</span>
+                        </div>
+                    </div>
+                    <div class="guest-info">
+                        <h3>GUEST</h3>
+                        <p>Thao Linh</p>
+                        <p>+0329696462</p>
+                        <p>phthlinh@gmail.com</p>
+                    </div>
                 </div>
-                <div class="detail-item">
-                    <p>Apply for</p>
-                    <span>Adults: 1</span>
-                </div>
-                <div class="detail-item">
-                    <p>Time frame</p>
-                    <span>12:30 PM</span>
-                </div>
-            </div>
-            <div class="guest-info">
-                <h3>GUEST</h3>
-                <p>Thao Linh</p>
-                <p>+0329696462</p>
-                <p>phthlinh@gmail.com</p>
             </div>
         </div>
     </div>
-    <footer id="pagefooter"></footer>
+    <!--<footer id="pagefooter"></footer>-->
     <script src="../../General/Footer/Footer.js"></script>
     <script src="../../General/Navbar/Navbar.js"></script><!--link của nav-->
-    <script src="Home.js"></script>
+    <script src="PAY.js"></script>
 </body>
 
 </html>
