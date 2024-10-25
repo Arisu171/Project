@@ -322,44 +322,43 @@ function loadCatBa() {
 }
 function loadMaiChau() {
     clearPreviousResources();
-    loadContent('./TourList/MaiChau.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
 }
 function loadMausoleum() {
     clearPreviousResources();
-    loadContent('./TourList/Mausoleum.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
 }
 function loadCuLaoCham() {
     clearPreviousResources();
-    loadContent('./TourList/CuLaoCham.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
 }
 function loadOfficeSG() {
     clearPreviousResources();
-    loadContent('./TourList/OfficeSG.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
 }
 function loadGreenHill() {
     clearPreviousResources();
-    loadContent('./TourList/GreenHill.html', ['./TourList/TourList.js'], ['./TourList/TourList.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
 }
-
 function loadRegions() {
     clearPreviousResources();
     loadContent('./Regions/Regions.html', ['./Regions/Regions.js'], ['./Regions/Regions.css']);
 }
 function loadCentralRegion() {
     clearPreviousResources();
-    loadContent('./Regions/Central Region.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+    loadContent('./Regions/Central Region.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
 }
 function loadCentralHighland() {
     clearPreviousResources();
-    loadContent('./Regions/Central Highland.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+    loadContent('./Regions/Central Highland.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
 }
 function loadNothern() {
     clearPreviousResources();
-    loadContent('./Regions/Nothern.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+    loadContent('./Regions/Nothern.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
 }
 function loadCentralRegion() {
     clearPreviousResources();
-    loadContent('./Regions/Southern.html', ['./Regions/Region.js'], ['./Regions/Region.css']);
+    loadContent('./Regions/Southern.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
 }
 function loadCarRental() {
     clearPreviousResources();
