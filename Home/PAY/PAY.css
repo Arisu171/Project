@@ -24,7 +24,6 @@ html{
 .pay-content .pay-booking{
     width:30%;
     height:auto;
-    background-color:bisque;
     padding:5rem;
     box-sizing: border-box;
 }
@@ -101,4 +100,92 @@ html{
     margin:2rem;
     display:flex;
     justify-content: center;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.pay-booking {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.booking-summary {
+    max-width: 300px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.summary-header {
+    background-color: #d07a2b;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.summary-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.summary-header span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.summary-details, .guest-info {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-details h3, .guest-info h3 {
+    font-size: 1rem;
+    color: #d07a2b;
+    margin: 0 0 0.5rem 0;
+    font-weight: bold;
+}
+
+.summary-details p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0.3rem 0;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+}
+
+.detail-item p {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.detail-item span {
+    font-weight: normal;
+    color: #333;
+}
+
+.guest-info {
+    padding: 1rem;
+}
+
+.guest-info p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    color: #333;
 }
