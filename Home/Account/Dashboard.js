@@ -31,6 +31,18 @@ function loadPreviousContent() {
         previousContent = currentContent;
     }
 }
+document.querySelectorAll('.dashboardcontent .dash-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        // Xóa lớp 'active' khỏi tất cả các thẻ <a>
+        document.querySelectorAll('.dashboardcontent .dash-menu a').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Thêm lớp 'active' vào thẻ <a> được nhấn
+        this.classList.add('active');
+    });
+});
+
 // Hàm để khôi phục lại nội dung trước đó
 
 /*hàm chỉnh profile*/
@@ -77,7 +89,12 @@ function togglePassword(inputId, button) {
     }
 }
 function nhap(){
-    alert('BẠN ĐÃ ĐỔI MẬT KHẨU THÀNH CÔNG');
+    if(passwordnew.value===passwordconfirm.value){
+        alert('BẠN ĐÃ ĐỔI MẬT KHẨU THÀNH CÔNG');
+    }
+    else if(passwordnew.value!==passwordconfirm.value){
+        alert('MẬT KHẨU KHÔNG TRÙNG NHAU')
+    }
 }
 
 
