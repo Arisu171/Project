@@ -120,7 +120,7 @@
 }
 
 .bannertitle {
-    color: white;
+    color: rgb(216, 10, 10);
     font-size: 6vw;
     font-family: "Koulen", sans-serif;
     line-height: 1;
@@ -627,3 +627,19 @@ textarea {
 body {
     color: #ffffff;
 }
+
+/* @media (max-width: 768px) {
+    .underbottours {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        top: calc(var(--high) / 5);
+        left: 0%;
+        height: calc(var(--high) *4 / 5 - 12vw);
+        width: 78vw;
+        padding: 6vw;
+        margin: 0 5vw;
+        align-content: center;
+        color: black;
+    }
+} */
