@@ -322,23 +322,23 @@ function loadCatBa() {
 }
 function loadMaiChau() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./Pay/Pay.css']);
 }
 function loadMausoleum() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./Pay/Pay.css']);
 }
 function loadCuLaoCham() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./Pay/Pay.css']);
 }
 function loadOfficeSG() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./Pay/Pay.css']);
 }
 function loadGreenHill() {
     clearPreviousResources();
-    loadContent('./PAY/PAY.html', ['./TourList/TourList.js'], ['./PAY/PAY.css']);
+    loadContent('./PAY/PAY.html', ['./TourList/TourList.js', './Pay/Pay.js'], ['./Pay/Pay.css']);
 }
 function loadRegions() {
     clearPreviousResources();
@@ -399,8 +399,55 @@ function loadChangepass() {
     clearPreviousResources();
     loadContent('./Account/Change-pass.html', ['./Account/Dashboard.js'], ['./Account/Dashboard.css']);
 }
+function loadHaNoi() {
+    clearPreviousResources();
+    loadContent('./Regions/Northen/Hanoi.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadQuangNinh() {
+    clearPreviousResources();
+    loadContent('./Regions/Northen/QuangNinh.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadNinhBinh() {
+    clearPreviousResources();
+    loadContent('./Regions/Northen/NinhBinh.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadHCM() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern/HCM.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadCanTho() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern/CanTho.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadPhuQuoc() {
+    clearPreviousResources();
+    loadContent('./Regions/Southern/PhuQuoc.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadDaLat() {
+    clearPreviousResources();
+    loadContent('./Regions/Highlands/DaLat.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadKonTum() {
+    clearPreviousResources();
+    loadContent('./Regions/Highlands/KonTum.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadBuonMaThuot() {
+    clearPreviousResources();
+    loadContent('./Regions/Highlands/BuonMaThuot.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadDaNang() {
+    clearPreviousResources();
+    loadContent('./Regions/Central/DaNang.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadHoiAn() {
+    clearPreviousResources();
+    loadContent('./Regions/Central/HoiAn.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
+function loadHue() {
+    clearPreviousResources();
+    loadContent('./Regions/Central/Hue.html', ['./Regions/Region.js', './TourList/TourList.js'], ['./Regions/Region.css']);
+}
 
-// Hàm tải nội dung trang với việc loại bỏ các CSS và JS cũ
 function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
     clearPreviousResources();
 
@@ -422,7 +469,7 @@ function loadContent(htmlFile, jsFiles = [], cssFiles = []) {
 
                     addCSSResources(cssFiles).then(() => {
                         addJSResources(jsFiles).then(() => {
-                            reinitializeOldScripts(); // Khởi động lại các chức năng cần thiết sau AJAX
+                            reinitializeOldScripts();
                         });
                     });
                 }
@@ -983,7 +1030,7 @@ function applyFilters(region, type, time, reviews, cost) {
         if (cost !== '0' && itemCost !== cost) matchesFilter = false;
 
         if (matchesFilter) {
-            item.style.display = 'block';
+            item.style.display = 'grid';
         } else {
             unmatchedItems.push(item);
         }
@@ -992,7 +1039,7 @@ function applyFilters(region, type, time, reviews, cost) {
     if (unmatchedItems.length <= 2) {
         unmatchedItems.forEach(item => {
             otherSuggestions.appendChild(item);
-            item.style.display = 'block';
+            item.style.display = 'grid';
         });
     } else {
         unmatchedItems.forEach(item => {
@@ -1000,16 +1047,13 @@ function applyFilters(region, type, time, reviews, cost) {
         });
     }
 }
-
 document.getElementById("underbotsearch").addEventListener("click", () => {
-
     const selectedRegion = document.querySelector('#underbotitem1 .underbotinputlist').value;
     const selectedType = document.querySelector('#underbotitem2 .underbotinputlist').value;
     const selectedTime = document.querySelector('#underbotitem3 .underbotinputlist').value;
     const selectedCost = document.querySelector('#underbotitem4 .underbotinputlist').value;
 
     const searchParams = `?region=${selectedRegion}&type=${selectedType}&time=${selectedTime}&cost=${selectedCost}`;
-
     console.log("Searching with parameters:", searchParams);
 
     const xhr = new XMLHttpRequest();
@@ -1019,11 +1063,25 @@ document.getElementById("underbotsearch").addEventListener("click", () => {
             const contentContainer = document.getElementById('content');
             contentContainer.innerHTML = xhr.responseText;
 
+            // Chèn file CSS nếu chưa có
+            addSearchCSS();
+
             reinitializeContent();
         }
     };
     xhr.send();
 });
+
+function addSearchCSS() {
+    // Kiểm tra xem file CSS đã được thêm vào chưa
+    if (!document.querySelector("link[href='Search.css']")) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "Search.css";
+        document.head.appendChild(link);
+        console.log("Search.css đã được thêm.");
+    }
+}
 
 function reinitializeContent() {
 
@@ -1032,3 +1090,37 @@ function reinitializeContent() {
     reinitializeOldScripts();
     console.log("Content reinitialized.");
 }
+
+let timeout;
+
+function resetTimer() {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(Logoutt, 3000);
+}
+
+function Logoutt() {
+    const loginElement = document.getElementById('login');
+    const loginBack = document.getElementById('loginback');
+    const navUserIcons = document.querySelectorAll('.navuser');
+    loginBack.classList.remove('show');
+    loginElement.classList.remove('show');
+    loginBack.classList.add('hide');
+    loginElement.classList.add('hide');
+    isLoggedIn = false;
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+    navUserIcons.forEach(function (navUserIcon) {
+        toggleMulticons('.multiconacc');
+    });
+    console.log("Đã logout do không có tương tác trong 3s.");
+}
+
+
+document.addEventListener('mousemove', resetTimer);
+document.addEventListener('keypress', resetTimer);
+document.addEventListener('click', resetTimer);
+document.addEventListener('scroll', resetTimer);
+document.addEventListener('touchstart', resetTimer);
+
+resetTimer();

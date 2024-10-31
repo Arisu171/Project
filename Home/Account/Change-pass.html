@@ -7,106 +7,127 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../../font-awesome-6.6.0-pro-full-main/css/all.css">
     <link rel="stylesheet" href="../../General/reset.css">
     <link rel="stylesheet" href="../../General/Navbar/Navbar.css">
     <link rel="stylesheet" href="../../General/Footer/Footer.css">
     <title>Flarista</title>
     <style>
-        html{
-            font-size:1vw;
+        html {
+            font-size: 1vw;
             font-family: 'Montserrat';
         }
+
         .change-pass {
-            height:auto;
+            height: auto;
             width: 80%;
-            padding:5rem;
-    background-color: #f9f9f9;
-    border-radius: 1rem;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
+            padding: 5rem;
+            background-color: #f9f9f9;
+            border-radius: 1rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
 
-.pass {
-    margin-bottom: 20px;
-}
+        .pass {
+            margin-bottom: 20px;
+        }
 
-.pass span {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
+        .pass span {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-.input-pass {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
+        .input-pass {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-.input-pass input {
-    width: 100%;
-    padding: 1rem;
-    padding-right: 2rem; /* Khoảng trống cho nút bên phải */
-    font-size: 1rem;
-    border: 1px solid rgb(246, 198, 94); ;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
+        .input-pass input {
+            width: 100%;
+            padding: 1rem;
+            padding-right: 2rem;
+            /* Khoảng trống cho nút bên phải */
+            font-size: 1rem;
+            border: 1px solid rgb(246, 198, 94);
+            ;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
 
-.input-pass input:focus {
-    border-color:var(--color-main-hover); /* Màu khi input được focus */
-}
+        .input-pass input:focus {
+            border-color: var(--color-main-hover);
+            /* Màu khi input được focus */
+        }
 
-.input-pass button {
-    position: absolute;
-    right: 1rem; /* Đặt nút bên phải của input */
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    font-size: 18px;
-    outline: none;
-    transition: color 0.3s ease;
-    font-family:'Montserrat';;
-}
+        .input-pass button {
+            position: absolute;
+            right: 1rem;
+            /* Đặt nút bên phải của input */
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            font-size: 18px;
+            outline: none;
+            transition: color 0.3s ease;
+            font-family: 'Montserrat';
+            ;
+        }
 
-.input-pass button:hover {
-    color: #ffb41e;
-}
-.input-pass button i{
-    font-size:1rem;
-}
-.input-pass button:last-of-type {
-    display: none; /* Ban đầu ẩn nút "eye-slash" */
-}
-.change{
-    width:100%;
-    display:flex;
-    justify-content: center;
-}
-.change button{
-    text-align:center;
-    background-color:var(--color-main);
-    border:none;
-    padding:1rem;
-    font-size: 1.5rem;
-    font-family:'Montserrat';
-    color:white;
-    font-weight: 600;
-    border-radius: 1rem;
-}
-.change button:hover{
-    background-color:var(--color-main-hover);
-}
-.change button:active{
-    background-color:var(--color-main-active);
-}
+        .input-pass button:hover {
+            color: #ffb41e;
+        }
+
+        .input-pass button i {
+            font-size: 1rem;
+        }
+
+        .input-pass button:last-of-type {
+            display: none;
+            /* Ban đầu ẩn nút "eye-slash" */
+        }
+
+        .change {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .change button {
+            text-align: center;
+            background-color: var(--color-main);
+            border: none;
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Montserrat';
+            color: white;
+            font-weight: 600;
+            border-radius: 1rem;
+        }
+
+        .change button:hover {
+            background-color: var(--color-main-hover);
+        }
+
+        .change button:active {
+            background-color: var(--color-main-active);
+        }
+
+        input {}
     </style>
 </head>
 
