@@ -10,3 +10,4 @@ function loadPay(file) {
     };
     xhr.send();
 }
+

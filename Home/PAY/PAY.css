@@ -23,7 +23,6 @@ html{
     box-sizing: border-box;
 }
 .pay-content .pay-booking{
-    width:100%;
     height:auto;
     box-sizing: border-box;
 }
@@ -114,7 +113,6 @@ body {
 .pay-booking {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .booking-summary {
